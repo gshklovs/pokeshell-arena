@@ -11,7 +11,7 @@ written to any pokeshell or arena state: the fights get a stand-in collection th
 runs the pack demo server (`scripts/packs-demo.mjs`) on its own port with its stand-in host.
 
 ```powershell
-node tools\teaser\capture.mjs        # the clips -> shots\teaser\raw\<clip>.mp4 + .events.json + .cam.json (~25 min)
+node tools\teaser\capture.mjs        # the clips -> shots\teaser\raw\<clip>.mp4 + .events.json + .cam.json (~12 min)
 node tools\teaser\layers.mjs         # the motion-graphics layers -> shots\teaser\layers\*.png
 python tools\teaser\compose.py --sheet shots\teaser\sheet.png              # a contact sheet, every 0.5 s
 python tools\teaser\compose.py                                             # the 1920x1080 50 fps master
@@ -19,7 +19,7 @@ python tools\teaser\compose.py --scale 0.41667 --stable 14 --out shots\teaser\gi
 powershell -NoProfile -ExecutionPolicy Bypass -File tools\teaser\export.ps1 # docs\media\teaser.gif + teaser.mp4
 ```
 
-- **capture.mjs** directs bot-vs-bot team matches beat by beat (who stands where, which attack is pressed, the foe
+- **capture.mjs** directs bot-vs-bot team matches beat by beat (who stands where, who runs where, which attack is pressed, the runner
   rolling out of a shot, a swap, an evolve, a KO): every move is the real sim and the real renderer. The page's clock
   runs 4x slower while the DevTools screencast records, so the 1080p frames come out at about 60 fps of game time.
   `--only duel-fire,pack` re-records some clips; `--probe` lists each clip's kits and attacks.

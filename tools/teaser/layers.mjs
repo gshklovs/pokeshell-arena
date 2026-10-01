@@ -19,6 +19,8 @@ const LAYERS = [
   ['wordmark', '<h1 class="wm">pokeshell <span>arena</span></h1>'],
   ['tagline', '<p class="tag">real-time Pokémon card battles</p>'],
   ['tagline2', '<p class="tag2">win tokens <b>→</b> open real packs</p>'],
+  ['cap-move', caption('move')],
+  ['cap-close', caption('close call')],
   ['cap-aim', caption('aim')],
   ['cap-fire', caption('fire!')],
   ['cap-dodge', caption('dodge')],

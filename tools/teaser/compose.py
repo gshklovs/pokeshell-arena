@@ -32,28 +32,34 @@ GOLD = (255, 211, 90)
 # ------------------------------------------------------------------ the shot list
 # clip shots: `clip` from `t` (seconds into the clip) for `dur` seconds of the teaser at `speed`; `zoom` (2.4) crops
 # a 1920/zoom wide window of the game (2.4: 800x450, the GIF's size), centred on the two fighters (`cam`: 'pair', 'a' you, 'b' the foe, or
-# [x, y]) plus `off`; `cap` a caption layer; `flash` a white flash `flash` seconds into the shot
+# [x, y]; 'fit', 'fita', 'fitb' a still window around where both / you / the foe go during the shot, zoomed to fit;
+# 'follow', 'fa', 'fb' pan after them frame by frame, which the GIF pays for in size) plus `off`; `cap` a caption layer; `flash` a white flash `flash` seconds into the shot
 SHOTS = [
     dict(kind="title", dur=1.2),
-    # the fights: signature moves, a dodge, a melee hit, an evolve, a KO (each a real cast of the card's own kit)
-    dict(clip="duel-water", t=0.50, dur=0.85, speed=1.5, cap="aim"),                     # Blastoise: Hydro Pump
-    dict(clip="duel-fire", t=1.80, dur=0.80, speed=2.3),                                 # Volcarona V: Fire Blast
-    dict(clip="duel-water", t=5.00, dur=0.70, speed=1.2),                                # Raichu: Thunderbolt
-    dict(clip="duel-night", t=23.9, dur=0.85, speed=1.8, cap="dodge"),                   # Umbreon-GX: Shadow Ball, rolled
-    dict(clip="duel-fire", t=8.55, dur=0.65, speed=1.4),                                 # Tropius: Solar Beam
-    dict(clip="duel-fire", t=13.9, dur=0.80, speed=1.8, off=(60, -90)),                  # Minior: Draco Meteor rain
-    dict(clip="melee", t=2.85, dur=0.65, speed=1.0),                                     # Leafeon V: Leaf Blade
-    dict(clip="duel-night", t=6.20, dur=0.75, speed=2.4),                                # Cresselia: Lunar Blast homing
-    dict(clip="duel-storm", t=8.30, dur=0.60, speed=1.3),                                # Orbeetle VMAX: G-Max Wave
-    dict(clip="melee", t=31.65, dur=0.5, speed=1.0, cam=(930, 680), cap="swap"),         # the team bar's swap
-    dict(clip="evo", t=2.65, dur=0.95, speed=1.2, cam="a", off=(120, -40), cap="evolve"),  # Charmeleon -> Charizard
-    dict(clip="duel-fire", t=23.6, dur=0.90, speed=1.0, cap="ko", flash=0.44),           # Fire Blast, the KO
+    # moving: the camera follows the runner; fliers over water, strafing, dodge rolls out of the shots, a close call,
+    # the bots chasing each other, a melee step-in
+    dict(clip="mv-lagoon", t=0.15, dur=0.70, cam="fita", cap="move"),                        # Zapdos flies out over the lagoon
+    dict(clip="mv-free", t=17.25, dur=0.70, cam="fit"),                       # the bots chase and roll
+    dict(clip="mv-city", t=0.60, dur=0.65, cam="fita", cap="dodge"),                        # Machamp's shoulder-charge dodge
+    dict(clip="mv-lagoon", t=5.45, dur=0.55, cam="fita"),                                   # Starmie blinks out of a Fire Blast
+    dict(clip="mv-lagoon", t=6.50, dur=0.70, cam="fita", cap="close"),                      # Zapdos: the star passes behind
+    dict(clip="melee", t=0.45, dur=0.65, cam="fit"),                                   # Leafeon V steps in: Leaf Blade
+    # the moves: walking in, then the signature casts
+    dict(clip="duel-water", t=0.50, dur=0.60, cam="fit", cap="aim"),                   # Blastoise: Hydro Pump
+    dict(clip="duel-fire", t=0.55, dur=0.65, speed=1.3, cam="fit"),                    # Volcarona V: Fire Blast
+    dict(clip="duel-water", t=2.35, dur=0.55, cam="fit"),                              # Raichu: Thunderbolt
+    dict(clip="duel-fire", t=2.50, dur=0.55, cam="fit"),                               # Tropius: Solar Beam
+    dict(clip="duel-fire", t=4.45, dur=0.65, off=(60, -90)),                              # Minior: Draco Meteor rain
+    dict(clip="duel-night", t=2.45, dur=0.60, speed=1.2, cam="fit"),                   # Cresselia: Lunar Blast homing
+    dict(clip="melee", t=3.90, dur=0.40, cam=(930, 680), cap="swap"),                     # the team bar's swap
+    dict(clip="evo", t=0.62, dur=0.75, cam="a", off=(120, -40), cap="evolve"),            # Charmeleon -> Charizard
+    dict(clip="duel-fire", t=6.95, dur=0.80, cam="fit", cap="ko", flash=0.63),         # Fire Blast, the KO
     # the pack: the roll reel lands, the tear, the shake, the alt-art reveal
-    dict(clip="pack", t=0.95, dur=0.80, speed=1.25, zoom=1.6, cam=(960, 440), smooth=True, cap="packs", cap_pos="tc"),
-    dict(clip="pack", t=1.95, dur=0.65, speed=1.6, zoom=2, cam=(960, 470), smooth=True),
-    dict(clip="pack", t=15.95, dur=0.85, speed=2.7, zoom=1.8, cam=(960, 470), smooth=True),
-    dict(clip="pack", t=18.4, dur=0.80, speed=1.1, zoom=1.8, cam=(960, 470), smooth=True, cap="rare", cap_pos="tc"),
-    dict(kind="end", dur=1.7),
+    dict(clip="pack", t=1.05, dur=0.65, speed=1.2, zoom=1.6, cam=(960, 440), smooth=True, cap="packs", cap_pos="tc"),
+    dict(clip="pack", t=1.90, dur=0.55, speed=1.3, zoom=2, cam=(960, 470), smooth=True),
+    dict(clip="pack", t=17.0, dur=0.70, speed=2.0, zoom=1.8, cam=(960, 470), smooth=True),
+    dict(clip="pack", t=18.7, dur=0.80, speed=1.2, zoom=1.8, cam=(960, 470), smooth=True, cap="rare", cap_pos="tc"),
+    dict(kind="end", dur=1.6),
 ]
 
 
@@ -99,6 +105,37 @@ def cam_center(clip, t0, t1, mode):
     a = np.mean([[c[1], c[2]] for c in pts], 0)
     b = np.mean([[c[3], c[4]] for c in pts], 0)
     return {"a": a, "b": b}.get(mode, (a + b) / 2)
+
+
+def fit(clip, t0, t1, mode, margin=150):
+    """a still window around the action: the box the runner ('fita'), the foe ('fitb') or both ('fit') cover over the
+    shot, plus a margin; the zoom steps down from 2.4 to 2.0 or 1.6 until the box fits (a still crop keeps a GIF's
+    frames small, a panning one redraws every pixel)"""
+    cam = np.array(json.loads((RAW / f"{clip}.cam.json").read_text()), float)
+    cam = cam[(cam[:, 0] >= t0) & (cam[:, 0] <= t1)]
+    pts = {"fita": cam[:, 1:3], "fitb": cam[:, 3:5]}.get(mode, np.concatenate([cam[:, 1:3], cam[:, 3:5]]))
+    lo, hi = pts.min(0) - margin, pts.max(0) + margin
+    zoom = next((z for z in (2.4, 2.0, 1.6) if hi[0] - lo[0] <= W / z and hi[1] - lo[1] <= H / z), 1.6)
+    return (lo + hi) / 2, zoom
+
+
+class Follow:
+    """a camera that follows the action: the pair's midpoint ('follow'), you ('fa') or the foe ('fb'), smoothed over
+    `win` seconds either side so it glides instead of jittering"""
+
+    def __init__(self, clip, mode, win=0.25):
+        cam = np.array(json.loads((RAW / f"{clip}.cam.json").read_text()), float)
+        self.t = cam[:, 0]
+        a, b = cam[:, 1:3], cam[:, 3:5]
+        self.p = {"follow": (a + b) / 2, "fa": a, "fb": b}[mode]
+        self.win = win
+
+    def at(self, t):
+        m = (self.t >= t - self.win) & (self.t <= t + self.win)
+        if not m.any():
+            return self.p[np.argmin(np.abs(self.t - t))]
+        w = 1 - np.abs(self.t[m] - t) / (self.win + 1e-6)
+        return (self.p[m] * w[:, None]).sum(0) / w.sum()
 
 
 def layer(name, scale):
@@ -242,9 +279,17 @@ class Teaser:
                     yield fn(i / FPS, sh["dur"])
                 continue
             speed = sh.get("speed", 1.0)
-            sh["_c"] = np.array(cam_center(sh["clip"], sh["t"], sh["t"] + sh["dur"] * speed, sh.get("cam", "pair")), float) + np.array(sh.get("off", (0, 0)))
+            mode = sh.get("cam", "pair")
+            follow = Follow(sh["clip"], mode, sh.get("win", 0.25)) if mode in ("follow", "fa", "fb") else None
+            if isinstance(mode, str) and mode.startswith("fit"):
+                c, sh["zoom"] = fit(sh["clip"], sh["t"], sh["t"] + sh["dur"] * speed, mode, sh.get("margin", 150))
+                sh["_c"] = c + np.array(sh.get("off", (0, 0)))
+            elif not follow:
+                sh["_c"] = np.array(cam_center(sh["clip"], sh["t"], sh["t"] + sh["dur"] * speed, mode), float) + np.array(sh.get("off", (0, 0)))
             c = Clip(sh["clip"], sh["t"])
             for i in range(n):
+                if follow:
+                    sh["_c"] = follow.at(sh["t"] + i * speed / FPS) + np.array(sh.get("off", (0, 0)))
                 src = c.frame(math.floor(i * speed))
                 yield self.clip_frame(sh, src, i / FPS)
             c.close()
@@ -263,6 +308,7 @@ def main():
     ap.add_argument("--scale", type=float, default=1.0)
     ap.add_argument("--out", default=str(ROOT / "shots/teaser/master.mp4"))
     ap.add_argument("--sheet")
+    ap.add_argument("--every", type=float, default=0.5)
     ap.add_argument("--stable", type=int, default=0)
     a = ap.parse_args()
     tz = Teaser(a.scale, punch=not a.stable)
@@ -271,7 +317,7 @@ def main():
     if a.sheet:
         thumbs = []
         for i, im in enumerate(tz.frames()):
-            if i % (FPS // 2) == 0:
+            if i % round(FPS * a.every) == 0:
                 th = im.convert("RGB").resize((480, 270), Image.BOX)
                 ImageDraw.Draw(th).text((6, 4), f"{i / FPS:.1f}s", fill=(255, 255, 0))
                 thumbs.append(th)

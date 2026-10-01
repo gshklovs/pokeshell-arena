@@ -39,30 +39,58 @@ const pack = existsSync(packPath) ? JSON.parse(readFileSync(packPath, 'utf8')).c
 // both walk at each other a moment first. `at`: where the two stand (the middle of the pair), `ang` the direction
 // from you to the foe (degrees)
 const TANK = 'swsh7-29' // Gyarados VMAX: 330 HP
+// movement beats (`run`): your Pokémon (`card`) at `me` runs through `path` (arena px) while the foe (`foe` card, at
+// `at2`) fires attack `fai` at it every `every` ticks from tick `fire`; `dodge` rolls (its type's dodge style: Psychic
+// / Dark blink, Fire a flame roll, Fighting a shoulder charge, Lightning a burst) when a shot comes within `near` px,
+// sideways to it; `hit` swings attack `ai` once you're within `reach` of the foe (a melee step-in); `free` lets both
+// bots play for that many ticks (they walk, strafe, dodge and kite on their own)
+const MOVERS = 'swsh7-170,swsh7-170,swsh7-170' // Volcarona V: Fire Blast, a big slow star to dodge
 const FIGHTS = [
+  { name: 'mv-lagoon', arena: 'lapras-lagoon', me: 'base1-16,base1-4,swsh9-55', foe: MOVERS, beats: [
+    // Zapdos flies out over the lagoon and back, the Fire Blasts after it (the open lane is y 360-440)
+    { run: true, card: 'base1-16', me: [560, 420], path: [[160, 420], [160, 620], [480, 620]], foe: 'swsh7-170', at2: [900, 400], fai: 1, fire: 6, every: 50, ticks: 160 },
+    // Charizard strafes, then flame-rolls out of a Fire Blast
+    { run: true, card: 'base1-4', me: [640, 330], path: [[640, 420]], foe: 'swsh7-170', at2: [1180, 410], fai: 1, fire: 4, dodge: true, near: 130, ticks: 110 },
+    // Starmie blinks out of one
+    { run: true, card: 'swsh9-55', me: [660, 410], path: [], foe: 'swsh7-170', at2: [1180, 410], fai: 1, fire: 4, dodge: true, near: 120, ticks: 100 },
+    // a close call: Zapdos dashes across the shot's line, it passes just behind
+    { run: true, card: 'base1-16', me: [760, 300], path: [[760, 470]], foe: 'swsh7-170', at2: [1200, 400], fai: 1, fire: 0, ticks: 110, wait: 22 },
+  ] },
+  { name: 'mv-city', arena: 'liepard-night-city', me: 'base1-8,sma-SV69,swsh7-7', foe: MOVERS, beats: [
+    // Machamp shoulder-charges out of a Fire Blast
+    { run: true, card: 'base1-8', me: [760, 560], path: [[760, 480]], foe: 'swsh7-170', at2: [1300, 540], fai: 1, fire: 4, dodge: true, near: 150, ticks: 140 },
+    // Umbreon kites behind the street's barrier while the shots break on it
+    { run: true, card: 'sma-SV69', me: [600, 450], path: [[630, 540], [620, 640], [640, 540], [620, 450]], foe: 'swsh7-170', at2: [1180, 540], fai: 1, fire: 6, every: 60, ticks: 220 },
+    // Umbreon blinks out of one in the open
+    { run: true, card: 'sma-SV69', me: [820, 760], path: [[900, 760]], foe: 'swsh7-170', at2: [1360, 760], fai: 1, fire: 4, dodge: true, near: 130, ticks: 110 },
+    // Leafeon V steps in and swings
+    { run: true, card: 'swsh7-7', me: [620, 540], path: [], foe: 'swsh7-170', at2: [980, 540], hit: 0, reach: 110, ticks: 140 },
+  ] },
+  // a stretch of the bots playing on their own: walking, strafing, dodging, kiting the cave's crystals
+  { name: 'mv-free', arena: 'sableye-crystal-cave', me: 'swsh7-50,sma-SV69,base1-4', foe: 'swsh9-55,swsh7-170,base1-8', diff: 'expert', beats: [{ free: 1300 }] },
   { name: 'duel-water', arena: 'lapras-lagoon', me: 'base1-2,swsh7-50,swsh9-55', at: [960, 600], beats: [
-    { card: 'base1-2', ai: 0, d: 380 }, { card: 'swsh7-50', ai: 1, d: 420 }, { card: 'swsh9-55', ai: 1, d: 360 },
+    { card: 'base1-2', ai: 0, d: 380, approach: 150, strafe: -1 }, { card: 'swsh7-50', ai: 1, d: 420, approach: 130, strafe: 1 }, { card: 'swsh9-55', ai: 1, d: 360 },
     { card: 'swsh9-55', ai: 1, d: 340, dodge: true }, { card: 'swsh7-50', ai: 1, d: 380, ko: 30 },
   ] },
   { name: 'duel-fire', arena: 'magmar-volcano', me: 'swsh7-170,swsh7-6,me55-124', at: [960, 560], beats: [
-    { card: 'swsh7-170', ai: 1, d: 400 }, { card: 'swsh7-6', ai: 1, d: 420 }, { card: 'me55-124', ai: 0, d: 360 },
-    { card: 'swsh7-170', ai: 1, d: 380, ko: 40 },
+    { card: 'swsh7-170', ai: 1, d: 400, approach: 140, strafe: 1 }, { card: 'swsh7-6', ai: 1, d: 420, approach: 130, strafe: -1 }, { card: 'me55-124', ai: 0, d: 360, approach: 120 },
+    { card: 'swsh7-170', ai: 1, d: 380, ko: 40, approach: 120 },
   ] },
   { name: 'duel-night', arena: 'cresselia-moonlit-sky', me: 'sma-SV69,swsh11-74,swsh7-8', at: [960, 560], beats: [
-    { card: 'sma-SV69', ai: 1, d: 400 }, { card: 'swsh11-74', ai: 1, d: 420 }, { card: 'swsh11-74', ai: 0, d: 380 },
+    { card: 'sma-SV69', ai: 1, d: 400, approach: 120 }, { card: 'swsh11-74', ai: 1, d: 420, approach: 140, strafe: 1 }, { card: 'swsh11-74', ai: 0, d: 380 },
     { card: 'swsh7-8', ai: 0, d: 340 }, { card: 'sma-SV69', ai: 1, d: 380, dodge: true },
   ] },
   { name: 'duel-storm', arena: 'kyogre-storm-sea', me: 'swsh11tg-TG13,base1-16,swsh7-14,swsh7-27', at: [960, 560], beats: [
     { card: 'swsh7-27', ai: 0, d: 400 },
-    { card: 'swsh11tg-TG13', ai: 0, d: 380 }, { card: 'base1-16', ai: 1, d: 420 }, { card: 'swsh7-14', ai: 1, d: 360 },
+    { card: 'swsh11tg-TG13', ai: 0, d: 380, approach: 120 }, { card: 'base1-16', ai: 1, d: 420 }, { card: 'swsh7-14', ai: 1, d: 360 },
   ] },
   // melee: Leafeon V's Leaf Blade and a close-up brawl; a swap; then the evolve
   { name: 'melee', arena: 'zarude-jungle', me: 'swsh7-7,base1-4,base1-16', at: [960, 560], beats: [
-    { card: 'swsh7-7', ai: 0, d: 110, walk: true }, { card: 'swsh7-7', ai: 1, d: 110 }, { card: 'swsh7-7', ai: 0, d: 110 },
+    { card: 'swsh7-7', ai: 0, d: 110, approach: 220 }, { card: 'swsh7-7', ai: 0, d: 110, approach: 180 },
     { swap: true }, { evolve: true }, { evolve: true },
   ] },
   { name: 'evo', arena: 'herdier-temple', me: 'base1-4,swsh7-50,base1-2', at: [960, 560], beats: [
-    { evolve: true, d: 300 }, { evolve: true, d: 300 }, { card: 'base1-4', ai: 1, d: 300 },
+    { evolve: true, d: 300 }, { evolve: true, d: 300 },
   ] },
   { name: 'duel-ice', arena: 'glastrier-ice-field', me: 'neo1-44,swsh9-55,swsh7-8', at: [960, 560], beats: [
     { card: 'neo1-44', ai: 1, d: 380 }, { card: 'swsh7-8', ai: 1, d: 400 }, { card: 'swsh9-55', ai: 1, d: 360, ko: 30 },
@@ -74,7 +102,7 @@ const FIGHTS = [
 const CLIPS = [...FIGHTS.map((f) => ({ ...f, kind: 'fight' })), { name: 'pack', kind: 'pack', secs: 30 }]
 const RUN = CLIPS.filter((c) => !only.length || only.includes(c.name))
 
-const ids = new Set(['base1-46', 'base1-24', 'base1-4', TANK, 'neo1-45', 'base1-63', 'base1-42', ...FIGHTS.flatMap((f) => f.me.split(','))])
+const ids = new Set(['swsh7-170', 'base1-8', 'base1-46', 'base1-24', 'base1-4', TANK, 'neo1-45', 'base1-63', 'base1-42', ...FIGHTS.flatMap((f) => f.me.split(','))])
 const collection = [...ids].map((id) => {
   const c = data[id]
   if (!c) throw new Error(`no card ${id}`)
@@ -96,7 +124,9 @@ const slowClock = (SLOW) => {
   performance.now = () => p0 + (rp() - p0) / SLOW
   Date.now = () => Math.round(d0 + (rd() - d0) / SLOW)
   const raf = window.requestAnimationFrame.bind(window)
-  window.requestAnimationFrame = (cb) => raf((t) => cb(p0 + (t - p0) / SLOW))
+  // the frame time is the slowed clock read at the callback: while the screencast runs, the timestamps Chromium hands
+  // requestAnimationFrame stop following the wall clock (the sim would run 4x slow against the recorded frames)
+  window.requestAnimationFrame = (cb) => raf(() => cb(p0 + (rp() - p0) / SLOW))
   const st = window.setTimeout.bind(window), si = window.setInterval.bind(window)
   window.setTimeout = (fn, ms, ...a) => st(fn, (Number(ms) || 0) * SLOW, ...a)
   window.setInterval = (fn, ms, ...a) => si(fn, (Number(ms) || 0) * SLOW, ...a)
@@ -159,7 +189,7 @@ function director() {
   const camLoop = () => {
     const s = r.s
     const a = s.players[0].fighter, b = s.players[1].fighter
-    window.__cam.push([Math.round(window.__vt.now()), Math.round(a.x / FP), Math.round(a.y / FP), Math.round(b.x / FP), Math.round(b.y / FP)])
+    window.__cam.push([Math.round(window.__vt.now()), Math.round(a.x / FP), Math.round(a.y / FP), Math.round(b.x / FP), Math.round(b.y / FP), a.dodge ? 1 : 0, b.dodge ? 1 : 0])
     requestAnimationFrame(camLoop)
   }
   requestAnimationFrame(camLoop)
@@ -168,6 +198,7 @@ function director() {
   // no hit ends the foe before its KO beat (a super-effective Thunderbolt does 244)
   for (const m of r.s.players[1].members) { m.maxHp = 5000; m.hp = 5000 }
   const idle = () => ({ mx: 0, my: 0, aim: 0, buttons: 0 })
+  window.__bots = [r.bots[0].input.bind(r.bots[0]), r.bots[1].input.bind(r.bots[1])]
   r.bots[0].input = (s) => (window.__ctl.me ?? idle)(s)
   r.bots[1].input = (s) => (window.__ctl.foe ?? idle)(s)
   window.__topUp = setInterval(() => {
@@ -188,7 +219,7 @@ function beat(b) {
   const ctl = window.__ctl
   const ang = ((b.ang ?? 0) * Math.PI) / 180
   const place = (s) => {
-    const a = s.players[0].fighter, f = s.players[1].fighter, d = b.d ?? 360
+    const a = s.players[0].fighter, f = s.players[1].fighter, d = (b.d ?? 360) + (b.approach ?? 0)
     const [cx, cy] = b.at
     a.x = Math.round((cx - (Math.cos(ang) * d) / 2) * FP); a.y = Math.round((cy - (Math.sin(ang) * d) / 2) * FP)
     f.x = Math.round((cx + (Math.cos(ang) * d) / 2) * FP); f.y = Math.round((cy + (Math.sin(ang) * d) / 2) * FP)
@@ -207,7 +238,7 @@ function beat(b) {
   const from = s0.nextId
   const t0 = s0.tick
   return new Promise((ok) => {
-    let state = 'go', hitAt = null, press = false, dodged = false, endAt = null
+    let state = 'go', hitAt = null, press = false, dodged = false, endAt = null, walking = !!b.approach
     const finish = (why) => { if (endAt === null) endAt = { tick: r.s.tick, why } }
     ctl.foe = (s) => {
       const f = s.players[1].fighter, a = s.players[0].fighter
@@ -217,6 +248,7 @@ function beat(b) {
         if (near) { dodged = true; return { mx: 0, my: -1, aim: 0, buttons: 8 } }
       }
       if (b.walk && s.tick - t0 < 40) return { mx: Math.sign(a.x - f.x), my: 0, aim: 0, buttons: 0 }
+      if (b.strafe && walking) return { mx: 0, my: b.strafe, aim: 0, buttons: 0 }
       return { mx: 0, my: 0, aim: 0, buttons: 0 }
     }
     ctl.me = (s) => {
@@ -227,6 +259,11 @@ function beat(b) {
       }
       if (s.tick - t0 > 240) finish('timeout')
       if (b.walk && s.tick - t0 < 40) return { mx: Math.sign(f.x - a.x), my: 0, aim: aimAt(s), buttons: 0 }
+      // `approach`: walk in to `d` px before casting (and `strafe`: the foe sidesteps meanwhile)
+      if (b.approach && walking) {
+        if (Math.hypot(f.x - a.x, f.y - a.y) / FP <= (b.d ?? 360) || s.tick - t0 > 90) walking = false
+        else return { mx: Math.sign(f.x - a.x), my: Math.abs(f.y - a.y) > 30 * FP ? Math.sign(f.y - a.y) : 0, aim: aimAt(s), buttons: 0 }
+      }
       if (b.swap) { if (s.events.some((e) => e.k === 'swap' && e.p === 0)) finish('swap'); return { mx: 0, my: 0, aim: aimAt(s), buttons: 2 << 8 } }
       if (b.evolve) {
         s.players[0].evo = 60
@@ -246,12 +283,83 @@ function beat(b) {
   })
 }
 
+/** in the page: a movement beat (see MOVERS above); resolves when it's over */
+function run(b) {
+  const r = window.__arena.runner
+  const FP = 256
+  const ctl = window.__ctl
+  const s0 = r.s
+  const me0 = s0.players[0], foe0 = s0.players[1]
+  if (b.free) {
+    const t0 = s0.tick
+    return new Promise((ok) => {
+      ctl.foe = window.__bots[1]
+      ctl.me = (s) => { if (s.tick - t0 > b.free) { ctl.me = null; ctl.foe = null; ok({ why: 'free' }) } return window.__bots[0](s) }
+    })
+  }
+  // the runner takes the shots it doesn't dodge: no KO mid-beat
+  for (const m of me0.members) if (m.maxHp < 5000) { m.maxHp = 5000; m.hp = 5000 }
+  const setKit = (pl, card) => { const want = r.def.kits.findIndex((k) => k.card === card); const m = pl.members[pl.active]; if (want >= 0 && m) m.kit = want }
+  if (b.card) setKit(me0, b.card)
+  if (b.foe) setKit(foe0, b.foe)
+  me0.usedOnce = []; foe0.usedOnce = []
+  const a0 = me0.fighter, f0 = foe0.fighter
+  a0.x = b.me[0] * FP; a0.y = b.me[1] * FP; f0.x = b.at2[0] * FP; f0.y = b.at2[1] * FP
+  a0.knock = null; f0.knock = null; a0.dodgeCd = 0; f0.dodgeCd = 0
+  ctl.keepHp = true
+  const from = s0.nextId, t0 = s0.tick
+  const ang = (fx, fy, tx, ty) => Math.round((Math.atan2(ty - fy, tx - fx) / (Math.PI * 2)) * 256) & 255
+  const path = [...(b.path ?? [])]
+  let dodged = false, swung = false, press = false, fpress = false
+  return new Promise((ok) => {
+    ctl.foe = (s) => {
+      const a = s.players[0].fighter, f = s.players[1].fighter
+      const k = s.tick - t0
+      const firing = b.fai !== undefined && k >= (b.fire ?? 0) && (b.every ? (k - (b.fire ?? 0)) % b.every < 8 : k - (b.fire ?? 0) < 8)
+      fpress = !fpress
+      return { mx: 0, my: 0, aim: ang(f.x, f.y, a.x, a.y), buttons: firing && fpress && !f.cast ? 1 << b.fai : 0 }
+    }
+    ctl.me = (s) => {
+      const a = s.players[0].fighter, f = s.players[1].fighter
+      const k = s.tick - t0
+      if (k > b.ticks) { ctl.me = null; ctl.foe = null; ok({ why: swung ? 'swung' : dodged ? 'dodged' : 'done', dodged }); return { mx: 0, my: 0, aim: 0, buttons: 0 } }
+      const aim = ang(a.x, a.y, f.x, f.y)
+      // the dodge: sideways to the incoming shot
+      if (b.dodge && !dodged) {
+        const shot = s.projectiles.find((p) => p.owner === 1 && p.id >= from && Math.hypot(p.x - a.x, p.y - a.y) < (b.near ?? 150) * FP)
+        if (shot) {
+          dodged = true
+          const vx = a.x - f.x, vy = a.y - f.y
+          const side = Math.abs(vx) > Math.abs(vy) ? { mx: 0, my: a.y > 540 * FP ? -1 : 1 } : { mx: a.x > 960 * FP ? -1 : 1, my: 0 }
+          return { ...side, aim, buttons: 8 }
+        }
+      }
+      if (b.wait && k < b.wait) return { mx: 0, my: 0, aim, buttons: 0 }
+      // the melee step-in: walk at the foe, swing once in reach
+      if (b.hit !== undefined && !swung) {
+        const d = Math.hypot(f.x - a.x, f.y - a.y) / FP
+        if (d > (b.reach ?? 110)) return { mx: Math.sign(f.x - a.x), my: Math.abs(f.y - a.y) > 12 * FP ? Math.sign(f.y - a.y) : 0, aim, buttons: 0 }
+        press = !press
+        if (a.cast || s.swings?.some((w) => w.owner === 0)) swung = true
+        return { mx: 0, my: 0, aim, buttons: press ? 1 << b.hit : 0 }
+      }
+      while (path.length && Math.hypot(path[0][0] * FP - a.x, path[0][1] * FP - a.y) < 18 * FP) path.shift()
+      if (path.length) {
+        const [tx, ty] = path[0]
+        const dx = tx * FP - a.x, dy = ty * FP - a.y
+        return { mx: Math.abs(dx) > 10 * FP ? Math.sign(dx) : 0, my: Math.abs(dy) > 10 * FP ? Math.sign(dy) : 0, aim, buttons: 0 }
+      }
+      return { mx: 0, my: 0, aim, buttons: 0 }
+    }
+  })
+}
+
 async function fight(page, base, c) {
   await page.route('**/api/**', (route) => {
     const path = new URL(route.request().url()).pathname
     route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(API[path] ?? {}) })
   })
-  await page.goto(`${base}?auto=1&bots=1&mode=team&me=${c.me}&foe=${TANK},${TANK},${TANK}&arena=${c.arena}&seed=${c.seed ?? 4}&diff=normal`)
+  await page.goto(`${base}?auto=1&bots=1&mode=team&me=${c.me}&foe=${c.foe ?? `${TANK},${TANK},${TANK}`}&arena=${c.arena}&seed=${c.seed ?? 4}&diff=${c.diff ?? 'normal'}`)
   await page.waitForFunction(() => window.__arena?.runner, null, { timeout: 90000 })
   if (PROBE) {
     const kits = await page.evaluate(() => window.__arena.runner.def.kits.map((k) => `${k.card} ${k.name}: ${k.attacks.map((a, i) => `#${i} ${a.name} [${a.look ?? '-'} ${a.shape.kind}]`).join(', ')}`))
@@ -265,7 +373,7 @@ async function fight(page, base, c) {
   const frames = await record(page, join(out, c.name), async () => {
     for (const b of c.beats) {
       const t = await page.evaluate(() => window.__vt.now())
-      const res = await page.evaluate(beat, { ...b, at: b.at ?? c.at })
+      const res = await page.evaluate(b.run || b.free ? run : beat, { ...b, at: b.at ?? c.at })
       results.push({ t, beat: b, ...res })
     }
     await vwait(page, 400)
