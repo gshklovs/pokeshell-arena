@@ -1,5 +1,7 @@
 # pokeshell arena
 
+[![pokeshell arena: real-time Pokémon card battles, then open the packs you win](docs/media/teaser.gif)](https://github.com/gshklovs/pokeshell-arena/releases/latest)
+
 Real-time top-down Pokémon battles with the cards you pulled in [pokeshell](https://github.com/gshklovs/pokeshell).
 A separate, optional install: pokeshell itself never depends on it. Or play it on its own: download it, open your
 free starter packs, battle.

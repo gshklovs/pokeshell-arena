@@ -6,11 +6,11 @@ import * as R from './rules'
 import type { Effect, ResolvedAttack } from './types'
 
 const TILE = 40
-const tiles = (px: number) => { const t = Math.round((px / TILE) * 2) / 2; return `${t} tile${t === 1 ? '' : 's'}` }
-const secs = (ticks: number) => { const v = ticks / 60; return `${v >= 10 || Number.isInteger(v) ? Math.round(v) : v.toFixed(1)} s` }
-const pct = (permille: number) => `${Math.round(permille / 10)}%`
+export const tiles = (px: number) => { const t = Math.round((px / TILE) * 2) / 2; return `${t} tile${t === 1 ? '' : 's'}` }
+export const secs = (ticks: number) => { const v = ticks / 60; return `${v >= 10 || Number.isInteger(v) ? Math.round(v) : v.toFixed(1)} s` }
+export const pct = (permille: number) => `${Math.round(permille / 10)}%`
 const num = (p: Effect, k: string, d = 0) => (typeof p[k] === 'number' ? (p[k] as number) : d)
-const signed = (n: number) => (n >= 0 ? `+${n}` : `−${-n}`)
+export const signed = (n: number) => (n >= 0 ? `+${n}` : `−${-n}`)
 const who = (p: Effect, dflt: 'target' | 'self', foe = 'the foe', me = 'you') => (((p.target as string | undefined) ?? dflt) === 'self' ? me : foe)
 const count = (n: number, one: string, many = `${one}s`) => `${n === 15 ? 'all' : n} ${n === 1 ? one : many}`
 

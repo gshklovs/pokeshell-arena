@@ -215,6 +215,17 @@ stored. So frames are self-contained, and netcode can resend or predict them. Re
     every op, the damage curve, W/R, shields, buffs, energy and statuses count as they would), never the sim's RNG
     (coin flips are enumerated for exact bounds; the average is exact for coins, seeded runs for weighted rolls).
     Render-only, recomputed every 6 frames while aiming (~0.1 ms).
+    **The aim info** (the user: "can previews also show any other helpful info pertaining to how a move works ... if
+    its a status effect it shows it on pokemon, if something else it shows at top of screen"), fading in while aiming
+    and out on release or cancel: small badges by each Pokémon the cast touches (conditions, reel, slow, knockback /
+    pull, buffs and debuffs, shields, energy lost or gained, locks, heals, recoil; yours too), with the chance ("50%")
+    and the length, read off the same dry runs (what the sim really did in each run, weighted like the damage); marks
+    on the team row for bench damage, a forced swap, a team heal; and a slim strip under the timer with how the move
+    behaves (homing, through walls, a lob, a volley, pierce, split, fuse / stick, blast, pulses, the melee style, ...),
+    the X+ math in the printed gold with what it adds now ("bonus: +30 per energy the foe has (now +60)"), weakness /
+    resistance, the energy, once per match. A straight shot or beam with a wall between you and the target is
+    "blocked by wall" (the number dims; the prediction still assumes the hit). `src/game/aiminfo.ts` (what),
+    `src/render/aimfx.ts` (drawing).
   - **Attack info: hold I** (the pad's Back / Select) to peek at your active Pokémon's attack sheet over the arena
     without pausing: cost, printed damage (gold), the card's text, the "in the arena" line and the prediction on the
     nearest foe (cyan). The controls hint lists it.

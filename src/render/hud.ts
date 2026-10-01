@@ -12,6 +12,7 @@ import { evoLoaner, evoShiny, type EnergyType, type FighterKit, type MatchDef, t
 import { FONT_HAND, FONT_PIX, FONT_ROUND, tokens, type Tokens } from '../theme'
 import type { Prediction } from '../sim/predict'
 import type { SheetAttack } from '../game/attacksheet'
+import type { AimInfo } from '../game/aiminfo'
 import { TYPE_COLOR, boundsOf, hexA, sprite } from './sprites'
 
 export interface HudInfo {
@@ -31,6 +32,8 @@ export interface HudInfo {
   aiming?: number
   /** the held attack's predicted damage on the foe it's aimed at (render-only; src/sim/predict.ts) */
   predict?: AimPrediction | null
+  /** the held attack's aim info: badges by the Pokémon it touches, the strip at the top (src/game/aiminfo.ts) */
+  aimInfo?: AimInfo | null
   /** the attack sheet peek (hold I) */
   peek?: PeekInfo | null
   /** the mouse in design px, for the KO picker's hover (render-only); null when a bot plays for you */
@@ -44,6 +47,8 @@ export interface AimPrediction {
   /** the target is on the aim path (else it's the nearest foe, and the number is dimmed) */
   onPath: boolean
   p: Prediction
+  /** a wall cuts the line to the target (predict.aimBlocked): the number is dimmed */
+  blocked?: boolean
 }
 
 export interface PeekInfo {
@@ -433,7 +438,7 @@ function attackPrediction(g: CanvasRenderingContext2D, s: SimState, def: MatchDe
   const c = attackCard(kit.attacks.length, pr.attack)
   const lbl = (pr.p.max > 0 ? predictLabel(pr.p, true) : 'no damage') + (pr.p.ko === 'always' ? ' KO' : '')
   g.save()
-  g.globalAlpha = pr.onPath ? 1 : 0.6
+  g.globalAlpha = pr.onPath && !pr.blocked ? 1 : 0.6
   g.font = `700 16px ${FONT_ROUND}`
   const w = g.measureText(lbl).width + 12
   const rx = c.x + c.w - 16, ry = c.y + 52

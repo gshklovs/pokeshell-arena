@@ -12,7 +12,8 @@ import { FP } from '../sim/fixed'
 import { createState, hashState } from '../sim/state'
 import { isTopStage, type EvoCard } from '../sim/evolution'
 import { evolveOptions, step } from '../sim/step'
-import { aimTarget, predictDamage } from '../sim/predict'
+import { aimBlocked, aimTarget, predictDamage } from '../sim/predict'
+import { aimInfo, type AimInfo } from './aiminfo'
 import { sheetOf } from './attacksheet'
 import type { InputFrame, MatchDef, SimState } from '../sim/types'
 import type { LoadedArena } from './arena'
@@ -61,6 +62,8 @@ export class MatchRunner {
   onEnd: (s: SimState) => void = () => {}
   /** the aim prediction (render-only): recomputed at most every PREDICT_EVERY frames while an attack is held */
   private pred: AimPrediction | null = null
+  /** the aim info (render-only): the held attack's badges and strip, refreshed with the prediction */
+  private info: AimInfo | null = null
   private peekInfo: PeekInfo | null = null
   private frameN = 0
   private predAt = -1e9
@@ -166,15 +169,17 @@ export class MatchRunner {
   /** the damage the held attack would do to the foe it's aimed at (or the nearest, dimmed): a dry run of the sim's own
    * pipeline on a copy of the state (src/sim/predict.ts), a few times a second, never touching the match */
   private predict(held: number): AimPrediction | null {
-    if (!held || this.s.phase !== 'fight') { this.pred = null; return null }
+    if (!held || this.s.phase !== 'fight') { this.pred = null; this.info = null; return null }
     const pl = this.s.players[0]
-    if (pl.active < 0) { this.pred = null; return null }
-    if (this.pred && this.pred.attack === held - 1 && this.frameN - this.predAt < PREDICT_EVERY) return this.pred
+    if (pl.active < 0) { this.pred = null; this.info = null; return null }
+    if (this.info && this.info.attack === held - 1 && this.frameN - this.predAt < PREDICT_EVERY) return this.pred
     this.predAt = this.frameN
     const f = pl.fighter
     const { target, onPath } = aimTarget(this.def, this.s, 0, held - 1, f.aim)
     const p = target >= 0 ? predictDamage(this.def, this.s, 0, held - 1, target) : null
-    this.pred = p ? { attack: held - 1, target, onPath, p } : null
+    const blocked = !!p && onPath && aimBlocked(this.def, this.s, 0, held - 1, target)
+    this.pred = p ? { attack: held - 1, target, onPath, p, blocked } : null
+    this.info = aimInfo(this.def, this.s, 0, held - 1, p, blocked)
     return this.pred
   }
 
@@ -209,6 +214,7 @@ export class MatchRunner {
       evoPick: this.input.evoPick(),
       aiming: held,
       predict: this.predict(held),
+      aimInfo: held ? this.info : null,
       peek: this.peek(!this.paused && this.input.peeking()),
       seen: this.elim.seen,
       pointer: this.bots[0] ? null : this.input.pointer(),

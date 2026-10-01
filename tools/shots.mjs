@@ -4,7 +4,7 @@
 //   2. arena-host (host/target/release) on a free port with a temp arena state, stopped through POST /api/shutdown
 //   3. Vite in-process, proxying /api and /pokeshell to that host; Playwright's Chromium drives the page
 // Writes shots/*.png, shots/fight.webm (and shots/fight.gif when ffmpeg is on PATH).
-//   node tools/shots.mjs [--out shots] [--pokeshell ..\pokeshell] [--only loadout,team,...]
+//   node tools/shots.mjs [--out shots] [--pokeshell ..\pokeshell] [--only loadout,team,...] [--host <arena-host.exe>]
 import { spawn, spawnSync } from 'node:child_process'
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, renameSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
@@ -34,7 +34,7 @@ if (repoGuess) {
 mkdirSync(home, { recursive: true })
 
 // ---------------------------------------------------------------- 2. arena-host
-const exe = resolve(root, 'host/target/release/arena-host.exe')
+const exe = resolve(arg('--host', resolve(root, 'host/target/release/arena-host.exe')))
 if (!existsSync(exe)) throw new Error('arena-host is not built: cargo build --release --manifest-path host\\Cargo.toml')
 const state = join(tmp, 'arena-state')
 mkdirSync(state, { recursive: true })
@@ -377,6 +377,71 @@ try {
       return (performance.now() - t0) / 20
     })
     console.log(`prediction: ${ms.toFixed(2)} ms per aimed coin-flip attack (run every 6 frames)`)
+  }
+
+  // 4c. the aim info: badges by the Pokémon the held attack touches, the strip at the top with how it works, the
+  // wall check. Each match is frozen (runner.paused) once the fighters are placed, so the shot shows that layout
+  if (want('aiminfo')) {
+    const toPage = (x, y) => page.evaluate(([x, y]) => {
+      const r = document.querySelector('#game').getBoundingClientRect()
+      return { x: r.left + (x * r.width) / 1920, y: r.top + (y * r.height) / 1080 }
+    }, [x, y])
+    /** a match, the two fighters placed (design px; `wall`: a wall tile between them, found in the arena), frozen,
+     * then attack `button` (0 left, 2 right) held on the foe */
+    const aimShot = async (name, url, opts = {}) => {
+      await page.goto(`${base}?auto=1&mode=1v1&diff=easy&${url}`)
+      await fight()
+      await wait(1200)
+      const at = await page.evaluate((o) => {
+        const s = window.__arena.state(), r = window.__arena.runner
+        let me = o.me ?? [760, 560], foe = o.foe ?? [1060, 560]
+        if (o.wall) {
+          // a wall tile with open floor 4 tiles either side on its row
+          for (let i = 0; i < s.tiles.length && o.wall !== 'done'; i++) {
+            const tx = i % 48, ty = Math.floor(i / 48)
+            if (s.tiles[i] !== 1 || tx < 6 || tx > 41 || ty < 5 || ty > 21) continue
+            const free = (x) => s.tiles[ty * 48 + x] === 0
+            if ([2, 3, 4].every((d) => free(tx - d) && free(tx + d))) { me = [(tx - 3) * 40 + 20, ty * 40 + 20]; foe = [(tx + 4) * 40 + 20, ty * 40 + 20]; o.wall = 'done' }
+          }
+        }
+        // a later card of the line (a screenshot shortcut, straight into the state): its kit is in the match already
+        const k = o.kit ? r.def.kits.findIndex((x) => x.card === o.kit) : -1
+        if (k >= 0) { const m = s.players[0].members[0]; m.kit = k; m.maxHp = r.def.kits[k].hp; m.hp = m.maxHp; s.players[0].fighter.cooldowns = r.def.kits[k].attacks.map(() => 0) }
+        const p0 = s.players[0].fighter, p1 = s.players[1].fighter
+        p0.x = me[0] * 256; p0.y = me[1] * 256; p1.x = foe[0] * 256; p1.y = foe[1] * 256
+        s.players[0].pips[0] = o.pips ?? 5
+        if (o.foePips !== undefined) s.players[1].pips[0] = o.foePips
+        if (o.hurt) s.players[0].members[0].hp = Math.max(10, s.players[0].members[0].hp - o.hurt)
+        r.paused = true
+        return foe
+      }, opts)
+      const pt = await toPage(at[0], at[1] - 10)
+      await page.mouse.move(pt.x, pt.y)
+      await page.mouse.down({ button: opts.button === 2 ? 'right' : 'left' })
+      await wait(500)
+      await shot(name)
+      await page.mouse.up({ button: opts.button === 2 ? 'right' : 'left' })
+      await wait(300)
+      await page.evaluate(() => { window.__arena.runner.paused = false })
+    }
+    // an X+ (Psychic: +10 per foe energy), homing
+    await aimShot('36-aim-info-plus', 'me=base1-10&foe=base1-4&arena=growlithe-meadow&seed=21', { foePips: 3 })
+    // a coin flip that may hurt you (Thunder Jolt), into a weakness
+    await aimShot('37-aim-info-coin-recoil', 'me=base1-58&foe=base1-63&arena=herdier-temple&seed=22', { button: 2 })
+    // a coin-flip condition (Confuse Ray), an instant beam
+    await aimShot('38-aim-info-status', 'me=base1-68&foe=base1-44&arena=growlithe-meadow&seed=23')
+    // a straight shot with a wall in the way: dimmed, "blocked by wall"
+    await aimShot('39-aim-info-blocked', 'me=base1-44&foe=base1-63&arena=herdier-temple&seed=24', { wall: true })
+    // a phase shot (Leafeon VMAX's Grass Knot) through that wall: not blocked; an X+ and a slow on the foe
+    await aimShot('40-aim-info-phase', 'me=swsh7-7&foe=base1-63&arena=herdier-temple&seed=25', { wall: true, foePips: 2, kit: 'swsh7-8' })
+    // on yourself: Barrier spends your energy and makes you untouchable
+    await aimShot('41-aim-info-self', 'me=base1-10&foe=base1-46&arena=growlithe-meadow&seed=26', { button: 2 })
+    // a heal on yourself and a slow on the foe (Leech Seed, hurt first)
+    await aimShot('42-aim-info-heal', 'me=base1-44&foe=base1-46&arena=growlithe-meadow&seed=27', { hurt: 30 })
+    // a 3-shot volley that burns a trail and costs you an energy (Ember), with a pulsing area foe nearby
+    await aimShot('43-aim-info-volley', 'me=base1-46&foe=base1-44&arena=growlithe-meadow&seed=28', { button: 2 })
+    // a coin-flip shield on yourself (Withdraw)
+    await aimShot('44-aim-info-shield', 'me=base1-63&foe=base1-58&arena=growlithe-meadow&seed=29', { button: 2 })
   }
 
   // 5. the fight video: a team demo match, recorded at 1280x720

@@ -17,6 +17,8 @@ import { drawConfirm, drawDashGlyph, drawImpact, drawLandGlyph, drawMeleeTelegra
 import { LANDING } from '../sim/melee'
 import { drawArea, drawAreaAir, drawBeam, drawCone, drawShot, type Vfx } from './vfx'
 import { SIG } from './sig'
+import { drawAimStrip, drawBadges, drawBenchMarks, stepAimFade, type Anchor } from './aimfx'
+import type { AimInfo } from '../game/aiminfo'
 
 export type { HudInfo } from './hud'
 
@@ -165,6 +167,9 @@ export class Renderer {
   private punchAt = { x: W / 2, y: H / 2 }
   private shakeDir = { x: 0, y: 0 }
   private delayed: { t: number; name: SfxName; pan: number }[] = []
+  /** the aim info's fade (0..1) and the last info shown, kept to fade out after a release or cancel */
+  private aimA = 0
+  private aimLast: AimInfo | null = null
   /** the attack whose shape the aim telegraph previews for the local player (the last one they cast) */
   previewAttack = 0
   shake = 0
@@ -579,7 +584,10 @@ export class Renderer {
     g.restore()
     drawHud(g, s, this.def, { mode: this.def.mode, ...hud }, this.frame)
     // over the HUD, so it reads where a panel fades over the target; the peek (hold I) has its own numbers
+    // the aim info's strip under the prediction chip, its badges over everything
+    this.drawAimInfo(prev, s, alpha, hud, false)
     if (!hud.peek) this.drawPrediction(prev, s, alpha, hud)
+    this.drawAimInfo(prev, s, alpha, hud, true)
     for (const a of this.evos) if (++a.t === EVO_ANIM - 12) this.fighterFx(a.p).pop = 1
     this.evos = this.evos.filter((a) => a.t < EVO_ANIM)
     if (this.whiteout > 0) { g.fillStyle = `rgba(255,255,255,${this.whiteout * 0.8})`; g.fillRect(0, 0, W, H); this.whiteout = Math.max(0, this.whiteout - 0.08) }
@@ -1096,22 +1104,15 @@ export class Renderer {
   private drawPrediction(prev: Snapshot, s: SimState, alpha: number, hud: HudInfo): void {
     const pr = hud.predict
     if (!pr || s.phase !== 'fight') return
-    const pl = s.players[pr.target]
-    if (!pl || pl.active < 0) return
-    const f = pl.fighter
-    const p0 = prev.fighters[pr.target]
-    const x = drawnPx(p0?.on ? p0.x : f.x, f.x, alpha)
-    const y = drawnPx(p0?.on ? p0.y : f.y, f.y, alpha)
-    const img = sprite(this.def.kits[pl.members[pl.active].kit].character, !!this.def.players[pr.target]?.shiny?.[pl.active])
-    const geo = img ? this.spriteGeom(img) : null
-    // the sprite stands on the body's feet (y + r * 0.6); a flier over water or a pit is drawn lifted
-    const head = y - (geo ? geo.b.h * geo.scale : 60) + f.r * 0.6 - (airborne(s, f) ? 19 : 0)
+    const at = this.anchor(prev, s, alpha, pr.target)
+    if (!at) return
+    const x = at.x, head = at.head
     const p = pr.p
     const main = p.max > 0 ? predictLabel(p) : 'no damage'
-    const tags = [p.eff > 0 ? 'weak!' : p.eff < 0 ? 'resists' : '', p.ko === 'always' ? 'KO' : p.ko === 'maybe' ? 'may KO' : '', p.hits > 1 ? `${p.hits} hits` : '', p.confused ? 'confused' : '', pr.onPath ? '' : 'nearest · off aim'].filter(Boolean).join(' · ')
+    const tags = [pr.blocked ? 'blocked by wall' : '', p.eff > 0 ? 'weak!' : p.eff < 0 ? 'resists' : '', p.ko === 'always' ? 'KO' : p.ko === 'maybe' ? 'may KO' : '', p.hits > 1 ? `${p.hits} hits` : '', p.confused ? 'confused' : '', pr.onPath ? '' : 'nearest · off aim'].filter(Boolean).join(' · ')
     const g = this.ctx
     g.save()
-    g.globalAlpha = pr.onPath ? 1 : 0.5
+    g.globalAlpha = pr.onPath && !pr.blocked ? 1 : 0.5
     g.font = `700 26px ${FONT}`
     const mw = g.measureText(main).width
     g.font = `700 13px ${FONT}`
@@ -1128,6 +1129,52 @@ export class Renderer {
     g.fillText(main, cx, top + 19)
     if (tags) { g.font = `700 13px ${FONT}`; g.fillStyle = p.ko !== 'no' ? '#ffb4a8' : 'rgba(200,245,255,0.85)'; g.fillText(tags, cx, top + 40) }
     g.restore()
+  }
+
+  /** where player p's fighter is drawn: its feet, the top of its sprite, the sprite's half width (null: off the field) */
+  private anchor(prev: Snapshot, s: SimState, alpha: number, p: number): Anchor | null {
+    const pl = s.players[p]
+    if (!pl || pl.active < 0) return null
+    const f = pl.fighter
+    const p0 = prev.fighters[p]
+    const x = drawnPx(p0?.on ? p0.x : f.x, f.x, alpha)
+    const y = drawnPx(p0?.on ? p0.y : f.y, f.y, alpha)
+    const img = sprite(this.def.kits[pl.members[pl.active].kit].character, !!this.def.players[p]?.shiny?.[pl.active])
+    const geo = img ? this.spriteGeom(img) : null
+    // the sprite stands on the body's feet (y + r * 0.6); a flier over water or a pit is drawn lifted
+    const head = y - (geo ? geo.b.h * geo.scale : 60) + f.r * 0.6 - (airborne(s, f) ? 19 : 0)
+    return { x, y, head, half: geo ? (geo.b.w * geo.scale) / 2 : f.r * 1.5 }
+  }
+
+  /** the held attack's aim info (src/game/aiminfo.ts, drawn by aimfx.ts): the strip at the top, badges by the foe
+   * it's aimed at and by you, marks on the team rows. Fades in while aiming, out on release or cancel; the peek
+   * (hold I) hides it */
+  private drawAimInfo(prev: Snapshot, s: SimState, alpha: number, hud: HudInfo, badges: boolean): void {
+    if (!badges) {
+      // once a frame, before anything of it is drawn: the fade
+      const on = !!hud.aimInfo && !hud.peek && s.phase === 'fight'
+      if (on) this.aimLast = hud.aimInfo!
+      this.aimA = stepAimFade(this.aimA, on)
+      if (this.aimA <= 0) this.aimLast = null
+    }
+    const info = this.aimLast
+    if (!info || this.aimA <= 0) return
+    const g = this.ctx
+    const a = this.aimA
+    const ft = info.target >= 0 ? this.anchor(prev, s, alpha, info.target) : null
+    const me = this.anchor(prev, s, alpha, hud.me)
+    if (!badges) {
+      // the strip goes see-through over the prediction chip and the badges by a fighter near the top
+      const near = (at: Anchor | null) => (at ? [{ x: at.x - 170, y: at.head - 100, w: 340 + at.half + 200, h: 130 }] : [])
+      drawAimStrip(g, s, info, a, [...near(ft), ...near(me)])
+      return
+    }
+    // the foe's badges dim with its prediction (off the aim path, or behind a wall)
+    const pr = hud.predict
+    const dim = !pr || !pr.onPath || !!pr.blocked ? 0.55 : 1
+    if (ft) drawBadges(g, info.foe, ft, a * dim)
+    if (me) drawBadges(g, info.self, me, a)
+    drawBenchMarks(g, info.bench, hud.me, a)
   }
 
   /** the sprite's draw geometry: integer scale ~3x, feet on the fighter's circle */

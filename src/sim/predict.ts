@@ -12,14 +12,19 @@
 //    high = tails / it fails) for exact bounds, and the average is exact for coin flips (1/2 each); when a weighted
 //    roll is involved (a `chance` op, a blind) it is the mean of fixed-seed runs. The sim's own RNG never moves
 //  - the real state is never written: the copy gets its own players, shape lists, tile arrays and events
+//  - what else it does (render-only, the aim info): each run's events and the fighters' fields before and after say
+//    which conditions, forces, buffs, energy changes, heals, recoil and bench hits the cast caused, on the target and
+//    on the caster; weighted like the damage, that is each one's chance (Prediction.effects)
 import { onField } from './combat'
 import { costPips } from './energy'
 import { advanceAreas, advanceDash, advanceMelee, advanceProjectiles, makeCtx, release } from './shapes'
 import { runEffects } from './effects/registry'
 import type { CastInfo } from './effects/define'
-import { FP, iatan2, idiv, icos, isin, ONE } from './fixed'
+import { FP, iatan2, idiv, icos, ilen, isin, ONE } from './fixed'
+import * as R from './rules'
 import { seedRng } from './rng'
-import type { Effect, MatchDef, ResolvedAttack, SimState } from './types'
+import { inSight } from './terrain'
+import type { Effect, Fighter, MatchDef, ResolvedAttack, SimState } from './types'
 
 export interface Prediction {
   /** the player predicted against */
@@ -38,6 +43,25 @@ export interface Prediction {
   ko: 'always' | 'maybe' | 'no'
   /** the caster is Confused: the attack may fail before it starts (half the time, the TCG coin) */
   confused: boolean
+  /** what else the cast does to the target, the caster and the benches (render-only: the aim info) */
+  effects: AimEffect[]
+}
+
+/** one thing a cast does besides the target's damage, read off the dry runs (not the op list). `kind`:
+ *  - status:<paralyzed|asleep|confused|burned|poisoned>, flinch, slow (amount = permille), push / pull (amount = px),
+ *    buff:<stat> (amount, as the buff stores it), dispel, shield (amount; 100000 = all), invuln, energy (pips gained,
+ *    negative lost), jam (the meter stops for `ticks`), lock (amount = attacks locked), trap (no swap / dodge),
+ *    heal, recoil (damage to the caster), leap (the caster is thrown back: a retreat, a bounce)
+ *  - on the bench (`on` 'bench', with p and member): bench (damage), swap (forced in), heal
+ *  `chance` is 0..1 (coin flips, rolls, a confused caster), `ticks` how long it lasts (0: until something ends it) */
+export interface AimEffect {
+  on: 'target' | 'self' | 'bench'
+  kind: string
+  amount: number
+  ticks: number
+  chance: number
+  p?: number
+  member?: number
 }
 
 /** how many scripted runs an enumeration may take before it settles for the extremes */
@@ -80,7 +104,83 @@ function useRng(c: SimState, r: Rng): void {
   })
 }
 
-interface Run { dmg: number; hits: number; eff: number; ko: boolean; fizzled?: boolean }
+interface Run { dmg: number; hits: number; eff: number; ko: boolean; fizzled?: boolean; fx?: Map<string, AimEffect> }
+
+/** the fields of a player the effects change, before the cast */
+interface Snap { f: Fighter; pips: number; fill: number; swapCd: number; bench: number[] }
+
+function snap(c: SimState, p: number): Snap {
+  const pl = c.players[p]
+  return {
+    f: JSON.parse(JSON.stringify(pl.fighter)) as Fighter, pips: pl.pips[0] ?? 0, fill: Math.min(0, ...pl.fill), swapCd: pl.swapCd,
+    bench: pl.members.map((m) => m.hp),
+  }
+}
+
+/** a condition's length (combat.applyStatus); burned lasts until a coin ends it */
+const STATUS_TICKS: Record<string, number> = { paralyzed: R.PARALYZE_TICKS, asleep: R.SLEEP_MAX_TICKS, confused: R.CONFUSE_TICKS, burned: 0, poisoned: R.POISON_TICKS }
+
+/** what a run did besides the target's damage: its events, and the two fighters' fields against their snapshots */
+function observe(c: SimState, p: number, t: number, bp: Snap, bt: Snap): Map<string, AimEffect> {
+  const out = new Map<string, AimEffect>()
+  const put = (on: AimEffect['on'], kind: string, amount: number, ticks: number, at: { p?: number; member?: number } = {}) => {
+    const key = `${on}:${kind}:${at.p ?? ''}:${at.member ?? ''}`
+    const o = out.get(key)
+    if (!o) { out.set(key, { on, kind, amount, ticks, chance: 1, ...at }); return }
+    // a sum for amounts (two heals, every recoil tick); a condition is once, the longest
+    if (kind !== 'flinch' && !kind.startsWith('status:')) o.amount += amount
+    o.ticks = Math.max(o.ticks, ticks)
+  }
+  const side = (q: number): AimEffect['on'] | null => (q === t ? 'target' : q === p ? 'self' : null)
+  const swapped = c.events.some((e) => e.k === 'swap' && e.p === t)
+  for (const e of c.events) {
+    if (e.k === 'bench') { put('bench', 'bench', e.amount, 0, { p: e.p, member: e.member }); continue }
+    if (e.k === 'swap') { if (e.p === t) put('bench', 'swap', 0, 0, { p: e.p, member: e.member }); continue }
+    if (e.k !== 'status' && e.k !== 'flinch' && e.k !== 'heal' && e.k !== 'dmg') continue
+    const on = side(e.p)
+    if (!on) continue
+    if (e.k === 'status') put(on, `status:${e.status}`, 0, STATUS_TICKS[e.status] ?? 0)
+    else if (e.k === 'flinch') put(on, 'flinch', 0, e.ticks)
+    else if (e.k === 'heal') put(on, 'heal', e.amount, 0)
+    else if (on === 'self') put(on, 'recoil', e.amount, 0)
+  }
+  const caster = c.players[p].fighter
+  const sides: [AimEffect['on'], number, Snap][] = [['target', t, bt], ['self', p, bp]]
+  for (const [on, q, b] of sides) {
+    const pl = c.players[q]
+    if (on === 'target' && swapped) continue // a new fighter: its fields say nothing about this cast
+    if (pl.active < 0 || pl.members[pl.active].ko) continue
+    const f = pl.fighter, f0 = b.f
+    if (f.slow && (!f0.slow || f.slow.t !== f0.slow.t || f.slow.permille !== f0.slow.permille)) put(on, 'slow', f.slow.permille, f.slow.t)
+    if (f.knock && JSON.stringify(f.knock) !== JSON.stringify(f0.knock)) {
+      const px = idiv(ilen(f.knock.vx, f.knock.vy) * f.knock.t, FP)
+      if (on === 'self') put(on, 'leap', px, 0)
+      else put(on, f.knock.vx * (f.x - caster.x) + f.knock.vy * (f.y - caster.y) >= 0 ? 'push' : 'pull', px, 0)
+    }
+    // buffs are appended: what's new is what this cast added
+    const was = f0.buffs.map((x) => JSON.stringify(x))
+    for (const x of f.buffs) {
+      const k = was.indexOf(JSON.stringify(x))
+      if (k >= 0) was.splice(k, 1)
+      else put(on, `buff:${x.stat}`, x.amount, x.t)
+    }
+    const helpful = (q: Fighter) => !!q.shield || q.buffs.some((x) => x.amount > 0 && x.stat !== 'blind')
+    if (on === 'target' && helpful(f0) && !helpful(f)) put(on, 'dispel', 0, 0)
+    if (f.shield && (!f0.shield || f.shield.t !== f0.shield.t)) put(on, 'shield', f.shield.amount, f.shield.t)
+    if (on === 'self' && f.invuln > f0.invuln) put(on, 'invuln', 0, f.invuln)
+    const dp = (pl.pips[0] ?? 0) - b.pips
+    if (dp !== 0) put(on, 'energy', dp, 0)
+    const jam = b.fill - Math.min(0, ...pl.fill)
+    if (jam > 0) put(on, 'jam', 0, jam)
+    let locked = 0, lockT = 0
+    f.cooldowns.forEach((cd, i) => { if (cd > (f0.cooldowns[i] ?? 0)) { locked++; lockT = Math.max(lockT, cd) } })
+    if (locked) put(on, 'lock', locked, lockT)
+    const trapT = Math.max(pl.swapCd > b.swapCd ? pl.swapCd : 0, f.dodgeCd > f0.dodgeCd ? f.dodgeCd : 0)
+    if (trapT > 0) put(on, 'trap', 0, trapT)
+    if (on === 'self') pl.members.forEach((m, i) => { if (i !== pl.active && m.hp > (b.bench[i] ?? m.hp)) put('bench', 'heal', m.hp - b.bench[i], 0, { p: q, member: i }) })
+  }
+  return out
+}
 
 function damageTo(c: SimState, t: number): Run {
   let dmg = 0, hits = 0, eff = 0
@@ -138,6 +238,7 @@ function runShape(def0: MatchDef, s: SimState, p: number, ai: number, t: number,
   const d = (f.r + tf.r + 2) * FP
   tf.x = f.x + idiv(icos(f.aim) * d, ONE)
   tf.y = f.y + idiv(isin(f.aim) * d, ONE)
+  const bp = snap(c, p), bt = snap(c, t)
   release(def, c, p, ai)
   for (let k = 0; k < MAX_TICKS; k++) {
     const shot = c.projectiles.find((x) => x.owner === p)
@@ -161,7 +262,7 @@ function runShape(def0: MatchDef, s: SimState, p: number, ai: number, t: number,
     // the target reels from taps but can't dodge a dry run's strikes: drop its flinch guard
     g.flinchGuard = 0
   }
-  return { ...damageTo(c, t), hits: n.hits }
+  return { ...damageTo(c, t), hits: n.hits, fx: observe(c, p, t, bp, bt) }
 }
 
 /** the effects straight on the target (onCast, onHit, onImpact at the target): when no shape could reach it */
@@ -172,12 +273,13 @@ function runEffectsOnly(def: MatchDef, s: SimState, p: number, ai: number, t: nu
   const atk = def.kits[pl.members[pl.active].kit].attacks[ai]
   const f = pl.fighter, tf = c.players[t].fighter
   const cast: CastInfo = { player: p, attack: ai, element: atk.element, bonus: 0 }
+  const bp = snap(c, p), bt = snap(c, t)
   runEffects(makeCtx(def, c, cast, -1, f.x, f.y), atk.onCast)
   if (!cast.fizzle && onField(c, p)) {
     runEffects(makeCtx(def, c, cast, t, tf.x, tf.y), atk.onHit)
     runEffects(makeCtx(def, c, cast, -1, tf.x, tf.y), atk.onImpact)
   }
-  return { ...damageTo(c, t), hits: cast.fizzle ? 0 : 1 }
+  return { ...damageTo(c, t), hits: cast.fizzle ? 0 : 1, fx: observe(c, p, t, bp, bt) }
 }
 
 function once(def: MatchDef, s: SimState, p: number, ai: number, t: number, rng: () => Rng): Run | null {
@@ -227,29 +329,63 @@ export function predictDamage(def: MatchDef, s: SimState, p: number, ai: number,
   const dmgs = leaves.map((l) => l.run.dmg)
   let min = Math.min(...dmgs), max = Math.max(...dmgs)
   let avg: number
+  // the runs each effect's chance is read from, with their weights (the ones the average is taken over)
+  let sample: { run: Run; w: number }[]
   const blind = f.buffs.some((b) => b.stat === 'blind')
   if (complete && !blind && !weighted(atk.onCast) && !weighted(atk.onHit) && !weighted(atk.onImpact)) {
     avg = leaves.reduce((n, l) => n + l.run.dmg * l.w, 0)
+    sample = leaves
   } else if (!draws) {
     avg = dmgs[0]
+    sample = [{ run: leaves[0].run, w: 1 }]
   } else {
     let sum = 0, n = 0
+    const runs: Run[] = []
     for (let k = 0; k < MEAN_RUNS; k++) {
       const r = once(def, s, p, ai, t, () => ({ seed: 0x5eed + k }))
-      if (r) { sum += r.dmg; n++; min = Math.min(min, r.dmg); max = Math.max(max, r.dmg) }
+      if (r) { sum += r.dmg; n++; min = Math.min(min, r.dmg); max = Math.max(max, r.dmg); runs.push(r) }
     }
     avg = n ? sum / n : dmgs[0]
+    sample = runs.length ? runs.map((run) => ({ run, w: 1 / runs.length })) : [{ run: leaves[0].run, w: 1 }]
   }
   const confused = f.status.confused > 0
   if (confused) { min = 0; avg /= 2 }
+  const effects = gather(sample, confused ? 0.5 : 1)
   const kos = leaves.filter((l) => l.run.ko).length
   const typical = leaves[0].run
   return {
     target: t, min, max, avg: Math.round(avg), chance: draws || confused, hits: typical.hits,
     eff: leaves.find((l) => l.run.eff)?.run.eff ?? 0,
     ko: kos === 0 ? 'no' : kos === leaves.length && !confused ? 'always' : 'maybe',
-    confused,
+    confused, effects,
   }
+}
+
+/** every effect seen in the runs, with its chance (the weight of the runs it happened in) and its biggest size */
+function gather(sample: { run: Run; w: number }[], odds: number): AimEffect[] {
+  const all = new Map<string, AimEffect>()
+  for (const { run, w } of sample) {
+    for (const [key, e] of run.fx ?? []) {
+      const o = all.get(key)
+      if (!o) { all.set(key, { ...e, chance: w }); continue }
+      o.chance += w
+      if (Math.abs(e.amount) > Math.abs(o.amount)) o.amount = e.amount
+      o.ticks = Math.max(o.ticks, e.ticks)
+    }
+  }
+  return [...all.values()].map((e) => ({ ...e, chance: Math.min(1, Math.round(e.chance * odds * 1000) / 1000) }))
+}
+
+/** is a straight shot's line to the target cut by a wall or prop: a projectile (not a lob, a phase shot or a
+ * ricochet) or a beam would break on it first. The prediction still assumes a hit; the aim info says it's blocked */
+export function aimBlocked(def: MatchDef, s: SimState, p: number, ai: number, t: number): boolean {
+  const f = onField(s, p), tf = onField(s, t)
+  const pl = s.players[p]
+  if (!f || !tf || pl.active < 0) return false
+  const sh = def.kits[pl.members[pl.active].kit].attacks[ai]?.shape
+  if (!sh) return false
+  if (sh.kind === 'projectile') { if (sh.path === 'lob' || sh.path === 'phase' || sh.path === 'bounce') return false } else if (sh.kind !== 'beam') return false
+  return !inSight(s, f.x, f.y, tf.x, tf.y)
 }
 
 /** a shape's reach and half-width in px along the aim (render-side targeting; floats are fine here) */
