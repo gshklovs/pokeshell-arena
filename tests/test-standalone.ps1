@@ -70,7 +70,8 @@ try {
   $l2 = Launch
   Check ($l2.code -eq 0) "the second launch exits 0 ($($l2.ms) ms)"
   Check ((HostPid) -eq $pid1) 'still the same host (one per state)'
-  $hosts = @(Get-CimInstance Win32_Process -Filter "ExecutablePath = '$($Exe.Replace('\', '\\'))'" | Where-Object { $_.CommandLine -like "*$state*" })
+  # by exe name and the state folder's (unique) leaf: a CI runner's temp path can show up short (8.3) in either one
+  $hosts = @(Get-CimInstance Win32_Process -Filter "Name = '$(Split-Path $Exe -Leaf)'" | Where-Object { $_.CommandLine -like "*$(Split-Path $state -Leaf)*" })
   Check ($hosts.Count -eq 1) "one host process for this state ($($hosts.Count))"
   # a second server on the same state is refused (the state lock), even on another port
   $p2 = Start-Process -FilePath $Exe -ArgumentList @('--serve', '--state', "`"$state`"", '--port', '0') -PassThru; $p2.WaitForExit()
