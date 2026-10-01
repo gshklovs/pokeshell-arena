@@ -1,0 +1,28 @@
+{
+ "version": 1,
+ "card": "swsh9tg-TG02",
+ "character": "vaporeon",
+ "name": "Vaporeon",
+ "fantasy": "Water guns and a draining bubble beam.",
+ "attacks": [
+  {
+   "name": "Aurora Beam",
+   "shape": {
+    "kind": "beam",
+    "length": 640,
+    "width": 26
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70
+    },
+    {
+     "op": "slow",
+     "permille": 300,
+     "ticks": 60
+    }
+   ]
+  }
+ ]
+}

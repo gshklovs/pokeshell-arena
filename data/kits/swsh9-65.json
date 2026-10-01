@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "swsh9-65",
+ "character": "whimsicott",
+ "name": "Whimsicott VSTAR",
+ "fantasy": "A trick wind that jams items, a fluffball star once per match.",
+ "attacks": [
+  {
+   "name": "Trick Wind",
+   "shape": {
+    "kind": "cone",
+    "range": 240,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    },
+    {
+     "op": "energyJam",
+     "ticks": 90
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  },
+  {
+   "name": "Fluffball Star",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 150,
+    "range": 500
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myAttached",
+     "amount": 60
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

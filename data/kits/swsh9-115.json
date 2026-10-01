@@ -1,0 +1,29 @@
+{
+ "version": 1,
+ "card": "swsh9-115",
+ "character": "farfetchd",
+ "name": "Farfetch'd",
+ "fantasy": "A duck with a leek sword: slaps, smashes, lashes.",
+ "attacks": [
+  {
+   "name": "Leek Lash",
+   "shape": {
+    "kind": "melee",
+    "range": 90,
+    "arc": 80,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeDamage",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

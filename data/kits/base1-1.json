@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "base1-1",
+ "character": "alakazam",
+ "name": "Alakazam",
+ "fantasy": "A confusing ray from afar.",
+ "attacks": [
+  {
+   "name": "Confuse Ray",
+   "shape": {
+    "kind": "beam",
+    "length": 640,
+    "width": 20
+   },
+   "windup": 10,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "confused"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

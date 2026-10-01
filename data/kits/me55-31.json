@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "me55-31",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Gnaw",
+   "shape": {
+    "kind": "melee",
+    "range": 60,
+    "arc": 64,
+    "lunge": 16
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

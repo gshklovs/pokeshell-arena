@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "base1-39",
+ "character": "porygon",
+ "name": "Porygon",
+ "fantasy": "A program: converts types, fires a beam.",
+ "attacks": [
+  {
+   "name": "Conversion 1",
+   "shape": {
+    "kind": "beam",
+    "length": 620,
+    "width": 20
+   },
+   "onHit": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": -20,
+     "ticks": 270,
+     "target": "target"
+    }
+   ]
+  },
+  {
+   "name": "Conversion 2",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 20,
+     "ticks": 270
+    }
+   ]
+  }
+ ]
+}

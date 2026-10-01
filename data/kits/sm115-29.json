@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "sm115-29",
+ "character": "weezing",
+ "name": "Weezing",
+ "fantasy": "A slow gas cloud that tackles.",
+ "attacks": [
+  {
+   "name": "Tackle",
+   "shape": {
+    "kind": "dash",
+    "distance": 220,
+    "speed": 16,
+    "radius": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  }
+ ]
+}

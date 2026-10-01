@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "card": "ex3-98",
+ "character": "charmander",
+ "name": "Charmander",
+ "fantasy": "A scrappy starter: quick scratches up close, then a short breath of fire that lights the grass.",
+ "attacks": [
+  {
+   "name": "Flare",
+   "shape": {
+    "kind": "projectile",
+    "speed": 13,
+    "radius": 11,
+    "range": 560
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Rage",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 80,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

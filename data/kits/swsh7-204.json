@@ -1,0 +1,56 @@
+{
+ "version": 1,
+ "card": "swsh7-204",
+ "character": "leafeon",
+ "name": "Leafeon VMAX",
+ "fantasy": "Grass Knot trips heavy foes (it hits harder the more they weigh); Max Leaf is a beam that heals.",
+ "attacks": [
+  {
+   "name": "Grass Knot",
+   "shape": {
+    "kind": "projectile",
+    "speed": 13,
+    "radius": 14,
+    "range": 620,
+    "path": "phase"
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeRetreat",
+     "amount": 60
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    },
+    {
+     "op": "slow",
+     "permille": 350,
+     "ticks": 60
+    }
+   ]
+  },
+  {
+   "name": "Max Leaf",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 40
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 170
+    }
+   ]
+  }
+ ]
+}

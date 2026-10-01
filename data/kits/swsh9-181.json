@@ -1,0 +1,27 @@
+{
+ "version": 1,
+ "card": "swsh9-181",
+ "character": "articuno-galar",
+ "name": "Galarian Articuno V",
+ "fantasy": "A psychic bird: a psyray that confuses.",
+ "attacks": [
+  {
+   "name": "Psyray",
+   "shape": {
+    "kind": "beam",
+    "length": 700,
+    "width": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110
+    },
+    {
+     "op": "status",
+     "status": "confused"
+    }
+   ]
+  }
+ ]
+}

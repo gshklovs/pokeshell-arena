@@ -1,0 +1,56 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-120",
+ "character": "greedent",
+ "name": "Greedent V",
+ "fantasy": "A body slam that paralyzes, incisors that fill its cheeks with cards.",
+ "attacks": [
+  {
+   "name": "Body Slam",
+   "shape": {
+    "kind": "dash",
+    "distance": 240,
+    "speed": 17,
+    "radius": 34,
+    "path": "leap",
+    "blast": 57
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "paralyzed"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Nom-Nom-Nom Incisors",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 90,
+    "lunge": 50
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ]
+  }
+ ]
+}

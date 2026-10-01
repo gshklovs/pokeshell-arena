@@ -1,0 +1,27 @@
+{
+ "version": 1,
+ "card": "sma-SV38",
+ "character": "gible",
+ "name": "Gible",
+ "fantasy": "A land shark pup: gnaws, and ascends into its evolution.",
+ "attacks": [
+  {
+   "name": "Ascension",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "damage",
+     "amount": 20,
+     "ticks": 360
+    },
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

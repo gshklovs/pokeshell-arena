@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "sma-SV75",
+ "character": "gardevoir",
+ "name": "Gardevoir-GX",
+ "fantasy": "Infinite Force: a burst that grows with every energy on both sides.",
+ "attacks": [
+  {
+   "name": "Infinite Force",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 120,
+    "range": 500
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "bothEnergy",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "name": "Twilight-GX",
+   "shape": {
+    "kind": "self"
+   }
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-45",
+ "character": "rotom",
+ "name": "Rotom V",
+ "fantasy": "Scrap short: throws junk that sparks.",
+ "attacks": [
+  {
+   "name": "Scrap Short",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 14,
+    "range": 620
+   },
+   "onCast": [
+    {
+     "op": "spendEnergy",
+     "max": 3,
+     "amount": 40
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  }
+ ]
+}

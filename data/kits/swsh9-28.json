@@ -1,0 +1,52 @@
+{
+ "version": 1,
+ "card": "swsh9-28",
+ "character": "kingler",
+ "name": "Kingler V",
+ "fantasy": "A crab that bubbles up energy, then a raging pincer that hurts it too.",
+ "attacks": [
+  {
+   "name": "Falling Bubbles",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "gainEnergy",
+       "count": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Raging Pincer",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 92,
+    "radius": 92,
+    "delay": 8
+   },
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

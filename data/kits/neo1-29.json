@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "neo1-29",
+ "character": "bayleef",
+ "name": "Bayleef",
+ "fantasy": "Spice-scented: poison powder, a pollen shield, twin razor leaves.",
+ "attacks": [
+  {
+   "name": "Sweet Scent",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "heal",
+       "amount": 40
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Double Razor Leaf",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 11,
+    "range": 620
+   },
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 2,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 40
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

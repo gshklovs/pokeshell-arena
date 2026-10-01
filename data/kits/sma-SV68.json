@@ -1,0 +1,76 @@
+{
+ "version": 1,
+ "card": "sma-SV68",
+ "character": "buzzwole",
+ "name": "Buzzwole-GX",
+ "fantasy": "Pure muscle: jet punches, a knuckle impact that needs a breather.",
+ "attacks": [
+  {
+   "name": "Jet Punch",
+   "shape": {
+    "kind": "melee",
+    "range": 72,
+    "arc": 80,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "benchDamage",
+     "amount": 30,
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Knuckle Impact",
+   "shape": {
+    "kind": "melee",
+    "range": 92,
+    "arc": 96,
+    "lunge": 60
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  },
+  {
+   "name": "Absorption-GX",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 16,
+    "range": 620,
+    "blast": 80
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myPrizesLeft",
+     "amount": 40
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

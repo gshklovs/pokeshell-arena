@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "card": "sm115-31",
+ "character": "mewtwo",
+ "name": "Mewtwo-GX",
+ "fantasy": "Psy bolts, a draining absorption, and Psystrike: a beam that ignores every shield.",
+ "attacks": [
+  {
+   "name": "Super Psy Bolt",
+   "shape": {
+    "kind": "beam",
+    "length": 700,
+    "width": 34
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110
+    }
+   ]
+  },
+  {
+   "name": "Psycrush-GX",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 140,
+    "range": 480
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "discardEnergy",
+     "count": 15,
+     "target": "target"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "version": 1,
+ "card": "sma-SV60",
+ "character": "espeon",
+ "name": "Espeon-GX",
+ "fantasy": "Psybeams that confuse, psychic bursts, and Divide: counters spread across the field.",
+ "attacks": [
+  {
+   "name": "Psybeam",
+   "shape": {
+    "kind": "beam",
+    "length": 620,
+    "width": 22
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "status",
+     "status": "confused"
+    }
+   ]
+  },
+  {
+   "name": "Psychic",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 120,
+    "range": 480
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeEnergy",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ]
+  },
+  {
+   "name": "Divide-GX",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 160,
+    "range": 520
+   },
+   "onHit": [
+    {
+     "op": "counters",
+     "amount": 100
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "version": 1,
+ "card": "sma-SV22",
+ "character": "lucario",
+ "name": "Lucario",
+ "fantasy": "An aura master: Aura Sphere flies true and splashes the back line; Missile Jab closes the gap instantly.",
+ "attacks": [
+  {
+   "name": "Missile Jab",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 80,
+    "lunge": 80
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70,
+     "wr": "weakness"
+    }
+   ]
+  }
+ ]
+}

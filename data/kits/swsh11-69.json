@@ -1,0 +1,29 @@
+{
+ "version": 1,
+ "card": "swsh11-69",
+ "character": "gardevoir",
+ "name": "Radiant Gardevoir",
+ "fantasy": "A radiant Psychic burst.",
+ "attacks": [
+  {
+   "name": "Psychic",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 120,
+    "range": 480
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeEnergy",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 70
+    }
+   ]
+  }
+ ]
+}

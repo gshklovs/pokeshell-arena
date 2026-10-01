@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "card": "me55-133",
+ "character": "zapdos",
+ "name": "Zapdos",
+ "fantasy": "The thunderbird: bolts from the sky, a long Thunderbolt, sky-high claws.",
+ "attacks": [
+  {
+   "name": "Thundering Lightning",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 140,
+    "range": 540
+   },
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 60
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 210
+    }
+   ]
+  }
+ ]
+}

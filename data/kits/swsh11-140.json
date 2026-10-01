@@ -1,0 +1,29 @@
+{
+ "version": 1,
+ "card": "swsh11-140",
+ "character": "porygon",
+ "name": "Porygon",
+ "fantasy": "A program: converts types, fires a beam.",
+ "attacks": [
+  {
+   "name": "Branch Calculation",
+   "shape": {
+    "kind": "self"
+   }
+  },
+  {
+   "name": "Beam",
+   "shape": {
+    "kind": "beam",
+    "length": 620,
+    "width": 18
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

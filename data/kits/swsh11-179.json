@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "swsh11-179",
+ "character": "aerodactyl",
+ "name": "Aerodactyl V",
+ "fantasy": "A fossil flier: bites, crushes rock.",
+ "attacks": [
+  {
+   "name": "Bite",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 80,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  },
+  {
+   "name": "Rock Crush",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 84,
+    "radius": 84,
+    "delay": 8
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "discardEnergy",
+     "count": 1,
+     "target": "target"
+    },
+    {
+     "op": "knockback",
+     "px": 80
+    }
+   ]
+  }
+ ]
+}

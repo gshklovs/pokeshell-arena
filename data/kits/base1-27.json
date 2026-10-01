@@ -1,0 +1,55 @@
+{
+ "version": 1,
+ "card": "base1-27",
+ "character": "farfetchd",
+ "name": "Farfetch'd",
+ "fantasy": "A duck with a leek sword: slaps, smashes, lashes.",
+ "attacks": [
+  {
+   "name": "Leek Slap",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 96,
+    "lunge": 40
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "tails": [
+      {
+       "op": "fizzle"
+      }
+     ]
+    },
+    {
+     "op": "exhaust",
+     "ticks": 600,
+     "which": "this"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Pot Smash",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 84,
+    "radius": 75,
+    "delay": 8
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

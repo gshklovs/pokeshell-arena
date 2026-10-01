@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "card": "swsh7-219",
+ "character": "duraludon-gmax",
+ "name": "Duraludon VMAX",
+ "fantasy": "G-Max Pulverization: a tower falling around it.",
+ "attacks": [
+  {
+   "name": "G-Max Pulverization",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 132,
+    "delay": 20
+   },
+   "windup": 20,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 220,
+     "pierce": true
+    },
+    {
+     "op": "knockback",
+     "px": 150
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "sma-SV1",
+ "character": "scyther",
+ "name": "Scyther",
+ "fantasy": "A blur of blades: slashes, sharp scythes, agility.",
+ "attacks": [
+  {
+   "name": "Twin Play",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 10,
+     "ticks": 270
+    }
+   ]
+  },
+  {
+   "name": "Agility",
+   "shape": {
+    "kind": "dash",
+    "distance": 240,
+    "speed": 20,
+    "radius": 26
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "invulnerable",
+       "ticks": 90
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "base1-28",
+ "character": "growlithe",
+ "name": "Growlithe",
+ "fantasy": "A loyal pup that spits little fireballs.",
+ "attacks": [
+  {
+   "name": "Flare",
+   "shape": {
+    "kind": "projectile",
+    "speed": 13,
+    "radius": 11,
+    "range": 560
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

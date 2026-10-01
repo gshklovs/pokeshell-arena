@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-109",
+ "character": "snorlax",
+ "name": "Snorlax",
+ "fantasy": "A mountain that sleeps: collapses and snores around itself, knocking everything away.",
+ "attacks": [
+  {
+   "name": "Heavy Impact",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 15,
+    "radius": 28,
+    "path": "leap",
+    "blast": 63
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

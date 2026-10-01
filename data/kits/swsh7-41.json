@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "swsh7-41",
+ "character": "glaceon",
+ "name": "Glaceon VMAX",
+ "fantasy": "Max Icicle: a huge icicle that also shatters onto the back line.",
+ "attacks": [
+  {
+   "name": "Max Icicle",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 22,
+    "range": 700
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 150
+    },
+    {
+     "op": "benchDamage",
+     "amount": 30,
+     "count": 1
+    },
+    {
+     "op": "slow",
+     "permille": 400,
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

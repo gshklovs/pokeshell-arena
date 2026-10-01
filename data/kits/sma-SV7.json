@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "card": "sma-SV7",
+ "character": "charmeleon",
+ "name": "Charmeleon",
+ "fantasy": "Claws and a real flamethrower: closes in with slashes, keeps foes off with a burning cone.",
+ "attacks": [
+  {
+   "name": "Flamethrower",
+   "shape": {
+    "kind": "cone",
+    "range": 230,
+    "arc": 56
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 40,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

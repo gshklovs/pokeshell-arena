@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "swsh11tg-TG12",
+ "character": "orbeetle",
+ "name": "Orbeetle V",
+ "fantasy": "A psychic beetle: strafes, then a mysterious wave on the aim point.",
+ "attacks": [
+  {
+   "name": "Strafe",
+   "shape": {
+    "kind": "dash",
+    "distance": 180,
+    "speed": 28,
+    "radius": 22
+   },
+   "onCast": [
+    {
+     "op": "retreat"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Mysterious Wave",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 130,
+    "range": 460
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeEnergy",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "version": 1,
+ "card": "neo1-17",
+ "character": "typhlosion",
+ "name": "Typhlosion",
+ "fantasy": "An eruption on legs: bursts of flame on the aim point, a burning wheel around itself.",
+ "attacks": [
+  {
+   "name": "Flame Burst",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 110,
+    "range": 440
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "bonus",
+       "amount": 20
+      },
+      {
+       "op": "selfDamage",
+       "amount": 20
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 60,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "card": "swsh7-20",
+ "character": "victini",
+ "name": "Victini",
+ "fantasy": "A victory spark: V-Flame and a diving tackle.",
+ "attacks": [
+  {
+   "name": "Victory Dive",
+   "shape": {
+    "kind": "dash",
+    "distance": 260,
+    "speed": 19,
+    "radius": 26
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

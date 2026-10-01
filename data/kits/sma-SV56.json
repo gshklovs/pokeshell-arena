@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "card": "sma-SV56",
+ "character": "greninja",
+ "name": "Greninja-GX",
+ "fantasy": "A ninja: slashes and vanishes, then throws three water shuriken once per match.",
+ "attacks": [
+  {
+   "name": "Haze Slash",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 20,
+    "radius": 28
+   },
+   "onCast": [
+    {
+     "op": "retreat",
+     "px": 220
+    },
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110
+    }
+   ]
+  },
+  {
+   "name": "Shadowy Hunter-GX",
+   "shape": {
+    "kind": "projectile",
+    "speed": 18,
+    "radius": 10,
+    "range": 780,
+    "count": 3,
+    "spread": 6
+   },
+   "onHit": [
+    {
+     "op": "benchDamage",
+     "amount": 130,
+     "count": 1
+    }
+   ]
+  }
+ ],
+ "notes": "Shadowy Hunter-GX: three of the opponent's Pokémon: three shuriken; all three can hit one foe"
+}

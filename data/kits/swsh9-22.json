@@ -1,0 +1,36 @@
+{
+ "version": 1,
+ "card": "swsh9-22",
+ "character": "entei",
+ "name": "Entei V",
+ "fantasy": "Burning Rondo: a blazing charge that hits harder the more Pokémon are around.",
+ "attacks": [
+  {
+   "name": "Burning Rondo",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 160
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "bothBench",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 40,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

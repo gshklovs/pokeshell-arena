@@ -1,0 +1,23 @@
+{
+ "version": 1,
+ "card": "base1-26",
+ "character": "dratini",
+ "name": "Dratini",
+ "fantasy": "A small dragon that pounds.",
+ "attacks": [
+  {
+   "name": "Pound",
+   "shape": {
+    "kind": "melee",
+    "range": 62,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

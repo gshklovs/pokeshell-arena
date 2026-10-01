@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "me55-92",
+ "character": "umbreon",
+ "name": "Umbreon ex",
+ "fantasy": "Lunatic Claw: a moonlit lunge that grows when the foe is a rule box.",
+ "attacks": [
+  {
+   "name": "Lunatic Claw",
+   "shape": {
+    "kind": "melee",
+    "range": 86,
+    "arc": 110,
+    "lunge": 70
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeDamaged",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 140
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

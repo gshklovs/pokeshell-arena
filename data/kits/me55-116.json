@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "card": "me55-116",
+ "character": "eevee",
+ "name": "Eevee",
+ "fantasy": "A curious all-rounder: tackles, quick attacks, and searches for its evolutions.",
+ "attacks": [
+  {
+   "name": "Fetch and Hide",
+   "shape": {
+    "kind": "self"
+   }
+  },
+  {
+   "name": "Tackle",
+   "shape": {
+    "kind": "melee",
+    "range": 62,
+    "arc": 72,
+    "lunge": 20
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

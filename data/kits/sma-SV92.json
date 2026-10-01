@@ -1,0 +1,85 @@
+{
+ "version": 1,
+ "card": "sma-SV92",
+ "character": "tapu-fini",
+ "name": "Tapu Fini-GX",
+ "fantasy": "A guardian of the sea: mist, a long hydro shot, and a storm that sweeps a foe away.",
+ "attacks": [
+  {
+   "name": "Aqua Ring",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 160
+   },
+   "onCast": [
+    {
+     "op": "retreat"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 60
+    }
+   ]
+  },
+  {
+   "name": "Hydro Shot",
+   "shape": {
+    "kind": "beam",
+    "length": 740,
+    "width": 24
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ]
+  },
+  {
+   "name": "Tapu Storm-GX",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 120,
+    "range": 440,
+    "path": "drift",
+    "drift": 2
+   },
+   "onHit": [
+    {
+     "op": "gust",
+     "mode": "push",
+     "px": 200
+    },
+    {
+     "op": "counters",
+     "amount": 30
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 120
+    }
+   ]
+  }
+ ]
+}

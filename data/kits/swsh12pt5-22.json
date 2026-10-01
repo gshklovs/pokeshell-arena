@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-22",
+ "character": "simisear",
+ "name": "Simisear V",
+ "fantasy": "A juggler: charges up, then tosses fireballs that grow with its energy.",
+ "attacks": [
+  {
+   "name": "Bursting Power",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 84
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Flare Juggling",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 16,
+    "range": 620,
+    "path": "lob",
+    "blast": 59
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeEnergy",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  }
+ ]
+}

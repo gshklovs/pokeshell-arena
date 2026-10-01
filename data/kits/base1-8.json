@@ -1,0 +1,29 @@
+{
+ "version": 1,
+ "card": "base1-8",
+ "character": "machamp",
+ "name": "Machamp",
+ "fantasy": "Four arms: grabs and throws a foe across the arena, a lariat that clears everything around.",
+ "attacks": [
+  {
+   "name": "Seismic Toss",
+   "shape": {
+    "kind": "melee",
+    "range": 84,
+    "arc": 96,
+    "lunge": 50
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    },
+    {
+     "op": "knockback",
+     "px": 150
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "card": "me55-36",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Slight Intrusion",
+   "shape": {
+    "kind": "dash",
+    "distance": 220,
+    "speed": 19,
+    "radius": 24
+   },
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 10
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  }
+ ]
+}

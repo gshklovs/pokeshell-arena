@@ -1,0 +1,60 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG40",
+ "character": "glaceon",
+ "name": "Glaceon VSTAR",
+ "fantasy": "Icicle shots pin a foe in place; Crystal Star seals it in ice once per match.",
+ "attacks": [
+  {
+   "name": "Icicle Shot",
+   "shape": {
+    "kind": "projectile",
+    "speed": 15,
+    "radius": 14,
+    "range": 680
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "retreatLock",
+     "ticks": 90
+    },
+    {
+     "op": "slow",
+     "permille": 300,
+     "ticks": 90
+    }
+   ]
+  },
+  {
+   "name": "Crystal Star",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 150,
+    "range": 480
+   },
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "invulnerable",
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 220
+    },
+    {
+     "op": "slow",
+     "permille": 500,
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

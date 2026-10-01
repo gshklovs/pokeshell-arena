@@ -1,0 +1,57 @@
+{
+ "version": 1,
+ "card": "swsh7-29",
+ "character": "gyarados",
+ "name": "Gyarados VMAX",
+ "fantasy": "A Hyper Beam that strips energy, and Max Tyrant: a tidal slam around itself.",
+ "attacks": [
+  {
+   "name": "Hyper Beam",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 48
+   },
+   "windup": 10,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "discardEnergy",
+     "count": 1,
+     "target": "target"
+    }
+   ]
+  },
+  {
+   "name": "Max Tyrant",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 220
+   },
+   "pin": "pinned: the Max-move lexicon made it a pillar on the aim point, and Gyarados VMAX fell to 12-33% of VMAX fights; wu16 (was 24), r220 (was 200) under the ring power",
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 240
+    },
+    {
+     "op": "knockback",
+     "px": 160
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 120
+    }
+   ]
+  }
+ ],
+ "notes": "Hyper Beam: W48 wu10 (was W40 wu14): with its heavy-card windup it missed most shots; Max Tyrant: pinned: the Max-move lexicon made it a pillar on the aim point, and Gyarados VMAX fell to 12-33% of VMAX fights; wu16 (was 24), r220 (was 200) under the ring power"
+}

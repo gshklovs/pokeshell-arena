@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "card": "me55-63",
+ "character": "mewtwo",
+ "name": "Mewtwo",
+ "fantasy": "A psychic weapon: homing Psychic that hits harder the more energy the foe holds, bursts on the aim point, barriers.",
+ "attacks": [
+  {
+   "name": "Empower",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "name": "Psydrive",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 40
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ]
+  }
+ ]
+}

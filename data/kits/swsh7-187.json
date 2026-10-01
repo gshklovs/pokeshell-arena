@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "swsh7-187",
+ "character": "lycanroc-dusk",
+ "name": "Lycanroc V",
+ "fantasy": "Throws rocks, then crashing fangs.",
+ "attacks": [
+  {
+   "name": "Rock Throw",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 14,
+    "range": 600,
+    "path": "lob",
+    "blast": 66
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  },
+  {
+   "name": "Crashing Fangs",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 21,
+    "radius": 32
+   },
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

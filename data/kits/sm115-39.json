@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "card": "sm115-39",
+ "character": "clefairy",
+ "name": "Clefairy",
+ "fantasy": "Sings foes to sleep and waves Metronome: it copies the foe's strongest attack.",
+ "attacks": [
+  {
+   "name": "Pound",
+   "shape": {
+    "kind": "melee",
+    "range": 62,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Moon Dance",
+   "shape": {
+    "kind": "projectile",
+    "speed": 10,
+    "radius": 12,
+    "range": 600,
+    "grow": 2,
+    "growMax": 12,
+    "blast": 62
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

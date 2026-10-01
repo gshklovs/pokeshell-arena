@@ -1,0 +1,77 @@
+{
+ "version": 1,
+ "card": "swsh9-174",
+ "character": "charizard",
+ "name": "Charizard VSTAR",
+ "fantasy": "Star Blaze: a falling star of flame on the aim point, once per match, that leaves the ground burning.",
+ "attacks": [
+  {
+   "name": "Explosive Fire",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 18,
+    "range": 600,
+    "blast": 88
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "selfDamaged",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 100
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 130
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 50,
+     "ticks": 150
+    }
+   ]
+  },
+  {
+   "name": "Star Blaze",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 150,
+    "range": 480
+   },
+   "windup": 24,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 320
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 90,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "base1-15",
+ "character": "venusaur",
+ "name": "Venusaur",
+ "fantasy": "Solarbeam: stands still to gather light, then a long wide beam.",
+ "attacks": [
+  {
+   "name": "Solarbeam",
+   "shape": {
+    "kind": "beam",
+    "length": 760,
+    "width": 40
+   },
+   "windup": 20,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1854 @@
+{
+    "pokeshell":  "1033340",
+    "generated":  "2026-09-30T18:03:20",
+    "random":  {
+                   "set":  "random",
+                   "priceExponent":  0.7,
+                   "sets":  [
+                                {
+                                    "set":  "swsh7",
+                                    "name":  "Evolving Skies",
+                                    "price":  43.97,
+                                    "priceSource":  {
+                                                        "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                        "url":  "https://www.pricecharting.com/game/pokemon-evolving-skies/booster-pack",
+                                                        "date":  "2026-09-29",
+                                                        "variant":  "English booster pack, any art"
+                                                    },
+                                    "openable":  true,
+                                    "chance":  0.106441,
+                                    "oneIn":  9.4
+                                },
+                                {
+                                    "set":  "me55",
+                                    "name":  "30th Celebration",
+                                    "price":  16.91,
+                                    "priceSource":  {
+                                                        "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                        "url":  "https://www.pricecharting.com/game/pokemon-30th-celebration/booster-pack",
+                                                        "date":  "2026-09-29",
+                                                        "variant":  "English booster pack",
+                                                        "note":  "released 2026-09-16: about two weeks of sales (27, $14.75-20.50), so it may still move"
+                                                    },
+                                    "openable":  true,
+                                    "chance":  0.207787,
+                                    "oneIn":  4.8
+                                },
+                                {
+                                    "set":  "swsh12pt5",
+                                    "name":  "Crown Zenith",
+                                    "price":  25.98,
+                                    "priceSource":  {
+                                                        "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                        "url":  "https://www.pricecharting.com/game/pokemon-crown-zenith/booster-pack",
+                                                        "date":  "2026-09-29",
+                                                        "variant":  "English loose pack (from ETBs, tins and collections: there is no booster box)"
+                                                    },
+                                    "openable":  true,
+                                    "chance":  0.15384,
+                                    "oneIn":  6.5
+                                },
+                                {
+                                    "set":  "sm115",
+                                    "name":  "Hidden Fates",
+                                    "price":  47.98,
+                                    "priceSource":  {
+                                                        "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                        "url":  "https://www.pricecharting.com/game/pokemon-hidden-fates/booster-pack",
+                                                        "date":  "2026-09-29",
+                                                        "variant":  "English booster pack, any art"
+                                                    },
+                                    "openable":  true,
+                                    "chance":  0.100133,
+                                    "oneIn":  10
+                                },
+                                {
+                                    "set":  "base1",
+                                    "name":  "Base Set",
+                                    "price":  632.5,
+                                    "priceSource":  {
+                                                        "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                        "url":  "https://www.pricecharting.com/game/pokemon-base-set/booster-pack",
+                                                        "date":  "2026-09-29",
+                                                        "variant":  "Unlimited print run (1999-2000), the Charizard / Blastoise / Venusaur arts averaged",
+                                                        "note":  "sales ran $254-1,375 (light vs heavy packs); Shadowless $3,529.21, 1st Edition $6,468.68"
+                                                    },
+                                    "openable":  true,
+                                    "chance":  0.016466,
+                                    "oneIn":  60.7
+                                },
+                                {
+                                    "set":  "swsh9",
+                                    "name":  "Brilliant Stars",
+                                    "price":  16.24,
+                                    "priceSource":  {
+                                                        "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                        "url":  "https://www.pricecharting.com/game/pokemon-brilliant-stars/booster-pack",
+                                                        "date":  "2026-09-29",
+                                                        "variant":  "English booster pack, any art"
+                                                    },
+                                    "openable":  true,
+                                    "chance":  0.213751,
+                                    "oneIn":  4.7
+                                },
+                                {
+                                    "set":  "neo1",
+                                    "name":  "Neo Genesis",
+                                    "price":  741.61,
+                                    "priceSource":  {
+                                                        "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                        "url":  "https://www.pricecharting.com/game/pokemon-neo-genesis/booster-pack",
+                                                        "date":  "2026-09-29",
+                                                        "variant":  "Unlimited print run (2000), the four pack arts averaged",
+                                                        "note":  "sales ran $500-1,375 (heavy packs cost more); 1st Edition $902.45"
+                                                    },
+                                    "openable":  true,
+                                    "chance":  0.01473,
+                                    "oneIn":  67.9
+                                },
+                                {
+                                    "set":  "swsh11",
+                                    "name":  "Lost Origin",
+                                    "price":  19.68,
+                                    "priceSource":  {
+                                                        "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                        "url":  "https://www.pricecharting.com/game/pokemon-lost-origin/booster-pack",
+                                                        "date":  "2026-09-29",
+                                                        "variant":  "English booster pack, any art"
+                                                    },
+                                    "openable":  true,
+                                    "chance":  0.186853,
+                                    "oneIn":  5.4
+                                }
+                            ]
+               },
+    "sets":  {
+                 "pack":  "pokemon",
+                 "tokens":  0,
+                 "priceExponent":  0.7,
+                 "sets":  [
+                              {
+                                  "id":  "swsh7",
+                                  "name":  "Evolving Skies",
+                                  "series":  "Sword \u0026 Shield",
+                                  "released":  "2021-08-27",
+                                  "cardSets":  [
+                                                   "swsh7"
+                                               ],
+                                  "cards":  193,
+                                  "inPack":  193,
+                                  "printed":  237,
+                                  "packSize":  10,
+                                  "realPackSize":  10,
+                                  "openable":  true,
+                                  "price":  43.97,
+                                  "priceSource":  {
+                                                      "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                      "url":  "https://www.pricecharting.com/game/pokemon-evolving-skies/booster-pack",
+                                                      "date":  "2026-09-29",
+                                                      "variant":  "English booster pack, any art"
+                                                  },
+                                  "chance":  0.106441,
+                                  "oneIn":  9.4,
+                                  "odds":  [
+                                               {
+                                                   "tier":  "common",
+                                                   "weight":  5.39252
+                                               },
+                                               {
+                                                   "tier":  "uncommon",
+                                                   "weight":  3.24299
+                                               },
+                                               {
+                                                   "tier":  "rare",
+                                                   "weight":  0.70627
+                                               },
+                                               {
+                                                   "tier":  "rare-holo",
+                                                   "weight":  0.45192
+                                               },
+                                               {
+                                                   "tier":  "rare-holo-v",
+                                                   "weight":  0.1056
+                                               },
+                                               {
+                                                   "tier":  "rare-holo-vmax",
+                                                   "weight":  0.056
+                                               },
+                                               {
+                                                   "tier":  "rare-ultra",
+                                                   "weight":  0.03365
+                                               },
+                                               {
+                                                   "tier":  "rare-rainbow",
+                                                   "weight":  0.00878
+                                               },
+                                               {
+                                                   "tier":  "rare-secret",
+                                                   "weight":  0.00228
+                                               }
+                                           ],
+                                  "art":  {
+                                              "colors":  [
+                                                             "#0d1f45",
+                                                             "#1f6fb2",
+                                                             "#8fd8ff"
+                                                         ],
+                                              "accent":  "#f4c542",
+                                              "hero":  "swsh7-218",
+                                              "motif":  "sky"
+                                          },
+                                  "hero":  "img/pokemon/rayquaza/swsh7-218.png",
+                                  "slots":  [
+                                                {
+                                                    "id":  "common",
+                                                    "count":  5,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "uncommon",
+                                                    "count":  3,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "reverse",
+                                                    "count":  1,
+                                                    "finish":  "reverse"
+                                                },
+                                                {
+                                                    "id":  "rare",
+                                                    "count":  1,
+                                                    "finish":  "normal"
+                                                }
+                                            ]
+                              },
+                              {
+                                  "id":  "me55",
+                                  "name":  "30th Celebration",
+                                  "series":  "Mega Evolution",
+                                  "released":  "2026-09-16",
+                                  "cardSets":  [
+                                                   "me55"
+                                               ],
+                                  "cards":  149,
+                                  "inPack":  149,
+                                  "printed":  161,
+                                  "packSize":  5,
+                                  "realPackSize":  6,
+                                  "openable":  true,
+                                  "price":  16.91,
+                                  "priceSource":  {
+                                                      "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                      "url":  "https://www.pricecharting.com/game/pokemon-30th-celebration/booster-pack",
+                                                      "date":  "2026-09-29",
+                                                      "variant":  "English booster pack",
+                                                      "note":  "released 2026-09-16: about two weeks of sales (27, $14.75-20.50), so it may still move"
+                                                  },
+                                  "chance":  0.207787,
+                                  "oneIn":  4.8,
+                                  "odds":  [
+                                               {
+                                                   "tier":  "common",
+                                                   "weight":  2.82471
+                                               },
+                                               {
+                                                   "tier":  "illustration-rare",
+                                                   "weight":  0.17529
+                                               },
+                                               {
+                                                   "tier":  "rare",
+                                                   "weight":  0.7551
+                                               },
+                                               {
+                                                   "tier":  "double-rare",
+                                                   "weight":  0.19268
+                                               },
+                                               {
+                                                   "tier":  "special-illustration-rare",
+                                                   "weight":  0.04392
+                                               },
+                                               {
+                                                   "tier":  "futuristic-rare",
+                                                   "weight":  0.0083
+                                               },
+                                               {
+                                                   "tier":  "pikachu-rare",
+                                                   "weight":  1
+                                               }
+                                           ],
+                                  "art":  {
+                                              "colors":  [
+                                                             "#2a0f3d",
+                                                             "#b0306a",
+                                                             "#ffd24a"
+                                                         ],
+                                              "accent":  "#ffe98a",
+                                              "hero":  "me55-150",
+                                              "motif":  "confetti"
+                                          },
+                                  "hero":  "img/pokemon/pikachu/me55-150.png",
+                                  "slots":  [
+                                                {
+                                                    "id":  "common",
+                                                    "count":  2,
+                                                    "finish":  "foil"
+                                                },
+                                                {
+                                                    "id":  "illustration",
+                                                    "count":  1,
+                                                    "finish":  "foil"
+                                                },
+                                                {
+                                                    "id":  "rare",
+                                                    "count":  1,
+                                                    "finish":  "foil"
+                                                },
+                                                {
+                                                    "id":  "pikachu",
+                                                    "count":  1,
+                                                    "finish":  "foil"
+                                                }
+                                            ]
+                              },
+                              {
+                                  "id":  "swsh12pt5",
+                                  "name":  "Crown Zenith",
+                                  "series":  "Sword \u0026 Shield",
+                                  "released":  "2023-01-20",
+                                  "cardSets":  [
+                                                   "swsh12pt5",
+                                                   "swsh12pt5gg"
+                                               ],
+                                  "cards":  183,
+                                  "inPack":  183,
+                                  "printed":  230,
+                                  "packSize":  10,
+                                  "realPackSize":  10,
+                                  "openable":  true,
+                                  "price":  25.98,
+                                  "priceSource":  {
+                                                      "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                      "url":  "https://www.pricecharting.com/game/pokemon-crown-zenith/booster-pack",
+                                                      "date":  "2026-09-29",
+                                                      "variant":  "English loose pack (from ETBs, tins and collections: there is no booster box)"
+                                                  },
+                                  "chance":  0.15384,
+                                  "oneIn":  6.5,
+                                  "odds":  [
+                                               {
+                                                   "tier":  "common",
+                                                   "weight":  5.26607
+                                               },
+                                               {
+                                                   "tier":  "uncommon",
+                                                   "weight":  3.12225
+                                               },
+                                               {
+                                                   "tier":  "rare",
+                                                   "weight":  0.7102
+                                               },
+                                               {
+                                                   "tier":  "rare-holo",
+                                                   "weight":  0.35748
+                                               },
+                                               {
+                                                   "tier":  "trainer-gallery-rare-holo",
+                                                   "weight":  0.224
+                                               },
+                                               {
+                                                   "tier":  "rare-holo-v",
+                                                   "weight":  0.15725
+                                               },
+                                               {
+                                                   "tier":  "rare-holo-vmax",
+                                                   "weight":  0.03163
+                                               },
+                                               {
+                                                   "tier":  "rare-holo-vstar",
+                                                   "weight":  0.07012
+                                               },
+                                               {
+                                                   "tier":  "rare-secret",
+                                                   "weight":  0.0155
+                                               },
+                                               {
+                                                   "tier":  "radiant-rare",
+                                                   "weight":  0.0455
+                                               }
+                                           ],
+                                  "art":  {
+                                              "colors":  [
+                                                             "#0b1030",
+                                                             "#2b3a8f",
+                                                             "#e8c35a"
+                                                         ],
+                                              "accent":  "#fff1b8",
+                                              "hero":  "swsh12pt5gg-GG70",
+                                              "motif":  "crown"
+                                          },
+                                  "hero":  "img/pokemon/arceus/swsh12pt5gg-GG70.png",
+                                  "slots":  [
+                                                {
+                                                    "id":  "common",
+                                                    "count":  5,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "uncommon",
+                                                    "count":  3,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "reverse",
+                                                    "count":  1,
+                                                    "finish":  "reverse"
+                                                },
+                                                {
+                                                    "id":  "rare",
+                                                    "count":  1,
+                                                    "finish":  "normal"
+                                                }
+                                            ]
+                              },
+                              {
+                                  "id":  "sm115",
+                                  "name":  "Hidden Fates",
+                                  "series":  "Sun \u0026 Moon",
+                                  "released":  "2019-08-23",
+                                  "cardSets":  [
+                                                   "sm115",
+                                                   "sma"
+                                               ],
+                                  "cards":  133,
+                                  "inPack":  133,
+                                  "printed":  163,
+                                  "packSize":  10,
+                                  "realPackSize":  10,
+                                  "openable":  true,
+                                  "price":  47.98,
+                                  "priceSource":  {
+                                                      "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                      "url":  "https://www.pricecharting.com/game/pokemon-hidden-fates/booster-pack",
+                                                      "date":  "2026-09-29",
+                                                      "variant":  "English booster pack, any art"
+                                                  },
+                                  "chance":  0.100133,
+                                  "oneIn":  10,
+                                  "odds":  [
+                                               {
+                                                   "tier":  "common",
+                                                   "weight":  5.30071
+                                               },
+                                               {
+                                                   "tier":  "uncommon",
+                                                   "weight":  3.13365
+                                               },
+                                               {
+                                                   "tier":  "rare",
+                                                   "weight":  0.93576
+                                               },
+                                               {
+                                                   "tier":  "rare-holo",
+                                                   "weight":  0.18212
+                                               },
+                                               {
+                                                   "tier":  "rare-shiny",
+                                                   "weight":  0.2128
+                                               },
+                                               {
+                                                   "tier":  "rare-shiny-gx",
+                                                   "weight":  0.0943
+                                               },
+                                               {
+                                                   "tier":  "rare-secret",
+                                                   "weight":  0.00795
+                                               },
+                                               {
+                                                   "tier":  "rare-holo-gx",
+                                                   "weight":  0.13271
+                                               }
+                                           ],
+                                  "art":  {
+                                              "colors":  [
+                                                             "#0a0a12",
+                                                             "#3a2a5c",
+                                                             "#c9a6ff"
+                                                         ],
+                                              "accent":  "#f2f0ff",
+                                              "hero":  "sma-SV49",
+                                              "motif":  "vault"
+                                          },
+                                  "hero":  "img/pokemon/charizard/sma-SV49.png",
+                                  "slots":  [
+                                                {
+                                                    "id":  "common",
+                                                    "count":  5,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "uncommon",
+                                                    "count":  3,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "reverse",
+                                                    "count":  1,
+                                                    "finish":  "reverse"
+                                                },
+                                                {
+                                                    "id":  "rare",
+                                                    "count":  1,
+                                                    "finish":  "normal"
+                                                }
+                                            ]
+                              },
+                              {
+                                  "id":  "base1",
+                                  "name":  "Base Set",
+                                  "series":  "Original (Wizards of the Coast)",
+                                  "released":  "1999-01-09",
+                                  "cardSets":  [
+                                                   "base1"
+                                               ],
+                                  "cards":  69,
+                                  "inPack":  69,
+                                  "printed":  102,
+                                  "packSize":  9,
+                                  "realPackSize":  11,
+                                  "openable":  true,
+                                  "price":  632.5,
+                                  "priceSource":  {
+                                                      "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                      "url":  "https://www.pricecharting.com/game/pokemon-base-set/booster-pack",
+                                                      "date":  "2026-09-29",
+                                                      "variant":  "Unlimited print run (1999-2000), the Charizard / Blastoise / Venusaur arts averaged",
+                                                      "note":  "sales ran $254-1,375 (light vs heavy packs); Shadowless $3,529.21, 1st Edition $6,468.68"
+                                                  },
+                                  "chance":  0.016466,
+                                  "oneIn":  60.7,
+                                  "odds":  [
+                                               {
+                                                   "tier":  "common",
+                                                   "weight":  5
+                                               },
+                                               {
+                                                   "tier":  "uncommon",
+                                                   "weight":  3
+                                               },
+                                               {
+                                                   "tier":  "rare",
+                                                   "weight":  0.6667
+                                               },
+                                               {
+                                                   "tier":  "rare-holo",
+                                                   "weight":  0.3333
+                                               }
+                                           ],
+                                  "art":  {
+                                              "colors":  [
+                                                             "#1c3f8f",
+                                                             "#e23b2e",
+                                                             "#ffcb05"
+                                                         ],
+                                              "accent":  "#ffffff",
+                                              "hero":  "base1-4",
+                                              "motif":  "classic"
+                                          },
+                                  "hero":  "img/pokemon/charizard/base1-4.png",
+                                  "slots":  [
+                                                {
+                                                    "id":  "common",
+                                                    "count":  5,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "uncommon",
+                                                    "count":  3,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "rare",
+                                                    "count":  1,
+                                                    "finish":  "normal"
+                                                }
+                                            ]
+                              },
+                              {
+                                  "id":  "swsh9",
+                                  "name":  "Brilliant Stars",
+                                  "series":  "Sword \u0026 Shield",
+                                  "released":  "2022-02-25",
+                                  "cardSets":  [
+                                                   "swsh9",
+                                                   "swsh9tg"
+                                               ],
+                                  "cards":  175,
+                                  "inPack":  175,
+                                  "printed":  216,
+                                  "packSize":  10,
+                                  "realPackSize":  10,
+                                  "openable":  true,
+                                  "price":  16.24,
+                                  "priceSource":  {
+                                                      "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                      "url":  "https://www.pricecharting.com/game/pokemon-brilliant-stars/booster-pack",
+                                                      "date":  "2026-09-29",
+                                                      "variant":  "English booster pack, any art"
+                                                  },
+                                  "chance":  0.213751,
+                                  "oneIn":  4.7,
+                                  "odds":  [
+                                               {
+                                                   "tier":  "common",
+                                                   "weight":  5.34845
+                                               },
+                                               {
+                                                   "tier":  "uncommon",
+                                                   "weight":  3.20741
+                                               },
+                                               {
+                                                   "tier":  "rare",
+                                                   "weight":  0.76842
+                                               },
+                                               {
+                                                   "tier":  "rare-holo",
+                                                   "weight":  0.27749
+                                               },
+                                               {
+                                                   "tier":  "trainer-gallery-rare-holo",
+                                                   "weight":  0.125
+                                               },
+                                               {
+                                                   "tier":  "rare-holo-v",
+                                                   "weight":  0.16484
+                                               },
+                                               {
+                                                   "tier":  "rare-holo-vmax",
+                                                   "weight":  0.03434
+                                               },
+                                               {
+                                                   "tier":  "rare-secret",
+                                                   "weight":  0.01344
+                                               },
+                                               {
+                                                   "tier":  "rare-holo-vstar",
+                                                   "weight":  0.0189
+                                               },
+                                               {
+                                                   "tier":  "rare-ultra",
+                                                   "weight":  0.0319
+                                               },
+                                               {
+                                                   "tier":  "rare-rainbow",
+                                                   "weight":  0.0098
+                                               }
+                                           ],
+                                  "art":  {
+                                              "colors":  [
+                                                             "#1a0b2e",
+                                                             "#5b2a86",
+                                                             "#ffcf6e"
+                                                         ],
+                                              "accent":  "#ff8a3d",
+                                              "hero":  "swsh9-154",
+                                              "motif":  "stars"
+                                          },
+                                  "hero":  "img/pokemon/charizard/swsh9-154.png",
+                                  "slots":  [
+                                                {
+                                                    "id":  "common",
+                                                    "count":  5,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "uncommon",
+                                                    "count":  3,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "reverse",
+                                                    "count":  1,
+                                                    "finish":  "reverse"
+                                                },
+                                                {
+                                                    "id":  "rare",
+                                                    "count":  1,
+                                                    "finish":  "normal"
+                                                }
+                                            ]
+                              },
+                              {
+                                  "id":  "neo1",
+                                  "name":  "Neo Genesis",
+                                  "series":  "Neo (Wizards of the Coast)",
+                                  "released":  "2000-12-16",
+                                  "cardSets":  [
+                                                   "neo1"
+                                               ],
+                                  "cards":  81,
+                                  "inPack":  81,
+                                  "printed":  111,
+                                  "packSize":  11,
+                                  "realPackSize":  11,
+                                  "openable":  true,
+                                  "price":  741.61,
+                                  "priceSource":  {
+                                                      "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                      "url":  "https://www.pricecharting.com/game/pokemon-neo-genesis/booster-pack",
+                                                      "date":  "2026-09-29",
+                                                      "variant":  "Unlimited print run (2000), the four pack arts averaged",
+                                                      "note":  "sales ran $500-1,375 (heavy packs cost more); 1st Edition $902.45"
+                                                  },
+                                  "chance":  0.01473,
+                                  "oneIn":  67.9,
+                                  "odds":  [
+                                               {
+                                                   "tier":  "common",
+                                                   "weight":  7
+                                               },
+                                               {
+                                                   "tier":  "uncommon",
+                                                   "weight":  3
+                                               },
+                                               {
+                                                   "tier":  "rare",
+                                                   "weight":  0.68424
+                                               },
+                                               {
+                                                   "tier":  "rare-holo",
+                                                   "weight":  0.31576
+                                               }
+                                           ],
+                                  "art":  {
+                                              "colors":  [
+                                                             "#10301f",
+                                                             "#2e8b57",
+                                                             "#f0d060"
+                                                         ],
+                                              "accent":  "#fffbe6",
+                                              "hero":  "neo1-9",
+                                              "motif":  "leaves"
+                                          },
+                                  "hero":  "img/pokemon/lugia/neo1-9.png",
+                                  "slots":  [
+                                                {
+                                                    "id":  "common",
+                                                    "count":  7,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "uncommon",
+                                                    "count":  3,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "rare",
+                                                    "count":  1,
+                                                    "finish":  "normal"
+                                                }
+                                            ]
+                              },
+                              {
+                                  "id":  "swsh11",
+                                  "name":  "Lost Origin",
+                                  "series":  "Sword \u0026 Shield",
+                                  "released":  "2022-09-09",
+                                  "cardSets":  [
+                                                   "swsh11",
+                                                   "swsh11tg"
+                                               ],
+                                  "cards":  200,
+                                  "inPack":  200,
+                                  "printed":  247,
+                                  "packSize":  10,
+                                  "realPackSize":  10,
+                                  "openable":  true,
+                                  "price":  19.68,
+                                  "priceSource":  {
+                                                      "site":  "PriceCharting (ungraded sealed booster pack)",
+                                                      "url":  "https://www.pricecharting.com/game/pokemon-lost-origin/booster-pack",
+                                                      "date":  "2026-09-29",
+                                                      "variant":  "English booster pack, any art"
+                                                  },
+                                  "chance":  0.186853,
+                                  "oneIn":  5.4,
+                                  "odds":  [
+                                               {
+                                                   "tier":  "common",
+                                                   "weight":  5.31898
+                                               },
+                                               {
+                                                   "tier":  "uncommon",
+                                                   "weight":  3.2018
+                                               },
+                                               {
+                                                   "tier":  "rare",
+                                                   "weight":  0.73589
+                                               },
+                                               {
+                                                   "tier":  "rare-holo",
+                                                   "weight":  0.38928
+                                               },
+                                               {
+                                                   "tier":  "trainer-gallery-rare-holo",
+                                                   "weight":  0.0829
+                                               },
+                                               {
+                                                   "tier":  "rare-holo-v",
+                                                   "weight":  0.12935
+                                               },
+                                               {
+                                                   "tier":  "rare-holo-vmax",
+                                                   "weight":  0.01191
+                                               },
+                                               {
+                                                   "tier":  "rare-secret",
+                                                   "weight":  0.01113
+                                               },
+                                               {
+                                                   "tier":  "radiant-rare",
+                                                   "weight":  0.0501
+                                               },
+                                               {
+                                                   "tier":  "rare-holo-vstar",
+                                                   "weight":  0.03789
+                                               },
+                                               {
+                                                   "tier":  "rare-ultra",
+                                                   "weight":  0.0248
+                                               },
+                                               {
+                                                   "tier":  "rare-rainbow",
+                                                   "weight":  0.00597
+                                               }
+                                           ],
+                                  "art":  {
+                                              "colors":  [
+                                                             "#07080f",
+                                                             "#3b1d5e",
+                                                             "#7cf0ff"
+                                                         ],
+                                              "accent":  "#b58cff",
+                                              "hero":  "swsh11-186",
+                                              "motif":  "void"
+                                          },
+                                  "hero":  "img/pokemon/giratina-origin/swsh11-186.png",
+                                  "slots":  [
+                                                {
+                                                    "id":  "common",
+                                                    "count":  5,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "uncommon",
+                                                    "count":  3,
+                                                    "finish":  "normal"
+                                                },
+                                                {
+                                                    "id":  "reverse",
+                                                    "count":  1,
+                                                    "finish":  "reverse"
+                                                },
+                                                {
+                                                    "id":  "rare",
+                                                    "count":  1,
+                                                    "finish":  "normal"
+                                                }
+                                            ]
+                              }
+                          ]
+             },
+    "odds":  {
+                 "swsh7":  {
+                               "set":  "swsh7",
+                               "name":  "Evolving Skies",
+                               "cards":  193,
+                               "outcomes":  [
+                                                {
+                                                    "slot":  "common",
+                                                    "count":  5,
+                                                    "outcome":  "common",
+                                                    "rate":  1,
+                                                    "printed":  42,
+                                                    "served":  42,
+                                                    "base":  true,
+                                                    "probability":  1,
+                                                    "oneIn":  1
+                                                },
+                                                {
+                                                    "slot":  "uncommon",
+                                                    "count":  3,
+                                                    "outcome":  "uncommon",
+                                                    "rate":  1,
+                                                    "printed":  51,
+                                                    "served":  26,
+                                                    "base":  true,
+                                                    "probability":  1,
+                                                    "oneIn":  1
+                                                },
+                                                {
+                                                    "slot":  "reverse",
+                                                    "count":  1,
+                                                    "outcome":  "reverse holo",
+                                                    "rate":  1,
+                                                    "printed":  132,
+                                                    "served":  107,
+                                                    "base":  true,
+                                                    "probability":  1,
+                                                    "oneIn":  1
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "rare",
+                                                    "rate":  0.5141,
+                                                    "printed":  19,
+                                                    "served":  19,
+                                                    "base":  true,
+                                                    "probability":  0.528698,
+                                                    "oneIn":  1.9
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "rare holo",
+                                                    "rate":  0.265,
+                                                    "printed":  20,
+                                                    "served":  20,
+                                                    "base":  false,
+                                                    "probability":  0.265,
+                                                    "oneIn":  3.8
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "V",
+                                                    "rate":  0.1056,
+                                                    "printed":  18,
+                                                    "served":  18,
+                                                    "base":  false,
+                                                    "probability":  0.1056,
+                                                    "oneIn":  9.5
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "VMAX",
+                                                    "rate":  0.056,
+                                                    "printed":  15,
+                                                    "served":  15,
+                                                    "base":  false,
+                                                    "probability":  0.056,
+                                                    "oneIn":  17.9
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "full art",
+                                                    "rate":  0.0278,
+                                                    "printed":  27,
+                                                    "served":  22,
+                                                    "base":  false,
+                                                    "probability":  0.022652,
+                                                    "oneIn":  44.1
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "alternate art V",
+                                                    "rate":  0.011,
+                                                    "printed":  11,
+                                                    "served":  11,
+                                                    "base":  false,
+                                                    "probability":  0.011,
+                                                    "oneIn":  90.9
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "alternate art VMAX",
+                                                    "rate":  0.003,
+                                                    "printed":  6,
+                                                    "served":  6,
+                                                    "base":  false,
+                                                    "probability":  0.003,
+                                                    "oneIn":  333.3
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "rainbow",
+                                                    "rate":  0.0084,
+                                                    "printed":  16,
+                                                    "served":  11,
+                                                    "base":  false,
+                                                    "probability":  0.005775,
+                                                    "oneIn":  173.2
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "gold",
+                                                    "rate":  0.0091,
+                                                    "printed":  12,
+                                                    "served":  3,
+                                                    "base":  false,
+                                                    "probability":  0.002275,
+                                                    "oneIn":  439.6
+                                                }
+                                            ]
+                           },
+                 "me55":  {
+                              "set":  "me55",
+                              "name":  "30th Celebration",
+                              "cards":  149,
+                              "outcomes":  [
+                                               {
+                                                   "slot":  "common",
+                                                   "count":  2,
+                                                   "outcome":  "foil common",
+                                                   "rate":  1,
+                                                   "printed":  71,
+                                                   "served":  65,
+                                                   "base":  true,
+                                                   "probability":  1,
+                                                   "oneIn":  1
+                                               },
+                                               {
+                                                   "slot":  "illustration",
+                                                   "count":  1,
+                                                   "outcome":  "foil common",
+                                                   "rate":  0.7013,
+                                                   "printed":  71,
+                                                   "served":  65,
+                                                   "base":  true,
+                                                   "probability":  0.824711,
+                                                   "oneIn":  1.2
+                                               },
+                                               {
+                                                   "slot":  "illustration",
+                                                   "count":  1,
+                                                   "outcome":  "illustration rare",
+                                                   "rate":  0.1972,
+                                                   "printed":  18,
+                                                   "served":  16,
+                                                   "base":  false,
+                                                   "probability":  0.175289,
+                                                   "oneIn":  5.7
+                                               },
+                                               {
+                                                   "slot":  "illustration",
+                                                   "count":  1,
+                                                   "outcome":  "classic collection",
+                                                   "rate":  0.1015,
+                                                   "printed":  30,
+                                                   "served":  0,
+                                                   "base":  false,
+                                                   "probability":  0,
+                                                   "oneIn":  null
+                                               },
+                                               {
+                                                   "slot":  "rare",
+                                                   "count":  1,
+                                                   "outcome":  "rare",
+                                                   "rate":  0.7327,
+                                                   "printed":  18,
+                                                   "served":  16,
+                                                   "base":  true,
+                                                   "probability":  0.755097,
+                                                   "oneIn":  1.3
+                                               },
+                                               {
+                                                   "slot":  "rare",
+                                                   "count":  1,
+                                                   "outcome":  "double rare",
+                                                   "rate":  0.2102,
+                                                   "printed":  12,
+                                                   "served":  11,
+                                                   "base":  false,
+                                                   "probability":  0.192683,
+                                                   "oneIn":  5.2
+                                               },
+                                               {
+                                                   "slot":  "rare",
+                                                   "count":  1,
+                                                   "outcome":  "special illustration rare",
+                                                   "rate":  0.0488,
+                                                   "printed":  10,
+                                                   "served":  9,
+                                                   "base":  false,
+                                                   "probability":  0.04392,
+                                                   "oneIn":  22.8
+                                               },
+                                               {
+                                                   "slot":  "rare",
+                                                   "count":  1,
+                                                   "outcome":  "futuristic rare",
+                                                   "rate":  0.0083,
+                                                   "printed":  2,
+                                                   "served":  2,
+                                                   "base":  false,
+                                                   "probability":  0.0083,
+                                                   "oneIn":  120.5
+                                               },
+                                               {
+                                                   "slot":  "pikachu",
+                                                   "count":  1,
+                                                   "outcome":  "pikachu rare",
+                                                   "rate":  1,
+                                                   "printed":  30,
+                                                   "served":  30,
+                                                   "base":  true,
+                                                   "probability":  1,
+                                                   "oneIn":  1
+                                               }
+                                           ]
+                          },
+                 "swsh12pt5":  {
+                                   "set":  "swsh12pt5",
+                                   "name":  "Crown Zenith",
+                                   "cards":  183,
+                                   "outcomes":  [
+                                                    {
+                                                        "slot":  "common",
+                                                        "count":  5,
+                                                        "outcome":  "common",
+                                                        "rate":  1,
+                                                        "printed":  42,
+                                                        "served":  37,
+                                                        "base":  true,
+                                                        "probability":  1,
+                                                        "oneIn":  1
+                                                    },
+                                                    {
+                                                        "slot":  "uncommon",
+                                                        "count":  3,
+                                                        "outcome":  "uncommon",
+                                                        "rate":  1,
+                                                        "printed":  29,
+                                                        "served":  17,
+                                                        "base":  true,
+                                                        "probability":  1,
+                                                        "oneIn":  1
+                                                    },
+                                                    {
+                                                        "slot":  "reverse",
+                                                        "count":  1,
+                                                        "outcome":  "reverse holo",
+                                                        "rate":  0.6025,
+                                                        "printed":  113,
+                                                        "served":  89,
+                                                        "base":  true,
+                                                        "probability":  0.64,
+                                                        "oneIn":  1.6
+                                                    },
+                                                    {
+                                                        "slot":  "reverse",
+                                                        "count":  1,
+                                                        "outcome":  "galarian gallery",
+                                                        "rate":  0.224,
+                                                        "printed":  34,
+                                                        "served":  34,
+                                                        "base":  false,
+                                                        "probability":  0.224,
+                                                        "oneIn":  4.5
+                                                    },
+                                                    {
+                                                        "slot":  "reverse",
+                                                        "count":  1,
+                                                        "outcome":  "galarian gallery V",
+                                                        "rate":  0.12,
+                                                        "printed":  32,
+                                                        "served":  22,
+                                                        "base":  false,
+                                                        "probability":  0.0825,
+                                                        "oneIn":  12.1
+                                                    },
+                                                    {
+                                                        "slot":  "reverse",
+                                                        "count":  1,
+                                                        "outcome":  "galarian gallery gold",
+                                                        "rate":  0.008,
+                                                        "printed":  4,
+                                                        "served":  4,
+                                                        "base":  false,
+                                                        "probability":  0.008,
+                                                        "oneIn":  125
+                                                    },
+                                                    {
+                                                        "slot":  "reverse",
+                                                        "count":  1,
+                                                        "outcome":  "radiant",
+                                                        "rate":  0.0455,
+                                                        "printed":  3,
+                                                        "served":  3,
+                                                        "base":  false,
+                                                        "probability":  0.0455,
+                                                        "oneIn":  22
+                                                    },
+                                                    {
+                                                        "slot":  "rare",
+                                                        "count":  1,
+                                                        "outcome":  "rare",
+                                                        "rate":  0.447,
+                                                        "printed":  22,
+                                                        "served":  22,
+                                                        "base":  true,
+                                                        "probability":  0.552,
+                                                        "oneIn":  1.8
+                                                    },
+                                                    {
+                                                        "slot":  "rare",
+                                                        "count":  1,
+                                                        "outcome":  "rare holo",
+                                                        "rate":  0.264,
+                                                        "printed":  13,
+                                                        "served":  13,
+                                                        "base":  false,
+                                                        "probability":  0.264,
+                                                        "oneIn":  3.8
+                                                    },
+                                                    {
+                                                        "slot":  "rare",
+                                                        "count":  1,
+                                                        "outcome":  "signature trainer",
+                                                        "rate":  0.0765,
+                                                        "printed":  7,
+                                                        "served":  0,
+                                                        "base":  false,
+                                                        "probability":  0,
+                                                        "oneIn":  null
+                                                    },
+                                                    {
+                                                        "slot":  "rare",
+                                                        "count":  1,
+                                                        "outcome":  "V",
+                                                        "rate":  0.1235,
+                                                        "printed":  17,
+                                                        "served":  17,
+                                                        "base":  false,
+                                                        "probability":  0.1235,
+                                                        "oneIn":  8.1
+                                                    },
+                                                    {
+                                                        "slot":  "rare",
+                                                        "count":  1,
+                                                        "outcome":  "VMAX / VSTAR",
+                                                        "rate":  0.053,
+                                                        "printed":  13,
+                                                        "served":  13,
+                                                        "base":  false,
+                                                        "probability":  0.053,
+                                                        "oneIn":  18.9
+                                                    },
+                                                    {
+                                                        "slot":  "rare",
+                                                        "count":  1,
+                                                        "outcome":  "full art / textured energy",
+                                                        "rate":  0.0285,
+                                                        "printed":  13,
+                                                        "served":  0,
+                                                        "base":  false,
+                                                        "probability":  0,
+                                                        "oneIn":  null
+                                                    },
+                                                    {
+                                                        "slot":  "rare",
+                                                        "count":  1,
+                                                        "outcome":  "secret rare",
+                                                        "rate":  0.0075,
+                                                        "printed":  1,
+                                                        "served":  1,
+                                                        "base":  false,
+                                                        "probability":  0.0075,
+                                                        "oneIn":  133.3
+                                                    }
+                                                ]
+                               },
+                 "sm115":  {
+                               "set":  "sm115",
+                               "name":  "Hidden Fates",
+                               "cards":  133,
+                               "outcomes":  [
+                                                {
+                                                    "slot":  "common",
+                                                    "count":  5,
+                                                    "outcome":  "common",
+                                                    "rate":  1,
+                                                    "printed":  18,
+                                                    "served":  18,
+                                                    "base":  true,
+                                                    "probability":  1,
+                                                    "oneIn":  1
+                                                },
+                                                {
+                                                    "slot":  "uncommon",
+                                                    "count":  3,
+                                                    "outcome":  "uncommon",
+                                                    "rate":  1,
+                                                    "printed":  17,
+                                                    "served":  8,
+                                                    "base":  true,
+                                                    "probability":  1,
+                                                    "oneIn":  1
+                                                },
+                                                {
+                                                    "slot":  "reverse",
+                                                    "count":  1,
+                                                    "outcome":  "reverse holo",
+                                                    "rate":  0.6651,
+                                                    "printed":  56,
+                                                    "served":  41,
+                                                    "base":  true,
+                                                    "probability":  0.68495,
+                                                    "oneIn":  1.5
+                                                },
+                                                {
+                                                    "slot":  "reverse",
+                                                    "count":  1,
+                                                    "outcome":  "shiny vault",
+                                                    "rate":  0.2128,
+                                                    "printed":  45,
+                                                    "served":  45,
+                                                    "base":  false,
+                                                    "probability":  0.2128,
+                                                    "oneIn":  4.7
+                                                },
+                                                {
+                                                    "slot":  "reverse",
+                                                    "count":  1,
+                                                    "outcome":  "shiny vault GX",
+                                                    "rate":  0.0943,
+                                                    "printed":  35,
+                                                    "served":  35,
+                                                    "base":  false,
+                                                    "probability":  0.0943,
+                                                    "oneIn":  10.6
+                                                },
+                                                {
+                                                    "slot":  "reverse",
+                                                    "count":  1,
+                                                    "outcome":  "shiny vault full art",
+                                                    "rate":  0.0119,
+                                                    "printed":  6,
+                                                    "served":  0,
+                                                    "base":  false,
+                                                    "probability":  0,
+                                                    "oneIn":  null
+                                                },
+                                                {
+                                                    "slot":  "reverse",
+                                                    "count":  1,
+                                                    "outcome":  "shiny vault gold",
+                                                    "rate":  0.0159,
+                                                    "printed":  8,
+                                                    "served":  4,
+                                                    "base":  false,
+                                                    "probability":  0.00795,
+                                                    "oneIn":  125.8
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "rare",
+                                                    "rate":  0.5366,
+                                                    "printed":  15,
+                                                    "served":  12,
+                                                    "base":  true,
+                                                    "probability":  0.735289,
+                                                    "oneIn":  1.4
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "rare holo",
+                                                    "rate":  0.264,
+                                                    "printed":  6,
+                                                    "served":  3,
+                                                    "base":  false,
+                                                    "probability":  0.132,
+                                                    "oneIn":  7.6
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "GX",
+                                                    "rate":  0.1493,
+                                                    "printed":  9,
+                                                    "served":  8,
+                                                    "base":  false,
+                                                    "probability":  0.132711,
+                                                    "oneIn":  7.5
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "full art",
+                                                    "rate":  0.0391,
+                                                    "printed":  3,
+                                                    "served":  0,
+                                                    "base":  false,
+                                                    "probability":  0,
+                                                    "oneIn":  null
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "rainbow",
+                                                    "rate":  0.011,
+                                                    "printed":  1,
+                                                    "served":  0,
+                                                    "base":  false,
+                                                    "probability":  0,
+                                                    "oneIn":  null
+                                                }
+                                            ]
+                           },
+                 "base1":  {
+                               "set":  "base1",
+                               "name":  "Base Set",
+                               "cards":  69,
+                               "outcomes":  [
+                                                {
+                                                    "slot":  "common",
+                                                    "count":  5,
+                                                    "outcome":  "common",
+                                                    "rate":  1,
+                                                    "printed":  32,
+                                                    "served":  27,
+                                                    "base":  true,
+                                                    "probability":  1,
+                                                    "oneIn":  1
+                                                },
+                                                {
+                                                    "slot":  "uncommon",
+                                                    "count":  3,
+                                                    "outcome":  "uncommon",
+                                                    "rate":  1,
+                                                    "printed":  32,
+                                                    "served":  20,
+                                                    "base":  true,
+                                                    "probability":  1,
+                                                    "oneIn":  1
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "rare",
+                                                    "rate":  0.6667,
+                                                    "printed":  16,
+                                                    "served":  6,
+                                                    "base":  true,
+                                                    "probability":  0.6667,
+                                                    "oneIn":  1.5
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "holo rare",
+                                                    "rate":  0.3333,
+                                                    "printed":  16,
+                                                    "served":  16,
+                                                    "base":  false,
+                                                    "probability":  0.3333,
+                                                    "oneIn":  3
+                                                }
+                                            ]
+                           },
+                 "swsh9":  {
+                               "set":  "swsh9",
+                               "name":  "Brilliant Stars",
+                               "cards":  175,
+                               "outcomes":  [
+                                                {
+                                                    "slot":  "common",
+                                                    "count":  5,
+                                                    "outcome":  "common",
+                                                    "rate":  1,
+                                                    "printed":  42,
+                                                    "served":  42,
+                                                    "base":  true,
+                                                    "probability":  1,
+                                                    "oneIn":  1
+                                                },
+                                                {
+                                                    "slot":  "uncommon",
+                                                    "count":  3,
+                                                    "outcome":  "uncommon",
+                                                    "rate":  1,
+                                                    "printed":  46,
+                                                    "served":  25,
+                                                    "base":  true,
+                                                    "probability":  1,
+                                                    "oneIn":  1
+                                                },
+                                                {
+                                                    "slot":  "reverse",
+                                                    "count":  1,
+                                                    "outcome":  "reverse holo",
+                                                    "rate":  0.8194,
+                                                    "printed":  124,
+                                                    "served":  101,
+                                                    "base":  true,
+                                                    "probability":  0.837933,
+                                                    "oneIn":  1.2
+                                                },
+                                                {
+                                                    "slot":  "reverse",
+                                                    "count":  1,
+                                                    "outcome":  "trainer gallery",
+                                                    "rate":  0.125,
+                                                    "printed":  12,
+                                                    "served":  12,
+                                                    "base":  false,
+                                                    "probability":  0.125,
+                                                    "oneIn":  8
+                                                },
+                                                {
+                                                    "slot":  "reverse",
+                                                    "count":  1,
+                                                    "outcome":  "trainer gallery V",
+                                                    "rate":  0.0556,
+                                                    "printed":  18,
+                                                    "served":  12,
+                                                    "base":  false,
+                                                    "probability":  0.037067,
+                                                    "oneIn":  27
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "rare",
+                                                    "rate":  0.468,
+                                                    "printed":  26,
+                                                    "served":  26,
+                                                    "base":  true,
+                                                    "probability":  0.552713,
+                                                    "oneIn":  1.8
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "rare holo",
+                                                    "rate":  0.2639,
+                                                    "printed":  10,
+                                                    "served":  8,
+                                                    "base":  false,
+                                                    "probability":  0.21112,
+                                                    "oneIn":  4.7
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "V",
+                                                    "rate":  0.1494,
+                                                    "printed":  20,
+                                                    "served":  20,
+                                                    "base":  false,
+                                                    "probability":  0.1494,
+                                                    "oneIn":  6.7
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "VMAX",
+                                                    "rate":  0.0189,
+                                                    "printed":  3,
+                                                    "served":  3,
+                                                    "base":  false,
+                                                    "probability":  0.0189,
+                                                    "oneIn":  52.9
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "VSTAR",
+                                                    "rate":  0.0189,
+                                                    "printed":  4,
+                                                    "served":  4,
+                                                    "base":  false,
+                                                    "probability":  0.0189,
+                                                    "oneIn":  52.9
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "full art / alternate art",
+                                                    "rate":  0.0319,
+                                                    "printed":  15,
+                                                    "served":  15,
+                                                    "base":  false,
+                                                    "probability":  0.0319,
+                                                    "oneIn":  31.3
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "full art trainer",
+                                                    "rate":  0.0185,
+                                                    "printed":  6,
+                                                    "served":  0,
+                                                    "base":  false,
+                                                    "probability":  0,
+                                                    "oneIn":  null
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "rainbow",
+                                                    "rate":  0.0196,
+                                                    "printed":  8,
+                                                    "served":  4,
+                                                    "base":  false,
+                                                    "probability":  0.0098,
+                                                    "oneIn":  102
+                                                },
+                                                {
+                                                    "slot":  "rare",
+                                                    "count":  1,
+                                                    "outcome":  "gold",
+                                                    "rate":  0.0109,
+                                                    "printed":  6,
+                                                    "served":  4,
+                                                    "base":  false,
+                                                    "probability":  0.007267,
+                                                    "oneIn":  137.6
+                                                }
+                                            ]
+                           },
+                 "neo1":  {
+                              "set":  "neo1",
+                              "name":  "Neo Genesis",
+                              "cards":  81,
+                              "outcomes":  [
+                                               {
+                                                   "slot":  "common",
+                                                   "count":  7,
+                                                   "outcome":  "common",
+                                                   "rate":  1,
+                                                   "printed":  35,
+                                                   "served":  30,
+                                                   "base":  true,
+                                                   "probability":  1,
+                                                   "oneIn":  1
+                                               },
+                                               {
+                                                   "slot":  "uncommon",
+                                                   "count":  3,
+                                                   "outcome":  "uncommon",
+                                                   "rate":  1,
+                                                   "printed":  35,
+                                                   "served":  27,
+                                                   "base":  true,
+                                                   "probability":  1,
+                                                   "oneIn":  1
+                                               },
+                                               {
+                                                   "slot":  "rare",
+                                                   "count":  1,
+                                                   "outcome":  "rare",
+                                                   "rate":  0.6667,
+                                                   "printed":  16,
+                                                   "served":  6,
+                                                   "base":  true,
+                                                   "probability":  0.684242,
+                                                   "oneIn":  1.5
+                                               },
+                                               {
+                                                   "slot":  "rare",
+                                                   "count":  1,
+                                                   "outcome":  "holo rare",
+                                                   "rate":  0.3333,
+                                                   "printed":  19,
+                                                   "served":  18,
+                                                   "base":  false,
+                                                   "probability":  0.315758,
+                                                   "oneIn":  3.2
+                                               }
+                                           ]
+                          },
+                 "swsh11":  {
+                                "set":  "swsh11",
+                                "name":  "Lost Origin",
+                                "cards":  200,
+                                "outcomes":  [
+                                                 {
+                                                     "slot":  "common",
+                                                     "count":  5,
+                                                     "outcome":  "common",
+                                                     "rate":  1,
+                                                     "printed":  49,
+                                                     "served":  49,
+                                                     "base":  true,
+                                                     "probability":  1,
+                                                     "oneIn":  1
+                                                 },
+                                                 {
+                                                     "slot":  "uncommon",
+                                                     "count":  3,
+                                                     "outcome":  "uncommon",
+                                                     "rate":  1,
+                                                     "printed":  50,
+                                                     "served":  31,
+                                                     "base":  true,
+                                                     "probability":  1,
+                                                     "oneIn":  1
+                                                 },
+                                                 {
+                                                     "slot":  "reverse",
+                                                     "count":  1,
+                                                     "outcome":  "reverse holo",
+                                                     "rate":  0.8267,
+                                                     "printed":  149,
+                                                     "served":  129,
+                                                     "base":  true,
+                                                     "probability":  0.839753,
+                                                     "oneIn":  1.2
+                                                 },
+                                                 {
+                                                     "slot":  "reverse",
+                                                     "count":  1,
+                                                     "outcome":  "trainer gallery",
+                                                     "rate":  0.0829,
+                                                     "printed":  11,
+                                                     "served":  11,
+                                                     "base":  false,
+                                                     "probability":  0.0829,
+                                                     "oneIn":  12.1
+                                                 },
+                                                 {
+                                                     "slot":  "reverse",
+                                                     "count":  1,
+                                                     "outcome":  "trainer gallery V",
+                                                     "rate":  0.0317,
+                                                     "printed":  17,
+                                                     "served":  10,
+                                                     "base":  false,
+                                                     "probability":  0.018647,
+                                                     "oneIn":  53.6
+                                                 },
+                                                 {
+                                                     "slot":  "reverse",
+                                                     "count":  1,
+                                                     "outcome":  "trainer gallery gold",
+                                                     "rate":  0.0086,
+                                                     "printed":  2,
+                                                     "served":  2,
+                                                     "base":  false,
+                                                     "probability":  0.0086,
+                                                     "oneIn":  116.3
+                                                 },
+                                                 {
+                                                     "slot":  "reverse",
+                                                     "count":  1,
+                                                     "outcome":  "radiant",
+                                                     "rate":  0.0501,
+                                                     "printed":  3,
+                                                     "served":  3,
+                                                     "base":  false,
+                                                     "probability":  0.0501,
+                                                     "oneIn":  20
+                                                 },
+                                                 {
+                                                     "slot":  "rare",
+                                                     "count":  1,
+                                                     "outcome":  "rare",
+                                                     "rate":  0.5155,
+                                                     "printed":  28,
+                                                     "served":  28,
+                                                     "base":  true,
+                                                     "probability":  0.553621,
+                                                     "oneIn":  1.8
+                                                 },
+                                                 {
+                                                     "slot":  "rare",
+                                                     "count":  1,
+                                                     "outcome":  "rare holo",
+                                                     "rate":  0.2646,
+                                                     "printed":  22,
+                                                     "served":  21,
+                                                     "base":  false,
+                                                     "probability":  0.252573,
+                                                     "oneIn":  4
+                                                 },
+                                                 {
+                                                     "slot":  "rare",
+                                                     "count":  1,
+                                                     "outcome":  "V",
+                                                     "rate":  0.1163,
+                                                     "printed":  12,
+                                                     "served":  12,
+                                                     "base":  false,
+                                                     "probability":  0.1163,
+                                                     "oneIn":  8.6
+                                                 },
+                                                 {
+                                                     "slot":  "rare",
+                                                     "count":  1,
+                                                     "outcome":  "VMAX / VSTAR",
+                                                     "rate":  0.0442,
+                                                     "printed":  7,
+                                                     "served":  7,
+                                                     "base":  false,
+                                                     "probability":  0.0442,
+                                                     "oneIn":  22.6
+                                                 },
+                                                 {
+                                                     "slot":  "rare",
+                                                     "count":  1,
+                                                     "outcome":  "full art V",
+                                                     "rate":  0.0198,
+                                                     "printed":  13,
+                                                     "served":  13,
+                                                     "base":  false,
+                                                     "probability":  0.0198,
+                                                     "oneIn":  50.5
+                                                 },
+                                                 {
+                                                     "slot":  "rare",
+                                                     "count":  1,
+                                                     "outcome":  "full art trainer",
+                                                     "rate":  0.0142,
+                                                     "printed":  8,
+                                                     "served":  0,
+                                                     "base":  false,
+                                                     "probability":  0,
+                                                     "oneIn":  null
+                                                 },
+                                                 {
+                                                     "slot":  "rare",
+                                                     "count":  1,
+                                                     "outcome":  "alternate art V",
+                                                     "rate":  0.005,
+                                                     "printed":  4,
+                                                     "served":  4,
+                                                     "base":  false,
+                                                     "probability":  0.005,
+                                                     "oneIn":  200
+                                                 },
+                                                 {
+                                                     "slot":  "rare",
+                                                     "count":  1,
+                                                     "outcome":  "rainbow",
+                                                     "rate":  0.0128,
+                                                     "printed":  15,
+                                                     "served":  7,
+                                                     "base":  false,
+                                                     "probability":  0.005973,
+                                                     "oneIn":  167.4
+                                                 },
+                                                 {
+                                                     "slot":  "rare",
+                                                     "count":  1,
+                                                     "outcome":  "gold",
+                                                     "rate":  0.0076,
+                                                     "printed":  6,
+                                                     "served":  2,
+                                                     "base":  false,
+                                                     "probability":  0.002533,
+                                                     "oneIn":  394.7
+                                                 }
+                                             ]
+                            }
+             }
+}

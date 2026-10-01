@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "swsh9-78",
+ "character": "riolu",
+ "name": "Riolu",
+ "fantasy": "An aura pup: detects attacks, jabs, low kicks.",
+ "attacks": [
+  {
+   "name": "Low Kick",
+   "shape": {
+    "kind": "melee",
+    "range": 68,
+    "arc": 80,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  }
+ ]
+}

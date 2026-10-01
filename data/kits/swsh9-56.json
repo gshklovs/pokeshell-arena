@@ -1,0 +1,45 @@
+{
+ "version": 1,
+ "card": "swsh9-56",
+ "character": "mewtwo",
+ "name": "Mewtwo",
+ "fantasy": "A psychic weapon: homing Psychic that hits harder the more energy the foe holds, bursts on the aim point, barriers.",
+ "attacks": [
+  {
+   "name": "Life Sucker",
+   "shape": {
+    "kind": "beam",
+    "length": 600,
+    "width": 22
+   },
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 20
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Psyburn",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 120,
+    "range": 480
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110
+    }
+   ]
+  }
+ ]
+}

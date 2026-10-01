@@ -1,0 +1,58 @@
+{
+ "version": 1,
+ "card": "sm115-18",
+ "character": "vaporeon",
+ "name": "Vaporeon",
+ "fantasy": "Water guns and a draining bubble beam.",
+ "attacks": [
+  {
+   "name": "Water Gun",
+   "shape": {
+    "kind": "projectile",
+    "speed": 13,
+    "radius": 12,
+    "range": 620
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 60
+    }
+   ]
+  },
+  {
+   "name": "Bubble Drain",
+   "shape": {
+    "kind": "beam",
+    "length": 600,
+    "width": 26
+   },
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 70
+    }
+   ]
+  }
+ ]
+}

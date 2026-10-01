@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "card": "swsh4-170",
+ "character": "pikachu",
+ "name": "Pikachu V",
+ "fantasy": "Charges up, then a huge Thunderbolt.",
+ "attacks": [
+  {
+   "name": "Charge",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "name": "Thunderbolt",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 38
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200
+    }
+   ]
+  }
+ ]
+}

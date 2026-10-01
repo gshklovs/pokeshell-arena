@@ -1,0 +1,78 @@
+// Water hand kits: shots and beams that flood where they land (set up a Lightning partner), ice that slows,
+// and heavy waves that push foes back.
+import type { HandSpec } from './index'
+
+const BUBBLE = 'proj s11 r12 R560 water60'
+const BITE = 'melee R68 A80 l30'
+const HYDRO_PUMP = 'beam L720 W40 wu16 water90 kb130'
+
+export const WATER: HandSpec[] = [
+  // ---- the Squirtle line and other water starters
+  { name: 'Squirtle', fantasy: 'A turtle that floods the ground with bubbles and hides in its shell.',
+    atk: { Bubble: BUBBLE, Withdraw: 'self', 'Skull Bash': 'dash D220 S18 r26 kb60' } },
+  { name: 'Wartortle', fantasy: 'Hides behind its shell, bites back.', atk: { Withdraw: 'self', Bite: BITE } },
+  { name: 'Blastoise', fantasy: 'Hydro Pump from its cannons: a long beam that pushes back and grows with the energy it holds.',
+    atk: { 'Hydro Pump': [`${HYDRO_PUMP} cast={"op":"bonus","amount":30}`, 'a flat +30 (the water it holds beyond the cost): it scales on unspent pips, nearly always 0 on the one meter, and Blastoise won 0% of Stage 2 fights'] } },
+  { name: 'Totodile', fantasy: 'A snapping crocodile: bites, stares, and flails away.',
+    atk: { Bite: 'melee R66 A76 l20', Rage: 'melee R70 A80 l30', Leer: 'cone R200 A64', 'Fury Swipes': 'melee R70 A96 l20' } },
+  { name: 'Croconaw', fantasy: 'Clamps its jaws on a foe so it can\'t get away; sweeps the field with water.',
+    atk: { Screech: 'cone R210 A72', 'Jaw Clamp': 'melee R74 A80 l40', Tackle: 'dash D220 S18 r26', 'Sweep Away': 'cone R220 A80 kb100 water80' } },
+  { name: 'Feraligatr', fantasy: 'A river tyrant: chomps that land more with every coin, a riptide around itself.',
+    atk: { Chomp: 'melee R84 A96 l60 kb70', Riptide: 'area@self r170 water120 kb120' } },
+  { name: 'Piplup', fantasy: 'A proud penguin that blows bubbles.', atk: { Bubble: BUBBLE } },
+  { name: 'Prinplup', fantasy: 'Pecks hard.', atk: { Peck: 'melee R70 A72 l30' } },
+  { name: 'Empoleon', fantasy: 'A water sniper: Water Arrow flies fast and far.', atk: { 'Water Arrow': 'proj s18 r10 R760 water50' } },
+  { name: 'Froakie', fantasy: 'A frog that flops into you.', atk: { Flop: 'melee R66 A80' } },
+  { name: 'Frogadier', fantasy: 'Flicks water drops from range.', atk: { 'Water Drip': 'proj s14 r10 R600 water50' } },
+  { name: 'Greninja-GX', fantasy: 'A ninja: slashes and vanishes, then throws three water shuriken once per match.',
+    atk: { 'Haze Slash': 'dash D280 S20 r28', 'Shadowy Hunter-GX': ['proj s18 r10 R780 n3 sp6', 'three of the opponent\'s Pokémon: three shuriken; all three can hit one foe'] } },
+  { name: 'Greninja ex', fantasy: 'Stealthy Slash cuts deeper into the wounded; Aqua Edge is a thin, fast blade of water.',
+    atk: { 'Stealthy Slash': ['melee R80 A100 l60 !', 'a slash from the shadows (the name reads as a vanish-and-strike: as that blink dash Greninja ex fell from 50-89% to 10%)'], 'Aqua Edge': 'beam L620 W22 water60' } },
+  // ---- Gyarados
+  { name: 'Magikarp', fantasy: 'Mostly splashes. Flail hits harder the more it has been hurt.',
+    atk: { Tackle: 'melee R60 A64', Flail: 'melee R66 A90', Splash: 'melee R60 A90' } },
+  { name: 'Gyarados', fantasy: 'Rage made into a beam; a wide bubble beam that can paralyze.', atk: { 'Dragon Rage': 'beam L660 W36 wu14 water70', Bubblebeam: 'beam L600 W28 water80' } },
+  { name: 'Gyarados-GX', fantasy: 'Dragon Rage, then a once-per-match Hyper Beam that blasts foes back.',
+    atk: { 'Dragon Rage': 'beam L680 W36 wu14 water70', 'Hyper Beam-GX': 'beam L780 W48 t12 wu22 kb140' } },
+  { name: 'Gyarados V', fantasy: 'Get Angry: thrashes harder the more it is hurt; Heavy Storm floods the field.',
+    atk: { 'Get Angry': 'melee R84 A110 l60 kb80', 'Heavy Storm': 'area@aim r150 R480 wu20 water120 kb120' } },
+  { name: 'Gyarados VMAX', fantasy: 'A Hyper Beam that strips energy, and Max Tyrant: a tidal slam around itself.',
+    atk: { 'Hyper Beam': ['beam L720 W48 wu10', 'W48 wu10 (was W40 wu14): with its heavy-card windup it missed most shots'], 'Max Tyrant': ['area@self r220 wu16 kb160 water120 !', 'pinned: the Max-move lexicon made it a pillar on the aim point, and Gyarados VMAX fell to 12-33% of VMAX fights; wu16 (was 24), r220 (was 200) under the ring power'] } },
+  // ---- ice and sea legends
+  { name: 'Lapras', fantasy: 'Carries its team across the water; its Ice Beam slows what it touches.',
+    atk: { 'Ferry Across': 'self', 'Ice Beam': 'beam L640 W26 slow400/90', 'Aqua Wave': 'cone R240 A72 water90 kb80', 'Raging Freeze': 'beam L660 W30 slow400/90' } },
+  { name: 'Articuno', fantasy: 'Calls down hail on a wide area: everything under it slows.', atk: { Hail: ['cone R280 A80 slow300/90 !', 'the wide hail cone it has played as (the old lexicon relexed the spec area into it); as the spec 160 px circle 480 px out it won 0-17% of basic+ fights'] } },
+  { name: 'Articuno-GX', fantasy: 'Icy wings; Cold Crush freezes the energy out of a foe.', atk: { 'Ice Wing': 'cone R240 A72 slow400/90', 'Cold Crush-GX': 'area@self r180' } },
+  { name: 'Kyogre', fantasy: 'The sea itself: a Hydro Pump that grows with its energy; Dynamic Wave floods everything around it.',
+    atk: { 'Hydro Pump': 'beam L720 W40 wu16 water100 kb120', 'Wave Summoning': 'self', 'Dynamic Wave': 'area@self r190 wu18 water140 kb140' } },
+  { name: 'Kyogre V', fantasy: 'Dual Splash picks off the back line; Aqua Typhoon is a huge flood around it, then it rests.',
+    atk: { 'Dual Splash': 'proj s12 r16 R680 water70', 'Aqua Typhoon': 'area@self r200 wu22 water140 kb150' } },
+  { name: 'Palkia', fantasy: 'Bends space: Wormhole hits and slips it away.', atk: { Wormhole: 'beam L700 W34' } },
+  { name: 'Origin Forme Palkia VSTAR', fantasy: 'Subspace Swell: a rift on the aim point that swells with every Pokémon in play.', atk: { 'Subspace Swell': 'area@aim r150 R480 wu14 water100' } },
+  { name: 'Suicune V', fantasy: 'The north wind: a gliding charge that chills.', atk: { 'Blizzard Rondo': 'dash D300 S20 r30 slow300/60' } },
+  { name: 'Kyurem V', fantasy: 'Freezes its own energy on, then smashes with ice.', atk: { 'Rapid Freeze': 'self', 'Frost Smash': 'melee R88 A100 l60 slow400/90 kb80' } },
+  { name: 'Kyurem VMAX', fantasy: 'Max Frost: burns energy into a freezing blast on the aim point.', atk: { 'Max Frost': 'area@aim r150 R480 wu18 slow500/90' } },
+  // ---- Eevee's water and ice forms
+  { name: 'Vaporeon', fantasy: 'Water guns and a draining bubble beam.', atk: { 'Water Gun': 'proj s13 r12 R620 water60', 'Bubble Drain': 'beam L600 W26 water70', 'Aurora Beam': 'beam L640 W26 slow300/60' } },
+  { name: 'Vaporeon V', fantasy: 'Leaps in with a splash and swaps out.', atk: { 'Triple Draw': 'self', 'Splash Jump': 'dash D260 S19 r28 water80' } },
+  { name: 'Vaporeon VMAX', fantasy: 'Max Torrent: a torrent beam that surges when a teammate falls.', atk: { 'Bubble Pod': 'self', 'Max Torrent': 'beam L740 W44 wu16 water110 kb120' } },
+  { name: 'Glaceon V', fantasy: 'A frost fox: freezing wind, and snow that buries the field (and its Stadium).',
+    atk: { 'Frost Charge': 'proj s13 r12 R600', 'Freezing Wind': 'cone R240 A60 slow400/90', 'Frozen Awakening': 'self', 'Heavy Snow': ['area@aim r140 R460 slow400/90 !', 'pinned to the spec (the lexicon made it a 300 px snow cone: Glaceon V won 91%)'] } },
+  { name: 'Glaceon VSTAR', fantasy: 'Icicle shots pin a foe in place; Crystal Star seals it in ice once per match.',
+    atk: { 'Icicle Shot': 'proj s15 r14 R680 slow300/90', 'Crystal Star': 'area@aim r150 R480 wu18 slow500/90' } },
+  { name: 'Glaceon VMAX', fantasy: 'Max Icicle: a huge icicle that also shatters onto the back line.', atk: { 'Max Icicle': 'proj s12 r22 R700 wu14 slow400/90' } },
+  { name: 'Glaceon-GX', fantasy: 'Frost bullets that splash; Polar Spear hits harder the more the foe is hurt.', atk: { 'Frost Bullet': 'proj s14 r14 R660 slow300/60', 'Polar Spear-GX': 'beam L740 W30 wu16' } },
+  { name: 'Alolan Ninetales-GX', fantasy: 'An ice-blade sniper and a blizzard edge.',
+    atk: { 'Ice Blade': 'proj s16 r10 R740', 'Blizzard Edge': 'cone R250 A64 slow400/90', 'Ice Path-GX': 'beam L660 W30' } },
+  // ---- others
+  { name: 'Staryu', fantasy: 'A spinning star.', atk: { Slap: 'melee R66 A80', 'Numbing Water': 'proj s12 r11 R560 water60', 'Double Spin': 'melee R70 A140' } },
+  { name: 'Starmie', fantasy: 'A gem that heals itself and fires freezing stars.', atk: { Recover: 'self', 'Star Freeze': 'proj s15 r12 R640 slow300/60', Psychic: 'proj s12 r14 R640', 'Power Gem': ['proj s15 r10 R700', 'r10 (was r14): the Psychic homing made it land nearly every time, and Starmie won 95-100% of Stage 1 fights'] } },
+  { name: 'Starmie-GX', fantasy: 'A shooting star: star streams, a spinning dash, and a Hydro Pump.',
+    atk: { 'Star Stream': 'proj s15 r12 R640', 'Spinning Attack': 'dash D260 S19 r28', 'Hydro Pump-GX': HYDRO_PUMP } },
+  { name: 'Tapu Fini-GX', fantasy: 'A guardian of the sea: mist, a long hydro shot, and a storm that sweeps a foe away.',
+    atk: { 'Aqua Ring': 'proj s12 r12 R600 water60', 'Hydro Shot': 'beam L740 W24 wu14', 'Tapu Storm-GX': 'area@aim r120 R440 water120' } },
+  { name: 'Lumineon V', fantasy: 'Aqua Return: hits and slips back to the bench.', atk: { 'Aqua Return': 'beam L680 W30 water80' } },
+  { name: 'Arctovish V', fantasy: 'An ancient fish that freezes foes solid, then a Giga Impact.', atk: { 'Ancient Freeze': 'beam L600 W24 slow500/90', 'Giga Impact': 'dash D320 S18 r34 wu18 kb140' } },
+  { name: 'Kingler V', fantasy: 'A crab that bubbles up energy, then a raging pincer that hurts it too.', atk: { 'Falling Bubbles': 'self', 'Raging Pincer': 'melee R86 A90 l60 kb90' } },
+  { name: 'Kingler VMAX', fantasy: 'G-Max Pincer: the biggest claw in the game.', atk: { 'Bubbles Galore': 'self', 'G-Max Pincer': 'melee R96 A100 l80 kb140 wu14' } },
+]

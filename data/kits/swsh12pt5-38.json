@@ -1,0 +1,50 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-38",
+ "character": "glaceon",
+ "name": "Glaceon V",
+ "fantasy": "A frost fox: freezing wind, and snow that buries the field (and its Stadium).",
+ "attacks": [
+  {
+   "name": "Frost Charge",
+   "shape": {
+    "kind": "dash",
+    "distance": 150,
+    "speed": 15,
+    "radius": 32,
+    "invulnerable": 0
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Freezing Wind",
+   "shape": {
+    "kind": "cone",
+    "range": 240,
+    "arc": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    },
+    {
+     "op": "slow",
+     "permille": 400,
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

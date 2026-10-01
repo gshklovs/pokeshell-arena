@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "swsh9-153",
+ "character": "charizard",
+ "name": "Charizard V",
+ "fantasy": "Incinerate burns through shields up close; Heat Blast is a long line of fire.",
+ "attacks": [
+  {
+   "name": "Incinerate",
+   "shape": {
+    "kind": "cone",
+    "range": 220,
+    "arc": 56
+   },
+   "onHit": [
+    {
+     "op": "dispel"
+    },
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  },
+  {
+   "name": "Heat Blast",
+   "shape": {
+    "kind": "cone",
+    "range": 180,
+    "arc": 70
+   },
+   "windup": 18,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 60,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

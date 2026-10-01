@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "neo1-10",
+ "character": "meganium",
+ "name": "Meganium",
+ "fantasy": "A soothing giant: a body slam that paralyzes, a scent that puts everything around it to sleep.",
+ "attacks": [
+  {
+   "name": "Body Slam",
+   "shape": {
+    "kind": "dash",
+    "distance": 240,
+    "speed": 18,
+    "radius": 30,
+    "path": "leap",
+    "blast": 57
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "paralyzed"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

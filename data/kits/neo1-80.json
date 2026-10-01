@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "card": "neo1-80",
+ "character": "totodile",
+ "name": "Totodile",
+ "fantasy": "A snapping crocodile: bites, stares, and flails away.",
+ "attacks": [
+  {
+   "name": "Bite",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 76,
+    "lunge": 20
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Rage",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 80,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

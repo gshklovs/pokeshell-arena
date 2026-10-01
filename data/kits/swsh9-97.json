@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "card": "swsh9-97",
+ "character": "aggron",
+ "name": "Aggron VMAX",
+ "fantasy": "Cracking stomps, and Max Take Down that hurts it too.",
+ "attacks": [
+  {
+   "name": "Cracking Stomp",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 180
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 150
+    },
+    {
+     "op": "energyJam",
+     "ticks": 30
+    },
+    {
+     "op": "knockback",
+     "px": 110
+    }
+   ]
+  },
+  {
+   "name": "Max Take Down",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 137,
+    "delay": 20
+   },
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 270
+    },
+    {
+     "op": "knockback",
+     "px": 160
+    }
+   ]
+  }
+ ]
+}

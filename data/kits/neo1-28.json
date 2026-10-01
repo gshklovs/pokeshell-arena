@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "card": "neo1-28",
+ "character": "bayleef",
+ "name": "Bayleef",
+ "fantasy": "Spice-scented: poison powder, a pollen shield, twin razor leaves.",
+ "attacks": [
+  {
+   "name": "Poisonpowder",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 110,
+    "radius": 84,
+    "ticks": 90,
+    "every": 45,
+    "delay": 8
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "poisoned"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Pollen Shield",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 110,
+    "radius": 84,
+    "ticks": 90,
+    "every": 45,
+    "delay": 8
+   },
+   "onCast": [
+    {
+     "op": "cleanse"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

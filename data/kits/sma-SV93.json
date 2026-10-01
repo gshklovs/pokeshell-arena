@@ -1,0 +1,50 @@
+{
+ "version": 1,
+ "card": "sma-SV93",
+ "character": "tapu-koko",
+ "name": "Tapu Koko-GX",
+ "fantasy": "Sky-high claws, and Tapu Thunder that grows with the foe's energy.",
+ "attacks": [
+  {
+   "name": "Sky-High Claws",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 21,
+    "radius": 24
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  },
+  {
+   "name": "Tapu Thunder-GX",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 150,
+    "range": 520
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeEnergy",
+     "amount": 50
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ],
+ "notes": "Sky-High Claws: r24 (was r30): Tapu Koko-GX won 95% of rule-box fights"
+}

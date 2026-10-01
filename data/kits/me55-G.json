@@ -1,0 +1,29 @@
+{
+ "version": 1,
+ "card": "me55-G",
+ "character": "mew",
+ "name": "Mew",
+ "fantasy": "A playful mirage: homing psychic shots.",
+ "attacks": [
+  {
+   "name": "Psychic",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 14,
+    "range": 660
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeEnergy",
+     "amount": 40
+    },
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

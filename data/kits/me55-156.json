@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "me55-156",
+ "character": "salamence",
+ "name": "Salamence ex",
+ "fantasy": "Calls its friends, then a huge dragon pulse.",
+ "attacks": [
+  {
+   "name": "Booming Call",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 10,
+     "ticks": 270
+    }
+   ]
+  },
+  {
+   "name": "Dragon Pulse",
+   "shape": {
+    "kind": "beam",
+    "length": 740,
+    "width": 40
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 240
+    }
+   ]
+  }
+ ]
+}

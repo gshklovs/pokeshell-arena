@@ -1,0 +1,87 @@
+{
+ "version": 1,
+ "card": "sm115-36",
+ "character": "onix",
+ "name": "Onix-GX",
+ "fantasy": "Binds foes in its coils; Heavy Impact shakes the ground; a rocky avalanche once per match.",
+ "attacks": [
+  {
+   "name": "Bind",
+   "shape": {
+    "kind": "melee",
+    "range": 90,
+    "arc": 120
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "paralyzed"
+      }
+     ]
+    },
+    {
+     "op": "slow",
+     "permille": 350,
+     "ticks": 90
+    }
+   ]
+  },
+  {
+   "name": "Heavy Impact",
+   "shape": {
+    "kind": "dash",
+    "distance": 340,
+    "speed": 16,
+    "radius": 28,
+    "path": "leap",
+    "blast": 75
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 150
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  },
+  {
+   "name": "Rocky Avalanche-GX",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 160,
+    "range": 480
+   },
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 100,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

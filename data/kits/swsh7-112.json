@@ -1,0 +1,57 @@
+{
+ "version": 1,
+ "card": "swsh7-112",
+ "character": "dialga",
+ "name": "Dialga",
+ "fantasy": "The time dragon: turns back the clock, a heavy impact, a chrono wind.",
+ "attacks": [
+  {
+   "name": "Chrono Wind",
+   "shape": {
+    "kind": "cone",
+    "range": 240,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeIs",
+     "kind": "V",
+     "then": [
+      {
+       "op": "exhaust",
+       "ticks": 90,
+       "target": "target"
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ]
+  },
+  {
+   "name": "Heavy Impact",
+   "shape": {
+    "kind": "dash",
+    "distance": 320,
+    "speed": 16,
+    "radius": 28,
+    "path": "leap",
+    "blast": 85
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 210
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

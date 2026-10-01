@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "card": "base1-35",
+ "character": "magikarp",
+ "name": "Magikarp",
+ "fantasy": "Mostly splashes. Flail hits harder the more it has been hurt.",
+ "attacks": [
+  {
+   "name": "Tackle",
+   "shape": {
+    "kind": "melee",
+    "range": 60,
+    "arc": 64
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Flail",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 90
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

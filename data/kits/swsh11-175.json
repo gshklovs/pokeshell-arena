@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "swsh11-175",
+ "character": "magnezone",
+ "name": "Magnezone V",
+ "fantasy": "Magnetic tension drags a foe in; a splitting beam.",
+ "attacks": [
+  {
+   "name": "Magnetic Tension",
+   "shape": {
+    "kind": "melee",
+    "range": 150,
+    "arc": 28
+   },
+   "onHit": [
+    {
+     "op": "gust",
+     "mode": "pull"
+    },
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  },
+  {
+   "name": "Splitting Beam",
+   "shape": {
+    "kind": "beam",
+    "length": 700,
+    "width": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    },
+    {
+     "op": "benchDamage",
+     "amount": 30,
+     "count": 2
+    }
+   ]
+  }
+ ]
+}

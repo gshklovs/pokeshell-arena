@@ -1,0 +1,28 @@
+{
+ "version": 1,
+ "card": "swsh11-123",
+ "character": "sneasler",
+ "name": "Radiant Hisuian Sneasler",
+ "fantasy": "A poison jab from a quick lunge.",
+ "attacks": [
+  {
+   "name": "Poison Jab",
+   "shape": {
+    "kind": "melee",
+    "range": 76,
+    "arc": 80,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    },
+    {
+     "op": "status",
+     "status": "poisoned"
+    }
+   ]
+  }
+ ]
+}

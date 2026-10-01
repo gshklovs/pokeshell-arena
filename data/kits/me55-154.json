@@ -1,0 +1,25 @@
+{
+ "version": 1,
+ "card": "me55-154",
+ "character": "gengar",
+ "name": "Gengar ex",
+ "fantasy": "Chaotic Pain: damage counters rain on the aim point.",
+ "attacks": [
+  {
+   "name": "Chaotic Pain",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 140,
+    "range": 500
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "counters",
+     "amount": 130
+    }
+   ]
+  }
+ ]
+}

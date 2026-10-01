@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "swsh11-88",
+ "character": "machamp",
+ "name": "Machamp",
+ "fantasy": "Four arms: grabs and throws a foe across the arena, a lariat that clears everything around.",
+ "attacks": [
+  {
+   "name": "Strong-Arm Lariat",
+   "shape": {
+    "kind": "melee",
+    "range": 92,
+    "arc": 150,
+    "lunge": 60
+   },
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "bonus",
+     "amount": 100
+    },
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 110
+    }
+   ]
+  }
+ ]
+}

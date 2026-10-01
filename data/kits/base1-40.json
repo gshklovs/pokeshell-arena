@@ -1,0 +1,39 @@
+{
+ "version": 1,
+ "card": "base1-40",
+ "character": "raticate",
+ "name": "Raticate",
+ "fantasy": "Bites, and Super Fang: halves a foe's remaining HP.",
+ "attacks": [
+  {
+   "name": "Bite",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 76,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Super Fang",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 72,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "hpCut",
+     "permille": 500
+    }
+   ]
+  }
+ ]
+}

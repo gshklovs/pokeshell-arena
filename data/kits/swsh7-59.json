@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "swsh7-59",
+ "character": "dracozolt",
+ "name": "Dracozolt VMAX",
+ "fantasy": "A spark trap that bites back, then Max Impact.",
+ "attacks": [
+  {
+   "name": "Spark Trap",
+   "shape": {
+    "kind": "melee",
+    "range": 72,
+    "arc": 90
+   },
+   "onCast": [
+    {
+     "op": "thorns",
+     "amount": 120,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ]
+  },
+  {
+   "name": "Max Impact",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 130,
+    "delay": 20
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ]
+}

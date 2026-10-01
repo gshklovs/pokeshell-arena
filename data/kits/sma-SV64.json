@@ -1,0 +1,77 @@
+{
+ "version": 1,
+ "card": "sma-SV64",
+ "character": "lucario",
+ "name": "Lucario-GX",
+ "fantasy": "Aura strikes, a cyclone kick, and Cantankerous Beatdown that grows with its wounds.",
+ "attacks": [
+  {
+   "name": "Aura Strike",
+   "shape": {
+    "kind": "melee",
+    "range": 74,
+    "arc": 84,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "fresh",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 90
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Cyclone Kick",
+   "shape": {
+    "kind": "melee",
+    "range": 89,
+    "arc": 255
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  },
+  {
+   "name": "Cantankerous Beatdown-GX",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 72,
+    "radius": 75,
+    "delay": 8
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

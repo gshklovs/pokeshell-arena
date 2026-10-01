@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "swsh9-30",
+ "character": "staryu",
+ "name": "Staryu",
+ "fantasy": "A spinning star.",
+ "attacks": [
+  {
+   "name": "Double Spin",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 140
+   },
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 2,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 10
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

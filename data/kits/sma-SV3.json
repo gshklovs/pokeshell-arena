@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "card": "sma-SV3",
+ "character": "dartrix",
+ "name": "Dartrix",
+ "fantasy": "Quills that snipe, a leaf blade up close.",
+ "attacks": [
+  {
+   "name": "Sharp Blade Quill",
+   "shape": {
+    "kind": "projectile",
+    "speed": 18,
+    "radius": 9,
+    "range": 760
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Leaf Blade",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 100,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "bonus",
+       "amount": 20
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  }
+ ]
+}

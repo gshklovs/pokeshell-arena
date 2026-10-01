@@ -1,0 +1,27 @@
+{
+ "version": 1,
+ "card": "sm115-3",
+ "character": "butterfree",
+ "name": "Butterfree",
+ "fantasy": "Wing gusts that blow foes away.",
+ "attacks": [
+  {
+   "name": "Gust",
+   "shape": {
+    "kind": "cone",
+    "range": 240,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

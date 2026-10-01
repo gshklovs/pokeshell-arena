@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "card": "me55-25",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Spark",
+   "shape": {
+    "kind": "dash",
+    "distance": 150,
+    "speed": 15,
+    "radius": 32,
+    "invulnerable": 0
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "benchDamage",
+     "amount": 20,
+     "count": 1
+    }
+   ]
+  }
+ ]
+}

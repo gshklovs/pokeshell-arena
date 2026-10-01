@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "sma-SV54",
+ "character": "articuno",
+ "name": "Articuno-GX",
+ "fantasy": "Icy wings; Cold Crush freezes the energy out of a foe.",
+ "attacks": [
+  {
+   "name": "Ice Wing",
+   "shape": {
+    "kind": "cone",
+    "range": 240,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    },
+    {
+     "op": "slow",
+     "permille": 400,
+     "ticks": 90
+    }
+   ]
+  },
+  {
+   "name": "Cold Crush-GX",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 72,
+    "radius": 72,
+    "delay": 8
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "discardEnergy",
+     "count": 15,
+     "target": "target"
+    }
+   ]
+  }
+ ]
+}

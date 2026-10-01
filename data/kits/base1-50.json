@@ -1,0 +1,47 @@
+{
+ "version": 1,
+ "card": "base1-50",
+ "character": "gastly",
+ "name": "Gastly",
+ "fantasy": "A gas cloud: puts foes to sleep and curses whoever knocks it out. It does almost no damage of its own.",
+ "attacks": [
+  {
+   "name": "Sleeping Gas",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 100,
+    "ticks": 120,
+    "every": 60
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "asleep"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Destiny Bond",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    },
+    {
+     "op": "thorns",
+     "permille": 1000,
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

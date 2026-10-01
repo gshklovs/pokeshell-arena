@@ -1,0 +1,39 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG67",
+ "character": "palkia-origin",
+ "name": "Origin Forme Palkia VSTAR",
+ "fantasy": "Subspace Swell: a rift on the aim point that swells with every Pokémon in play.",
+ "attacks": [
+  {
+   "name": "Subspace Swell",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 40,
+    "radius": 28,
+    "path": "leap",
+    "blast": 64
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "bothBench",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 100
+    }
+   ]
+  }
+ ]
+}

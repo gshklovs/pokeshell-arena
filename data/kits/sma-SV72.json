@@ -1,0 +1,61 @@
+{
+ "version": 1,
+ "card": "sma-SV72",
+ "character": "scizor",
+ "name": "Scizor-GX",
+ "fantasy": "A steel wing that shields it, a cross-cut.",
+ "attacks": [
+  {
+   "name": "Steel Wing",
+   "shape": {
+    "kind": "cone",
+    "range": 200,
+    "arc": 80
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 30,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ]
+  },
+  {
+   "name": "Cross-Cut-GX",
+   "shape": {
+    "kind": "melee",
+    "range": 88,
+    "arc": 120,
+    "lunge": 70
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeIs",
+     "kind": "Evolution",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 100
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

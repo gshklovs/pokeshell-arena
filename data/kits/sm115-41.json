@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "card": "sm115-41",
+ "character": "jigglypuff",
+ "name": "Jigglypuff",
+ "fantasy": "Sings, then rolls in.",
+ "attacks": [
+  {
+   "name": "Singing Voice",
+   "shape": {
+    "kind": "projectile",
+    "speed": 10,
+    "radius": 11,
+    "range": 480,
+    "count": 3,
+    "spread": 0,
+    "path": "helix",
+    "amp": 16,
+    "period": 12
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Rollout",
+   "shape": {
+    "kind": "dash",
+    "distance": 240,
+    "speed": 18,
+    "radius": 26
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

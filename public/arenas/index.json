@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "arenas": [
+    "growlithe-meadow",
+    "lapras-lagoon",
+    "zarude-jungle",
+    "magmar-volcano",
+    "kyogre-storm-sea",
+    "sableye-crystal-cave",
+    "liepard-night-city",
+    "glastrier-ice-field",
+    "cresselia-moonlit-sky",
+    "herdier-temple"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "me55-100",
+ "character": "yveltal",
+ "name": "Yveltal",
+ "fantasy": "The destruction bird: a dark cutter of wing.",
+ "attacks": [
+  {
+   "name": "Dark Cutter",
+   "shape": {
+    "kind": "melee",
+    "range": 96,
+    "arc": 80,
+    "lunge": 110
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  }
+ ]
+}

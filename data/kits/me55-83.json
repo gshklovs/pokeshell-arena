@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "card": "me55-83",
+ "character": "lucario",
+ "name": "Lucario",
+ "fantasy": "An aura master: Aura Sphere flies true and splashes the back line; Missile Jab closes the gap instantly.",
+ "attacks": [
+  {
+   "name": "Aura Sphere",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 18,
+    "range": 680,
+    "blast": 56
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "benchDamage",
+     "amount": 60,
+     "count": 1
+    }
+   ]
+  }
+ ]
+}

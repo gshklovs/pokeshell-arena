@@ -1,0 +1,45 @@
+{
+ "version": 1,
+ "card": "sv3pt5-170",
+ "character": "squirtle",
+ "name": "Squirtle",
+ "fantasy": "A turtle that floods the ground with bubbles and hides in its shell.",
+ "attacks": [
+  {
+   "name": "Withdraw",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "shield",
+       "ticks": 90
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Skull Bash",
+   "shape": {
+    "kind": "dash",
+    "distance": 220,
+    "speed": 18,
+    "radius": 26
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "knockback",
+     "px": 60
+    }
+   ]
+  }
+ ]
+}

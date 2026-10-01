@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "sm115-40",
+ "character": "clefable",
+ "name": "Clefable",
+ "fantasy": "Moon Impact: moonlight lands on the aim point.",
+ "attacks": [
+  {
+   "name": "Pound",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 80,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  },
+  {
+   "name": "Moon Impact",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 120,
+    "range": 480
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  }
+ ]
+}

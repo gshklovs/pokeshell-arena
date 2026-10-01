@@ -1,0 +1,27 @@
+{
+ "version": 1,
+ "card": "me55-38",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Targeted Spark",
+   "shape": {
+    "kind": "projectile",
+    "speed": 18,
+    "radius": 9,
+    "range": 760,
+    "path": "zigzag",
+    "amp": 8,
+    "period": 4
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

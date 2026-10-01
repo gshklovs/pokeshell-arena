@@ -1,0 +1,36 @@
+{
+ "version": 1,
+ "card": "swsh9-182",
+ "character": "zapdos-galar",
+ "name": "Galarian Zapdos V",
+ "fantasy": "A fighting bird: a thunderous flying kick.",
+ "attacks": [
+  {
+   "name": "Thunderous Kick",
+   "shape": {
+    "kind": "dash",
+    "distance": 320,
+    "speed": 22,
+    "radius": 32
+   },
+   "onHit": [
+    {
+     "op": "dispel"
+    },
+    {
+     "op": "damage",
+     "amount": 170
+    },
+    {
+     "op": "discardEnergy",
+     "count": 1,
+     "target": "target"
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

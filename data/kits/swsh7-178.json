@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "card": "swsh7-178",
+ "character": "dracozolt",
+ "name": "Dracozolt V",
+ "fantasy": "A fossil that bites and swings its tail like a mountain.",
+ "attacks": [
+  {
+   "name": "Primeval Beak",
+   "shape": {
+    "kind": "melee",
+    "range": 72,
+    "arc": 80,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "energyJam",
+     "ticks": 90
+    }
+   ]
+  },
+  {
+   "name": "Mountain Swing",
+   "shape": {
+    "kind": "melee",
+    "range": 90,
+    "arc": 120,
+    "lunge": 50
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "swsh11-197",
+ "character": "kyurem",
+ "name": "Kyurem VMAX",
+ "fantasy": "Max Frost: burns energy into a freezing blast on the aim point.",
+ "attacks": [
+  {
+   "name": "Max Frost",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 150,
+    "range": 480
+   },
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "spendEnergy",
+     "max": 3,
+     "amount": 50,
+     "paid": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "slow",
+     "permille": 500,
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

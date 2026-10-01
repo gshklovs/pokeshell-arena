@@ -1,0 +1,25 @@
+{
+ "version": 1,
+ "card": "swsh9tg-TG04",
+ "character": "jolteon",
+ "name": "Jolteon",
+ "fantasy": "Spiky and fast: a crackling Thunderbolt, electric balls.",
+ "attacks": [
+  {
+   "name": "Electric Ball",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 16,
+    "range": 640,
+    "blast": 68
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  }
+ ]
+}

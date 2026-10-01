@@ -1,0 +1,55 @@
+{
+ "version": 1,
+ "card": "swsh9-106",
+ "character": "flygon",
+ "name": "Flygon V",
+ "fantasy": "A desert spirit: sand spray, a draconic impulse.",
+ "attacks": [
+  {
+   "name": "Sand Spray",
+   "shape": {
+    "kind": "cone",
+    "range": 230,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70
+    }
+   ]
+  },
+  {
+   "name": "Draconic Impulse",
+   "shape": {
+    "kind": "dash",
+    "distance": 320,
+    "speed": 20,
+    "radius": 36,
+    "invulnerable": 0
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeIs",
+     "kind": "VMAX",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 160
+      },
+      {
+       "op": "discardEnergy",
+       "count": 3
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 160
+    }
+   ]
+  }
+ ]
+}

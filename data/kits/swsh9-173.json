@@ -1,0 +1,29 @@
+{
+ "version": 1,
+ "card": "swsh9-173",
+ "character": "shaymin-sky",
+ "name": "Shaymin VSTAR",
+ "fantasy": "Revenge Blast grows with every prize the foe has taken.",
+ "attacks": [
+  {
+   "name": "Revenge Blast",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 40
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foePrizes",
+     "amount": 40
+    },
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ]
+  }
+ ]
+}

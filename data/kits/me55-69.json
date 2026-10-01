@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "card": "me55-69",
+ "character": "espeon",
+ "name": "Espeon",
+ "fantasy": "Shines foes into view, then a psy bolt.",
+ "attacks": [
+  {
+   "name": "Miraculous Shine",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 165
+   },
+   "onHit": [
+    {
+     "op": "gust",
+     "mode": "push",
+     "px": 200
+    },
+    {
+     "op": "counters",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Super Psy Bolt",
+   "shape": {
+    "kind": "beam",
+    "length": 700,
+    "width": 32
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  }
+ ]
+}

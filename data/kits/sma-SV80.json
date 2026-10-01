@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "card": "sma-SV80",
+ "character": "drampa",
+ "name": "Drampa-GX",
+ "fantasy": "A gentle dragon: a righteous edge, a berserk breath when its team is hurt.",
+ "attacks": [
+  {
+   "name": "Righteous Edge",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 96,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "discardEnergy",
+     "count": 1,
+     "target": "target"
+    }
+   ]
+  },
+  {
+   "name": "Berserk",
+   "shape": {
+    "kind": "cone",
+    "range": 240,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "selfDamaged",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 70
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ]
+  },
+  {
+   "name": "Big Wheel-GX",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  }
+ ]
+}

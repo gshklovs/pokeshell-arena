@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG31",
+ "character": "turtwig",
+ "name": "Turtwig",
+ "fantasy": "A sturdy sprout that bites and headbutts.",
+ "attacks": [
+  {
+   "name": "Bite",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 76,
+    "lunge": 20
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Headbutt Bounce",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 80,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "knockback",
+     "px": 60
+    }
+   ]
+  }
+ ]
+}

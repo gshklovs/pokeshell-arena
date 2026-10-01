@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "me55-102",
+ "character": "jirachi",
+ "name": "Jirachi ex",
+ "fantasy": "A wish star: grants a wish, fires a swift star.",
+ "attacks": [
+  {
+   "name": "Wish Granter",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Swift",
+   "shape": {
+    "kind": "projectile",
+    "speed": 16,
+    "radius": 12,
+    "range": 720,
+    "path": "straight"
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 150,
+     "wr": false,
+     "pierce": true
+    }
+   ]
+  }
+ ],
+ "notes": "Swift: straight (the stars archetype made it weave): Jirachi ex won 6% of ex fights"
+}

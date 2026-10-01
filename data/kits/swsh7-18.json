@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "card": "swsh7-18",
+ "character": "flareon",
+ "name": "Flareon VMAX",
+ "fantasy": "Max Detonate: gathers its energy and explodes around itself.",
+ "attacks": [
+  {
+   "name": "Max Detonate",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 120,
+    "delay": 20
+   },
+   "windup": 20,
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 5,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 100
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 80,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

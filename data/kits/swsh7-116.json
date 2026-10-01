@@ -1,0 +1,36 @@
+{
+ "version": 1,
+ "card": "swsh7-116",
+ "character": "kyurem",
+ "name": "Kyurem",
+ "fantasy": "Extreme Freeze: burns energy into an ice storm.",
+ "attacks": [
+  {
+   "name": "Extreme Freeze",
+   "shape": {
+    "kind": "cone",
+    "range": 280,
+    "arc": 80
+   },
+   "onCast": [
+    {
+     "op": "spendEnergy",
+     "max": 3,
+     "amount": 60,
+     "paid": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 0
+    },
+    {
+     "op": "slow",
+     "permille": 500,
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

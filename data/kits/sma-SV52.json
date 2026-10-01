@@ -1,0 +1,75 @@
+{
+ "version": 1,
+ "card": "sma-SV52",
+ "character": "turtonator",
+ "name": "Turtonator-GX",
+ "fantasy": "A spiked shell: hit it and the shell trap bites back; Bright Flame is a heavy cone.",
+ "attacks": [
+  {
+   "name": "Shell Trap",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 74,
+    "range": 480,
+    "delay": 24
+   },
+   "onCast": [
+    {
+     "op": "thorns",
+     "amount": 80,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Bright Flame",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 18,
+    "range": 600,
+    "blast": 88
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 60,
+     "ticks": 150
+    }
+   ]
+  },
+  {
+   "name": "Nitro Tank-GX",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 3
+    }
+   ]
+  }
+ ]
+}

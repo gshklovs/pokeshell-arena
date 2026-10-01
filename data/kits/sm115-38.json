@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "sm115-38",
+ "character": "clefairy",
+ "name": "Clefairy",
+ "fantasy": "Sings foes to sleep and waves Metronome: it copies the foe's strongest attack.",
+ "attacks": [
+  {
+   "name": "Lead",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "gainEnergy",
+       "count": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Pound",
+   "shape": {
+    "kind": "melee",
+    "range": 62,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

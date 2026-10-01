@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "sm115-10",
+ "character": "magmar",
+ "name": "Magmar",
+ "fantasy": "A brawler with burning fists.",
+ "attacks": [
+  {
+   "name": "Fire Punch",
+   "shape": {
+    "kind": "melee",
+    "range": 72,
+    "arc": 84,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  }
+ ]
+}

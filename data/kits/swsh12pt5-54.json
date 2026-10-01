@@ -1,0 +1,58 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-54",
+ "character": "zeraora",
+ "name": "Zeraora VMAX",
+ "fantasy": "Reactive Pulse punishes energy; Max Fist is a lightning haymaker.",
+ "attacks": [
+  {
+   "name": "Reactive Pulse",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 12,
+    "wall": 30,
+    "range": 440,
+    "pierce": 9
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeBench",
+     "amount": 60
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "name": "Max Fist",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 134,
+    "delay": 20
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 240
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ]
+}

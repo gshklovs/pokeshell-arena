@@ -1,0 +1,63 @@
+{
+ "version": 1,
+ "card": "sm115-42",
+ "character": "wigglytuff",
+ "name": "Wigglytuff-GX",
+ "fantasy": "Rolls in again and again (flip until tails); Lovely Star puts foes to sleep and heals.",
+ "attacks": [
+  {
+   "name": "Rolling Rush",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 19,
+    "radius": 32
+   },
+   "onHit": [
+    {
+     "op": "coinsUntilTails",
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 30
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  },
+  {
+   "name": "Lovely Star-GX",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 11,
+    "range": 460,
+    "count": 2,
+    "spread": 0,
+    "path": "helix",
+    "amp": 14,
+    "period": 10
+   },
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 1000
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    }
+   ]
+  }
+ ]
+}

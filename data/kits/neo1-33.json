@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "card": "neo1-33",
+ "character": "electabuzz",
+ "name": "Electabuzz",
+ "fantasy": "A boxer made of lightning.",
+ "attacks": [
+  {
+   "name": "Punch",
+   "shape": {
+    "kind": "melee",
+    "range": 68,
+    "arc": 80,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Swift",
+   "shape": {
+    "kind": "projectile",
+    "speed": 16,
+    "radius": 10,
+    "range": 700,
+    "path": "weave",
+    "amp": 12,
+    "period": 10
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30,
+     "wr": false,
+     "pierce": true
+    }
+   ]
+  }
+ ]
+}

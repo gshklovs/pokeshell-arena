@@ -1,0 +1,45 @@
+{
+ "version": 1,
+ "card": "base1-10",
+ "character": "mewtwo",
+ "name": "Mewtwo",
+ "fantasy": "A psychic weapon: homing Psychic that hits harder the more energy the foe holds, bursts on the aim point, barriers.",
+ "attacks": [
+  {
+   "name": "Psychic",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 14,
+    "range": 660
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeEnergy",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Barrier",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    },
+    {
+     "op": "invulnerable",
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

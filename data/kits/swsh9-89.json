@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "swsh9-89",
+ "character": "spiritomb",
+ "name": "Spiritomb",
+ "fantasy": "A chain of spirits: curses that land on the aim point.",
+ "attacks": [
+  {
+   "name": "Ticking Terror",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 10,
+    "range": 450,
+    "path": "phase",
+    "fuse": 30,
+    "stick": 1,
+    "blast": 64
+   },
+   "onHit": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": -30,
+     "ticks": 180,
+     "target": "target"
+    }
+   ]
+  },
+  {
+   "name": "Cursed Drop",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 100,
+    "range": 460
+   },
+   "onHit": [
+    {
+     "op": "counters",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

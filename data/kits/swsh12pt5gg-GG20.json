@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG20",
+ "character": "latias",
+ "name": "Latias",
+ "fantasy": "A dyna barrier: a gliding charge that shields it.",
+ "attacks": [
+  {
+   "name": "Dyna Barrier",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 12,
+    "range": 460,
+    "wall": 34,
+    "pierce": 9
+   },
+   "onCast": [
+    {
+     "op": "shield",
+     "amount": 60,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70
+    }
+   ]
+  }
+ ]
+}

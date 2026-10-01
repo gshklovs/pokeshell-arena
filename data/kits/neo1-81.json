@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "card": "neo1-81",
+ "character": "totodile",
+ "name": "Totodile",
+ "fantasy": "A snapping crocodile: bites, stares, and flails away.",
+ "attacks": [
+  {
+   "name": "Leer",
+   "shape": {
+    "kind": "cone",
+    "range": 200,
+    "arc": 64
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "exhaust",
+       "ticks": 90,
+       "target": "target"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Fury Swipes",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 96,
+    "lunge": 20
+   },
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 3,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 10
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

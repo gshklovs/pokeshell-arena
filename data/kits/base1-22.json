@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "base1-22",
+ "character": "pidgeotto",
+ "name": "Pidgeotto",
+ "fantasy": "A whirlwind that blows foes away; a mirror move that returns what it took.",
+ "attacks": [
+  {
+   "name": "Whirlwind",
+   "shape": {
+    "kind": "cone",
+    "range": 240,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "gust",
+     "mode": "push"
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  },
+  {
+   "name": "Mirror Move",
+   "shape": {
+    "kind": "beam",
+    "length": 640,
+    "width": 26
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "hurt",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 0,
+     "wr": false
+    }
+   ]
+  }
+ ]
+}

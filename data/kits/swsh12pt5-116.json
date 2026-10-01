@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-116",
+ "character": "stoutland",
+ "name": "Stoutland V",
+ "fantasy": "Double-dip fangs that take extra prizes, a wild tackle.",
+ "attacks": [
+  {
+   "name": "Double Dip Fangs",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 96,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    },
+    {
+     "op": "bounty",
+     "prizes": 1
+    }
+   ]
+  },
+  {
+   "name": "Wild Tackle",
+   "shape": {
+    "kind": "dash",
+    "distance": 320,
+    "speed": 19,
+    "radius": 36
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200
+    },
+    {
+     "op": "knockback",
+     "px": 130
+    }
+   ]
+  }
+ ]
+}

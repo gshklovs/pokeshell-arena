@@ -1,0 +1,25 @@
+{
+ "version": 1,
+ "card": "swsh11-63",
+ "character": "clefable",
+ "name": "Clefable",
+ "fantasy": "Moon Impact: moonlight lands on the aim point.",
+ "attacks": [
+  {
+   "name": "Moon Impact",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 120,
+    "range": 480
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  }
+ ]
+}

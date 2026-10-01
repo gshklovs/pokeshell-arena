@@ -1,0 +1,69 @@
+{
+ "version": 1,
+ "card": "base1-9",
+ "character": "magneton",
+ "name": "Magneton",
+ "fantasy": "A magnet cluster: paralyzing waves, a zap cannon, and a self-destruct.",
+ "attacks": [
+  {
+   "name": "Thunder Wave",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 12,
+    "wall": 30,
+    "range": 440,
+    "pierce": 9
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "paralyzed"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Selfdestruct",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 180
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "benchDamage",
+     "amount": 20,
+     "side": "self"
+    },
+    {
+     "op": "selfDamage",
+     "amount": 80
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "benchDamage",
+     "amount": 20
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ]
+}

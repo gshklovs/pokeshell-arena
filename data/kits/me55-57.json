@@ -1,0 +1,56 @@
+{
+ "version": 1,
+ "card": "me55-57",
+ "character": "zeraora",
+ "name": "Zeraora",
+ "fantasy": "A thunder cat: quick draws, electrobullets, a wild charge.",
+ "attacks": [
+  {
+   "name": "Rapid Draw",
+   "shape": {
+    "kind": "projectile",
+    "speed": 18,
+    "radius": 8,
+    "range": 640,
+    "path": "zigzag",
+    "amp": 8,
+    "period": 4
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Electrobullet",
+   "shape": {
+    "kind": "projectile",
+    "speed": 18,
+    "radius": 10,
+    "range": 700,
+    "path": "zigzag",
+    "amp": 8,
+    "period": 4
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    },
+    {
+     "op": "benchDamage",
+     "amount": 20,
+     "count": 1
+    }
+   ]
+  }
+ ]
+}

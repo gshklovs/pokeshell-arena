@@ -1,0 +1,29 @@
+{
+ "version": 1,
+ "card": "swsh11tg-TG09",
+ "character": "spiritomb",
+ "name": "Spiritomb",
+ "fantasy": "A chain of spirits: curses that land on the aim point.",
+ "attacks": [
+  {
+   "name": "Chain of Spirits",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 110,
+    "range": 460
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "turns",
+     "amount": 60
+    },
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

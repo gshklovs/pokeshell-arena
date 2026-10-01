@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "card": "base1-68",
+ "character": "vulpix",
+ "name": "Vulpix",
+ "fantasy": "A trickster fox: a confusing ray, a quick kick.",
+ "attacks": [
+  {
+   "name": "Confuse Ray",
+   "shape": {
+    "kind": "beam",
+    "length": 540,
+    "width": 16
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "confused"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

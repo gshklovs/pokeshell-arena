@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "card": "swsh7-65",
+ "character": "espeon",
+ "name": "Espeon VMAX",
+ "fantasy": "Max Mindstorm: a storm on the aim point that grows with its energy.",
+ "attacks": [
+  {
+   "name": "Max Mindstorm",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 160,
+    "range": 520
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "bonus",
+     "amount": 60
+    }
+   ],
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeEnergy",
+     "amount": 60
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ],
+ "notes": "Max Mindstorm: a flat +60 (one energy on the foe): it scales on the unspent pips of the foe, nearly always 0, and Espeon VMAX won 0% of VMAX fights"
+}

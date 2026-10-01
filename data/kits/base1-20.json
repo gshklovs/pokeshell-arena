@@ -1,0 +1,66 @@
+{
+ "version": 1,
+ "card": "base1-20",
+ "character": "electabuzz",
+ "name": "Electabuzz",
+ "fantasy": "A boxer made of lightning.",
+ "attacks": [
+  {
+   "name": "Thundershock",
+   "shape": {
+    "kind": "projectile",
+    "speed": 16,
+    "radius": 10,
+    "range": 620,
+    "path": "zigzag",
+    "amp": 8,
+    "period": 4
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "paralyzed"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Thunderpunch",
+   "shape": {
+    "kind": "melee",
+    "range": 72,
+    "arc": 84,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "bonus",
+       "amount": 10
+      }
+     ],
+     "tails": [
+      {
+       "op": "selfDamage",
+       "amount": 10
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

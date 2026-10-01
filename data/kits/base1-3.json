@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "base1-3",
+ "character": "chansey",
+ "name": "Chansey",
+ "fantasy": "Curls up, then a double-edge charge that hurts it too.",
+ "attacks": [
+  {
+   "name": "Scrunch",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "shield",
+       "ticks": 90
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Double-edge",
+   "shape": {
+    "kind": "dash",
+    "distance": 240,
+    "speed": 16,
+    "radius": 34
+   },
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 80
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

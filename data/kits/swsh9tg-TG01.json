@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "card": "swsh9tg-TG01",
+ "character": "flareon",
+ "name": "Flareon",
+ "fantasy": "A fluffy furnace: a mane of fire.",
+ "attacks": [
+  {
+   "name": "Fire Mane",
+   "shape": {
+    "kind": "cone",
+    "range": 230,
+    "arc": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 40,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "version": 1,
+ "card": "me55-45",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Nightime Stroll",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Static Shock",
+   "shape": {
+    "kind": "projectile",
+    "speed": 16,
+    "radius": 10,
+    "range": 620,
+    "path": "zigzag",
+    "amp": 8,
+    "period": 4
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

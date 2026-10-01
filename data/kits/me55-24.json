@@ -1,0 +1,34 @@
+{
+ "version": 1,
+ "card": "me55-24",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Volt Tackle",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 21,
+    "radius": 28
+   },
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

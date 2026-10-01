@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "card": "swsh11-185",
+ "character": "giratina-origin",
+ "name": "Giratina V",
+ "fantasy": "Seeks the abyss, then shreds through every shield.",
+ "attacks": [
+  {
+   "name": "Abyss Seeking",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Shred",
+   "shape": {
+    "kind": "melee",
+    "range": 90,
+    "arc": 120,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160,
+     "pierce": true
+    }
+   ]
+  }
+ ]
+}

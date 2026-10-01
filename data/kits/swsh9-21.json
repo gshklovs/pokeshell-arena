@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "swsh9-21",
+ "character": "moltres",
+ "name": "Moltres",
+ "fantasy": "A firebird: sweeping wings of flame.",
+ "attacks": [
+  {
+   "name": "Inferno Wings",
+   "shape": {
+    "kind": "cone",
+    "range": 220,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "selfDamaged",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 70
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 20,
+     "wr": "resistance"
+    },
+    {
+     "op": "knockback",
+     "px": 70
+    }
+   ]
+  }
+ ]
+}

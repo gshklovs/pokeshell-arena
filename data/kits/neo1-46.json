@@ -1,0 +1,61 @@
+{
+ "version": 1,
+ "card": "neo1-46",
+ "character": "quilava",
+ "name": "Quilava",
+ "fantasy": "Smoke and embers: blinds with a smokescreen, fans fire across the field.",
+ "attacks": [
+  {
+   "name": "Ember",
+   "shape": {
+    "kind": "projectile",
+    "count": 3,
+    "spread": 6,
+    "speed": 14,
+    "radius": 8,
+    "range": 250
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Fire Wind",
+   "shape": {
+    "kind": "cone",
+    "range": 230,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "coins",
+     "count": 2,
+     "perHeads": [
+      {
+       "op": "benchDamage",
+       "amount": 10,
+       "count": 1
+      }
+     ]
+    },
+    {
+     "op": "knockback",
+     "px": 60
+    }
+   ]
+  }
+ ]
+}

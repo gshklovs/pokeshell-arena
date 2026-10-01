@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "card": "sm115-22",
+ "character": "electrode",
+ "name": "Electrode",
+ "fantasy": "A ball that explodes: shocks around itself, lightning balls.",
+ "attacks": [
+  {
+   "name": "Lightning Ball",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 14,
+    "range": 620,
+    "blast": 56
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Electroblast",
+   "shape": {
+    "kind": "projectile",
+    "speed": 8,
+    "radius": 18,
+    "range": 620,
+    "grow": 1,
+    "growMax": 8,
+    "blast": 74
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 2,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 30
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ]
+  }
+ ]
+}

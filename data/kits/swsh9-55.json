@@ -1,0 +1,45 @@
+{
+ "version": 1,
+ "card": "swsh9-55",
+ "character": "starmie",
+ "name": "Starmie",
+ "fantasy": "A gem that heals itself and fires freezing stars.",
+ "attacks": [
+  {
+   "name": "Psychic",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 14,
+    "range": 640
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeEnergy",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Power Gem",
+   "shape": {
+    "kind": "projectile",
+    "speed": 15,
+    "radius": 10,
+    "range": 700
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ]
+  }
+ ],
+ "notes": "Power Gem: r10 (was r14): the Psychic homing made it land nearly every time, and Starmie won 95-100% of Stage 1 fights"
+}

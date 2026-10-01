@@ -1,0 +1,25 @@
+{
+ "version": 1,
+ "card": "me55-28",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Pika Ball",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 14,
+    "range": 600,
+    "blast": 54
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

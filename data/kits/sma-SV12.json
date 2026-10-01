@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "card": "sma-SV12",
+ "character": "frogadier",
+ "name": "Frogadier",
+ "fantasy": "Flicks water drops from range.",
+ "attacks": [
+  {
+   "name": "Water Drip",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 10,
+    "range": 600
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 50
+    }
+   ]
+  }
+ ]
+}

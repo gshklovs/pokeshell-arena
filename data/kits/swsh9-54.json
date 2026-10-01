@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "card": "swsh9-54",
+ "character": "clefable",
+ "name": "Clefable",
+ "fantasy": "Moon Impact: moonlight lands on the aim point.",
+ "attacks": [
+  {
+   "name": "Moonlit Miracle",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "damage",
+     "amount": 20,
+     "ticks": 360
+    },
+    {
+     "op": "heal",
+     "amount": 30,
+     "target": "team"
+    }
+   ]
+  },
+  {
+   "name": "Magical Shot",
+   "shape": {
+    "kind": "projectile",
+    "speed": 13,
+    "radius": 14,
+    "range": 640
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  }
+ ]
+}

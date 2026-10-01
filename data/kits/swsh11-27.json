@@ -1,0 +1,66 @@
+{
+ "version": 1,
+ "card": "swsh11-27",
+ "character": "delphox",
+ "name": "Delphox V",
+ "fantasy": "A fire mage: an eerie homing glow that burns and confuses, a magical fireball that splashes.",
+ "attacks": [
+  {
+   "name": "Eerie Glow",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 14,
+    "range": 620,
+    "path": "helix",
+    "amp": 18,
+    "period": 10
+   },
+   "onHit": [
+    {
+     "op": "status",
+     "status": "burned"
+    },
+    {
+     "op": "status",
+     "status": "confused"
+    }
+   ]
+  },
+  {
+   "name": "Magical Fire",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 18,
+    "range": 680,
+    "blast": 88
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "benchDamage",
+     "amount": 120,
+     "count": 1
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 60,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

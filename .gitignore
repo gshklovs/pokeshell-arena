@@ -1,0 +1,22 @@
+node_modules/
+dist/
+*.log
+# arena art is generated (from copyrighted card scenes) and binary: never committed. public/arenas/<id>/bg.png and
+# props.png are local copies of style-lab/arenas/<id>/ in the pokeshell checkout (tools/arenas/README.md) and ship
+# through this repo's own art release. arena.json and props.json stay tracked.
+public/arenas/*/bg.png
+public/arenas/*/props.png
+public/arenas/*/*.jpg
+__pycache__/
+# Rust host build output
+host/target/
+# battle sprites are pokemon-colorscripts art (Nintendo): built by tools/build_sprites.py, shipped in the arena
+# art release, never committed (docs/SPEC.md section 12)
+public/sprites/
+# screenshots and test output
+shots/
+test-results/
+# the pack demo's image export and throwaway pokeshell state (npm run packs:demo)
+.cache/
+# standalone release build output (tools/release, docs/RELEASE.md)
+/release/

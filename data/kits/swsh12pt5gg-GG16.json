@@ -1,0 +1,55 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG16",
+ "character": "absol",
+ "name": "Absol",
+ "fantasy": "A disaster omen: slashes, claws that steal, a swirling disaster around it.",
+ "attacks": [
+  {
+   "name": "Swirling Disaster",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 300,
+    "radius": 92,
+    "ticks": 100,
+    "every": 45
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    },
+    {
+     "op": "benchDamage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Claw Rend",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 100,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeDamaged",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 70
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  }
+ ]
+}

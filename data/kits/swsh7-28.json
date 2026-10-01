@@ -1,0 +1,62 @@
+{
+ "version": 1,
+ "card": "swsh7-28",
+ "character": "gyarados",
+ "name": "Gyarados V",
+ "fantasy": "Get Angry: thrashes harder the more it is hurt; Heavy Storm floods the field.",
+ "attacks": [
+  {
+   "name": "Get Angry",
+   "shape": {
+    "kind": "melee",
+    "range": 84,
+    "arc": 110,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    },
+    {
+     "op": "knockback",
+     "px": 80
+    }
+   ]
+  },
+  {
+   "name": "Heavy Storm",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 150,
+    "range": 480,
+    "path": "drift",
+    "drift": 2
+   },
+   "windup": 20,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 120
+    }
+   ]
+  }
+ ]
+}

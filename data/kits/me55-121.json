@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "card": "me55-121",
+ "character": "lugia",
+ "name": "Lugia",
+ "fantasy": "The storm guardian: Elemental Blast, a long beam of fire, water and lightning that pushes foes back.",
+ "attacks": [
+  {
+   "name": "Elemental Blast",
+   "shape": {
+    "kind": "beam",
+    "length": 760,
+    "width": 40,
+    "ticks": 12
+   },
+   "windup": 28,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 3
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 250
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 70
+    }
+   ]
+  }
+ ],
+ "notes": "Elemental Blast: trimmed from W48 wu22 kb160: it won 83% of same-tier fights"
+}

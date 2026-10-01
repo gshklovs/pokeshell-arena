@@ -1,0 +1,61 @@
+{
+ "version": 1,
+ "card": "swsh9-16",
+ "character": "zarude",
+ "name": "Zarude V",
+ "fantasy": "A jungle rogue: leaps from vine to vine, then rages.",
+ "attacks": [
+  {
+   "name": "Leap to Leap",
+   "shape": {
+    "kind": "dash",
+    "distance": 240,
+    "speed": 20,
+    "radius": 26,
+    "path": "leap",
+    "blast": 55
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "benchDamage",
+     "amount": 30,
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Jungle Rage",
+   "shape": {
+    "kind": "melee",
+    "range": 86,
+    "arc": 110,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeIs",
+     "kind": "V",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 120
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

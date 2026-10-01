@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-94",
+ "character": "zacian-crowned",
+ "name": "Zacian",
+ "fantasy": "The sword hero: hardened blades and slashing strikes.",
+ "attacks": [
+  {
+   "name": "Battle Legion",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 100,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myBench",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 20,
+     "wr": "resistance",
+     "pierce": true
+    }
+   ]
+  },
+  {
+   "name": "Slicing Blade",
+   "shape": {
+    "kind": "melee",
+    "range": 86,
+    "arc": 110,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-66",
+ "character": "hatterene-gmax",
+ "name": "Hatterene VMAX",
+ "fantasy": "G-Max Smite confuses everything on the aim point.",
+ "attacks": [
+  {
+   "name": "G-Max Smite",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 150,
+    "range": 500
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 150
+    },
+    {
+     "op": "status",
+     "status": "confused"
+    }
+   ]
+  }
+ ]
+}

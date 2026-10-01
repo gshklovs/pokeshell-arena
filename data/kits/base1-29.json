@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "card": "base1-29",
+ "character": "haunter",
+ "name": "Haunter",
+ "fantasy": "Hypnotizes, then eats the dream; drops curses from afar.",
+ "attacks": [
+  {
+   "name": "Hypnosis",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 12,
+    "range": 600,
+    "path": "weave",
+    "amp": 10,
+    "period": 14
+   },
+   "onHit": [
+    {
+     "op": "status",
+     "status": "asleep"
+    }
+   ]
+  },
+  {
+   "name": "Dream Eater",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 100,
+    "range": 460
+   },
+   "onCast": [
+    {
+     "op": "when",
+     "cond": "foeAsleep",
+     "else": [
+      {
+       "op": "fizzle"
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  }
+ ]
+}

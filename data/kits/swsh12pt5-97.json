@@ -1,0 +1,34 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-97",
+ "character": "zamazenta-crowned",
+ "name": "Zamazenta",
+ "fantasy": "The shield hero: fends off, presses with its shield, retaliates.",
+ "attacks": [
+  {
+   "name": "Retaliate",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 96,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "allyKo",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 120
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 100
+    }
+   ]
+  }
+ ]
+}

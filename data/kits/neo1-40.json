@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "neo1-40",
+ "character": "magmar",
+ "name": "Magmar",
+ "fantasy": "A brawler with burning fists.",
+ "attacks": [
+  {
+   "name": "Tail Slap",
+   "shape": {
+    "kind": "melee",
+    "range": 76,
+    "arc": 120
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Magma Punch",
+   "shape": {
+    "kind": "melee",
+    "range": 76,
+    "arc": 84,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 40,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

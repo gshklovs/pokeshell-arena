@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "card": "swsh11-184",
+ "character": "perrserker",
+ "name": "Galarian Perrserker V",
+ "fantasy": "A treasure rush of metal claws.",
+ "attacks": [
+  {
+   "name": "Feelin' Fine",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Treasure Rush",
+   "shape": {
+    "kind": "melee",
+    "range": 78,
+    "arc": 96,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myAttached",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "version": 1,
+ "card": "sm115-49",
+ "character": "eevee",
+ "name": "Eevee",
+ "fantasy": "A curious all-rounder: tackles, quick attacks, and searches for its evolutions.",
+ "attacks": [
+  {
+   "name": "Gnaw",
+   "shape": {
+    "kind": "melee",
+    "range": 60,
+    "arc": 64
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "neo1-18",
+ "character": "typhlosion",
+ "name": "Typhlosion",
+ "fantasy": "An eruption on legs: bursts of flame on the aim point, a burning wheel around itself.",
+ "attacks": [
+  {
+   "name": "Flame Wheel",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 19,
+    "radius": 36,
+    "invulnerable": 0
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 3
+    },
+    {
+     "op": "benchDamage",
+     "amount": 20,
+     "side": "self"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "benchDamage",
+     "amount": 20
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 80,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

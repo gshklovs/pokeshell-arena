@@ -1,0 +1,29 @@
+{
+ "version": 1,
+ "card": "swsh7-1",
+ "character": "pinsir",
+ "name": "Pinsir",
+ "fantasy": "Grabs and throws.",
+ "attacks": [
+  {
+   "name": "Seismic Toss",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 90,
+    "lunge": 40
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ]
+}

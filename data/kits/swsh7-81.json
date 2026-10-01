@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "swsh7-81",
+ "character": "hitmonchan",
+ "name": "Hitmonchan",
+ "fantasy": "A boxer: jabs, a special punch, a bullet-straight punch across the gap.",
+ "attacks": [
+  {
+   "name": "Clean Hit",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 80,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeIs",
+     "kind": "Evolution",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 50
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Bullet Straight Punch",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 72,
+    "lunge": 80
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40,
+     "wr": "weakness"
+    }
+   ]
+  }
+ ]
+}

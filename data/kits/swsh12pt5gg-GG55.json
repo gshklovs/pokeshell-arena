@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG55",
+ "character": "regigigas",
+ "name": "Regigigas VSTAR",
+ "fantasy": "Giga Impact: the heaviest charge, then a rest.",
+ "attacks": [
+  {
+   "name": "Giga Impact",
+   "shape": {
+    "kind": "dash",
+    "distance": 320,
+    "speed": 16,
+    "radius": 42
+   },
+   "windup": 20,
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 230
+    },
+    {
+     "op": "knockback",
+     "px": 160
+    }
+   ]
+  }
+ ]
+}

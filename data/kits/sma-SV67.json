@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "card": "sma-SV67",
+ "character": "lycanroc-dusk",
+ "name": "Lycanroc-GX",
+ "fantasy": "A rock wolf: claw slashes, an accelerock charge, splintered shards everywhere.",
+ "attacks": [
+  {
+   "name": "Accelerock",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 22,
+    "radius": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  },
+  {
+   "name": "Splintered Shards-GX",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 140,
+    "range": 460
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "turns",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

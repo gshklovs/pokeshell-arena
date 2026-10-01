@@ -1,0 +1,28 @@
+{
+ "version": 1,
+ "card": "swsh11tg-TG20",
+ "character": "crobat",
+ "name": "Crobat V",
+ "fantasy": "A venomous fang in a swooping dash.",
+ "attacks": [
+  {
+   "name": "Venomous Fang",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 22,
+    "radius": 26
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70
+    },
+    {
+     "op": "status",
+     "status": "poisoned"
+    }
+   ]
+  }
+ ]
+}

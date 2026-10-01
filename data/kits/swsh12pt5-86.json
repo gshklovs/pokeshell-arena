@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-86",
+ "character": "scizor",
+ "name": "Scizor",
+ "fantasy": "Pincers: an X-scissor, dangerous claws.",
+ "attacks": [
+  {
+   "name": "X-Scissor",
+   "shape": {
+    "kind": "melee",
+    "range": 78,
+    "arc": 110,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "bonus",
+       "amount": 30
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Dangerous Claws",
+   "shape": {
+    "kind": "melee",
+    "range": 82,
+    "arc": 110,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeIs",
+     "kind": "Basic",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 80
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ]
+  }
+ ]
+}

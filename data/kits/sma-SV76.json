@@ -1,0 +1,58 @@
+{
+ "version": 1,
+ "card": "sma-SV76",
+ "character": "sylveon",
+ "name": "Sylveon-GX",
+ "fantasy": "Fairy wind, and Plea: it asks a foe to leave.",
+ "attacks": [
+  {
+   "name": "Magical Ribbon",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Fairy Wind",
+   "shape": {
+    "kind": "cone",
+    "range": 240,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  },
+  {
+   "name": "Plea-GX",
+   "shape": {
+    "kind": "cone",
+    "range": 210,
+    "arc": 70
+   },
+   "onHit": [
+    {
+     "op": "gust",
+     "mode": "push",
+     "px": 200
+    },
+    {
+     "op": "counters",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

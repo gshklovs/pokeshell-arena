@@ -1,0 +1,34 @@
+{
+ "version": 1,
+ "card": "swsh9-157",
+ "character": "pikachu",
+ "name": "Pikachu V",
+ "fantasy": "Charges up, then a huge Thunderbolt.",
+ "attacks": [
+  {
+   "name": "Lightning Blast",
+   "shape": {
+    "kind": "beam",
+    "length": 700,
+    "width": 34
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "bonus",
+     "amount": 120
+    },
+    {
+     "op": "damage",
+     "amount": 100
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "me55-76",
+ "character": "xerneas",
+ "name": "Xerneas",
+ "fantasy": "The life deer: geonavigation, then a charge with aurora horns.",
+ "attacks": [
+  {
+   "name": "Geonavigation",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Aurora Horns",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 20,
+    "radius": 32
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

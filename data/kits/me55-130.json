@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "card": "me55-130",
+ "character": "moltres",
+ "name": "Moltres",
+ "fantasy": "A firebird: sweeping wings of flame.",
+ "attacks": [
+  {
+   "name": "Fire Spin",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 300,
+    "radius": 92,
+    "ticks": 100,
+    "every": 45
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 60,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

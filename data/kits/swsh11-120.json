@@ -1,0 +1,55 @@
+{
+ "version": 1,
+ "card": "swsh11-120",
+ "character": "darkrai",
+ "name": "Darkrai",
+ "fantasy": "Puts foes into nightmares, then a pitch-black blade.",
+ "attacks": [
+  {
+   "name": "Nightmare",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 14,
+    "range": 620,
+    "path": "phase"
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "status",
+     "status": "asleep"
+    }
+   ]
+  },
+  {
+   "name": "Pitch-Black Blade",
+   "shape": {
+    "kind": "melee",
+    "range": 88,
+    "arc": 120,
+    "lunge": 60
+   },
+   "windup": 12,
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

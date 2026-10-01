@@ -1,0 +1,50 @@
+{
+ "version": 1,
+ "card": "swsh7-168",
+ "character": "trevenant",
+ "name": "Trevenant V",
+ "fantasy": "A haunted tree: drains life, claws from the shadows.",
+ "attacks": [
+  {
+   "name": "Absorb Life",
+   "shape": {
+    "kind": "beam",
+    "length": 320,
+    "width": 16,
+    "ticks": 16
+   },
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Shadow Claw",
+   "shape": {
+    "kind": "melee",
+    "range": 84,
+    "arc": 100,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "discardEnergy",
+     "count": 1,
+     "target": "target"
+    }
+   ]
+  }
+ ]
+}

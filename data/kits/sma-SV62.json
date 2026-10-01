@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "card": "sma-SV62",
+ "character": "nihilego",
+ "name": "Nihilego-GX",
+ "fantasy": "A parasite: locks a foe in place.",
+ "attacks": [
+  {
+   "name": "Lock Up",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 90,
+    "lunge": 28
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "retreatLock",
+     "ticks": 90
+    }
+   ]
+  },
+  {
+   "name": "Symbiont-GX",
+   "shape": {
+    "kind": "projectile",
+    "speed": 9,
+    "radius": 16,
+    "range": 640
+   },
+   "onHit": [
+    {
+     "op": "energyJam",
+     "ticks": 180
+    }
+   ]
+  }
+ ]
+}

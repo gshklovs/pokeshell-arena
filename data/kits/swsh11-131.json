@@ -1,0 +1,63 @@
+{
+ "version": 1,
+ "card": "swsh11-131",
+ "character": "giratina-origin",
+ "name": "Giratina VSTAR",
+ "fantasy": "Lost Impact: a huge blast around it that sends its own energy to the Lost Zone; Star Requiem knocks a foe out once the fight has gone long.",
+ "attacks": [
+  {
+   "name": "Lost Impact",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 190
+   },
+   "windup": 20,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 280
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  },
+  {
+   "name": "Star Requiem",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 160,
+    "range": 520
+   },
+   "windup": 24,
+   "onCast": [
+    {
+     "op": "when",
+     "cond": "late",
+     "n": 10,
+     "else": [
+      {
+       "op": "fizzle"
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "execute",
+     "hp": 100000
+    }
+   ]
+  }
+ ],
+ "notes": "Lost Impact: costs two extra pips: the energy it puts in the Lost Zone; Star Requiem: usable once the fight has lasted 10 TURNs (the Lost Zone fills with time)"
+}

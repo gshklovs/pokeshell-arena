@@ -1,0 +1,21 @@
+{
+ "version": 1,
+ "card": "me55-27",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Nap",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

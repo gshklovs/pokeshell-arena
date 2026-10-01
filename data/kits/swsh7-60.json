@@ -1,0 +1,57 @@
+{
+ "version": 1,
+ "card": "swsh7-60",
+ "character": "regieleki",
+ "name": "Regieleki",
+ "fantasy": "Pure electricity: static shocks and a terasparking burst.",
+ "attacks": [
+  {
+   "name": "Static Shock",
+   "shape": {
+    "kind": "projectile",
+    "speed": 16,
+    "radius": 10,
+    "range": 620,
+    "path": "zigzag",
+    "amp": 8,
+    "period": 4
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Teraspark",
+   "shape": {
+    "kind": "projectile",
+    "speed": 8,
+    "radius": 18,
+    "range": 620,
+    "grow": 1,
+    "growMax": 8,
+    "blast": 84
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "benchDamage",
+     "amount": 40,
+     "count": 2
+    }
+   ]
+  }
+ ]
+}

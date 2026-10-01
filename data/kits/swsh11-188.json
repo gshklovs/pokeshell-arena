@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "card": "swsh11-188",
+ "character": "pidgeot",
+ "name": "Pidgeot V",
+ "fantasy": "A flight-surf dive.",
+ "attacks": [
+  {
+   "name": "Flight Surf",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 220
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "stadium",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 80
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "knockback",
+     "px": 80
+    }
+   ]
+  }
+ ]
+}

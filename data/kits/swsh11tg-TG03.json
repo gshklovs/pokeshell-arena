@@ -1,0 +1,39 @@
+{
+ "version": 1,
+ "card": "swsh11tg-TG03",
+ "character": "charizard",
+ "name": "Charizard",
+ "fantasy": "The classic: saves up for Fire Spin, a wide roaring cone that sets the whole field alight.",
+ "attacks": [
+  {
+   "name": "Royal Blaze",
+   "shape": {
+    "kind": "cone",
+    "range": 250,
+    "arc": 64
+   },
+   "pin": "pinned to the spec cone: the lexicon made it an 84 px fireball, and this Charizard won 92% of Stage 2 fights",
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "turns",
+     "amount": 50
+    },
+    {
+     "op": "damage",
+     "amount": 100
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 60,
+     "ticks": 150
+    }
+   ]
+  }
+ ],
+ "notes": "Royal Blaze: pinned to the spec cone: the lexicon made it an 84 px fireball, and this Charizard won 92% of Stage 2 fights"
+}

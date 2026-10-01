@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "card": "swsh9-8",
+ "character": "torterra",
+ "name": "Torterra",
+ "fantasy": "A walking forest: an evolution-powered quake, a slow crushing hammer.",
+ "attacks": [
+  {
+   "name": "Evopress",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 72,
+    "radius": 77,
+    "delay": 8
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myBench",
+     "amount": 50
+    },
+    {
+     "op": "bonus",
+     "amount": 50
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  },
+  {
+   "name": "Hammer In",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 84,
+    "radius": 88,
+    "delay": 8
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

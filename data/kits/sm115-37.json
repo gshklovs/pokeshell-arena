@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "sm115-37",
+ "character": "cubone",
+ "name": "Cubone",
+ "fantasy": "Throws its bone at the back line.",
+ "attacks": [
+  {
+   "name": "Sharpshooting",
+   "shape": {
+    "kind": "projectile",
+    "speed": 16,
+    "radius": 12,
+    "range": 720
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

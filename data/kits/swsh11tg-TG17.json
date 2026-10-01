@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "swsh11tg-TG17",
+ "character": "pikachu-gmax",
+ "name": "Pikachu VMAX",
+ "fantasy": "G-Max Volt Tackle: a giant charge that grows with the energy it burns.",
+ "attacks": [
+  {
+   "name": "G-Max Volt Tackle",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 122,
+    "delay": 20
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "bonus",
+     "amount": 150
+    },
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ]
+}

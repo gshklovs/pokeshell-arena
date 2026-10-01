@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "card": "swsh9-29",
+ "character": "kingler-gmax",
+ "name": "Kingler VMAX",
+ "fantasy": "G-Max Pincer: the biggest claw in the game.",
+ "attacks": [
+  {
+   "name": "Bubbles Galore",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "name": "G-Max Pincer",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 134,
+    "delay": 20
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 240
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ]
+}

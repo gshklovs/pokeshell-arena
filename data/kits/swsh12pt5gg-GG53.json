@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG53",
+ "character": "hoopa-unbound",
+ "name": "Hoopa V",
+ "fantasy": "Shadow Impact: a portal slam that hurts its own team.",
+ "attacks": [
+  {
+   "name": "Shadow Impact",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 140,
+    "range": 480
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "counters",
+     "amount": 30,
+     "target": "self"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 170
+    }
+   ]
+  }
+ ]
+}

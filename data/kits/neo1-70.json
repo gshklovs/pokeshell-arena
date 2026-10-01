@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "card": "neo1-70",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Quick Attack",
+   "shape": {
+    "kind": "dash",
+    "distance": 220,
+    "speed": 20,
+    "radius": 24
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "bonus",
+       "amount": 20
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Agility",
+   "shape": {
+    "kind": "dash",
+    "distance": 220,
+    "speed": 20,
+    "radius": 24
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "invulnerable",
+       "ticks": 90
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

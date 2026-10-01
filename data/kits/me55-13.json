@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "me55-13",
+ "character": "victini",
+ "name": "Victini",
+ "fantasy": "A victory spark: V-Flame and a diving tackle.",
+ "attacks": [
+  {
+   "name": "Call for Family",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 10,
+     "ticks": 270
+    }
+   ]
+  },
+  {
+   "name": "V-Flame",
+   "shape": {
+    "kind": "cone",
+    "range": 180,
+    "arc": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 40,
+     "ticks": 150
+    }
+   ]
+  }
+ ],
+ "notes": "V-Flame: R180 (was R210): Victini won 94% of basic fights"
+}

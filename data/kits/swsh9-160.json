@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "card": "swsh9-160",
+ "character": "whimsicott",
+ "name": "Whimsicott V",
+ "fantasy": "Fluff gets in the way; a cotton guard that softens hits.",
+ "attacks": [
+  {
+   "name": "Fluff Gets in the Way",
+   "shape": {
+    "kind": "cone",
+    "range": 200,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeIs",
+     "kind": "Basic",
+     "then": [
+      {
+       "op": "exhaust",
+       "ticks": 90,
+       "target": "target"
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Cotton Guard",
+   "shape": {
+    "kind": "dash",
+    "distance": 210,
+    "speed": 15,
+    "radius": 32,
+    "invulnerable": 0
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 30,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "version": 1,
+ "card": "base1-14",
+ "character": "raichu",
+ "name": "Raichu",
+ "fantasy": "A heavier Pikachu: agility, sparks over the back line, thunder from above, a big bolt.",
+ "attacks": [
+  {
+   "name": "Agility",
+   "shape": {
+    "kind": "dash",
+    "distance": 240,
+    "speed": 20,
+    "radius": 26
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "invulnerable",
+       "ticks": 90
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Thunder",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 120,
+    "range": 520
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "coin",
+     "tails": [
+      {
+       "op": "selfDamage",
+       "amount": 30
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ]
+  }
+ ]
+}

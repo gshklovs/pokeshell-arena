@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "base1-56",
+ "character": "onix",
+ "name": "Onix",
+ "fantasy": "A rock snake: throws rocks, hardens, rages.",
+ "attacks": [
+  {
+   "name": "Rock Throw",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 14,
+    "range": 560,
+    "path": "lob",
+    "blast": 59
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Harden",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 30,
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

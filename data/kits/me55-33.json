@@ -1,0 +1,25 @@
+{
+ "version": 1,
+ "card": "me55-33",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Tiny Charge",
+   "shape": {
+    "kind": "dash",
+    "distance": 150,
+    "speed": 15,
+    "radius": 32,
+    "invulnerable": 0
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

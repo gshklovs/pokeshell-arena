@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "card": "base1-7",
+ "character": "hitmonchan",
+ "name": "Hitmonchan",
+ "fantasy": "A boxer: jabs, a special punch, a bullet-straight punch across the gap.",
+ "attacks": [
+  {
+   "name": "Jab",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 72,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Special Punch",
+   "shape": {
+    "kind": "melee",
+    "range": 76,
+    "arc": 80,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    },
+    {
+     "op": "knockback",
+     "px": 80
+    }
+   ]
+  }
+ ]
+}

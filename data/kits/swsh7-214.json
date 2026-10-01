@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "card": "swsh7-214",
+ "character": "umbreon",
+ "name": "Umbreon VMAX",
+ "fantasy": "Max Darkness: a charge out of the night.",
+ "attacks": [
+  {
+   "name": "Max Darkness",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 126,
+    "delay": 20
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

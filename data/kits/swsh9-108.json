@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "swsh9-108",
+ "character": "gabite",
+ "name": "Gabite",
+ "fantasy": "Claws, and ascension.",
+ "attacks": [
+  {
+   "name": "Dragon Claw",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 100,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG44",
+ "character": "mewtwo",
+ "name": "Mewtwo VSTAR",
+ "fantasy": "Psy Purge burns energy into a huge beam; Star Raid hits every foe once per match.",
+ "attacks": [
+  {
+   "name": "Psy Purge",
+   "shape": {
+    "kind": "beam",
+    "length": 760,
+    "width": 44
+   },
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "spendEnergy",
+     "max": 3,
+     "amount": 90,
+     "paid": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "name": "Star Raid",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 160,
+    "range": 520
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120,
+     "wr": false
+    },
+    {
+     "op": "benchDamage",
+     "amount": 120
+    }
+   ]
+  }
+ ]
+}

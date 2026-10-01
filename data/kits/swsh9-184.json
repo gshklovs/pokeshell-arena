@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "swsh9-184",
+ "character": "arceus",
+ "name": "Arceus VSTAR",
+ "fantasy": "Trinity Nova: a burst on the aim point that charges its team.",
+ "attacks": [
+  {
+   "name": "Trinity Nova",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 160,
+    "range": 520
+   },
+   "pin": "pinned to the spec: the lexicon made it a ring around itself (nova), and it won 100% of VSTAR fights",
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 3
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200
+    }
+   ]
+  }
+ ],
+ "notes": "Trinity Nova: pinned to the spec: the lexicon made it a ring around itself (nova), and it won 100% of VSTAR fights"
+}

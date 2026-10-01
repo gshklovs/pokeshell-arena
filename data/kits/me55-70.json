@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "me55-70",
+ "character": "espeon",
+ "name": "Espeon ex",
+ "fantasy": "Solar Beatdown: a sun beam that grows with its energy.",
+ "attacks": [
+  {
+   "name": "Solar Beatdown",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 40
+   },
+   "pin": "a sun beam (the name reads as a hammer: on a small circle just ahead Espeon ex won 0%)",
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myBench",
+     "amount": 30
+    },
+    {
+     "op": "bonus",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ],
+ "notes": "Solar Beatdown: a sun beam (the name reads as a hammer: on a small circle just ahead Espeon ex won 0%)"
+}

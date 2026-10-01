@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "sm115-47",
+ "character": "kangaskhan",
+ "name": "Kangaskhan",
+ "fantasy": "A parent that punches harder the angrier it gets.",
+ "attacks": [
+  {
+   "name": "Parental Fury",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 110,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "coinsUntilTails",
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 40
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

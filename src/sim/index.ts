@@ -1,0 +1,11 @@
+// The sim's public surface. Everything under src/sim is deterministic and DOM-free.
+export * from './types'
+export { step, bringIn, evolve, evolveOptions } from './step'
+export { createState, cloneState, hashState } from './state'
+export { parseArena, validateArena } from './arena'
+export { resolveKit, autoKit, validateKit, kitOverrides, parseDamage } from './kit'
+export { canPay, planPayment, costPips, defaultEnergy } from './energy'
+export { OPS, opNames, validateEffects } from './effects/registry'
+export { onField, kitOf, canAct } from './combat'
+export * as rules from './rules'
+export { FP, iatan2, icos, isin, ilen, deg } from './fixed'

@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "me55-105",
+ "character": "solgaleo",
+ "name": "Solgaleo",
+ "fantasy": "The sun lion: Sunsteel Strike, a charge that burns all its energy.",
+ "attacks": [
+  {
+   "name": "Sunsteel Strike",
+   "shape": {
+    "kind": "dash",
+    "distance": 340,
+    "speed": 20,
+    "radius": 38
+   },
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 220
+    },
+    {
+     "op": "knockback",
+     "px": 150
+    }
+   ]
+  }
+ ]
+}

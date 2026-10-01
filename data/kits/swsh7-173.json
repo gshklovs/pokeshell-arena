@@ -1,0 +1,34 @@
+{
+ "version": 1,
+ "card": "swsh7-173",
+ "character": "suicune",
+ "name": "Suicune V",
+ "fantasy": "The north wind: a gliding charge that chills.",
+ "attacks": [
+  {
+   "name": "Blizzard Rondo",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 20,
+    "radius": 30
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "bothBench",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "slow",
+     "permille": 300,
+     "ticks": 60
+    }
+   ]
+  }
+ ]
+}

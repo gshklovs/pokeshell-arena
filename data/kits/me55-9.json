@@ -1,0 +1,34 @@
+{
+ "version": 1,
+ "card": "me55-9",
+ "character": "vulpix",
+ "name": "Vulpix",
+ "fantasy": "A trickster fox: a confusing ray, a quick kick.",
+ "attacks": [
+  {
+   "name": "Wild Kick",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 80,
+    "lunge": 30
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "tails": [
+      {
+       "op": "fizzle"
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

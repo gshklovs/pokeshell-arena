@@ -1,0 +1,67 @@
+{
+ "version": 1,
+ "card": "sma-SV77",
+ "character": "altaria",
+ "name": "Altaria-GX",
+ "fantasy": "A cloud singer: a bright tone, a sonic edge, and Euphoria.",
+ "attacks": [
+  {
+   "name": "Bright Tone",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 184
+   },
+   "onCast": [
+    {
+     "op": "shield",
+     "amount": 60,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  },
+  {
+   "name": "Sonic Edge",
+   "shape": {
+    "kind": "melee",
+    "range": 96,
+    "arc": 80,
+    "lunge": 110
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110,
+     "pierce": true
+    }
+   ]
+  },
+  {
+   "name": "Euphoria-GX",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 180
+   },
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 60,
+     "target": "team"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "status",
+     "status": "asleep"
+    }
+   ]
+  }
+ ]
+}

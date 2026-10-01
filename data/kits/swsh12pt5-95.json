@@ -1,0 +1,52 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-95",
+ "character": "zacian-crowned",
+ "name": "Zacian V",
+ "fantasy": "A piercing thrust that ignores resistance, a behemoth blade, a storm slash.",
+ "attacks": [
+  {
+   "name": "Piercing Strike",
+   "shape": {
+    "kind": "melee",
+    "range": 86,
+    "arc": 40,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40,
+     "wr": false,
+     "pierce": true
+    }
+   ]
+  },
+  {
+   "name": "Behemoth Blade",
+   "shape": {
+    "kind": "melee",
+    "range": 90,
+    "arc": 110,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeIs",
+     "kind": "VMAX",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 160
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 100
+    }
+   ]
+  }
+ ]
+}

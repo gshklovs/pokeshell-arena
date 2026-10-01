@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "card": "swsh11-199",
+ "character": "aerodactyl",
+ "name": "Aerodactyl VSTAR",
+ "fantasy": "Lost Dive: a huge dive from above; Ancient Star shuts off abilities.",
+ "attacks": [
+  {
+   "name": "Lost Dive",
+   "shape": {
+    "kind": "dash",
+    "distance": 340,
+    "speed": 22,
+    "radius": 34,
+    "path": "leap",
+    "blast": 90
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 240
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  },
+  {
+   "name": "Ancient Star",
+   "shape": {
+    "kind": "projectile",
+    "count": 3,
+    "spread": 20,
+    "speed": 14,
+    "radius": 9,
+    "range": 580,
+    "path": "weave",
+    "amp": 12,
+    "period": 10
+   },
+   "onHit": [
+    {
+     "op": "dispel"
+    },
+    {
+     "op": "energyJam",
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

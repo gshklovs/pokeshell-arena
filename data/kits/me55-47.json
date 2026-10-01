@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "me55-47",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Play Rough",
+   "shape": {
+    "kind": "melee",
+    "range": 68,
+    "arc": 84,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "bonus",
+       "amount": 20
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

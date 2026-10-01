@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "swsh9-158",
+ "character": "raichu",
+ "name": "Raichu V",
+ "fantasy": "Charges fast, then a dynamic spark that spends its energy.",
+ "attacks": [
+  {
+   "name": "Fast Charge",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Dynamic Spark",
+   "shape": {
+    "kind": "dash",
+    "distance": 150,
+    "speed": 15,
+    "radius": 32,
+    "invulnerable": 0
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "spendEnergy",
+     "max": 3,
+     "amount": 60,
+     "paid": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

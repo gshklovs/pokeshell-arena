@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "card": "swsh11tg-TG13",
+ "character": "orbeetle-gmax",
+ "name": "Orbeetle VMAX",
+ "fantasy": "G-Max Wave: a wide psychic wave on the aim point.",
+ "attacks": [
+  {
+   "name": "G-Max Wave",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 160,
+    "range": 480
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeEnergy",
+     "amount": 50
+    },
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  }
+ ]
+}

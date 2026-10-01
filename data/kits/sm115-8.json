@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "sm115-8",
+ "character": "charmeleon",
+ "name": "Charmeleon",
+ "fantasy": "Claws and a real flamethrower: closes in with slashes, keeps foes off with a burning cone.",
+ "attacks": [
+  {
+   "name": "Slash",
+   "shape": {
+    "kind": "melee",
+    "range": 78,
+    "arc": 100,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Flamethrower",
+   "shape": {
+    "kind": "cone",
+    "range": 230,
+    "arc": 56
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 40,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

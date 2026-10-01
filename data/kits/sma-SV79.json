@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "sma-SV79",
+ "character": "silvally",
+ "name": "Silvally-GX",
+ "fantasy": "A synthetic beast: a turbo drive, and Rebel that grows with the foe's bench.",
+ "attacks": [
+  {
+   "name": "Turbo Drive",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 20,
+    "radius": 30
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ]
+  },
+  {
+   "name": "Rebel-GX",
+   "shape": {
+    "kind": "dash",
+    "distance": 200,
+    "speed": 17,
+    "radius": 34,
+    "invulnerable": 0
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeBench",
+     "amount": 50
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

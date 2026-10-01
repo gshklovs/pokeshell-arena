@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "swsh9-46",
+ "character": "electabuzz",
+ "name": "Electabuzz",
+ "fantasy": "A boxer made of lightning.",
+ "attacks": [
+  {
+   "name": "Thunder Wave",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 12,
+    "wall": 30,
+    "range": 440,
+    "pierce": 9
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "paralyzed"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Head Bolt",
+   "shape": {
+    "kind": "projectile",
+    "speed": 18,
+    "radius": 8,
+    "range": 660,
+    "path": "zigzag",
+    "amp": 8,
+    "period": 4
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

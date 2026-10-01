@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "swsh9-122",
+ "character": "arceus",
+ "name": "Arceus V",
+ "fantasy": "Charges its team, then a power edge.",
+ "attacks": [
+  {
+   "name": "Trinity Charge",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "name": "Power Edge",
+   "shape": {
+    "kind": "melee",
+    "range": 90,
+    "arc": 120,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

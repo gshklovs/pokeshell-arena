@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "base1-43",
+ "character": "abra",
+ "name": "Abra",
+ "fantasy": "A sleepy teleporter: a psyshock that may paralyze.",
+ "attacks": [
+  {
+   "name": "Psyshock",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 11,
+    "range": 600
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "paralyzed"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

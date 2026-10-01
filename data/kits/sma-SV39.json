@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "card": "sma-SV39",
+ "character": "gabite",
+ "name": "Gabite",
+ "fantasy": "Claws, and ascension.",
+ "attacks": [
+  {
+   "name": "Ascension",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "damage",
+     "amount": 20,
+     "ticks": 360
+    },
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Slash",
+   "shape": {
+    "kind": "melee",
+    "range": 76,
+    "arc": 100,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  }
+ ]
+}

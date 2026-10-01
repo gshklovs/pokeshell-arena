@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "sma-SV40",
+ "character": "garchomp",
+ "name": "Garchomp",
+ "fantasy": "A jet shark: quick dives and royal blades.",
+ "attacks": [
+  {
+   "name": "Quick Dive",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 23,
+    "radius": 28
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  },
+  {
+   "name": "Royal Blades",
+   "shape": {
+    "kind": "melee",
+    "range": 92,
+    "arc": 120,
+    "lunge": 80
+   },
+   "onHit": [
+    {
+     "op": "chance",
+     "permille": 500,
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 100
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 100
+    }
+   ]
+  }
+ ]
+}

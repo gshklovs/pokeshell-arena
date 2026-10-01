@@ -1,0 +1,39 @@
+{
+ "version": 1,
+ "card": "sm115-5",
+ "character": "scyther",
+ "name": "Scyther",
+ "fantasy": "A blur of blades: slashes, sharp scythes, agility.",
+ "attacks": [
+  {
+   "name": "Slash",
+   "shape": {
+    "kind": "melee",
+    "range": 74,
+    "arc": 96,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Sharp Scythe",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 100,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

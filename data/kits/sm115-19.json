@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "sm115-19",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Quick Attack",
+   "shape": {
+    "kind": "dash",
+    "distance": 220,
+    "speed": 20,
+    "radius": 24
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Electro Ball",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 16,
+    "range": 620,
+    "blast": 62
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ]
+  }
+ ]
+}

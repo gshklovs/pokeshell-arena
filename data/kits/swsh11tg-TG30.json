@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "card": "swsh11tg-TG30",
+ "character": "mew",
+ "name": "Mew VMAX",
+ "fantasy": "Cross Fusion Strike copies the strongest attack in play; Max Miracle ignores every effect on the foe.",
+ "attacks": [
+  {
+   "name": "Cross Fusion Strike",
+   "shape": {
+    "kind": "beam",
+    "length": 680,
+    "width": 30
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "mimic"
+    }
+   ]
+  },
+  {
+   "name": "Max Miracle",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 150,
+    "range": 500
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130,
+     "pierce": true
+    }
+   ]
+  }
+ ],
+ "notes": "Cross Fusion Strike: copies a benched Fusion Strike attack: the arena copies the strongest attack in play (mimic)"
+}

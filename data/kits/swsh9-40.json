@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "card": "swsh9-40",
+ "character": "lumineon",
+ "name": "Lumineon V",
+ "fantasy": "Aqua Return: hits and slips back to the bench.",
+ "attacks": [
+  {
+   "name": "Aqua Return",
+   "shape": {
+    "kind": "dash",
+    "distance": 250,
+    "speed": 24,
+    "radius": 32,
+    "invulnerable": 0
+   },
+   "onCast": [
+    {
+     "op": "retreat",
+     "px": 220
+    },
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 80
+    }
+   ]
+  }
+ ]
+}

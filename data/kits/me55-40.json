@@ -1,0 +1,34 @@
+{
+ "version": 1,
+ "card": "me55-40",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Overwriting Bolt",
+   "shape": {
+    "kind": "projectile",
+    "speed": 15,
+    "radius": 10,
+    "range": 620,
+    "path": "zigzag",
+    "amp": 8,
+    "period": 4
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    },
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": -30,
+     "ticks": 180,
+     "target": "target"
+    }
+   ]
+  }
+ ]
+}

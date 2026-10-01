@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "card": "me55-12",
+ "character": "ho-oh",
+ "name": "Ho-Oh",
+ "fantasy": "A rainbow phoenix: sacred breath that heals, wings of fire.",
+ "attacks": [
+  {
+   "name": "Sacred Breath",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    },
+    {
+     "op": "heal",
+     "amount": 100,
+     "target": "team"
+    }
+   ]
+  },
+  {
+   "name": "Fire Wing",
+   "shape": {
+    "kind": "cone",
+    "range": 220,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

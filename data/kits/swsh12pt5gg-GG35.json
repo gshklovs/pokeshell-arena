@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG35",
+ "character": "leafeon",
+ "name": "Leafeon VSTAR",
+ "fantasy": "Leaf Guard with a sword's reach.",
+ "attacks": [
+  {
+   "name": "Leaf Guard",
+   "shape": {
+    "kind": "projectile",
+    "count": 3,
+    "spread": 14,
+    "speed": 14,
+    "radius": 9,
+    "range": 480,
+    "pierce": 1
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 30,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "version": 1,
+ "card": "base1-17",
+ "character": "beedrill",
+ "name": "Beedrill",
+ "fantasy": "Twin needles, a poison sting: fast, thin shots.",
+ "attacks": [
+  {
+   "name": "Twineedle",
+   "shape": {
+    "kind": "projectile",
+    "speed": 16,
+    "radius": 9,
+    "range": 620,
+    "path": "helix",
+    "amp": 11,
+    "period": 5
+   },
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 2,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 30
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "name": "Poison Sting",
+   "shape": {
+    "kind": "projectile",
+    "speed": 16,
+    "radius": 10,
+    "range": 640
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "poisoned"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

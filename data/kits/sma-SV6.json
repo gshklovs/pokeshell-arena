@@ -1,0 +1,28 @@
+{
+ "version": 1,
+ "card": "sma-SV6",
+ "character": "charmander",
+ "name": "Charmander",
+ "fantasy": "A scrappy starter: quick scratches up close, then a short breath of fire that lights the grass.",
+ "attacks": [
+  {
+   "name": "Fire Fang",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 72,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "status",
+     "status": "burned"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "version": 1,
+ "card": "swsh7-186",
+ "character": "medicham",
+ "name": "Medicham V",
+ "fantasy": "Yoga Loop: counters that take another turn; a smash uppercut.",
+ "attacks": [
+  {
+   "name": "Yoga Loop",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 80,
+    "lunge": 28
+   },
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 180,
+     "which": "this"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "counters",
+     "amount": 20
+    },
+    {
+     "op": "gainEnergy",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "name": "Smash Uppercut",
+   "shape": {
+    "kind": "melee",
+    "range": 84,
+    "arc": 100,
+    "lunge": 80
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100,
+     "wr": "weakness"
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ],
+ "notes": "Smash Uppercut: wider and a longer step in (was R80 A80 l60): it won 0-14% of V fights"
+}

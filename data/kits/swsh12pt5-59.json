@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-59",
+ "character": "mewtwo",
+ "name": "Mewtwo",
+ "fantasy": "A psychic weapon: homing Psychic that hits harder the more energy the foe holds, bursts on the aim point, barriers.",
+ "attacks": [
+  {
+   "name": "Psypump",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "name": "Limit Break",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 120,
+    "range": 480
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foePrizesLeft",
+     "n": 3,
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 90
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  }
+ ]
+}

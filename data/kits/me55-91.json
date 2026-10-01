@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "card": "me55-91",
+ "character": "umbreon",
+ "name": "Umbreon",
+ "fantasy": "A moonlight hunter: retaliates when a teammate falls, darkness fangs.",
+ "attacks": [
+  {
+   "name": "Retaliate",
+   "shape": {
+    "kind": "melee",
+    "range": 76,
+    "arc": 96,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "allyKo",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 100
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Darkness Fang",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 90,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 70
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "version": 1,
+ "card": "swsh7-14",
+ "character": "trevenant",
+ "name": "Trevenant VMAX",
+ "fantasy": "Lost in the forest: an area that grows with its bench; Max Tree slams everything around it.",
+ "attacks": [
+  {
+   "name": "Missing in the Forest",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 40,
+    "radius": 28,
+    "path": "leap",
+    "blast": 64
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "turns",
+     "amount": 40
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "name": "Max Tree",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 128,
+    "delay": 20
+   },
+   "windup": 20,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

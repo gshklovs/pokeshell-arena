@@ -1,0 +1,47 @@
+{
+ "version": 1,
+ "card": "swsh11-68",
+ "character": "jynx",
+ "name": "Jynx",
+ "fantasy": "Slaps, kisses and a dance that draws a foe in.",
+ "attacks": [
+  {
+   "name": "Alluring Dance",
+   "shape": {
+    "kind": "projectile",
+    "speed": 10,
+    "radius": 11,
+    "range": 480,
+    "count": 3,
+    "spread": 0,
+    "path": "helix",
+    "amp": 16,
+    "period": 12
+   },
+   "onHit": [
+    {
+     "op": "gust",
+     "mode": "pull"
+    },
+    {
+     "op": "status",
+     "status": "confused"
+    }
+   ]
+  },
+  {
+   "name": "Super Psy Bolt",
+   "shape": {
+    "kind": "beam",
+    "length": 680,
+    "width": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ]
+  }
+ ]
+}

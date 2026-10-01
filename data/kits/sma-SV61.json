@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "card": "sma-SV61",
+ "character": "banette",
+ "name": "Banette-GX",
+ "fantasy": "A cursed doll: chants that grow with the dead.",
+ "attacks": [
+  {
+   "name": "Shadow Chant",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 110,
+    "range": 460
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "turns",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Tomb Hunt-GX",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  }
+ ]
+}

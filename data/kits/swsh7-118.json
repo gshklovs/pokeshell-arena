@@ -1,0 +1,45 @@
+{
+ "version": 1,
+ "card": "swsh7-118",
+ "character": "zygarde",
+ "name": "Zygarde",
+ "fantasy": "Bites, and a judgment surge around it.",
+ "attacks": [
+  {
+   "name": "Bite",
+   "shape": {
+    "kind": "melee",
+    "range": 72,
+    "arc": 80,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Judgment Surge",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 340,
+    "radius": 108,
+    "delay": 20
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foePrizes",
+     "amount": 40
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

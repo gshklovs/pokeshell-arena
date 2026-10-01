@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "me55-19",
+ "character": "kyogre",
+ "name": "Kyogre",
+ "fantasy": "The sea itself: a Hydro Pump that grows with its energy; Dynamic Wave floods everything around it.",
+ "attacks": [
+  {
+   "name": "Hydro Pump",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 40
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myAttached",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 60
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 100
+    }
+   ]
+  }
+ ]
+}

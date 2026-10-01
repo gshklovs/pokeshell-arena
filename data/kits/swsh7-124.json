@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "swsh7-124",
+ "character": "regidrago",
+ "name": "Regidrago",
+ "fantasy": "A dragon golem: hammers in, then Dragon Energy, weaker the more it is hurt.",
+ "attacks": [
+  {
+   "name": "Hammer In",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 72,
+    "radius": 75,
+    "delay": 8
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  },
+  {
+   "name": "Dragon Energy",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 20,
+    "radius": 40,
+    "invulnerable": 0
+   },
+   "windup": 18,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": -20
+    },
+    {
+     "op": "damage",
+     "amount": 240
+    }
+   ]
+  }
+ ]
+}

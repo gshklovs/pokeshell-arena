@@ -1,0 +1,62 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-13",
+ "character": "leafeon",
+ "name": "Leafeon V",
+ "fantasy": "A leaf swordsman: Leaf Blade lunges far; Leaf Guard hardens it as it strikes.",
+ "attacks": [
+  {
+   "name": "Leaf Guard",
+   "shape": {
+    "kind": "projectile",
+    "count": 3,
+    "spread": 14,
+    "speed": 14,
+    "radius": 9,
+    "range": 480,
+    "pierce": 1
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 30,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Slashing Strike",
+   "shape": {
+    "kind": "melee",
+    "range": 88,
+    "arc": 96,
+    "lunge": 50
+   },
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90,
+     "which": "this"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ],
+ "notes": "Slashing Strike: A96 l50 (was A110 l70): Leafeon V won 92% of V fights"
+}

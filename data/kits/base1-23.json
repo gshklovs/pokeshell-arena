@@ -1,0 +1,62 @@
+{
+ "version": 1,
+ "card": "base1-23",
+ "character": "arcanine",
+ "name": "Arcanine",
+ "fantasy": "A legendary dog: a flamethrower, then a charging Take Down that hurts it too.",
+ "attacks": [
+  {
+   "name": "Flamethrower",
+   "shape": {
+    "kind": "cone",
+    "range": 230,
+    "arc": 56
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 40,
+     "ticks": 150
+    }
+   ]
+  },
+  {
+   "name": "Take Down",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 19,
+    "radius": 30
+   },
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

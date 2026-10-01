@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "swsh7-64",
+ "character": "espeon",
+ "name": "Espeon V",
+ "fantasy": "A zen shot at the back line, a psy bolt.",
+ "attacks": [
+  {
+   "name": "Zen Shot",
+   "shape": {
+    "kind": "projectile",
+    "speed": 17,
+    "radius": 10,
+    "range": 760
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ]
+  },
+  {
+   "name": "Super Psy Bolt",
+   "shape": {
+    "kind": "beam",
+    "length": 700,
+    "width": 34
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ]
+  }
+ ]
+}

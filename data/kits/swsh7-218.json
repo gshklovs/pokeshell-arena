@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "swsh7-218",
+ "character": "rayquaza",
+ "name": "Rayquaza VMAX",
+ "fantasy": "Max Burst: burns its energy into a huge beam from the sky.",
+ "attacks": [
+  {
+   "name": "Max Burst",
+   "shape": {
+    "kind": "beam",
+    "length": 780,
+    "width": 48,
+    "ticks": 12
+   },
+   "windup": 20,
+   "onCast": [
+    {
+     "op": "spendEnergy",
+     "max": 3,
+     "amount": 80,
+     "paid": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "knockback",
+     "px": 130
+    }
+   ]
+  }
+ ],
+ "notes": "Max Burst: no flat bonus any more: spendEnergy now counts the energy that paid for it (it was +60, and still at 21-54% of VMAX fights)"
+}

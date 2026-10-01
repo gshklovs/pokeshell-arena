@@ -1,0 +1,34 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG12",
+ "character": "deoxys",
+ "name": "Deoxys",
+ "fantasy": "A DNA alien: a photon boost beam.",
+ "attacks": [
+  {
+   "name": "Photon Boost",
+   "shape": {
+    "kind": "beam",
+    "length": 700,
+    "width": 30
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "hasEnergy",
+     "n": 1,
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 80
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG41",
+ "character": "raikou",
+ "name": "Raikou V",
+ "fantasy": "Lightning Rondo: a thunder-fast charge that grows with every Pokémon around.",
+ "attacks": [
+  {
+   "name": "Lightning Rondo",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 130
+   },
+   "pin": "a tighter ring (the lexicon made the dash a 160 px nova): Raikou V won 88-100% of V fights",
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "bothBench",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ],
+ "notes": "Lightning Rondo: a tighter ring (the lexicon made the dash a 160 px nova): Raikou V won 88-100% of V fights"
+}

@@ -1,0 +1,52 @@
+{
+ "version": 1,
+ "card": "sma-SV73",
+ "character": "kartana",
+ "name": "Kartana-GX",
+ "fantasy": "A paper blade: gale-fast cuts.",
+ "attacks": [
+  {
+   "name": "Gale Blade",
+   "shape": {
+    "kind": "projectile",
+    "speed": 15,
+    "radius": 10,
+    "range": 520,
+    "count": 2,
+    "spread": 10,
+    "pierce": 1
+   },
+   "onCast": [
+    {
+     "op": "retreat",
+     "px": 220
+    },
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70
+    }
+   ]
+  },
+  {
+   "name": "Blade-GX",
+   "shape": {
+    "kind": "melee",
+    "range": 84,
+    "arc": 120,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "counters",
+     "amount": 60
+    }
+   ]
+  }
+ ]
+}

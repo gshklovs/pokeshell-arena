@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "swsh9-19",
+ "character": "magmar",
+ "name": "Magmar",
+ "fantasy": "A brawler with burning fists.",
+ "attacks": [
+  {
+   "name": "Low Kick",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 80
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Fiery Punch",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 90,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 40,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

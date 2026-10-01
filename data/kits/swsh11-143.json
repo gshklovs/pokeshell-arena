@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "swsh11-143",
+ "character": "snorlax",
+ "name": "Snorlax",
+ "fantasy": "A mountain that sleeps: collapses and snores around itself, knocking everything away.",
+ "attacks": [
+  {
+   "name": "Thumping Snore",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 170
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "status",
+     "status": "asleep",
+     "target": "self"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

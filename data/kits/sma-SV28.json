@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "sma-SV28",
+ "character": "magneton",
+ "name": "Magneton",
+ "fantasy": "A magnet cluster: paralyzing waves, a zap cannon, and a self-destruct.",
+ "attacks": [
+  {
+   "name": "Ram",
+   "shape": {
+    "kind": "dash",
+    "distance": 220,
+    "speed": 18,
+    "radius": 26
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Zap Cannon",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 36
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90,
+     "which": "this"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ]
+  }
+ ]
+}

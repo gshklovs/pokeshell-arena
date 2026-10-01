@@ -1,0 +1,52 @@
+{
+ "version": 1,
+ "card": "swsh7-94",
+ "character": "umbreon",
+ "name": "Umbreon V",
+ "fantasy": "A mean look pins a foe in place; the moonlight blade cuts deeper into the wounded.",
+ "attacks": [
+  {
+   "name": "Mean Look",
+   "shape": {
+    "kind": "cone",
+    "range": 280,
+    "arc": 36
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "retreatLock",
+     "ticks": 90
+    }
+   ]
+  },
+  {
+   "name": "Moonlight Blade",
+   "shape": {
+    "kind": "melee",
+    "range": 86,
+    "arc": 110,
+    "lunge": 70
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "selfDamaged",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 80
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ]
+  }
+ ]
+}

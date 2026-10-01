@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "neo1-56",
+ "character": "cyndaquil",
+ "name": "Cyndaquil",
+ "fantasy": "A nervous spark: stares foes down, flicks homing sparks, darts in.",
+ "attacks": [
+  {
+   "name": "Leer",
+   "shape": {
+    "kind": "cone",
+    "range": 200,
+    "arc": 64
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "exhaust",
+       "ticks": 90,
+       "target": "target"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Swift",
+   "shape": {
+    "kind": "projectile",
+    "speed": 16,
+    "radius": 10,
+    "range": 700,
+    "path": "weave",
+    "amp": 12,
+    "period": 10
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20,
+     "wr": false,
+     "pierce": true
+    }
+   ]
+  }
+ ]
+}

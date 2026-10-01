@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "neo1-69",
+ "character": "onix",
+ "name": "Onix",
+ "fantasy": "A rock snake: throws rocks, hardens, rages.",
+ "attacks": [
+  {
+   "name": "Screech",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 172
+   },
+   "onHit": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": -20,
+     "ticks": 180,
+     "target": "target"
+    }
+   ]
+  },
+  {
+   "name": "Rage",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 110,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

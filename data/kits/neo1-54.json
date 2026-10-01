@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "neo1-54",
+ "character": "chikorita",
+ "name": "Chikorita",
+ "fantasy": "A leaf-headed defender: growls foes weaker, throws razor leaves.",
+ "attacks": [
+  {
+   "name": "Growl",
+   "shape": {
+    "kind": "cone",
+    "range": 200,
+    "arc": 72
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 10,
+     "ticks": 90
+    }
+   ]
+  },
+  {
+   "name": "Razor Leaf",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 10,
+    "range": 600
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

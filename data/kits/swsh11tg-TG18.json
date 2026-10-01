@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "card": "swsh11tg-TG18",
+ "character": "enamorus",
+ "name": "Enamorus V",
+ "fantasy": "A blossom tail that sweeps and charges its team.",
+ "attacks": [
+  {
+   "name": "Blossom Tail",
+   "shape": {
+    "kind": "melee",
+    "range": 84,
+    "arc": 120,
+    "lunge": 40
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    }
+   ]
+  }
+ ]
+}

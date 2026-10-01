@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "neo1-4",
+ "character": "feraligatr",
+ "name": "Feraligatr",
+ "fantasy": "A river tyrant: chomps that land more with every coin, a riptide around itself.",
+ "attacks": [
+  {
+   "name": "Chomp",
+   "shape": {
+    "kind": "melee",
+    "range": 84,
+    "arc": 96,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 3,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 10
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 50
+    },
+    {
+     "op": "knockback",
+     "px": 70
+    }
+   ]
+  }
+ ]
+}

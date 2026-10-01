@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG46",
+ "character": "deoxys",
+ "name": "Deoxys VSTAR",
+ "fantasy": "A psychic javelin that also hits the back line; Star Force grows with the foe's energy.",
+ "attacks": [
+  {
+   "name": "Psychic Javelin",
+   "shape": {
+    "kind": "projectile",
+    "speed": 18,
+    "radius": 14,
+    "range": 780
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 190
+    },
+    {
+     "op": "benchDamage",
+     "amount": 60,
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Star Force",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 160,
+    "range": 520
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "bothEnergy",
+     "amount": 60
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

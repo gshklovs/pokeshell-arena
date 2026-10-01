@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "card": "me55-46",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Get Some Air",
+   "shape": {
+    "kind": "cone",
+    "range": 180,
+    "arc": 72
+   },
+   "onCast": [
+    {
+     "op": "cleanse"
+    }
+   ]
+  },
+  {
+   "name": "Smash Kick",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 80,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "card": "neo1-11",
+ "character": "meganium",
+ "name": "Meganium",
+ "fantasy": "A soothing giant: a body slam that paralyzes, a scent that puts everything around it to sleep.",
+ "attacks": [
+  {
+   "name": "Soothing Scent",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 110,
+    "radius": 84,
+    "ticks": 90,
+    "every": 45,
+    "delay": 8
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    },
+    {
+     "op": "status",
+     "status": "asleep"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "card": "me55-114",
+ "character": "kangaskhan",
+ "name": "Kangaskhan",
+ "fantasy": "A parent that punches harder the angrier it gets.",
+ "attacks": [
+  {
+   "name": "Rage",
+   "shape": {
+    "kind": "melee",
+    "range": 76,
+    "arc": 90,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Mega Punch",
+   "shape": {
+    "kind": "melee",
+    "range": 84,
+    "arc": 90,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

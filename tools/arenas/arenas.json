@@ -1,0 +1,72 @@
+{
+  "kyogre-storm-sea": {
+    "pick": 1, "card": "swsh12pt5-36", "name": "Tempest Sea",
+    "boxes": [],
+    "place": "a stormy sea at dusk: huge teal and white breaking waves and spray, a dark brown rock crag, a pink-red sunset sky",
+    "layout": "an arena of wave-washed rock shelves in a stormy teal sea: a large central flat wet-rock platform and two side shelves joined by rock causeways, deep churning teal water with white foam around the edges and in channels, dark brown rock crags as obstacles",
+    "ambient": {"tint": "#9fd4d0", "particles": "bubbles"}
+  },
+  "magmar-volcano": {
+    "pick": 1, "card": "neo1-40", "name": "Cinder Caldera",
+    "boxes": [],
+    "place": "a volcano: a dark red-brown crater slope with bright orange lava rivers and a smoky crimson and violet sky",
+    "layout": "a volcanic crater floor of dark cooled basalt and ash, crossed by a few narrow glowing lava rivers and lava pools, jagged black rock outcrops as obstacles, smoking vents",
+    "ambient": {"tint": "#ff9a5a", "particles": "embers"}
+  },
+  "zarude-jungle": {
+    "pick": 2, "card": "swsh12pt5-16", "name": "Deep Jungle Clearing",
+    "boxes": [],
+    "place": "a dense green jungle with thick hanging vines, mossy trunks and dappled light",
+    "layout": "a mossy jungle clearing of packed earth and short moss, walled by giant tree trunks and dense foliage around the edges, a few big trunks and vine thickets inside as cover, patches of tall grass",
+    "ambient": {"tint": "#a8e08a", "particles": "leaves"}
+  },
+  "sableye-crystal-cave": {
+    "pick": 1, "card": "swsh11-70", "name": "Gem Cavern",
+    "boxes": [],
+    "place": "a dark violet cave glittering with big pale-blue, teal and purple crystal clusters",
+    "layout": "a cave floor of dark violet stone, enclosed by cave walls, with clusters of glowing blue and purple crystals as obstacles and breakable props, a couple of small dark pools",
+    "ambient": {"tint": "#b49cff", "particles": "none"}
+  },
+  "liepard-night-city": {
+    "pick": 2, "card": "swsh9-91", "name": "Midnight Rooftops",
+    "boxes": [[0, 58, 312, 136], [0, 58, 125, 175]],
+    "place": "a city at night: purple-violet skyscrapers, lit windows, a big full moon, a deep indigo sky and warm streetlights",
+    "layout": "a night city plaza and street intersection seen from above, paved in violet-grey stone and asphalt, with building rooftops and blocks around the edges as walls, planters, benches and crates as small obstacles, glowing streetlights",
+    "ambient": {"tint": "#8e7ae0", "particles": "none"}
+  },
+  "lapras-lagoon": {
+    "pick": 1, "card": "sm115-17", "name": "Seafoam Lagoon",
+    "boxes": [],
+    "place": "a calm, sunlit turquoise sea with soft white ripples and shimmering light",
+    "layout": "a tropical lagoon arena: a big pale-sand island and sandbars in the middle, clear turquoise shallows and deeper blue water around the edges and in a few channels, rocks, a few palm trees and beach umbrellas as obstacles",
+    "ambient": {"tint": "#bff0f0", "particles": "none"}
+  },
+  "glastrier-ice-field": {
+    "pick": 1, "card": "swsh11-51", "name": "Crown Tundra Ice Field",
+    "boxes": [],
+    "place": "a frozen tundra with tall pale-blue ice spires and crystals, snowy pines, snow on the ground and a cold blue sky with pink clouds",
+    "layout": "a snowy tundra field, open packed snow in the middle, clusters of tall ice spires, ice crystals and snowy pines around the edges and a few inside as obstacles, frozen ponds",
+    "ambient": {"tint": "#d8ecff", "particles": "snow"}
+  },
+  "cresselia-moonlit-sky": {
+    "pick": 2, "card": "swsh11-74", "name": "Crescent Isle",
+    "boxes": [],
+    "place": "a starry night sky with shooting stars above a glowing pale-blue planet rim, deep violet and blue",
+    "layout": "a floating moonstone island of pale glowing blue-white rock in a starry violet void: the void around it is impassable, a wide flat moonstone floor with a few pale crystal pillars and moon-rock outcrops as obstacles",
+    "ambient": {"tint": "#c8a8ff", "particles": "none"}
+  },
+  "herdier-temple": {
+    "pick": 1, "card": "swsh7-134", "name": "Stone Stair Temple",
+    "boxes": [[0, 58, 312, 136], [0, 58, 125, 175], [240, 110, 600, 470]],
+    "place": "sunlit old ruins: wide pale pink sandstone stairs and walls, a small red lantern, warm light and a blue sky with white clouds",
+    "layout": "an ancient pink sandstone temple courtyard like a gym battle floor: a large flat paved stone floor with a faint circular emblem, stepped stone walls and stairs around the edges, a few stone pillars and red lanterns as cover",
+    "ambient": {"tint": "#ffe8c0", "particles": "leaves"}
+  },
+  "growlithe-meadow": {
+    "pick": 2, "card": "base1-28", "name": "Kanto Meadow",
+    "boxes": [],
+    "place": "a green rolling meadow with round trees and hills under a bright sky",
+    "layout": "a grassy meadow arena of short green grass and dirt paths, round leafy trees and bushes around the edges and a few inside, patches of tall grass, a small pond",
+    "ambient": {"tint": "#d8f0a0", "particles": "leaves"}
+  }
+}

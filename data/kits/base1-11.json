@@ -1,0 +1,63 @@
+{
+ "version": 1,
+ "card": "base1-11",
+ "character": "nidoking",
+ "name": "Nidoking",
+ "fantasy": "A thrashing brute with a toxic cloud.",
+ "attacks": [
+  {
+   "name": "Thrash",
+   "shape": {
+    "kind": "melee",
+    "range": 82,
+    "arc": 110,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "bonus",
+       "amount": 10
+      }
+     ],
+     "tails": [
+      {
+       "op": "selfDamage",
+       "amount": 10
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Toxic",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 100,
+    "ticks": 120,
+    "every": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "status",
+     "status": "poisoned"
+    },
+    {
+     "op": "counters",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

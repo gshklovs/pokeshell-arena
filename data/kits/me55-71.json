@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "card": "me55-71",
+ "character": "sylveon",
+ "name": "Sylveon ex",
+ "fantasy": "Colorful Harmony: a chord on the aim point that grows with its team's types.",
+ "attacks": [
+  {
+   "name": "Colorful Harmony",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 150,
+    "range": 500
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myAttached",
+     "amount": 50
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

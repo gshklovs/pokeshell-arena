@@ -1,0 +1,52 @@
+{
+ "version": 1,
+ "card": "neo1-32",
+ "character": "croconaw",
+ "name": "Croconaw",
+ "fantasy": "Clamps its jaws on a foe so it can't get away; sweeps the field with water.",
+ "attacks": [
+  {
+   "name": "Tackle",
+   "shape": {
+    "kind": "dash",
+    "distance": 220,
+    "speed": 18,
+    "radius": 26
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Sweep Away",
+   "shape": {
+    "kind": "projectile",
+    "speed": 7,
+    "radius": 16,
+    "wall": 55,
+    "range": 510,
+    "pierce": 9
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 80
+    }
+   ]
+  }
+ ]
+}

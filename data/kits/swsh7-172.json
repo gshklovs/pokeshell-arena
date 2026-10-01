@@ -1,0 +1,50 @@
+{
+ "version": 1,
+ "card": "swsh7-172",
+ "character": "vaporeon",
+ "name": "Vaporeon V",
+ "fantasy": "Leaps in with a splash and swaps out.",
+ "attacks": [
+  {
+   "name": "Triple Draw",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Splash Jump",
+   "shape": {
+    "kind": "dash",
+    "distance": 260,
+    "speed": 19,
+    "radius": 28,
+    "path": "leap",
+    "blast": 65
+   },
+   "onCast": [
+    {
+     "op": "retreat"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 80
+    }
+   ]
+  }
+ ]
+}

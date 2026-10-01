@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "base1-4",
+ "character": "charizard",
+ "name": "Charizard",
+ "fantasy": "The classic: saves up for Fire Spin, a wide roaring cone that sets the whole field alight.",
+ "attacks": [
+  {
+   "name": "Fire Spin",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 300,
+    "radius": 92,
+    "ticks": 100,
+    "every": 45
+   },
+   "windup": 20,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 70
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 70,
+     "ticks": 150
+    }
+   ]
+  }
+ ],
+ "notes": "Fire Spin: the 4-energy commitment: a long windup, the widest cone in the game"
+}

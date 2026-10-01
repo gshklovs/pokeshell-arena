@@ -1,0 +1,29 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG48",
+ "character": "zacian",
+ "name": "Zacian V",
+ "fantasy": "A piercing thrust that ignores resistance, a behemoth blade, a storm slash.",
+ "attacks": [
+  {
+   "name": "Storm Slash",
+   "shape": {
+    "kind": "melee",
+    "range": 90,
+    "arc": 120,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myAttached",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ]
+  }
+ ]
+}

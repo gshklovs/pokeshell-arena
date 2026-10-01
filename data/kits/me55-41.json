@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "me55-41",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Hang Down",
+   "shape": {
+    "kind": "melee",
+    "range": 62,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Zap Kick",
+   "shape": {
+    "kind": "melee",
+    "range": 72,
+    "arc": 80,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  }
+ ]
+}

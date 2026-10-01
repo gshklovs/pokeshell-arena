@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "card": "sm115-23",
+ "character": "jolteon",
+ "name": "Jolteon",
+ "fantasy": "Spiky and fast: a crackling Thunderbolt, electric balls.",
+ "attacks": [
+  {
+   "name": "Thunderbolt",
+   "shape": {
+    "kind": "beam",
+    "length": 680,
+    "width": 30
+   },
+   "windup": 10,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  }
+ ]
+}

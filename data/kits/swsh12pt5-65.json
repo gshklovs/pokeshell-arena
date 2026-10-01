@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-65",
+ "character": "hatterene",
+ "name": "Hatterene V",
+ "fantasy": "Reads the stars, then a teleportation burst.",
+ "attacks": [
+  {
+   "name": "Horoscope",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Teleportation Burst",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 40,
+    "radius": 28,
+    "path": "leap",
+    "blast": 64
+   },
+   "onCast": [
+    {
+     "op": "retreat"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ]
+  }
+ ]
+}

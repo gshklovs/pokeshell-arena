@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "card": "cel25-5",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Gnaw",
+   "shape": {
+    "kind": "melee",
+    "range": 60,
+    "arc": 64,
+    "lunge": 16
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Thunder Jolt",
+   "shape": {
+    "kind": "projectile",
+    "speed": 15,
+    "radius": 10,
+    "range": 640,
+    "path": "zigzag",
+    "amp": 8,
+    "period": 4
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "tails": [
+      {
+       "op": "selfDamage",
+       "amount": 10
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

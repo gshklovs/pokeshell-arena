@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "swsh11-174",
+ "character": "kyurem",
+ "name": "Kyurem V",
+ "fantasy": "Freezes its own energy on, then smashes with ice.",
+ "attacks": [
+  {
+   "name": "Rapid Freeze",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "name": "Frost Smash",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 84,
+    "radius": 86,
+    "delay": 8
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 140
+    },
+    {
+     "op": "slow",
+     "permille": 400,
+     "ticks": 90
+    },
+    {
+     "op": "knockback",
+     "px": 80
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "version": 1,
+ "card": "me55-132",
+ "character": "articuno",
+ "name": "Articuno",
+ "fantasy": "Calls down hail on a wide area: everything under it slows.",
+ "attacks": [
+  {
+   "name": "Hail",
+   "shape": {
+    "kind": "cone",
+    "range": 280,
+    "arc": 80
+   },
+   "pin": "the wide hail cone it has played as (the old lexicon relexed the spec area into it); as the spec 160 px circle 480 px out it won 0-17% of basic+ fights",
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "benchDamage",
+     "amount": 30
+    },
+    {
+     "op": "slow",
+     "permille": 300,
+     "ticks": 90
+    }
+   ]
+  }
+ ],
+ "notes": "Hail: the wide hail cone it has played as (the old lexicon relexed the spec area into it); as the spec 160 px circle 480 px out it won 0-17% of basic+ fights"
+}

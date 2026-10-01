@@ -1,0 +1,56 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-36",
+ "character": "kyogre",
+ "name": "Kyogre",
+ "fantasy": "The sea itself: a Hydro Pump that grows with its energy; Dynamic Wave floods everything around it.",
+ "attacks": [
+  {
+   "name": "Wave Summoning",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Dynamic Wave",
+   "shape": {
+    "kind": "projectile",
+    "speed": 7,
+    "radius": 16,
+    "wall": 50,
+    "range": 540,
+    "pierce": 9
+   },
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 3
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 140
+    }
+   ]
+  }
+ ]
+}

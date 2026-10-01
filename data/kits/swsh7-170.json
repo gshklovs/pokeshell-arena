@@ -1,0 +1,64 @@
+{
+ "version": 1,
+ "card": "swsh7-170",
+ "character": "volcarona",
+ "name": "Volcarona V",
+ "fantasy": "A sun moth: surging flames, then a slow, heavy Fire Blast.",
+ "attacks": [
+  {
+   "name": "Surging Flames",
+   "shape": {
+    "kind": "cone",
+    "range": 200,
+    "arc": 64
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "turns",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Fire Blast",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 22,
+    "range": 660,
+    "path": "straight"
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    },
+    {
+     "op": "knockback",
+     "px": 60
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 70,
+     "ticks": 150
+    }
+   ]
+  }
+ ],
+ "notes": "Fire Blast: a straight shot (the fireball archetype gave it an 84 px blast): Volcarona V won 88-100% of V fights"
+}

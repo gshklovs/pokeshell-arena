@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "card": "sma-SV94",
+ "character": "tapu-lele",
+ "name": "Tapu Lele-GX",
+ "fantasy": "An energy drive, and Tapu Cure for its team.",
+ "attacks": [
+  {
+   "name": "Energy Drive",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 14,
+    "range": 640,
+    "blast": 64
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "bothEnergy",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 0,
+     "wr": false
+    }
+   ]
+  },
+  {
+   "name": "Tapu Cure-GX",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 60,
+     "target": "team"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "card": "swsh9tg-TG13",
+ "character": "boltund",
+ "name": "Boltund V",
+ "fantasy": "A running dog: electrifies its team, then a bolt-storm charge.",
+ "attacks": [
+  {
+   "name": "Electrify",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "name": "Bolt Storm",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 340,
+    "radius": 92,
+    "delay": 20
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myAttached",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

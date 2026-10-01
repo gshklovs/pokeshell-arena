@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "swsh11-86",
+ "character": "machop",
+ "name": "Machop",
+ "fantasy": "A small fighter: low kicks and punches.",
+ "attacks": [
+  {
+   "name": "Punch",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 72,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

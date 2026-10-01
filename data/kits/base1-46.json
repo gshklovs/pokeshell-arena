@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "card": "base1-46",
+  "character": "charmander",
+  "name": "Charmander",
+  "stats": {
+    "hp": 50, "types": ["Fire"], "subtypes": ["Basic"],
+    "weaknesses": [{ "type": "Water", "value": "×2" }], "resistances": [], "retreat": 1
+  },
+  "attacks": [
+    {
+      "name": "Scratch", "cost": ["Colorless"], "damage": "10",
+      "shape": { "kind": "melee", "range": 64, "arc": 72 },
+      "windup": 4, "recovery": 6, "cooldown": 18,
+      "onHit": [{ "op": "damage", "amount": 10 }]
+    },
+    {
+      "name": "Ember", "cost": ["Fire", "Colorless"], "damage": "30",
+      "shape": { "kind": "cone", "range": 190, "arc": 44 },
+      "windup": 10, "recovery": 10, "cooldown": 40,
+      "onCast": [{ "op": "discardEnergy", "type": "Fire", "count": 1 }],
+      "onHit": [{ "op": "damage", "amount": 30 }]
+    }
+  ],
+  "passive": null,
+  "notes": "Ember discards 1 more Fire pip after paying (the card's 'discard 1 Fire Energy'). The flames ignite tall grass and evaporate water."
+}

@@ -1,0 +1,23 @@
+{
+ "version": 1,
+ "card": "base1-65",
+ "character": "staryu",
+ "name": "Staryu",
+ "fantasy": "A spinning star.",
+ "attacks": [
+  {
+   "name": "Slap",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 80
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

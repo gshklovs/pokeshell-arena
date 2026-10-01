@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "sv3pt5-168",
+ "character": "charmander",
+ "name": "Charmander",
+ "fantasy": "A scrappy starter: quick scratches up close, then a short breath of fire that lights the grass.",
+ "attacks": [
+  {
+   "name": "Blazing Destruction",
+   "shape": {
+    "kind": "terrain",
+    "at": "aim",
+    "radius": 120,
+    "range": 360
+   },
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "none",
+     "radius": 140
+    },
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 70,
+     "ticks": 150
+    }
+   ]
+  },
+  {
+   "name": "Steady Firebreathing",
+   "shape": {
+    "kind": "cone",
+    "range": 200,
+    "arc": 48
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ],
+ "notes": "Blazing Destruction: the Stadium it burns down is the terrain under the flames: clears the surface, then sets it alight"
+}

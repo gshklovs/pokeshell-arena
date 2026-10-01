@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-55",
+ "character": "zeraora",
+ "name": "Zeraora VSTAR",
+ "fantasy": "Crushing Beat smashes the Stadium; Lightning Storm Star rains four bolts.",
+ "attacks": [
+  {
+   "name": "Crushing Beat",
+   "shape": {
+    "kind": "melee",
+    "range": 88,
+    "arc": 110,
+    "lunge": 70
+   },
+   "pin": "pinned to the spec swing: the lexicon made it a hammer on a small circle just ahead, and Zeraora VSTAR won 0%",
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 190
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "none",
+     "radius": 140
+    },
+    {
+     "op": "paint",
+     "terrain": "none",
+     "radius": 120
+    }
+   ]
+  },
+  {
+   "name": "Lightning Storm Star",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 160,
+    "range": 560
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 240,
+     "wr": false
+    }
+   ]
+  }
+ ],
+ "notes": "Crushing Beat: pinned to the spec swing: the lexicon made it a hammer on a small circle just ahead, and Zeraora VSTAR won 0%"
+}

@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-105",
+ "character": "eternatus",
+ "name": "Radiant Eternatus",
+ "fantasy": "A power beam from its core.",
+ "attacks": [
+  {
+   "name": "Power Beam",
+   "shape": {
+    "kind": "beam",
+    "length": 760,
+    "width": 42
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200
+    }
+   ]
+  }
+ ]
+}

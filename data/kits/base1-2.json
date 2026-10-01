@@ -1,0 +1,47 @@
+{
+ "version": 1,
+ "card": "base1-2",
+ "character": "blastoise",
+ "name": "Blastoise",
+ "fantasy": "Hydro Pump from its cannons: a long beam that pushes back and grows with the energy it holds.",
+ "attacks": [
+  {
+   "name": "Hydro Pump",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 40
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "bonus",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myEnergy",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 40
+    },
+    {
+     "op": "knockback",
+     "px": 130
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 90
+    }
+   ]
+  }
+ ],
+ "notes": "Hydro Pump: a flat +30 (the water it holds beyond the cost): it scales on unspent pips, nearly always 0 on the one meter, and Blastoise won 0% of Stage 2 fights"
+}

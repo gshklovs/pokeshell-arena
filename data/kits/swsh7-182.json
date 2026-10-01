@@ -1,0 +1,52 @@
+{
+ "version": 1,
+ "card": "swsh7-182",
+ "character": "golurk",
+ "name": "Golurk V",
+ "fantasy": "A golem: mega punches, and a rewind beam that turns back evolution.",
+ "attacks": [
+  {
+   "name": "Mega Punch",
+   "shape": {
+    "kind": "melee",
+    "range": 84,
+    "arc": 90,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  },
+  {
+   "name": "Rewind Beam",
+   "shape": {
+    "kind": "beam",
+    "length": 740,
+    "width": 40
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "gust",
+     "mode": "push",
+     "px": 200
+    },
+    {
+     "op": "counters",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "version": 1,
+ "card": "swsh7-175",
+ "character": "glaceon",
+ "name": "Glaceon V",
+ "fantasy": "A frost fox: freezing wind, and snow that buries the field (and its Stadium).",
+ "attacks": [
+  {
+   "name": "Frozen Awakening",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "damage",
+     "amount": 20,
+     "ticks": 360
+    },
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Heavy Snow",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 140,
+    "range": 460
+   },
+   "pin": "pinned to the spec (the lexicon made it a 300 px snow cone: Glaceon V won 91%)",
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "slow",
+     "permille": 400,
+     "ticks": 90
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "none",
+     "radius": 140
+    }
+   ]
+  }
+ ],
+ "notes": "Heavy Snow: pinned to the spec (the lexicon made it a 300 px snow cone: Glaceon V won 91%)"
+}

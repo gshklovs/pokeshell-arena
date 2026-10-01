@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "card": "me55-42",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Charge-Up Dash",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "coinsUntilTails",
+     "max": 3,
+     "perHeads": [
+      {
+       "op": "gainEnergy",
+       "count": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Pika Bolt",
+   "shape": {
+    "kind": "beam",
+    "length": 640,
+    "width": 26
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  }
+ ]
+}

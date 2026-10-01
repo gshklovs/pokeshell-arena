@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "card": "swsh7-51",
+ "character": "jolteon",
+ "name": "Jolteon VMAX",
+ "fantasy": "Max Thunder Rumble: lightning all around it, and the back line.",
+ "attacks": [
+  {
+   "name": "Max Thunder Rumble",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 120,
+    "delay": 20
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "benchDamage",
+     "amount": 100,
+     "count": 1
+    }
+   ]
+  }
+ ]
+}

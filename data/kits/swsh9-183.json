@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "card": "swsh9-183",
+ "character": "moltres-galar",
+ "name": "Galarian Moltres V",
+ "fantasy": "An aura of dark fire that burns it too.",
+ "attacks": [
+  {
+   "name": "Aura Burn",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 20,
+    "range": 580,
+    "blast": 84
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 190
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG56",
+ "character": "zoroark-hisui",
+ "name": "Hisuian Zoroark VSTAR",
+ "fantasy": "A ticking curse that grows with its team's wounds.",
+ "attacks": [
+  {
+   "name": "Ticking Curse",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 140,
+    "range": 480
+   },
+   "pin": "a big curse circle on the aim point (as the sticky cursed timer the name reads as, it fell from 44-47% to 12% of VSTAR fights)",
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myBench",
+     "amount": 50
+    },
+    {
+     "op": "bonus",
+     "amount": 50
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ],
+ "notes": "Ticking Curse: a big curse circle on the aim point (as the sticky cursed timer the name reads as, it fell from 44-47% to 12% of VSTAR fights)"
+}

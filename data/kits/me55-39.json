@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "me55-39",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Iron Tail",
+   "shape": {
+    "kind": "melee",
+    "range": 78,
+    "arc": 110,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "coinsUntilTails",
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 20
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

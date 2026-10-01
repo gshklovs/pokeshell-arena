@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "sm115-16",
+ "character": "gyarados",
+ "name": "Gyarados-GX",
+ "fantasy": "Dragon Rage, then a once-per-match Hyper Beam that blasts foes back.",
+ "attacks": [
+  {
+   "name": "Dragon Rage",
+   "shape": {
+    "kind": "cone",
+    "range": 250,
+    "arc": 60
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 70
+    }
+   ]
+  },
+  {
+   "name": "Hyper Beam-GX",
+   "shape": {
+    "kind": "beam",
+    "length": 780,
+    "width": 48,
+    "ticks": 12
+   },
+   "windup": 22,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 240
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ]
+}

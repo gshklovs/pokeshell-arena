@@ -1,0 +1,47 @@
+{
+ "image": "props.png",
+ "size": {
+  "w": 98,
+  "h": 136
+ },
+ "frames": [
+  {
+   "name": "prop1",
+   "x": 0,
+   "y": 0,
+   "w": 96,
+   "h": 136,
+   "at": {
+    "x": 912,
+    "y": 432
+   },
+   "tiles": [
+    [
+     23,
+     11
+    ],
+    [
+     24,
+     11
+    ],
+    [
+     23,
+     12
+    ],
+    [
+     24,
+     12
+    ],
+    [
+     23,
+     13
+    ],
+    [
+     24,
+     13
+    ]
+   ]
+  }
+ ],
+ "note": "frame x/y/w/h in props.png; `at` is its top-left in the arena px; `tiles` are its 'o' grid cells"
+}

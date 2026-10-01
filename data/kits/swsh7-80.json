@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "card": "swsh7-80",
+ "character": "marshadow",
+ "name": "Marshadow",
+ "fantasy": "A shadow that flickers in and steals a prize.",
+ "attacks": [
+  {
+   "name": "Rapid Hunt",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Shadow Flicker",
+   "shape": {
+    "kind": "melee",
+    "range": 72,
+    "arc": 96,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    },
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": -20,
+     "ticks": 180,
+     "target": "target"
+    }
+   ]
+  }
+ ]
+}

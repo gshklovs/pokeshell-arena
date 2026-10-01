@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "card": "swsh9-159",
+ "character": "granbull",
+ "name": "Granbull V",
+ "fantasy": "A bulldog: chomps, then a bull dash that hurts it too.",
+ "attacks": [
+  {
+   "name": "Chomp",
+   "shape": {
+    "kind": "melee",
+    "range": 76,
+    "arc": 90,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Bull Dash",
+   "shape": {
+    "kind": "dash",
+    "distance": 320,
+    "speed": 20,
+    "radius": 34
+   },
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 190
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

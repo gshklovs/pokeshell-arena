@@ -1,0 +1,67 @@
+{
+ "arenas": {
+  "kyogre-storm-sea": {
+   "generations": 1,
+   "picked": 1,
+   "output_tokens": 5300,
+   "input_tokens": 979
+  },
+  "magmar-volcano": {
+   "generations": 1,
+   "picked": 1,
+   "output_tokens": 5300,
+   "input_tokens": 923
+  },
+  "zarude-jungle": {
+   "generations": 2,
+   "picked": 2,
+   "output_tokens": 10600,
+   "input_tokens": 1937
+  },
+  "sableye-crystal-cave": {
+   "generations": 1,
+   "picked": 1,
+   "output_tokens": 5300,
+   "input_tokens": 947
+  },
+  "liepard-night-city": {
+   "generations": 2,
+   "picked": 2,
+   "output_tokens": 10600,
+   "input_tokens": 1975
+  },
+  "lapras-lagoon": {
+   "generations": 1,
+   "picked": 1,
+   "output_tokens": 5300,
+   "input_tokens": 958
+  },
+  "glastrier-ice-field": {
+   "generations": 1,
+   "picked": 1,
+   "output_tokens": 5300,
+   "input_tokens": 965
+  },
+  "cresselia-moonlit-sky": {
+   "generations": 2,
+   "picked": 2,
+   "output_tokens": 10600,
+   "input_tokens": 1983
+  },
+  "herdier-temple": {
+   "generations": 1,
+   "picked": 1,
+   "output_tokens": 5300,
+   "input_tokens": 967
+  },
+  "growlithe-meadow": {
+   "generations": 2,
+   "picked": 2,
+   "output_tokens": 10600,
+   "input_tokens": 1857
+  }
+ },
+ "total_generations": 14,
+ "total_output_tokens": 74200,
+ "total_input_tokens": 13491
+}

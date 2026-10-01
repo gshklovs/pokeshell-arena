@@ -1,0 +1,56 @@
+{
+ "version": 1,
+ "card": "swsh11tg-TG21",
+ "character": "eternatus",
+ "name": "Eternatus V",
+ "fantasy": "Accelerates energy, then Dynamax Cannon: stronger against evolved foes.",
+ "attacks": [
+  {
+   "name": "Power Accelerator",
+   "shape": {
+    "kind": "melee",
+    "range": 78,
+    "arc": 96,
+    "lunge": 40
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Dynamax Cannon",
+   "shape": {
+    "kind": "beam",
+    "length": 760,
+    "width": 44
+   },
+   "windup": 18,
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeIs",
+     "kind": "VMAX",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 120
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ]
+  }
+ ]
+}

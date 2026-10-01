@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "card": "sma-SV58",
+ "character": "xurkitree",
+ "name": "Xurkitree-GX",
+ "fantasy": "Rumbling wires that jam a foe's energy.",
+ "attacks": [
+  {
+   "name": "Rumbling Wires",
+   "shape": {
+    "kind": "beam",
+    "length": 700,
+    "width": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "energyJam",
+     "ticks": 30
+    }
+   ]
+  },
+  {
+   "name": "Lighting-GX",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 180
+   },
+   "onHit": [
+    {
+     "op": "discardEnergy",
+     "count": 2,
+     "target": "target"
+    }
+   ]
+  }
+ ]
+}

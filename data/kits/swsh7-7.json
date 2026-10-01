@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "card": "swsh7-7",
+  "character": "leafeon",
+  "name": "Leafeon V",
+  "stats": {
+    "hp": 200, "types": ["Grass"], "subtypes": ["Basic", "V"],
+    "weaknesses": [{ "type": "Fire", "value": "×2" }], "resistances": [], "retreat": 1
+  },
+  "attacks": [
+    {
+      "name": "Leaf Blade", "cost": ["Grass", "Colorless", "Colorless"], "damage": "90+",
+      "shape": { "kind": "melee", "range": 84, "arc": 96, "lunge": 90 },
+      "windup": 12, "recovery": 12, "cooldown": 45,
+      "onCast": [{ "op": "coin", "heads": [{ "op": "bonus", "amount": 60 }] }],
+      "onHit": [{ "op": "damage", "amount": 90 }]
+    }
+  ],
+  "passive": null,
+  "notes": "A lunging slash; heads adds 60 (the card's 90+). Greening Cells (ability) is M2 (passive)."
+}

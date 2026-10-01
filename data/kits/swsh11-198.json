@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "card": "swsh11-198",
+ "character": "magnezone",
+ "name": "Magnezone VSTAR",
+ "fantasy": "Magnetic Grip pulls foes in; Electro Star hits the back line.",
+ "attacks": [
+  {
+   "name": "Magnetic Grip",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 38
+   },
+   "pin": "pinned to the spec beam: the lexicon made it a close grab with a 19-tick windup, and Magnezone VSTAR won 7-20% of VSTAR fights",
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "pull",
+     "px": 120
+    }
+   ]
+  },
+  {
+   "name": "Electro Star",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 160,
+    "range": 520
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "benchDamage",
+     "amount": 90,
+     "count": 2
+    }
+   ]
+  }
+ ],
+ "notes": "Magnetic Grip: pinned to the spec beam: the lexicon made it a close grab with a 19-tick windup, and Magnezone VSTAR won 7-20% of VSTAR fights"
+}

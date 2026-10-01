@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG45",
+ "character": "deoxys",
+ "name": "Deoxys VMAX",
+ "fantasy": "Max Drain: a beam that heals it.",
+ "attacks": [
+  {
+   "name": "Max Drain",
+   "shape": {
+    "kind": "beam",
+    "length": 740,
+    "width": 42
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    }
+   ]
+  }
+ ]
+}

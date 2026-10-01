@@ -1,0 +1,29 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG50",
+ "character": "darkrai",
+ "name": "Darkrai VSTAR",
+ "fantasy": "A dark pulse that grows with the energy in play.",
+ "attacks": [
+  {
+   "name": "Dark Pulse",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 140,
+    "range": 480
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myAttached",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

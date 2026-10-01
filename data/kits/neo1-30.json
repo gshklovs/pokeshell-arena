@@ -1,0 +1,39 @@
+{
+ "version": 1,
+ "card": "neo1-30",
+ "character": "clefairy",
+ "name": "Clefairy",
+ "fantasy": "Sings foes to sleep and waves Metronome: it copies the foe's strongest attack.",
+ "attacks": [
+  {
+   "name": "Doubleslap",
+   "shape": {
+    "kind": "melee",
+    "range": 68,
+    "arc": 90
+   },
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 2,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 10
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "name": "Squaredance",
+   "shape": {
+    "kind": "self"
+   }
+  }
+ ]
+}

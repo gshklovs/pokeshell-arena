@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "card": "me55-80",
+ "character": "lunala",
+ "name": "Lunala",
+ "fantasy": "The moon: a midnight ray and a lunar blast.",
+ "attacks": [
+  {
+   "name": "Midnight Ray",
+   "shape": {
+    "kind": "beam",
+    "length": 680,
+    "width": 24
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "turns",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Lunar Blast",
+   "shape": {
+    "kind": "beam",
+    "length": 740,
+    "width": 40
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ]
+  }
+ ]
+}

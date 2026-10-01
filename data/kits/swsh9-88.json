@@ -1,0 +1,23 @@
+{
+ "version": 1,
+ "card": "swsh9-88",
+ "character": "honchkrow",
+ "name": "Honchkrow V",
+ "fantasy": "A fearsome shadow on the aim point.",
+ "attacks": [
+  {
+   "name": "Fearsome Shadow",
+   "shape": {
+    "kind": "cone",
+    "range": 280,
+    "arc": 36
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    }
+   ]
+  }
+ ]
+}

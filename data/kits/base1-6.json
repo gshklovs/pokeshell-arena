@@ -1,0 +1,61 @@
+{
+ "version": 1,
+ "card": "base1-6",
+ "character": "gyarados",
+ "name": "Gyarados",
+ "fantasy": "Rage made into a beam; a wide bubble beam that can paralyze.",
+ "attacks": [
+  {
+   "name": "Dragon Rage",
+   "shape": {
+    "kind": "cone",
+    "range": 230,
+    "arc": 56
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 70
+    }
+   ]
+  },
+  {
+   "name": "Bubblebeam",
+   "shape": {
+    "kind": "beam",
+    "length": 600,
+    "width": 28
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "paralyzed"
+      }
+     ]
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 80
+    }
+   ]
+  }
+ ]
+}

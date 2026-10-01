@@ -1,0 +1,45 @@
+{
+ "version": 1,
+ "card": "sm115-20",
+ "character": "raichu",
+ "name": "Raichu-GX",
+ "fantasy": "A Thunderbolt, then Spark Ball: a huge slow orb once per match.",
+ "attacks": [
+  {
+   "name": "Thunderbolt",
+   "shape": {
+    "kind": "beam",
+    "length": 740,
+    "width": 40
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ]
+  },
+  {
+   "name": "Spark Ball-GX",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 24,
+    "range": 700,
+    "blast": 80
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

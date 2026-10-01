@@ -1,0 +1,73 @@
+{
+ "version": 1,
+ "card": "sma-SV65",
+ "character": "zygarde-complete",
+ "name": "Zygarde-GX",
+ "fantasy": "Cells connect, the land's wrath quakes around it, Verdict protects it from rule-box foes.",
+ "attacks": [
+  {
+   "name": "Cell Connector",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 16,
+    "range": 620,
+    "blast": 64
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  },
+  {
+   "name": "Land's Wrath",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 170
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    },
+    {
+     "op": "knockback",
+     "px": 110
+    }
+   ]
+  },
+  {
+   "name": "Verdict-GX",
+   "shape": {
+    "kind": "melee",
+    "range": 68,
+    "arc": 64,
+    "lunge": 56
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "shield",
+     "amount": 60,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 150
+    }
+   ]
+  }
+ ]
+}

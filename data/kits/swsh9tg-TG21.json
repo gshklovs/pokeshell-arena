@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "card": "swsh9tg-TG21",
+ "character": "urshifu-rapid-strike-gmax",
+ "name": "Rapid Strike Urshifu VMAX",
+ "fantasy": "A flurry: gale thrusts and two rapid water-fists at once.",
+ "attacks": [
+  {
+   "name": "Gale Thrust",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 22,
+    "radius": 28
+   },
+   "pin": "a gale-fast rush (the name reads as a horn thrust: as one it fell to 17-24% of VMAX fights)",
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "fresh",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 120
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "G-Max Rapid Flow",
+   "shape": {
+    "kind": "projectile",
+    "speed": 20,
+    "radius": 12,
+    "range": 760,
+    "count": 2,
+    "spread": 8
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ]
+  }
+ ],
+ "notes": "Gale Thrust: a gale-fast rush (the name reads as a horn thrust: as one it fell to 17-24% of VMAX fights); G-Max Rapid Flow: two of the opponent's Pokémon: two fists; both can hit one foe"
+}

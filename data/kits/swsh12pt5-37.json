@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-37",
+ "character": "kyogre",
+ "name": "Kyogre V",
+ "fantasy": "Dual Splash picks off the back line; Aqua Typhoon is a huge flood around it, then it rests.",
+ "attacks": [
+  {
+   "name": "Dual Splash",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 16,
+    "range": 680
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 70
+    }
+   ]
+  },
+  {
+   "name": "Aqua Typhoon",
+   "shape": {
+    "kind": "beam",
+    "length": 660,
+    "width": 44,
+    "ticks": 16
+   },
+   "windup": 22,
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90,
+     "which": "this"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 210
+    },
+    {
+     "op": "knockback",
+     "px": 150
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 140
+    }
+   ]
+  }
+ ]
+}

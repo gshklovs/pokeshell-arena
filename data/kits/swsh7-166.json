@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "swsh7-166",
+ "character": "leafeon",
+ "name": "Leafeon V",
+ "fantasy": "A leaf swordsman: Leaf Blade lunges far; Leaf Guard hardens it as it strikes.",
+ "attacks": [
+  {
+   "name": "Leaf Blade",
+   "shape": {
+    "kind": "melee",
+    "range": 84,
+    "arc": 96,
+    "lunge": 90
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "bonus",
+       "amount": 60
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  }
+ ]
+}

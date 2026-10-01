@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-20",
+ "character": "charizard",
+ "name": "Radiant Charizard",
+ "fantasy": "One huge Combustion Blast: the longest, widest fire beam, then a turn to cool down.",
+ "attacks": [
+  {
+   "name": "Combustion Blast",
+   "shape": {
+    "kind": "beam",
+    "length": 780,
+    "width": 48,
+    "ticks": 12
+   },
+   "windup": 28,
+   "cost": [
+    "Fire",
+    "Colorless",
+    "Colorless"
+   ],
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90,
+     "which": "this"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 250
+    },
+    {
+     "op": "knockback",
+     "px": 110
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 60,
+     "ticks": 150
+    }
+   ]
+  }
+ ],
+ "notes": "Combustion Blast: three pips (see overrides); wu28 as before: at wu26 and five pips it won 94% of same-tier fights, at five pips and a pip per 160 ticks 14-21%",
+ "overrides": {
+  "Combustion Blast.cost": "its Excited Heart ability (the attack costs 1 less for each Prize card the opponent has taken) is not simulated: 3 of its 5 energy, the cost it has midway through a fight"
+ }
+}

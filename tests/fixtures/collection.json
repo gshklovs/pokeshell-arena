@@ -1,0 +1,244 @@
+{
+ "api": 1,
+ "version": "source",
+ "state": "C:\\fixture\\pokeshell-home",
+ "pack": null,
+ "counts": {
+  "caught": 3,
+  "seen": 1,
+  "pulls": 3,
+  "shiny": 1
+ },
+ "cards": [
+  {
+   "card": "base1-58",
+   "pack": "pokemon",
+   "character": "pikachu",
+   "name": "Pikachu",
+   "set": "base1",
+   "setName": "Base",
+   "number": "58/102",
+   "rarity": "Common",
+   "tier": "common",
+   "tierLabel": "common",
+   "tierRank": 0,
+   "caught": true,
+   "count": 1,
+   "shinyCount": 0,
+   "shiny": false,
+   "new": false,
+   "firstCaught": "2026-09-29T10:00:00",
+   "lastCaught": "2026-09-29T10:00:00",
+   "art": {
+    "ans": "C:\\fixture\\pokeshell\\dist\\pokemon\\pikachu-base1-58.ans",
+    "ansShiny": "C:\\fixture\\pokeshell\\dist\\pokemon\\pikachu-base1-58-shiny.ans",
+    "png": null,
+    "pngShiny": null,
+    "img": null,
+    "imgShiny": null
+   },
+   "data": {
+    "supertype": "Pokémon",
+    "hp": 40,
+    "types": [
+     "Lightning"
+    ],
+    "subtypes": [
+     "Basic"
+    ],
+    "evolvesFrom": null,
+    "abilities": [],
+    "attacks": [
+     {
+      "name": "Gnaw",
+      "cost": [
+       "Colorless"
+      ],
+      "convertedEnergyCost": 1,
+      "damage": "10",
+      "text": ""
+     },
+     {
+      "name": "Thunder Jolt",
+      "cost": [
+       "Lightning",
+       "Colorless"
+      ],
+      "convertedEnergyCost": 2,
+      "damage": "30",
+      "text": ""
+     }
+    ],
+    "weaknesses": [
+     {
+      "type": "Fighting",
+      "value": "×2"
+     }
+    ],
+    "resistances": [],
+    "retreatCost": [
+     "Colorless"
+    ],
+    "rules": []
+   }
+  },
+  {
+   "card": "base1-63",
+   "pack": "pokemon",
+   "character": "squirtle",
+   "name": "Squirtle",
+   "set": "base1",
+   "setName": "Base",
+   "number": "63/102",
+   "rarity": "Common",
+   "tier": "common",
+   "tierLabel": "common",
+   "tierRank": 0,
+   "caught": true,
+   "count": 1,
+   "shinyCount": 1,
+   "shiny": true,
+   "new": false,
+   "firstCaught": "2026-09-29T10:05:00",
+   "lastCaught": "2026-09-29T10:05:00",
+   "art": {
+    "ans": "C:\\fixture\\pokeshell\\dist\\pokemon\\squirtle-base1-63.ans",
+    "ansShiny": "C:\\fixture\\pokeshell\\dist\\pokemon\\squirtle-base1-63-shiny.ans",
+    "png": null,
+    "pngShiny": null,
+    "img": null,
+    "imgShiny": null
+   },
+   "data": {
+    "supertype": "Pokémon",
+    "hp": 40,
+    "types": [
+     "Water"
+    ],
+    "subtypes": [
+     "Basic"
+    ],
+    "evolvesFrom": null,
+    "abilities": [],
+    "attacks": [
+     {
+      "name": "Bubble",
+      "cost": [
+       "Water"
+      ],
+      "convertedEnergyCost": 1,
+      "damage": "10",
+      "text": ""
+     },
+     {
+      "name": "Withdraw",
+      "cost": [
+       "Water",
+       "Colorless"
+      ],
+      "convertedEnergyCost": 2,
+      "damage": "",
+      "text": ""
+     }
+    ],
+    "weaknesses": [
+     {
+      "type": "Lightning",
+      "value": "×2"
+     }
+    ],
+    "resistances": [],
+    "retreatCost": [
+     "Colorless"
+    ],
+    "rules": []
+   }
+  },
+  {
+   "card": "swsh7-7",
+   "pack": "pokemon",
+   "character": "leafeon",
+   "name": "Leafeon V",
+   "set": "swsh7",
+   "setName": "Evolving Skies",
+   "number": "7/203",
+   "rarity": "Rare Holo V",
+   "tier": "rare-holo-v",
+   "tierLabel": "rare holo V",
+   "tierRank": 15,
+   "caught": true,
+   "count": 1,
+   "shinyCount": 0,
+   "shiny": false,
+   "new": false,
+   "firstCaught": "2026-09-29T10:06:00",
+   "lastCaught": "2026-09-29T10:06:00",
+   "art": {
+    "ans": "C:\\fixture\\pokeshell\\dist\\pokemon\\leafeon-swsh7-7.ans",
+    "ansShiny": "C:\\fixture\\pokeshell\\dist\\pokemon\\leafeon-swsh7-7-shiny.ans",
+    "png": null,
+    "pngShiny": null,
+    "img": null,
+    "imgShiny": null
+   },
+   "data": {
+    "supertype": "Pokémon",
+    "hp": 200,
+    "types": [
+     "Grass"
+    ],
+    "subtypes": [
+     "Basic",
+     "V"
+    ],
+    "evolvesFrom": null,
+    "abilities": [
+     {
+      "name": "Greening Cells",
+      "type": "Ability",
+      "text": ""
+     }
+    ],
+    "attacks": [
+     {
+      "name": "Leaf Blade",
+      "cost": [
+       "Grass",
+       "Colorless",
+       "Colorless"
+      ],
+      "convertedEnergyCost": 3,
+      "damage": "90+",
+      "text": ""
+     }
+    ],
+    "weaknesses": [
+     {
+      "type": "Fire",
+      "value": "×2"
+     }
+    ],
+    "resistances": [],
+    "retreatCost": [
+     "Colorless"
+    ],
+    "rules": []
+   }
+  },
+  {
+   "card": "swsh7-215",
+   "pack": "pokemon",
+   "character": "umbreon",
+   "name": "Umbreon VMAX",
+   "set": "swsh7",
+   "setName": "Evolving Skies",
+   "number": "215/203",
+   "rarity": "Rare Rainbow",
+   "tier": "rare-rainbow",
+   "caught": false,
+   "count": 0,
+   "shiny": false
+  }
+ ],
+ "seen": []
+}

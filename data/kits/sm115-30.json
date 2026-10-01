@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "card": "sm115-30",
+ "character": "jynx",
+ "name": "Jynx",
+ "fantasy": "Slaps, kisses and a dance that draws a foe in.",
+ "attacks": [
+  {
+   "name": "Slap",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 80
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Lovely Kiss",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 11,
+    "range": 460,
+    "count": 2,
+    "spread": 0,
+    "path": "helix",
+    "amp": 14,
+    "period": 10
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

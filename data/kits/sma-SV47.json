@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "card": "sma-SV47",
+ "character": "decidueye",
+ "name": "Decidueye-GX",
+ "fantasy": "An archer: long razor-leaf arrows.",
+ "attacks": [
+  {
+   "name": "Razor Leaf",
+   "shape": {
+    "kind": "projectile",
+    "speed": 19,
+    "radius": 12,
+    "range": 680
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  },
+  {
+   "name": "Hollow Hunt-GX",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  }
+ ],
+ "notes": "Razor Leaf: an archer: s19 (was s15), Decidueye-GX won 5% of rule-box fights"
+}

@@ -1,0 +1,66 @@
+{
+ "version": 1,
+ "card": "sma-SV69",
+ "character": "umbreon",
+ "name": "Umbreon-GX",
+ "fantasy": "Strafes and slips away, shadow bullets, and Dark Call.",
+ "attacks": [
+  {
+   "name": "Strafe",
+   "shape": {
+    "kind": "dash",
+    "distance": 180,
+    "speed": 28,
+    "radius": 22
+   },
+   "onCast": [
+    {
+     "op": "retreat"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Shadow Bullet",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 16,
+    "range": 680,
+    "blast": 74
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    },
+    {
+     "op": "benchDamage",
+     "amount": 30,
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Dark Call-GX",
+   "shape": {
+    "kind": "melee",
+    "range": 68,
+    "arc": 84,
+    "lunge": 70
+   },
+   "onHit": [
+    {
+     "op": "discardEnergy",
+     "count": 2,
+     "target": "target"
+    }
+   ]
+  }
+ ]
+}

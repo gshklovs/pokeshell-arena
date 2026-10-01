@@ -1,0 +1,66 @@
+{
+ "version": 1,
+ "card": "swsh7-176",
+ "character": "arctovish",
+ "name": "Arctovish V",
+ "fantasy": "An ancient fish that freezes foes solid, then a Giga Impact.",
+ "attacks": [
+  {
+   "name": "Ancient Freeze",
+   "shape": {
+    "kind": "cone",
+    "range": 280,
+    "arc": 80
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeIs",
+     "kind": "V",
+     "then": [
+      {
+       "op": "exhaust",
+       "ticks": 90,
+       "target": "target"
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "slow",
+     "permille": 500,
+     "ticks": 90
+    }
+   ]
+  },
+  {
+   "name": "Giga Impact",
+   "shape": {
+    "kind": "dash",
+    "distance": 320,
+    "speed": 18,
+    "radius": 34
+   },
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 220
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ]
+}

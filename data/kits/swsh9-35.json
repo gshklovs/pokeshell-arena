@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "swsh9-35",
+ "character": "piplup",
+ "name": "Piplup",
+ "fantasy": "A proud penguin that blows bubbles.",
+ "attacks": [
+  {
+   "name": "Bubble",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 12,
+    "range": 560
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "paralyzed"
+      }
+     ]
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 60
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "version": 1,
+ "card": "swsh9-109",
+ "character": "garchomp",
+ "name": "Garchomp",
+ "fantasy": "A jet shark: quick dives and royal blades.",
+ "attacks": [
+  {
+   "name": "Dragonblade",
+   "shape": {
+    "kind": "melee",
+    "range": 92,
+    "arc": 120,
+    "lunge": 80
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

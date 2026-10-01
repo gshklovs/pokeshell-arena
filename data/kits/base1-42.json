@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "card": "base1-42",
+ "character": "wartortle",
+ "name": "Wartortle",
+ "fantasy": "Hides behind its shell, bites back.",
+ "attacks": [
+  {
+   "name": "Withdraw",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "shield",
+       "ticks": 90
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Bite",
+   "shape": {
+    "kind": "melee",
+    "range": 68,
+    "arc": 80,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pack Opening Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; height: 100%; background: #07060d; color: #f4f1ff; font-family: Fredoka, "Segoe UI", system-ui, sans-serif; }
+  #app { position: fixed; inset: 0; }
+  .demo-stage { position: absolute; inset: 0; }
+  .demo-picker { position: absolute; inset: 0; overflow-y: auto; padding: 28px 16px 40px;
+    background: radial-gradient(90% 70% at 50% 0%, #1d1840, #07060d 70%); }
+  .demo-picker header { text-align: center; max-width: 720px; margin: 0 auto 22px; }
+  .demo-picker h1 { margin: 0 0 6px; font: 700 30px/1.1 Fredoka, system-ui, sans-serif; }
+  .demo-picker p { margin: 0; opacity: .75; font-size: 15px; line-height: 1.45; }
+  .demo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 22px 16px; max-width: 980px; margin: 0 auto; }
+  .demo-set { all: unset; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; border-radius: 12px; padding: 8px; }
+  .demo-set:focus-visible { outline: 2px solid #ffd35a; }
+  .demo-set__pack { width: 100%; max-width: 150px; aspect-ratio: 250 / 400; transition: transform .25s cubic-bezier(.2,1.4,.4,1); filter: drop-shadow(0 14px 16px rgba(0,0,0,.5)); }
+  .demo-set:hover .demo-set__pack { transform: translateY(-8px) rotate(-2deg) scale(1.04); }
+  .demo-set__pack svg { width: 100%; height: 100%; display: block; }
+  .demo-set b { font-size: 15px; } .demo-set span { font-size: 12px; opacity: .6; }
+  .pk-w-title { font: 800 30px/1 Fredoka, system-ui, sans-serif; fill: #fff; stroke: rgba(0,0,0,.45); stroke-width: 5px; paint-order: stroke; }
+  .pk-w-series, .pk-w-meta { font: 700 8px/1 Silkscreen, monospace; fill: rgba(255,255,255,.85); letter-spacing: 1.5px; }
+  .pk-w-booster { font: 800 17px/1 Fredoka, system-ui, sans-serif; fill: #fff; letter-spacing: 6px; stroke: rgba(0,0,0,.35); stroke-width: 3px; paint-order: stroke; }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script type="module" src="/src/packs/demo.ts"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+ "version": 1,
+ "card": "swsh9tg-TG19",
+ "character": "urshifu-gmax",
+ "name": "Single Strike Urshifu VMAX",
+ "fantasy": "G-Max One Blow: the slowest windup, the hardest single punch.",
+ "attacks": [
+  {
+   "name": "Beatdown",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 84,
+    "radius": 82,
+    "delay": 8
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  },
+  {
+   "name": "G-Max One Blow",
+   "shape": {
+    "kind": "melee",
+    "range": 98,
+    "arc": 120,
+    "lunge": 100
+   },
+   "pin": "pinned to the spec punch (the Max-move lexicon made it a pillar that landed 26 ticks after a 25-tick windup: 5% of VMAX fights), a little wider",
+   "windup": 22,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 270,
+     "pierce": true
+    },
+    {
+     "op": "knockback",
+     "px": 180
+    }
+   ]
+  }
+ ],
+ "notes": "G-Max One Blow: pinned to the spec punch (the Max-move lexicon made it a pillar that landed 26 ticks after a 25-tick windup: 5% of VMAX fights), a little wider"
+}

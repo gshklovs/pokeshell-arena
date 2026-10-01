@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "base1-21",
+ "character": "electrode",
+ "name": "Electrode",
+ "fantasy": "A ball that explodes: shocks around itself, lightning balls.",
+ "attacks": [
+  {
+   "name": "Electric Shock",
+   "shape": {
+    "kind": "projectile",
+    "speed": 18,
+    "radius": 8,
+    "range": 680,
+    "path": "zigzag",
+    "amp": 8,
+    "period": 4
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "tails": [
+      {
+       "op": "selfDamage",
+       "amount": 10
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  }
+ ]
+}

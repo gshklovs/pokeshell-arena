@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-46",
+ "character": "rotom",
+ "name": "Rotom VSTAR",
+ "fantasy": "A scrap pulse on the aim point.",
+ "attacks": [
+  {
+   "name": "Scrap Pulse",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 130,
+    "range": 480
+   },
+   "onCast": [
+    {
+     "op": "spendEnergy",
+     "max": 3,
+     "amount": 40
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "version": 1,
+ "card": "swsh11-66",
+ "character": "gengar",
+ "name": "Gengar",
+ "fantasy": "Screaming Circle: a ring of dread around it that grows with the foe's bench.",
+ "attacks": [
+  {
+   "name": "Screaming Circle",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 200
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeBench",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

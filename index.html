@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pokeshell arena</title>
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <!-- pokeshell's binder fonts (tools/binder-web/index.html in pokeshell); offline, the fallbacks in theme.css apply -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div id="stage">
+      <canvas id="game" width="1920" height="1080"></canvas>
+      <button id="quit" class="hud-quit hidden" title="quit the match (a forfeit: it counts as a loss)">Quit match</button>
+    </div>
+    <div id="menu" class="overlay"></div>
+    <div id="reveal" class="overlay hidden"></div>
+    <div id="pause" class="overlay hidden"></div>
+    <div id="result" class="overlay hidden"></div>
+    <div id="packs" class="overlay hidden"></div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

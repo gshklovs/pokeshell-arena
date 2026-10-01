@@ -1,0 +1,45 @@
+{
+ "version": 1,
+ "card": "neo1-31",
+ "character": "croconaw",
+ "name": "Croconaw",
+ "fantasy": "Clamps its jaws on a foe so it can't get away; sweeps the field with water.",
+ "attacks": [
+  {
+   "name": "Screech",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 172
+   },
+   "onHit": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": -20,
+     "ticks": 180,
+     "target": "target"
+    }
+   ]
+  },
+  {
+   "name": "Jaw Clamp",
+   "shape": {
+    "kind": "melee",
+    "range": 74,
+    "arc": 80,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "retreatLock",
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

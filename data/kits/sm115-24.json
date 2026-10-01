@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "sm115-24",
+ "character": "zapdos",
+ "name": "Zapdos",
+ "fantasy": "The thunderbird: bolts from the sky, a long Thunderbolt, sky-high claws.",
+ "attacks": [
+  {
+   "name": "Hurricane Call",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "coins",
+     "count": 4,
+     "perHeads": [
+      {
+       "op": "gainEnergy",
+       "count": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Sky-High Claws",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 21,
+    "radius": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

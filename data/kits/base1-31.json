@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "card": "base1-31",
+ "character": "jynx",
+ "name": "Jynx",
+ "fantasy": "Slaps, kisses and a dance that draws a foe in.",
+ "attacks": [
+  {
+   "name": "Doubleslap",
+   "shape": {
+    "kind": "melee",
+    "range": 68,
+    "arc": 90
+   },
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 2,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 10
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "name": "Meditate",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 110,
+    "range": 460
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeDamage",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

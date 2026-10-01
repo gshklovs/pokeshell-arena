@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "swsh11tg-TG19",
+ "character": "gallade",
+ "name": "Gallade V",
+ "fantasy": "A blade knight: a rising sword, a buster swing that cuts through resistance.",
+ "attacks": [
+  {
+   "name": "Rising Sword",
+   "shape": {
+    "kind": "melee",
+    "range": 78,
+    "arc": 96,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myPrizes",
+     "amount": 50
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Buster Swing",
+   "shape": {
+    "kind": "melee",
+    "range": 92,
+    "arc": 140,
+    "lunge": 70
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130,
+     "wr": "weakness"
+    },
+    {
+     "op": "knockback",
+     "px": 110
+    }
+   ]
+  }
+ ],
+ "notes": "Buster Swing: l70 (was l40): Gallade V won 6% of V fights"
+}

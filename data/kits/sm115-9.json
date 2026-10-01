@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "card": "sm115-9",
+ "character": "charizard",
+ "name": "Charizard-GX",
+ "fantasy": "A GX brawler: a scorching flamethrower, then a once-per-match Flare Blitz that crashes through everything.",
+ "attacks": [
+  {
+   "name": "Flamethrower",
+   "shape": {
+    "kind": "cone",
+    "range": 240,
+    "arc": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 140
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 50,
+     "ticks": 150
+    }
+   ]
+  },
+  {
+   "name": "Flare Blitz-GX",
+   "shape": {
+    "kind": "dash",
+    "distance": 340,
+    "speed": 20,
+    "radius": 36
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 300
+    },
+    {
+     "op": "knockback",
+     "px": 160
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 60,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

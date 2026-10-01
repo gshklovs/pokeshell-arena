@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "card": "swsh11tg-TG15",
+ "character": "centiskorch-gmax",
+ "name": "Centiskorch VMAX",
+ "fantasy": "G-Max Centiferno: a ring of fire around itself that grows with its energy.",
+ "attacks": [
+  {
+   "name": "G-Max Centiferno",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 120,
+    "delay": 20
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myAttached",
+     "amount": 40
+    },
+    {
+     "op": "damage",
+     "amount": 40
+    },
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 80,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

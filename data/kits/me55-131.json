@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "me55-131",
+ "character": "lapras",
+ "name": "Lapras",
+ "fantasy": "Carries its team across the water; its Ice Beam slows what it touches.",
+ "attacks": [
+  {
+   "name": "Ferry Across",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Ice Beam",
+   "shape": {
+    "kind": "beam",
+    "length": 640,
+    "width": 26
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "paralyzed"
+      }
+     ]
+    },
+    {
+     "op": "slow",
+     "permille": 400,
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

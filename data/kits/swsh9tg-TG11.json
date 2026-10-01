@@ -1,0 +1,36 @@
+{
+ "version": 1,
+ "card": "swsh9tg-TG11",
+ "character": "eevee",
+ "name": "Eevee",
+ "fantasy": "A curious all-rounder: tackles, quick attacks, and searches for its evolutions.",
+ "attacks": [
+  {
+   "name": "Vee-Search",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Stampede",
+   "shape": {
+    "kind": "dash",
+    "distance": 240,
+    "speed": 19,
+    "radius": 26
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

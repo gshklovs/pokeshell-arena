@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "base1-30",
+ "character": "ivysaur",
+ "name": "Ivysaur",
+ "fantasy": "Vine whips that drag foes in, a cloud of poison powder.",
+ "attacks": [
+  {
+   "name": "Vine Whip",
+   "shape": {
+    "kind": "melee",
+    "range": 110,
+    "arc": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "pull",
+     "px": 60
+    }
+   ]
+  },
+  {
+   "name": "Poisonpowder",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 110,
+    "radius": 84,
+    "ticks": 90,
+    "every": 45,
+    "delay": 8
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "status",
+     "status": "poisoned"
+    }
+   ]
+  }
+ ]
+}

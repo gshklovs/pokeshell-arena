@@ -1,0 +1,52 @@
+{
+ "version": 1,
+ "card": "swsh7-177",
+ "character": "jolteon",
+ "name": "Jolteon V",
+ "fantasy": "A thunder spear that snipes, pin missiles.",
+ "attacks": [
+  {
+   "name": "Thunder Spear",
+   "shape": {
+    "kind": "melee",
+    "range": 108,
+    "arc": 36,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Pin Missile",
+   "shape": {
+    "kind": "projectile",
+    "speed": 18,
+    "radius": 9,
+    "range": 680,
+    "path": "helix",
+    "amp": 11,
+    "period": 5
+   },
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 4,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 60
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

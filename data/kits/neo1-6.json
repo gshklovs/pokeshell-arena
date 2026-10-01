@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "neo1-6",
+ "character": "heracross",
+ "name": "Heracross",
+ "fantasy": "Megahorn: a charging horn that can miss, and flings foes when it lands.",
+ "attacks": [
+  {
+   "name": "Megahorn",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 19,
+    "radius": 30
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "tails": [
+      {
+       "op": "fizzle"
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    },
+    {
+     "op": "knockback",
+     "px": 110
+    }
+   ]
+  }
+ ]
+}

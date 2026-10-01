@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "card": "base1-12",
+ "character": "ninetales",
+ "name": "Ninetales",
+ "fantasy": "Lures a foe in, then a heavy Fire Blast; a sweeping flame tail.",
+ "attacks": [
+  {
+   "name": "Lure",
+   "shape": {
+    "kind": "melee",
+    "range": 150,
+    "arc": 28
+   },
+   "onHit": [
+    {
+     "op": "gust",
+     "mode": "pull"
+    }
+   ]
+  },
+  {
+   "name": "Fire Blast",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 22,
+    "range": 640,
+    "blast": 88
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 70,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

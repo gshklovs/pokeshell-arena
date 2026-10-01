@@ -1,0 +1,44 @@
+/* The arena's design tokens. Shapes, sizes, borders and fonts come from pokeshell's web binder (pokeshell
+   tools/binder-web/index.html): paper-like panels, clear pockets, divider tabs, card frames, Fredoka / Silkscreen /
+   Caveat. The colours are the arena's own dark palette (navy panels, gold accents, the user's pick over the binder's
+   bright desk): one theme, dark, for everyone. The canvas HUD reads these same tokens (src/theme.ts).
+   The names stay the binder's (desk, paper, pocket, cover) so the shapes read the same in both codebases. */
+:root {
+  color-scheme: dark;
+  --ff-round: Fredoka, "Segoe UI", system-ui, -apple-system, sans-serif;
+  --ff-pix: Silkscreen, "Cascadia Mono", Consolas, ui-monospace, monospace;
+  --ff-hand: Caveat, "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+
+  /* the backdrop the screens lie on: the arena's night navy, with its two glows */
+  --desk: #0a0e19; --desk-2: #0d1222; --desk-dot: rgba(160, 180, 255, .05);
+  --desk-glow-1: #1c2a52; --desk-glow-2: #3a1c3e;
+  /* ink */
+  --ink: #eef2ff; --ink-soft: rgba(238, 242, 255, .62);
+  /* panels ("pages") and their edges */
+  --paper: #121828; --paper-2: #1a2238; --paper-edge: rgba(255, 255, 255, .12);
+  --panel-alpha: .92;
+  /* pockets */
+  --pocket-bg: rgba(255, 255, 255, .045); --pocket-line: rgba(255, 255, 255, .13); --pocket-gloss: rgba(255, 255, 255, .12);
+  --ghost-line: rgba(255, 255, 255, .18); --ghost-ink: rgba(238, 242, 255, .5);
+  /* the binder board behind the loadout pages: a darker navy with gold stitching (not the binder's red) */
+  --cover: #161d33; --cover-2: #0c1120; --cover-stitch: rgba(255, 211, 90, .28);
+  /* chips, panels, modals */
+  --chip: rgba(255, 255, 255, .06); --chip-line: rgba(255, 255, 255, .12);
+  --panel: #151c30; --panel-line: rgba(255, 255, 255, .12);
+  --modal-bg: rgba(5, 8, 16, .62);
+  --shadow: 0 1px 0 rgba(255,255,255,.05) inset, 0 22px 50px -18px rgba(0, 0, 0, .85), 0 4px 12px -4px rgba(0, 0, 0, .6);
+  /* the arena's gold */
+  --accent: #ffd35a; --accent-ink: #ffd35a; --focus: #78dcff;
+  /* divider tabs: gold (team), cyan (1v1 / you), coral (the bot); small accents on the navy */
+  --tab-yellow: #ffd35a; --tab-yellow-ink: #1a1405;
+  --tab-blue: #78dcff; --tab-blue-ink: #042430;
+  --tab-red: #ff7a7a; --tab-red-ink: #2a0606;
+  --dex-blue: #78dcff;
+  /* sides */
+  --me: #78dcff; --foe: #ff7a7a;
+  --good: #7dff9a; --good-ink: #7dff9a;
+  --hp-hi: #5ee06a; --hp-mid: #f5c542; --hp-lo: #f0504a;
+  --gold: #ffd35a; --gold-2: #d9901e; --gold-ink: #1a1405;
+  /* the art window inside a card frame */
+  --art-rim: rgba(255, 255, 255, .16); --art-rim-2: rgba(0, 0, 0, .45);
+}

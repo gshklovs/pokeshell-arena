@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "swsh7-75",
+ "character": "sylveon",
+ "name": "Sylveon VMAX",
+ "fantasy": "Heals its bench, then Max Harmony: a harmony on the aim point that grows with its team's types.",
+ "attacks": [
+  {
+   "name": "Precious Touch",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    },
+    {
+     "op": "heal",
+     "amount": 120,
+     "target": "team"
+    }
+   ]
+  },
+  {
+   "name": "Max Harmony",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 150,
+    "range": 500
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myTypes",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 70
+    }
+   ]
+  }
+ ]
+}

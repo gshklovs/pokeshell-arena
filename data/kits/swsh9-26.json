@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "card": "swsh9-26",
+ "character": "infernape",
+ "name": "Infernape",
+ "fantasy": "A fire-fist martial artist: a burning vortex around itself and a flying Burning Kick.",
+ "attacks": [
+  {
+   "name": "Infernal Vortex",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 300,
+    "radius": 92,
+    "ticks": 100,
+    "every": 45
+   },
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 5,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 80
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 60,
+     "ticks": 150
+    }
+   ]
+  },
+  {
+   "name": "Burning Kick",
+   "shape": {
+    "kind": "melee",
+    "range": 86,
+    "arc": 100,
+    "lunge": 90
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    },
+    {
+     "op": "knockback",
+     "px": 110
+    }
+   ]
+  }
+ ]
+}

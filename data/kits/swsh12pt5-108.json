@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-108",
+ "character": "eevee",
+ "name": "Eevee V",
+ "fantasy": "A brave charge that grows when it has evolved friends.",
+ "attacks": [
+  {
+   "name": "Tackle",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 80,
+    "lunge": 30
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Vee Brave",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 20,
+    "radius": 30
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeIs",
+     "kind": "V",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 80
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "knockback",
+     "px": 80
+    }
+   ]
+  }
+ ]
+}

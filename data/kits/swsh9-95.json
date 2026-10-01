@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "card": "swsh9-95",
+ "character": "morpeko-hangry",
+ "name": "Morpeko V",
+ "fantasy": "Gnaws and runs; a hangry spike.",
+ "attacks": [
+  {
+   "name": "Gnaw and Run",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 80,
+    "lunge": 30
+   },
+   "onCast": [
+    {
+     "op": "retreat"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Hangry Spike",
+   "shape": {
+    "kind": "melee",
+    "range": 124,
+    "arc": 36,
+    "lunge": 70
+   },
+   "onHit": [
+    {
+     "op": "chance",
+     "permille": 500,
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 120
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ]
+  }
+ ]
+}

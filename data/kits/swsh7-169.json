@@ -1,0 +1,56 @@
+{
+ "version": 1,
+ "card": "swsh7-169",
+ "character": "flareon",
+ "name": "Flareon V",
+ "fantasy": "Breathes fire to charge up, then burns a column on the aim point.",
+ "attacks": [
+  {
+   "name": "Flaming Breath",
+   "shape": {
+    "kind": "cone",
+    "range": 180,
+    "arc": 50
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Scorching Column",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 90,
+    "range": 440
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "status",
+     "status": "burned"
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 60,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

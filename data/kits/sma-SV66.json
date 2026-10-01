@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "card": "sma-SV66",
+ "character": "lycanroc-midnight",
+ "name": "Lycanroc-GX",
+ "fantasy": "A rock wolf: claw slashes, an accelerock charge, splintered shards everywhere.",
+ "attacks": [
+  {
+   "name": "Claw Slash",
+   "shape": {
+    "kind": "melee",
+    "range": 78,
+    "arc": 100,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110
+    }
+   ]
+  },
+  {
+   "name": "Dangerous Rogue-GX",
+   "shape": {
+    "kind": "dash",
+    "distance": 320,
+    "speed": 21,
+    "radius": 32
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeBench",
+     "amount": 50
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

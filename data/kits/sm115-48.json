@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "card": "sm115-48",
+ "character": "eevee",
+ "name": "Eevee",
+ "fantasy": "A curious all-rounder: tackles, quick attacks, and searches for its evolutions.",
+ "attacks": [
+  {
+   "name": "Curiosity",
+   "shape": {
+    "kind": "self"
+   }
+  },
+  {
+   "name": "Spin Tackle",
+   "shape": {
+    "kind": "dash",
+    "distance": 240,
+    "speed": 19,
+    "radius": 26
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "tails": [
+      {
+       "op": "selfDamage",
+       "amount": 10
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

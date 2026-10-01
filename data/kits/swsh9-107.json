@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "swsh9-107",
+ "character": "gible",
+ "name": "Gible",
+ "fantasy": "A land shark pup: gnaws, and ascends into its evolution.",
+ "attacks": [
+  {
+   "name": "Gnaw",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 80,
+    "lunge": 20
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

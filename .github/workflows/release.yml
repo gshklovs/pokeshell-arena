@@ -1,0 +1,152 @@
+# The downloadable arena (docs/RELEASE.md): on a v* tag, build the Windows exe and the macOS universal app and attach
+# them to a draft GitHub Release. Run it by hand (Actions > release > Run workflow) to build the artifacts without a
+# release.
+#
+# The code comes from the tagged commit. The art isn't in git (Nintendo sprites, generated arena paintings, card faces
+# rendered from pokeshell's built art), so the build takes it from arena-art.pak, an asset of the release named by
+# ART_TAG (default "arena-art"), uploaded once from a dev machine with `npm run release:art` (docs/RELEASE.md).
+name: release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      art_tag:
+        description: the release whose arena-art.pak to build from
+        default: arena-art
+
+permissions:
+  contents: write
+
+env:
+  ART_TAG: ${{ inputs.art_tag || vars.ARENA_ART_TAG || 'arena-art' }}
+
+jobs:
+  data:
+    name: game data (frontend + art + cards)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-fund --no-audit
+      - name: fetch the art (arena-art.pak from the ${{ env.ART_TAG }} release)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p release
+          gh release download "$ART_TAG" --repo "$GITHUB_REPOSITORY" --pattern 'arena-art.pak*' --dir release
+          (cd release && sha256sum -c arena-art.pak.sha256)
+          node tools/release/pak.mjs unpack release/arena-art.pak release/art
+          cp -R release/art/public/. public/
+      - name: typecheck and unit tests
+        run: |
+          npx tsc --noEmit
+          npx vitest run --exclude 'src/bots/ladder.test.ts'
+      - run: npm run build
+      - run: node tools/release/bundle.mjs --art release/art
+      - uses: actions/upload-artifact@v4
+        with:
+          name: arena-data
+          path: |
+            release/arena-data.pak
+            release/arena-data.pak.sha256
+          retention-days: 7
+
+  windows:
+    name: Windows x64
+    needs: data
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/download-artifact@v4
+        with:
+          name: arena-data
+          path: release
+      - uses: dtolnay/rust-toolchain@stable
+      - name: host tests (wallet, starter packs, tokens, pack-odds parity)
+        run: cargo test --release --manifest-path host/Cargo.toml
+      - name: build (the game data embedded)
+        run: cargo build --release --features bundle --manifest-path host/Cargo.toml --target-dir host/target/bundle
+      - run: node tools/release/package.mjs win host/target/bundle/release/arena-host.exe
+      - name: smoke test (temp state, no browser)
+        shell: powershell
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File tests/test-standalone.ps1 -Exe release/pokeshell-arena.exe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: release/pokeshell-arena-*-windows-x64.zip
+          retention-days: 7
+
+  macos:
+    name: macOS universal
+    needs: data
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/download-artifact@v4
+        with:
+          name: arena-data
+          path: release
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+      - run: cargo test --release --manifest-path host/Cargo.toml
+      - name: build both architectures, join them
+        run: |
+          for t in aarch64-apple-darwin x86_64-apple-darwin; do
+            cargo build --release --features bundle --manifest-path host/Cargo.toml --target-dir host/target/bundle --target "$t"
+          done
+          lipo -create -output host/target/bundle/arena-host-universal \
+            host/target/bundle/aarch64-apple-darwin/release/arena-host host/target/bundle/x86_64-apple-darwin/release/arena-host
+          lipo -info host/target/bundle/arena-host-universal
+      - name: the .app (ad-hoc signed), zipped with ditto
+        run: node tools/release/package.mjs mac host/target/bundle/arena-host-universal
+      - name: smoke test (temp state, no browser)
+        run: |
+          set -eu
+          app="release/pokeshell arena.app/Contents/MacOS/pokeshell-arena"
+          state="$(mktemp -d)/state"
+          POKEARENA_NO_OPEN=1 "$app" --state "$state"            # the launcher: starts the host, exits
+          port=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1]))['port'])" "$state/host.json")
+          curl -fsS "http://127.0.0.1:$port/api/health" | tee /dev/stderr | grep -q '"mode":"standalone"'
+          curl -fsS "http://127.0.0.1:$port/api/wallet" | grep -q '"tokens":3'
+          POKEARENA_NO_OPEN=1 "$app" --state "$state"            # a second launch reuses it
+          curl -fsS -X POST -H 'Content-Type: application/json' -d '{"random":true}' "http://127.0.0.1:$port/api/pack/open" | grep -q '"tokens":2'
+          curl -fsS -o /dev/null "http://127.0.0.1:$port/"
+          curl -fsS -X POST -H 'Content-Type: application/json' -d '{}' "http://127.0.0.1:$port/api/shutdown"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: macos
+          path: release/pokeshell-arena-*-macos-universal.zip
+          retention-days: 7
+
+  release:
+    name: draft release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [windows, macos]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist-release
+          merge-multiple: true
+      - name: checksums
+        run: cd dist-release && sha256sum *.zip > SHA256SUMS.txt && cat SHA256SUMS.txt
+      - name: create the draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --draft --verify-tag \
+            --title "pokeshell arena ${GITHUB_REF_NAME#v}" --notes-file docs/release-notes.md \
+            dist-release/*.zip dist-release/SHA256SUMS.txt

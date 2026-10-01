@@ -1,0 +1,55 @@
+{
+ "version": 1,
+ "card": "sma-SV55",
+ "character": "glaceon",
+ "name": "Glaceon-GX",
+ "fantasy": "Frost bullets that splash; Polar Spear hits harder the more the foe is hurt.",
+ "attacks": [
+  {
+   "name": "Frost Bullet",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 14,
+    "range": 660
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    },
+    {
+     "op": "benchDamage",
+     "amount": 30,
+     "count": 1
+    },
+    {
+     "op": "slow",
+     "permille": 300,
+     "ticks": 60
+    }
+   ]
+  },
+  {
+   "name": "Polar Spear-GX",
+   "shape": {
+    "kind": "melee",
+    "range": 124,
+    "arc": 36,
+    "lunge": 70
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeDamage",
+     "amount": 50
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

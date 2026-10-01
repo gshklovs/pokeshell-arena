@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-99",
+ "character": "zamazenta-crowned",
+ "name": "Zamazenta VSTAR",
+ "fantasy": "Giga Impact with a shield: huge, then a rest.",
+ "attacks": [
+  {
+   "name": "Giga Impact",
+   "shape": {
+    "kind": "dash",
+    "distance": 320,
+    "speed": 19,
+    "radius": 38
+   },
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 220
+    },
+    {
+     "op": "knockback",
+     "px": 150
+    }
+   ]
+  }
+ ]
+}

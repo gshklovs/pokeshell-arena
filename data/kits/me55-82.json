@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "me55-82",
+ "character": "groudon",
+ "name": "Groudon",
+ "fantasy": "The land itself: Break Ground, the biggest quake in the game, hits its own bench too.",
+ "attacks": [
+  {
+   "name": "Break Ground",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 200
+   },
+   "windup": 24,
+   "onCast": [
+    {
+     "op": "benchDamage",
+     "amount": 20,
+     "side": "self"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 250
+    },
+    {
+     "op": "knockback",
+     "px": 160
+    }
+   ]
+  }
+ ]
+}

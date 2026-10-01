@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "base1-5",
+ "character": "clefairy",
+ "name": "Clefairy",
+ "fantasy": "Sings foes to sleep and waves Metronome: it copies the foe's strongest attack.",
+ "attacks": [
+  {
+   "name": "Sing",
+   "shape": {
+    "kind": "projectile",
+    "speed": 10,
+    "radius": 11,
+    "range": 480,
+    "count": 3,
+    "spread": 0,
+    "path": "helix",
+    "amp": 16,
+    "period": 12
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "asleep"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Metronome",
+   "shape": {
+    "kind": "beam",
+    "length": 640,
+    "width": 28
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "mimic"
+    }
+   ]
+  }
+ ],
+ "notes": "Metronome: copies the Defending Pokémon's strongest attack (mimic)"
+}

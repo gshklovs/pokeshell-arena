@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "sma-SV74",
+ "character": "stakataka",
+ "name": "Stakataka-GX",
+ "fantasy": "A wall of stones: gigaton stomps.",
+ "attacks": [
+  {
+   "name": "Gigaton Stomp",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 170
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  },
+  {
+   "name": "Assembly-GX",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 16,
+    "range": 620,
+    "blast": 80
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myPrizes",
+     "amount": 50
+    },
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  }
+ ]
+}

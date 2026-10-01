@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "me55-56",
+ "character": "zekrom",
+ "name": "Zekrom",
+ "fantasy": "The black lightning: slashes, a nitro thunder beam, a wild shock that hurts it too.",
+ "attacks": [
+  {
+   "name": "Slash",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 100,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  },
+  {
+   "name": "Nitro Thunder",
+   "shape": {
+    "kind": "beam",
+    "length": 700,
+    "width": 34
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "hasEnergy",
+     "n": 1,
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 80
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ]
+  }
+ ]
+}

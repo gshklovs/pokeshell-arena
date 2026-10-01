@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "card": "sma-SV70",
+ "character": "darkrai",
+ "name": "Darkrai-GX",
+ "fantasy": "A dark cleave through resistance; Dead End knocks out a foe under a condition.",
+ "attacks": [
+  {
+   "name": "Dark Cleave",
+   "shape": {
+    "kind": "melee",
+    "range": 88,
+    "arc": 120,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130,
+     "wr": "weakness"
+    }
+   ]
+  },
+  {
+   "name": "Dead End-GX",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 40,
+    "radius": 28,
+    "path": "leap",
+    "blast": 64
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeStatus",
+     "then": [
+      {
+       "op": "execute",
+       "hp": 100000
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

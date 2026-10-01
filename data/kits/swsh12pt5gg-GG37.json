@@ -1,0 +1,73 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG37",
+ "character": "simisear",
+ "name": "Simisear VSTAR",
+ "fantasy": "Fireball Fever burns energy for power; Ember Star rains fire once per match.",
+ "attacks": [
+  {
+   "name": "Fireball Fever",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 18,
+    "range": 620,
+    "path": "lob",
+    "blast": 51
+   },
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 5,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 40
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 40,
+     "ticks": 150
+    }
+   ]
+  },
+  {
+   "name": "Ember Star",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 140,
+    "range": 460
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "turns",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 80,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

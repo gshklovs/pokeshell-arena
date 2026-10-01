@@ -1,0 +1,79 @@
+{
+ "version": 1,
+ "card": "sm115-14",
+ "character": "starmie",
+ "name": "Starmie-GX",
+ "fantasy": "A shooting star: star streams, a spinning dash, and a Hydro Pump.",
+ "attacks": [
+  {
+   "name": "Star Stream",
+   "shape": {
+    "kind": "projectile",
+    "speed": 15,
+    "radius": 12,
+    "range": 640,
+    "path": "weave",
+    "amp": 12,
+    "period": 10
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  },
+  {
+   "name": "Spinning Attack",
+   "shape": {
+    "kind": "dash",
+    "distance": 260,
+    "speed": 19,
+    "radius": 28
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    }
+   ]
+  },
+  {
+   "name": "Hydro Pump-GX",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 40
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myAttached",
+     "amount": 40
+    },
+    {
+     "op": "damage",
+     "amount": 40
+    },
+    {
+     "op": "knockback",
+     "px": 130
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 90
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+{
+ "version": 1,
+ "card": "sma-SV48",
+ "character": "golisopod",
+ "name": "Golisopod-GX",
+ "fantasy": "An armored knight: First Impression hits hard on the way in, then it cuts and retreats.",
+ "attacks": [
+  {
+   "name": "First Impression",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 100,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "fresh",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 90
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Armor Press",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 84,
+    "radius": 82,
+    "delay": 8
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 20,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    }
+   ]
+  },
+  {
+   "name": "Crossing Cut-GX",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 20,
+    "radius": 32
+   },
+   "onCast": [
+    {
+     "op": "retreat"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 150
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

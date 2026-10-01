@@ -1,0 +1,34 @@
+{
+ "version": 1,
+ "card": "swsh7-101",
+ "character": "garbodor-gmax",
+ "name": "Garbodor VMAX",
+ "fantasy": "G-Max Malodor: a poison cloud around it.",
+ "attacks": [
+  {
+   "name": "G-Max Malodor",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 122,
+    "delay": 20
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "status",
+     "status": "poisoned"
+    },
+    {
+     "op": "retreatLock",
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

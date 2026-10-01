@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "card": "swsh9-24",
+ "character": "chimchar",
+ "name": "Chimchar",
+ "fantasy": "A flicker of flame: one quick ember.",
+ "attacks": [
+  {
+   "name": "Ember",
+   "shape": {
+    "kind": "projectile",
+    "count": 3,
+    "spread": 6,
+    "speed": 14,
+    "radius": 8,
+    "range": 250
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

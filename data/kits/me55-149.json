@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "card": "me55-149",
+ "character": "pikachu",
+ "name": "Pikachu ex",
+ "fantasy": "A Tera Pikachu: parades its friends in, then thunder, bolts, and the Topaz Bolt.",
+ "attacks": [
+  {
+   "name": "Pika-Pika Parade",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 10,
+     "ticks": 270
+    }
+   ]
+  },
+  {
+   "name": "Thunderbolt",
+   "shape": {
+    "kind": "beam",
+    "length": 740,
+    "width": 40
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200
+    }
+   ]
+  }
+ ]
+}

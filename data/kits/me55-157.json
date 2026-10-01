@@ -1,0 +1,57 @@
+{
+ "version": 1,
+ "card": "me55-157",
+ "character": "mewtwo",
+ "name": "Mewtwo ex",
+ "fantasy": "Photon bullets pick off the back line; Psychic Powers is a crushing burst that needs a rest after.",
+ "attacks": [
+  {
+   "name": "Photon Bullets",
+   "shape": {
+    "kind": "projectile",
+    "speed": 17,
+    "radius": 12,
+    "range": 740,
+    "path": "helix",
+    "amp": 11,
+    "period": 5
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    },
+    {
+     "op": "benchDamage",
+     "amount": 50
+    }
+   ]
+  },
+  {
+   "name": "Psychic Powers",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 150,
+    "range": 500
+   },
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 230
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

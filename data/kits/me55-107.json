@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "card": "me55-107",
+ "character": "zamazenta-crowned",
+ "name": "Zamazenta",
+ "fantasy": "The shield hero: fends off, presses with its shield, retaliates.",
+ "attacks": [
+  {
+   "name": "Fend Off",
+   "shape": {
+    "kind": "melee",
+    "range": 74,
+    "arc": 90,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "dispel"
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  },
+  {
+   "name": "Shield Press",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 84,
+    "radius": 82,
+    "delay": 8
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 50,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

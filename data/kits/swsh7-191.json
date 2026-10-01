@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "swsh7-191",
+ "character": "dragonite",
+ "name": "Dragonite V",
+ "fantasy": "Shreds, then Dragon Gale: a wide wind that blasts everything back.",
+ "attacks": [
+  {
+   "name": "Shred",
+   "shape": {
+    "kind": "melee",
+    "range": 84,
+    "arc": 110,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50,
+     "pierce": true
+    }
+   ]
+  },
+  {
+   "name": "Dragon Gale",
+   "shape": {
+    "kind": "cone",
+    "range": 270,
+    "arc": 80
+   },
+   "windup": 18,
+   "onCast": [
+    {
+     "op": "benchDamage",
+     "amount": 20,
+     "side": "self"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 250
+    },
+    {
+     "op": "knockback",
+     "px": 150
+    }
+   ]
+  }
+ ]
+}

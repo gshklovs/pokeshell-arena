@@ -1,0 +1,77 @@
+{
+ "version": 1,
+ "card": "sma-SV78",
+ "character": "noivern",
+ "name": "Noivern-GX",
+ "fantasy": "Sound waves: distort, a sonic volume that blows foes back, Boomburst.",
+ "attacks": [
+  {
+   "name": "Distort",
+   "shape": {
+    "kind": "projectile",
+    "speed": 10,
+    "radius": 12,
+    "range": 520,
+    "path": "weave",
+    "amp": 16,
+    "period": 9
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    },
+    {
+     "op": "energyJam",
+     "ticks": 90
+    }
+   ]
+  },
+  {
+   "name": "Sonic Volume",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 14,
+    "range": 420,
+    "wall": 40,
+    "pierce": 9
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "energyJam",
+     "ticks": 90
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  },
+  {
+   "name": "Boomburst-GX",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 14,
+    "range": 420,
+    "wall": 40,
+    "pierce": 9
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    },
+    {
+     "op": "benchDamage",
+     "amount": 50
+    }
+   ]
+  }
+ ]
+}

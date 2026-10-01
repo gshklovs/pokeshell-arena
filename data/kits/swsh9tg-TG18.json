@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "card": "swsh9tg-TG18",
+ "character": "urshifu",
+ "name": "Single Strike Urshifu V",
+ "fantasy": "Focuses, then one impact blow.",
+ "attacks": [
+  {
+   "name": "Laser Focus",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "name": "Impact Blow",
+   "shape": {
+    "kind": "melee",
+    "range": 88,
+    "arc": 90,
+    "lunge": 80
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90,
+     "which": "this"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ]
+}

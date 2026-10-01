@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG51",
+ "character": "samurott-hisui",
+ "name": "Hisuian Samurott V",
+ "fantasy": "A shell-blade samurai: basket crash, a shadow slash.",
+ "attacks": [
+  {
+   "name": "Basket Crash",
+   "shape": {
+    "kind": "melee",
+    "range": 74,
+    "arc": 96,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "dispel"
+    }
+   ]
+  },
+  {
+   "name": "Shadow Slash",
+   "shape": {
+    "kind": "melee",
+    "range": 90,
+    "arc": 120,
+    "lunge": 70
+   },
+   "windup": 12,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

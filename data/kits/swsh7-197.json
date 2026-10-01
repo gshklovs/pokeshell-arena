@@ -1,0 +1,50 @@
+{
+ "version": 1,
+ "card": "swsh7-197",
+ "character": "duraludon",
+ "name": "Duraludon V",
+ "fantasy": "An alloy dragon: metal claws, a breaking swipe.",
+ "attacks": [
+  {
+   "name": "Metal Claw",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 96,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70
+    }
+   ]
+  },
+  {
+   "name": "Breaking Swipe",
+   "shape": {
+    "kind": "melee",
+    "range": 92,
+    "arc": 140,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 140
+    },
+    {
+     "op": "buff",
+     "stat": "damage",
+     "amount": -30,
+     "ticks": 90,
+     "target": "target"
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

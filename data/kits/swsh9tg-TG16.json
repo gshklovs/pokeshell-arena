@@ -1,0 +1,28 @@
+{
+ "version": 1,
+ "card": "swsh9tg-TG16",
+ "character": "mimikyu",
+ "name": "Mimikyu V",
+ "fantasy": "Jealous eyes: its curse copies the foe's own damage.",
+ "attacks": [
+  {
+   "name": "Jealous Eyes",
+   "shape": {
+    "kind": "cone",
+    "range": 280,
+    "arc": 36
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foePrizes",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

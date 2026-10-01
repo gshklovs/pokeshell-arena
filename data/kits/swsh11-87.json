@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "card": "swsh11-87",
+ "character": "machoke",
+ "name": "Machoke",
+ "fantasy": "Karate chops that weaken as it is hurt, submission holds that hurt it too.",
+ "attacks": [
+  {
+   "name": "Strength",
+   "shape": {
+    "kind": "melee",
+    "range": 72,
+    "arc": 84,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Seismic Toss",
+   "shape": {
+    "kind": "melee",
+    "range": 82,
+    "arc": 92,
+    "lunge": 50
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    },
+    {
+     "op": "knockback",
+     "px": 130
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "card": "sma-SV63",
+ "character": "naganadel",
+ "name": "Naganadel-GX",
+ "fantasy": "A poison jet: beast raids, jet needles that ignore resistance.",
+ "attacks": [
+  {
+   "name": "Beast Raid",
+   "shape": {
+    "kind": "dash",
+    "distance": 200,
+    "speed": 17,
+    "radius": 34,
+    "invulnerable": 0
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myBench",
+     "amount": 20
+    },
+    {
+     "op": "bonus",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "name": "Jet Needle",
+   "shape": {
+    "kind": "melee",
+    "range": 124,
+    "arc": 36,
+    "lunge": 70
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110,
+     "wr": false
+    }
+   ]
+  },
+  {
+   "name": "Stinger-GX",
+   "shape": {
+    "kind": "melee",
+    "range": 124,
+    "arc": 36,
+    "lunge": 70
+   },
+   "onHit": [
+    {
+     "op": "energyJam",
+     "ticks": 180
+    }
+   ]
+  }
+ ]
+}

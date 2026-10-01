@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "card": "base1-63",
+  "character": "squirtle",
+  "name": "Squirtle",
+  "stats": {
+    "hp": 40, "types": ["Water"], "subtypes": ["Basic"],
+    "weaknesses": [{ "type": "Lightning", "value": "×2" }], "resistances": [], "retreat": 1
+  },
+  "attacks": [
+    {
+      "name": "Bubble", "cost": ["Water"], "damage": "10",
+      "shape": { "kind": "projectile", "speed": 11, "radius": 12, "range": 560 },
+      "windup": 6, "recovery": 6, "cooldown": 24,
+      "onHit": [
+        { "op": "damage", "amount": 10 },
+        { "op": "coin", "heads": [{ "op": "status", "status": "paralyzed" }] }
+      ],
+      "onImpact": [{ "op": "paint", "terrain": "water", "radius": 60 }]
+    },
+    {
+      "name": "Withdraw", "cost": ["Water", "Colorless"], "damage": "",
+      "shape": { "kind": "self" },
+      "windup": 4, "recovery": 6, "cooldown": 120,
+      "onCast": [{ "op": "coin", "heads": [{ "op": "shield", "ticks": 90 }] }]
+    }
+  ],
+  "passive": null,
+  "notes": "Bubble floods where it lands: set up water for a Lightning partner (or get electrified). Withdraw heads: all attack damage prevented for 1 TURN."
+}

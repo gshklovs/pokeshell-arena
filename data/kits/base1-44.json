@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "card": "base1-44",
+  "character": "bulbasaur",
+  "name": "Bulbasaur",
+  "stats": {
+    "hp": 40, "types": ["Grass"], "subtypes": ["Basic"],
+    "weaknesses": [{ "type": "Fire", "value": "×2" }], "resistances": [], "retreat": 1
+  },
+  "attacks": [
+    {
+      "name": "Leech Seed", "cost": ["Grass", "Grass"], "damage": "20",
+      "shape": { "kind": "projectile", "speed": 10, "radius": 12, "range": 520 },
+      "windup": 8, "recovery": 8, "cooldown": 30,
+      "onHit": [
+        { "op": "damage", "amount": 20 },
+        { "op": "heal", "amount": 10 }
+      ]
+    }
+  ],
+  "passive": null,
+  "notes": "The seed curves toward the target a little; a hit heals Bulbasaur 10 (removes 1 damage counter)."
+}

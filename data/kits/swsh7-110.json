@@ -1,0 +1,45 @@
+{
+ "version": 1,
+ "card": "swsh7-110",
+ "character": "rayquaza",
+ "name": "Rayquaza V",
+ "fantasy": "A sky dragon: a dragon pulse, and a spiral burst fed by its energy.",
+ "attacks": [
+  {
+   "name": "Dragon Pulse",
+   "shape": {
+    "kind": "beam",
+    "length": 680,
+    "width": 28
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  },
+  {
+   "name": "Spiral Burst",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 36
+   },
+   "onCast": [
+    {
+     "op": "spendEnergy",
+     "max": 2,
+     "amount": 80,
+     "paid": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

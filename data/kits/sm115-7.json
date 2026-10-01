@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "sm115-7",
+ "character": "charmander",
+ "name": "Charmander",
+ "fantasy": "A scrappy starter: quick scratches up close, then a short breath of fire that lights the grass.",
+ "attacks": [
+  {
+   "name": "Gnaw",
+   "shape": {
+    "kind": "melee",
+    "range": 60,
+    "arc": 64
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Flare",
+   "shape": {
+    "kind": "projectile",
+    "speed": 13,
+    "radius": 11,
+    "range": 560
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

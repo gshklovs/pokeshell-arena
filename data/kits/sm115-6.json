@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "card": "sm115-6",
+ "character": "pinsir",
+ "name": "Pinsir-GX",
+ "fantasy": "Horns that toss foes, and a Guillotine.",
+ "attacks": [
+  {
+   "name": "Superpowered Horns",
+   "shape": {
+    "kind": "melee",
+    "range": 82,
+    "arc": 96,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  },
+  {
+   "name": "Guillotine-GX",
+   "shape": {
+    "kind": "melee",
+    "range": 92,
+    "arc": 110,
+    "lunge": 70
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ]
+}

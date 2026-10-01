@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "card": "neo1-57",
+ "character": "cyndaquil",
+ "name": "Cyndaquil",
+ "fantasy": "A nervous spark: stares foes down, flicks homing sparks, darts in.",
+ "attacks": [
+  {
+   "name": "Fireworks",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 10,
+    "range": 520,
+    "split": 8,
+    "splitSpread": 0,
+    "splitRange": 110,
+    "splitSpeed": 11,
+    "splitR": 5,
+    "splitPower": 400
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "tails": [
+      {
+       "op": "discardEnergy",
+       "count": 1
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Quick Attack",
+   "shape": {
+    "kind": "dash",
+    "distance": 220,
+    "speed": 20,
+    "radius": 24
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "bonus",
+       "amount": 20
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

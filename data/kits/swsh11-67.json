@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "swsh11-67",
+ "character": "mr-mime",
+ "name": "Mr. Mime",
+ "fantasy": "A mime: slaps, and a trick that makes attacks miss it.",
+ "attacks": [
+  {
+   "name": "Pound",
+   "shape": {
+    "kind": "melee",
+    "range": 64,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Tricky Slap",
+   "shape": {
+    "kind": "melee",
+    "range": 74,
+    "arc": 96,
+    "lunge": 30
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "invulnerable",
+       "ticks": 90
+      }
+     ]
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    }
+   ]
+  }
+ ]
+}

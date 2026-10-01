@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG68",
+ "character": "dialga-origin",
+ "name": "Origin Forme Dialga VSTAR",
+ "fantasy": "Metal blasts, and Star Chronos: a huge beam, then it gets another go.",
+ "attacks": [
+  {
+   "name": "Metal Blast",
+   "shape": {
+    "kind": "beam",
+    "length": 700,
+    "width": 30
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myAttached",
+     "amount": 40
+    },
+    {
+     "op": "damage",
+     "amount": 40
+    }
+   ]
+  },
+  {
+   "name": "Star Chronos",
+   "shape": {
+    "kind": "beam",
+    "length": 780,
+    "width": 50,
+    "ticks": 12
+   },
+   "windup": 24,
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 3
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 220
+    },
+    {
+     "op": "knockback",
+     "px": 150
+    }
+   ]
+  }
+ ]
+}

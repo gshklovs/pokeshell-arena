@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "card": "swsh11-62",
+ "character": "clefairy",
+ "name": "Clefairy",
+ "fantasy": "Sings foes to sleep and waves Metronome: it copies the foe's strongest attack.",
+ "attacks": [
+  {
+   "name": "Wonder Storm",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 120,
+    "range": 460,
+    "path": "drift",
+    "drift": 2
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myAttached",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

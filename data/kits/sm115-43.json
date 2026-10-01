@@ -1,0 +1,45 @@
+{
+ "version": 1,
+ "card": "sm115-43",
+ "character": "mr-mime",
+ "name": "Mr. Mime",
+ "fantasy": "A mime: slaps, and a trick that makes attacks miss it.",
+ "attacks": [
+  {
+   "name": "Happy Mime",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Double Slap",
+   "shape": {
+    "kind": "melee",
+    "range": 68,
+    "arc": 90
+   },
+   "onHit": [
+    {
+     "op": "coins",
+     "count": 2,
+     "perHeads": [
+      {
+       "op": "bonus",
+       "amount": 40
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

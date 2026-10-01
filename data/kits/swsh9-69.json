@@ -1,0 +1,45 @@
+{
+ "version": 1,
+ "card": "swsh9-69",
+ "character": "mimikyu",
+ "name": "Mimikyu VMAX",
+ "fantasy": "Ominous numbers: counters on the aim point; Max Shadow wipes the foe's hand.",
+ "attacks": [
+  {
+   "name": "Ominous Numbers",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 120,
+    "range": 480
+   },
+   "onHit": [
+    {
+     "op": "counters",
+     "amount": 40
+    }
+   ]
+  },
+  {
+   "name": "Max Shadow",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 150,
+    "range": 500
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "discardEnergy",
+     "count": 1,
+     "target": "target"
+    }
+   ]
+  }
+ ]
+}

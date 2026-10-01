@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "swsh11-118",
+ "character": "drapion",
+ "name": "Drapion V",
+ "fantasy": "A dynamic tail with a huge reach that also hits the back line.",
+ "attacks": [
+  {
+   "name": "Dynamic Tail",
+   "shape": {
+    "kind": "melee",
+    "range": 100,
+    "arc": 160
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "benchDamage",
+     "amount": 60,
+     "side": "self"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 190
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

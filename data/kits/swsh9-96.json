@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "card": "swsh9-96",
+ "character": "aggron",
+ "name": "Aggron V",
+ "fantasy": "An iron beast: a rock slide, a merciless strike.",
+ "attacks": [
+  {
+   "name": "Rock Slide",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 120,
+    "range": 460
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    },
+    {
+     "op": "benchDamage",
+     "amount": 30,
+     "count": 2
+    }
+   ]
+  },
+  {
+   "name": "Merciless Strike",
+   "shape": {
+    "kind": "melee",
+    "range": 92,
+    "arc": 100,
+    "lunge": 50
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeDamaged",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 150
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 150
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ]
+}

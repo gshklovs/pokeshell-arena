@@ -1,0 +1,34 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-160",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Wild Charge",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 20,
+    "radius": 26
+   },
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 90
+    },
+    {
+     "op": "knockback",
+     "px": 70
+    }
+   ]
+  }
+ ]
+}

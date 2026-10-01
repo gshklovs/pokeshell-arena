@@ -1,0 +1,61 @@
+{
+ "version": 1,
+ "card": "swsh7-117",
+ "character": "noivern",
+ "name": "Noivern V",
+ "fantasy": "Boomburst around it, a synchro loud cone.",
+ "attacks": [
+  {
+   "name": "Boomburst",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 14,
+    "range": 420,
+    "wall": 40,
+    "pierce": 9
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "benchDamage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Synchro Loud",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 14,
+    "range": 420,
+    "wall": 40,
+    "pierce": 9
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "samePips",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 120
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 60
+    },
+    {
+     "op": "knockback",
+     "px": 80
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "card": "sma-SV57",
+ "character": "electrode",
+ "name": "Electrode-GX",
+ "fantasy": "Electro balls, and a once-per-match Crush and Burn.",
+ "attacks": [
+  {
+   "name": "Electro Ball",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 16,
+    "range": 640,
+    "blast": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  },
+  {
+   "name": "Crush and Burn-GX",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 72,
+    "radius": 75,
+    "delay": 8
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "spendEnergy",
+     "max": 3,
+     "amount": 50,
+     "paid": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

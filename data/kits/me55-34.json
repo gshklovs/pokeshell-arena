@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "me55-34",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Pika Chain",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 80,
+    "lunge": 28
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myBench",
+     "amount": 40
+    },
+    {
+     "op": "bonus",
+     "amount": 40
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

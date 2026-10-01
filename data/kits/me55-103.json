@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "card": "me55-103",
+ "character": "dialga",
+ "name": "Dialga",
+ "fantasy": "The time dragon: turns back the clock, a heavy impact, a chrono wind.",
+ "attacks": [
+  {
+   "name": "Reversed Clock",
+   "shape": {
+    "kind": "self"
+   }
+  },
+  {
+   "name": "Heavy Impact",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 15,
+    "radius": 28,
+    "path": "leap",
+    "blast": 68
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

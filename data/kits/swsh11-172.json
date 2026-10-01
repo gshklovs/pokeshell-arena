@@ -1,0 +1,56 @@
+{
+ "version": 1,
+ "card": "swsh11-172",
+ "character": "electrode-hisui",
+ "name": "Hisuian Electrode V",
+ "fantasy": "A living bomb: a tantrum blast around itself, a solar shot.",
+ "attacks": [
+  {
+   "name": "Tantrum Blast",
+   "shape": {
+    "kind": "dash",
+    "distance": 200,
+    "speed": 17,
+    "radius": 34,
+    "invulnerable": 0
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeStatus",
+     "amount": 100
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  },
+  {
+   "name": "Solar Shot",
+   "shape": {
+    "kind": "beam",
+    "length": 700,
+    "width": 34
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 120
+    }
+   ]
+  }
+ ]
+}

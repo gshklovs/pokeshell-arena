@@ -1,0 +1,32 @@
+[package]
+name = "arena-host"
+version = "0.1.0"
+edition = "2024"
+description = "pokeshell arena's local host: serves the built game and its JSON API (docs/SPEC.md section 9)"
+license = "MIT"
+build = "build.rs"
+
+[features]
+# the downloadable build (docs/RELEASE.md): the standalone game data (release/arena-data.pak, npm run release:data, or
+# $ARENA_DATA_PAK) embedded in the binary; standalone, the double-click launcher, the app icon; no console on Windows
+bundle = []
+
+[dependencies]
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+getrandom = "0.3"
+# preserve_order: pack.json's cards in file order, as pokeshell reads them (the booster pools' order)
+serde_json = { version = "1", features = ["preserve_order"] }
+tiny_http = "0.12"
+
+[build-dependencies]
+embed-resource = "3"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+strip = true
+
+[[bin]]
+name = "arena-host"
+path = "src/main.rs"

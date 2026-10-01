@@ -1,0 +1,92 @@
+{
+ "kyogre-storm-sea": {
+  "card": "swsh12pt5-36",
+  "gen": 1,
+  "model": "gpt-image-2",
+  "size": "1920x1088",
+  "quality": "high",
+  "reference": "style-lab/arenas/<id>/scene.png (scene.py)",
+  "prompt": "Turn this reference scene into a top-down battle arena of the same place. The reference is a stormy sea at dusk: huge teal and white breaking waves and spray, a dark brown rock crag, a pink-red sunset sky. Keep its exact colour palette, lighting and mood, and its landmarks, seen from directly above. The arena: an arena of wave-washed rock shelves in a stormy teal sea: a large central flat wet-rock platform and two side shelves joined by rock causeways, deep churning teal water with white foam around the edges and in channels, dark brown rock crags as obstacles. Painterly Pokemon trading card game illustration style: soft hand-painted brushwork, gentle gradients, clean shapes, a warm storybook finish like the reference card art. Strict top-down orthographic view, looking straight down at the ground from high above, like a 2D top-down video game battle map: no horizon, no sky, no perspective, no vanishing point. One enclosed battlefield filling the whole 16:9 frame: impassable terrain (rocks, cliffs, walls, deep water or dense foliage) forms a border around all four edges, a few obstacles and cover pieces sit inside, and a wide, clear, evenly lit open floor fills most of the middle so that small characters stay readable on it. The layout is roughly mirror-symmetric left to right. Floor surfaces are calm and low-contrast; obstacles are clearly outlined with a soft drop shadow so they read at a glance. No characters, no Pokemon, no creatures, no people, no text, no letters, no logos, no UI, no grid lines."
+ },
+ "magmar-volcano": {
+  "card": "neo1-40",
+  "gen": 1,
+  "model": "gpt-image-2",
+  "size": "1920x1088",
+  "quality": "high",
+  "reference": "style-lab/arenas/<id>/scene.png (scene.py)",
+  "prompt": "Turn this reference scene into a top-down battle arena of the same place. The reference is a volcano: a dark red-brown crater slope with bright orange lava rivers and a smoky crimson and violet sky. Keep its exact colour palette, lighting and mood, and its landmarks, seen from directly above. The arena: a volcanic crater floor of dark cooled basalt and ash, crossed by a few narrow glowing lava rivers and lava pools, jagged black rock outcrops as obstacles, smoking vents. Painterly Pokemon trading card game illustration style: soft hand-painted brushwork, gentle gradients, clean shapes, a warm storybook finish like the reference card art. Strict top-down orthographic view, looking straight down at the ground from high above, like a 2D top-down video game battle map: no horizon, no sky, no perspective, no vanishing point. One enclosed battlefield filling the whole 16:9 frame: impassable terrain (rocks, cliffs, walls, deep water or dense foliage) forms a border around all four edges, a few obstacles and cover pieces sit inside, and a wide, clear, evenly lit open floor fills most of the middle so that small characters stay readable on it. The layout is roughly mirror-symmetric left to right. Floor surfaces are calm and low-contrast; obstacles are clearly outlined with a soft drop shadow so they read at a glance. No characters, no Pokemon, no creatures, no people, no text, no letters, no logos, no UI, no grid lines."
+ },
+ "zarude-jungle": {
+  "card": "swsh12pt5-16",
+  "gen": 2,
+  "model": "gpt-image-2",
+  "size": "1920x1088",
+  "quality": "high",
+  "reference": "style-lab/arenas/<id>/scene.png (scene.py)",
+  "prompt": "Turn this reference scene into a top-down battle arena of the same place. The reference is a dense green jungle with thick hanging vines, mossy trunks and dappled light. Keep its exact colour palette, lighting and mood, and its landmarks, seen from directly above. The arena: a mossy jungle clearing of packed earth and short moss, walled by giant tree trunks and dense foliage around the edges, a few big trunks and vine thickets inside as cover, patches of tall grass. Painterly Pokemon trading card game illustration style: soft hand-painted brushwork, gentle gradients, clean shapes, a warm storybook finish like the reference card art. Strict top-down orthographic view, looking straight down at the ground from high above, like a 2D top-down video game battle map: no horizon, no sky, no perspective, no vanishing point. One enclosed battlefield filling the whole 16:9 frame: impassable terrain (rocks, cliffs, walls, deep water or dense foliage) forms a border around all four edges, a few obstacles and cover pieces sit inside, and a wide, clear, evenly lit open floor fills most of the middle so that small characters stay readable on it. The layout is roughly mirror-symmetric left to right. Floor surfaces are calm and low-contrast; obstacles are clearly outlined with a soft drop shadow so they read at a glance. No characters, no Pokemon, no creatures, no people, no text, no letters, no logos, no UI, no grid lines. Hanging vines and giant mossy roots frame the border, dappled sun spots on the clearing floor, big fallen trunks as cover."
+ },
+ "sableye-crystal-cave": {
+  "card": "swsh11-70",
+  "gen": 1,
+  "model": "gpt-image-2",
+  "size": "1920x1088",
+  "quality": "high",
+  "reference": "style-lab/arenas/<id>/scene.png (scene.py)",
+  "prompt": "Turn this reference scene into a top-down battle arena of the same place. The reference is a dark violet cave glittering with big pale-blue, teal and purple crystal clusters. Keep its exact colour palette, lighting and mood, and its landmarks, seen from directly above. The arena: a cave floor of dark violet stone, enclosed by cave walls, with clusters of glowing blue and purple crystals as obstacles and breakable props, a couple of small dark pools. Painterly Pokemon trading card game illustration style: soft hand-painted brushwork, gentle gradients, clean shapes, a warm storybook finish like the reference card art. Strict top-down orthographic view, looking straight down at the ground from high above, like a 2D top-down video game battle map: no horizon, no sky, no perspective, no vanishing point. One enclosed battlefield filling the whole 16:9 frame: impassable terrain (rocks, cliffs, walls, deep water or dense foliage) forms a border around all four edges, a few obstacles and cover pieces sit inside, and a wide, clear, evenly lit open floor fills most of the middle so that small characters stay readable on it. The layout is roughly mirror-symmetric left to right. Floor surfaces are calm and low-contrast; obstacles are clearly outlined with a soft drop shadow so they read at a glance. No characters, no Pokemon, no creatures, no people, no text, no letters, no logos, no UI, no grid lines."
+ },
+ "liepard-night-city": {
+  "card": "swsh9-91",
+  "gen": 2,
+  "model": "gpt-image-2",
+  "size": "1920x1088",
+  "quality": "high",
+  "reference": "style-lab/arenas/<id>/scene.png (scene.py)",
+  "prompt": "Turn this reference scene into a top-down battle arena of the same place. The reference is a city at night: purple-violet skyscrapers, lit windows, a big full moon, a deep indigo sky and warm streetlights. Keep its exact colour palette, lighting and mood, and its landmarks, seen from directly above. The arena: a night city plaza and street intersection seen from above, paved in violet-grey stone and asphalt, with building rooftops and blocks around the edges as walls, planters, benches and crates as small obstacles, glowing streetlights. Painterly Pokemon trading card game illustration style: soft hand-painted brushwork, gentle gradients, clean shapes, a warm storybook finish like the reference card art. Strict top-down orthographic view, looking straight down at the ground from high above, like a 2D top-down video game battle map: no horizon, no sky, no perspective, no vanishing point. One enclosed battlefield filling the whole 16:9 frame: impassable terrain (rocks, cliffs, walls, deep water or dense foliage) forms a border around all four edges, a few obstacles and cover pieces sit inside, and a wide, clear, evenly lit open floor fills most of the middle so that small characters stay readable on it. The layout is roughly mirror-symmetric left to right. Floor surfaces are calm and low-contrast; obstacles are clearly outlined with a soft drop shadow so they read at a glance. No characters, no Pokemon, no creatures, no people, no text, no letters, no logos, no UI, no grid lines. Brighter warm streetlight pools on the pavement so the floor stays readable; a round moon-shaped plaza emblem at the centre; violet skyscraper rooftops with lit windows along the edges."
+ },
+ "lapras-lagoon": {
+  "card": "sm115-17",
+  "gen": 1,
+  "model": "gpt-image-2",
+  "size": "1920x1088",
+  "quality": "high",
+  "reference": "style-lab/arenas/<id>/scene.png (scene.py)",
+  "prompt": "Turn this reference scene into a top-down battle arena of the same place. The reference is a calm, sunlit turquoise sea with soft white ripples and shimmering light. Keep its exact colour palette, lighting and mood, and its landmarks, seen from directly above. The arena: a tropical lagoon arena: a big pale-sand island and sandbars in the middle, clear turquoise shallows and deeper blue water around the edges and in a few channels, rocks, a few palm trees and beach umbrellas as obstacles. Painterly Pokemon trading card game illustration style: soft hand-painted brushwork, gentle gradients, clean shapes, a warm storybook finish like the reference card art. Strict top-down orthographic view, looking straight down at the ground from high above, like a 2D top-down video game battle map: no horizon, no sky, no perspective, no vanishing point. One enclosed battlefield filling the whole 16:9 frame: impassable terrain (rocks, cliffs, walls, deep water or dense foliage) forms a border around all four edges, a few obstacles and cover pieces sit inside, and a wide, clear, evenly lit open floor fills most of the middle so that small characters stay readable on it. The layout is roughly mirror-symmetric left to right. Floor surfaces are calm and low-contrast; obstacles are clearly outlined with a soft drop shadow so they read at a glance. No characters, no Pokemon, no creatures, no people, no text, no letters, no logos, no UI, no grid lines."
+ },
+ "glastrier-ice-field": {
+  "card": "swsh11-51",
+  "gen": 1,
+  "model": "gpt-image-2",
+  "size": "1920x1088",
+  "quality": "high",
+  "reference": "style-lab/arenas/<id>/scene.png (scene.py)",
+  "prompt": "Turn this reference scene into a top-down battle arena of the same place. The reference is a frozen tundra with tall pale-blue ice spires and crystals, snowy pines, snow on the ground and a cold blue sky with pink clouds. Keep its exact colour palette, lighting and mood, and its landmarks, seen from directly above. The arena: a snowy tundra field, open packed snow in the middle, clusters of tall ice spires, ice crystals and snowy pines around the edges and a few inside as obstacles, frozen ponds. Painterly Pokemon trading card game illustration style: soft hand-painted brushwork, gentle gradients, clean shapes, a warm storybook finish like the reference card art. Strict top-down orthographic view, looking straight down at the ground from high above, like a 2D top-down video game battle map: no horizon, no sky, no perspective, no vanishing point. One enclosed battlefield filling the whole 16:9 frame: impassable terrain (rocks, cliffs, walls, deep water or dense foliage) forms a border around all four edges, a few obstacles and cover pieces sit inside, and a wide, clear, evenly lit open floor fills most of the middle so that small characters stay readable on it. The layout is roughly mirror-symmetric left to right. Floor surfaces are calm and low-contrast; obstacles are clearly outlined with a soft drop shadow so they read at a glance. No characters, no Pokemon, no creatures, no people, no text, no letters, no logos, no UI, no grid lines."
+ },
+ "cresselia-moonlit-sky": {
+  "card": "swsh11-74",
+  "gen": 2,
+  "model": "gpt-image-2",
+  "size": "1920x1088",
+  "quality": "high",
+  "reference": "style-lab/arenas/<id>/scene.png (scene.py)",
+  "prompt": "Turn this reference scene into a top-down battle arena of the same place. The reference is a starry night sky with shooting stars above a glowing pale-blue planet rim, deep violet and blue. Keep its exact colour palette, lighting and mood, and its landmarks, seen from directly above. The arena: a floating moonstone island of pale glowing blue-white rock in a starry violet void: the void around it is impassable, a wide flat moonstone floor with a few pale crystal pillars and moon-rock outcrops as obstacles. Painterly Pokemon trading card game illustration style: soft hand-painted brushwork, gentle gradients, clean shapes, a warm storybook finish like the reference card art. Strict top-down orthographic view, looking straight down at the ground from high above, like a 2D top-down video game battle map: no horizon, no sky, no perspective, no vanishing point. One enclosed battlefield filling the whole 16:9 frame: impassable terrain (rocks, cliffs, walls, deep water or dense foliage) forms a border around all four edges, a few obstacles and cover pieces sit inside, and a wide, clear, evenly lit open floor fills most of the middle so that small characters stay readable on it. The layout is roughly mirror-symmetric left to right. Floor surfaces are calm and low-contrast; obstacles are clearly outlined with a soft drop shadow so they read at a glance. No characters, no Pokemon, no creatures, no people, no text, no letters, no logos, no UI, no grid lines. The floor is pale lavender and moon-blue glowing moonstone with shallow craters and faint star dust, lit with pink and cyan crescent-moon light, clearly not ice or snow; the void is the deep indigo and violet starfield of the reference with shooting stars."
+ },
+ "herdier-temple": {
+  "card": "swsh7-134",
+  "gen": 1,
+  "model": "gpt-image-2",
+  "size": "1920x1088",
+  "quality": "high",
+  "reference": "style-lab/arenas/<id>/scene.png (scene.py)",
+  "prompt": "Turn this reference scene into a top-down battle arena of the same place. The reference is sunlit old ruins: wide pale pink sandstone stairs and walls, a small red lantern, warm light and a blue sky with white clouds. Keep its exact colour palette, lighting and mood, and its landmarks, seen from directly above. The arena: an ancient pink sandstone temple courtyard like a gym battle floor: a large flat paved stone floor with a faint circular emblem, stepped stone walls and stairs around the edges, a few stone pillars and red lanterns as cover. Painterly Pokemon trading card game illustration style: soft hand-painted brushwork, gentle gradients, clean shapes, a warm storybook finish like the reference card art. Strict top-down orthographic view, looking straight down at the ground from high above, like a 2D top-down video game battle map: no horizon, no sky, no perspective, no vanishing point. One enclosed battlefield filling the whole 16:9 frame: impassable terrain (rocks, cliffs, walls, deep water or dense foliage) forms a border around all four edges, a few obstacles and cover pieces sit inside, and a wide, clear, evenly lit open floor fills most of the middle so that small characters stay readable on it. The layout is roughly mirror-symmetric left to right. Floor surfaces are calm and low-contrast; obstacles are clearly outlined with a soft drop shadow so they read at a glance. No characters, no Pokemon, no creatures, no people, no text, no letters, no logos, no UI, no grid lines."
+ },
+ "growlithe-meadow": {
+  "card": "base1-28",
+  "gen": 2,
+  "model": "gpt-image-2",
+  "size": "1920x1088",
+  "quality": "high",
+  "reference": "style-lab/arenas/<id>/scene.png (scene.py)",
+  "prompt": "Turn this reference scene into a top-down battle arena of the same place. The reference is a green rolling meadow with round trees and hills under a bright sky. Keep its exact colour palette, lighting and mood, and its landmarks, seen from directly above. The arena: a grassy meadow arena of short green grass and dirt paths, round leafy trees and bushes around the edges and a few inside, patches of tall grass, a small pond. Painterly Pokemon trading card game illustration style: soft hand-painted brushwork, gentle gradients, clean shapes, a warm storybook finish like the reference card art. Strict top-down orthographic view, looking straight down at the ground from high above, like a 2D top-down video game battle map: no horizon, no sky, no perspective, no vanishing point. One enclosed battlefield filling the whole 16:9 frame: impassable terrain (rocks, cliffs, walls, deep water or dense foliage) forms a border around all four edges, a few obstacles and cover pieces sit inside, and a wide, clear, evenly lit open floor fills most of the middle so that small characters stay readable on it. The layout is roughly mirror-symmetric left to right. Floor surfaces are calm and low-contrast; obstacles are clearly outlined with a soft drop shadow so they read at a glance. No characters, no Pokemon, no creatures, no people, no text, no letters, no logos, no UI, no grid lines. Soft painterly brushwork like the old watercolour card art, not pixel art. Round leafy trees with painted shadows around the edges, a small round pond exactly in the centre, symmetric tall-grass patches, far blue hills are not visible from above."
+ }
+}

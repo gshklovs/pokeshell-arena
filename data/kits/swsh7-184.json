@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "swsh7-184",
+ "character": "sylveon",
+ "name": "Sylveon V",
+ "fantasy": "A ribbon fairy: magical homing shots.",
+ "attacks": [
+  {
+   "name": "Magical Shot",
+   "shape": {
+    "kind": "projectile",
+    "speed": 13,
+    "radius": 13,
+    "range": 640
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ]
+  }
+ ]
+}

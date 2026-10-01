@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "sv3pt5-166",
+ "character": "bulbasaur",
+ "name": "Bulbasaur",
+ "fantasy": "A seed that curves toward its target and drains a little life back.",
+ "attacks": [
+  {
+   "name": "Leech Seed",
+   "shape": {
+    "kind": "projectile",
+    "speed": 10,
+    "radius": 12,
+    "range": 520,
+    "path": "weave",
+    "amp": 10,
+    "period": 12
+   },
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 20
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

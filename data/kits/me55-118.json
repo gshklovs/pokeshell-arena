@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "me55-118",
+ "character": "eevee",
+ "name": "Eevee",
+ "fantasy": "A curious all-rounder: tackles, quick attacks, and searches for its evolutions.",
+ "attacks": [
+  {
+   "name": "Quick Attack",
+   "shape": {
+    "kind": "dash",
+    "distance": 220,
+    "speed": 21,
+    "radius": 24
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "bonus",
+       "amount": 20
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

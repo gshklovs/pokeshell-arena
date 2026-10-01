@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "me55-20",
+ "character": "palkia",
+ "name": "Palkia",
+ "fantasy": "Bends space: Wormhole hits and slips it away.",
+ "attacks": [
+  {
+   "name": "Wormhole",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 40,
+    "radius": 28,
+    "path": "leap",
+    "blast": 64
+   },
+   "onCast": [
+    {
+     "op": "retreat"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "gust",
+     "mode": "push"
+    }
+   ]
+  }
+ ]
+}

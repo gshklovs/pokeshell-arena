@@ -1,0 +1,45 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-53",
+ "character": "zeraora",
+ "name": "Zeraora V",
+ "fantasy": "Claw slashes, then a Thunderous Bolt that needs a rest.",
+ "attacks": [
+  {
+   "name": "Claw Slash",
+   "shape": {
+    "kind": "melee",
+    "range": 76,
+    "arc": 100,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  },
+  {
+   "name": "Thunderous Bolt",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 40
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 190
+    }
+   ]
+  }
+ ]
+}

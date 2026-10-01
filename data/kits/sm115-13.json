@@ -1,0 +1,40 @@
+{
+ "version": 1,
+ "card": "sm115-13",
+ "character": "staryu",
+ "name": "Staryu",
+ "fantasy": "A spinning star.",
+ "attacks": [
+  {
+   "name": "Numbing Water",
+   "shape": {
+    "kind": "projectile",
+    "speed": 12,
+    "radius": 11,
+    "range": 560
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "paralyzed"
+      }
+     ]
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 60
+    }
+   ]
+  }
+ ]
+}

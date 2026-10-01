@@ -1,0 +1,60 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-113",
+ "character": "regigigas",
+ "name": "Regigigas V",
+ "fantasy": "A colossus: hammers in, then an angry whack.",
+ "attacks": [
+  {
+   "name": "Hammer In",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 72,
+    "radius": 77,
+    "delay": 8
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  },
+  {
+   "name": "Angry Whack",
+   "shape": {
+    "kind": "melee",
+    "range": 90,
+    "arc": 120,
+    "lunge": 50
+   },
+   "onCast": [
+    {
+     "op": "status",
+     "status": "confused",
+     "target": "self"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 110
+    }
+   ]
+  }
+ ]
+}

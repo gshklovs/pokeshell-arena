@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-76",
+ "character": "absol",
+ "name": "Absol",
+ "fantasy": "A disaster omen: slashes, claws that steal, a swirling disaster around it.",
+ "attacks": [
+  {
+   "name": "Slash",
+   "shape": {
+    "kind": "melee",
+    "range": 74,
+    "arc": 100,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Lost Claw",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 100,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70
+    },
+    {
+     "op": "discardEnergy",
+     "count": 1,
+     "target": "target"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "card": "me55-150",
+ "character": "pikachu",
+ "name": "Pikachu ex",
+ "fantasy": "A Tera Pikachu: parades its friends in, then thunder, bolts, and the Topaz Bolt.",
+ "attacks": [
+  {
+   "name": "Zip-Zap Frenzy",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "name": "Thunder",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 160,
+    "range": 540
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200
+    }
+   ]
+  }
+ ],
+ "notes": "Thunder: r160 (was r130): Pikachu ex won 0-10% of ex fights"
+}

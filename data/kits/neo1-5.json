@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "card": "neo1-5",
+ "character": "feraligatr",
+ "name": "Feraligatr",
+ "fantasy": "A river tyrant: chomps that land more with every coin, a riptide around itself.",
+ "attacks": [
+  {
+   "name": "Riptide",
+   "shape": {
+    "kind": "dash",
+    "distance": 250,
+    "speed": 24,
+    "radius": 32,
+    "invulnerable": 0
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "turns",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 10
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 120
+    }
+   ]
+  }
+ ]
+}

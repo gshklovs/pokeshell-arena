@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "swsh9-128",
+ "character": "drampa",
+ "name": "Drampa V",
+ "fantasy": "Spike draws, then a dragon pulse.",
+ "attacks": [
+  {
+   "name": "Spike Draw",
+   "shape": {
+    "kind": "projectile",
+    "speed": 14,
+    "radius": 12,
+    "range": 620
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Dragon Pulse",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 28
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    }
+   ]
+  }
+ ],
+ "notes": "Dragon Pulse: W28 (was W38): Drampa V won 94% of V fights"
+}

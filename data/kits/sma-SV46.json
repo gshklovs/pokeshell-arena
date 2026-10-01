@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "card": "sma-SV46",
+ "character": "leafeon",
+ "name": "Leafeon-GX",
+ "fantasy": "A solar beam, and Grand Bloom that grows its team.",
+ "attacks": [
+  {
+   "name": "Solar Beam",
+   "shape": {
+    "kind": "beam",
+    "length": 720,
+    "width": 36
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110
+    }
+   ]
+  },
+  {
+   "name": "Grand Bloom-GX",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "damage",
+     "amount": 20,
+     "ticks": 360
+    },
+    {
+     "op": "heal",
+     "amount": 30,
+     "target": "team"
+    }
+   ]
+  }
+ ]
+}

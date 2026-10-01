@@ -1,0 +1,61 @@
+{
+ "version": 1,
+ "card": "neo1-47",
+ "character": "quilava",
+ "name": "Quilava",
+ "fantasy": "Smoke and embers: blinds with a smokescreen, fans fire across the field.",
+ "attacks": [
+  {
+   "name": "Smokescreen",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 100,
+    "ticks": 120,
+    "every": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "blind",
+     "ticks": 90
+    }
+   ]
+  },
+  {
+   "name": "Char",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 14,
+    "range": 560
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "burned"
+      }
+     ]
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 50,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "version": 1,
+ "card": "swsh7-30",
+ "character": "vaporeon",
+ "name": "Vaporeon VMAX",
+ "fantasy": "Max Torrent: a torrent beam that surges when a teammate falls.",
+ "attacks": [
+  {
+   "name": "Bubble Pod",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 10,
+     "ticks": 270
+    },
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Max Torrent",
+   "shape": {
+    "kind": "beam",
+    "length": 740,
+    "width": 44
+   },
+   "windup": 16,
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeDamaged",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 100
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 110
+    }
+   ]
+  }
+ ]
+}

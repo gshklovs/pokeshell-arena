@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "card": "swsh11-187",
+ "character": "goodra-hisui",
+ "name": "Hisuian Goodra V",
+ "fantasy": "A slime shell: slips foes up, rolls in.",
+ "attacks": [
+  {
+   "name": "Slip-'n'-Trip",
+   "shape": {
+    "kind": "melee",
+    "range": 62,
+    "arc": 255
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    },
+    {
+     "op": "gust",
+     "mode": "push"
+    },
+    {
+     "op": "slow",
+     "permille": 400,
+     "ticks": 60
+    }
+   ]
+  },
+  {
+   "name": "Rolling Shell",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 16,
+    "radius": 40
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 30,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 140
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

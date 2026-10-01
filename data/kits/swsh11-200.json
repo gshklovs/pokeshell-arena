@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "swsh11-200",
+ "character": "drapion",
+ "name": "Drapion VSTAR",
+ "fantasy": "Big Bang Arm: weaker the more it is hurt, so strike first.",
+ "attacks": [
+  {
+   "name": "Big Bang Arm",
+   "shape": {
+    "kind": "melee",
+    "range": 100,
+    "arc": 140,
+    "lunge": 100
+   },
+   "windup": 18,
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": -10
+    },
+    {
+     "op": "damage",
+     "amount": 250
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ],
+ "notes": "Big Bang Arm: a wider, longer swing (was A100 l80): with its 22-tick windup it won 6-8% of VSTAR fights"
+}

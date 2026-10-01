@@ -1,0 +1,81 @@
+{
+ "version": 1,
+ "card": "sma-SV49",
+ "character": "charizard",
+ "name": "Charizard-GX",
+ "fantasy": "A GX brawler: a scorching flamethrower, then a once-per-match Flare Blitz that crashes through everything.",
+ "attacks": [
+  {
+   "name": "Wing Attack",
+   "shape": {
+    "kind": "cone",
+    "range": 200,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  },
+  {
+   "name": "Crimson Storm",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 130,
+    "range": 300,
+    "ticks": 150,
+    "every": 40,
+    "path": "drift",
+    "drift": 2
+   },
+   "windup": 24,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 3
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 300
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 90,
+     "ticks": 150
+    }
+   ]
+  },
+  {
+   "name": "Raging Out-GX",
+   "shape": {
+    "kind": "dash",
+    "distance": 200,
+    "speed": 17,
+    "radius": 34,
+    "invulnerable": 0
+   },
+   "onHit": [
+    {
+     "op": "energyJam",
+     "ticks": 270
+    }
+   ]
+  }
+ ]
+}

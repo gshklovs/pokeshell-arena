@@ -1,0 +1,52 @@
+{
+ "version": 1,
+ "card": "swsh9-25",
+ "character": "monferno",
+ "name": "Monferno",
+ "fantasy": "Fireballs and a flamethrower, always moving.",
+ "attacks": [
+  {
+   "name": "Flare",
+   "shape": {
+    "kind": "projectile",
+    "speed": 13,
+    "radius": 11,
+    "range": 560
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Flamethrower",
+   "shape": {
+    "kind": "cone",
+    "range": 230,
+    "arc": 56
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 40,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "version": 1,
+ "card": "sm115-46",
+ "character": "chansey",
+ "name": "Chansey",
+ "fantasy": "Curls up, then a double-edge charge that hurts it too.",
+ "attacks": [
+  {
+   "name": "Double-Edge",
+   "shape": {
+    "kind": "dash",
+    "distance": 240,
+    "speed": 16,
+    "radius": 34
+   },
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 20
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 80
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-51",
+ "character": "charjabug",
+ "name": "Radiant Charjabug",
+ "fantasy": "A battery on wheels: a linear shot at the back line.",
+ "attacks": [
+  {
+   "name": "Linear Attack",
+   "shape": {
+    "kind": "beam",
+    "length": 740,
+    "width": 18
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  }
+ ]
+}

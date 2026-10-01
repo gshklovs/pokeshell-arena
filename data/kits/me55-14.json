@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "card": "me55-14",
+ "character": "reshiram",
+ "name": "Reshiram",
+ "fantasy": "The white flame: a clean slash and a searing laser.",
+ "attacks": [
+  {
+   "name": "Slash",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 100,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  },
+  {
+   "name": "Laser Flame",
+   "shape": {
+    "kind": "beam",
+    "length": 680,
+    "width": 30
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "hasEnergy",
+     "n": 1,
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 80
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 80
+    }
+   ]
+  }
+ ]
+}

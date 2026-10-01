@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "card": "sma-SV2",
+ "character": "rowlet",
+ "name": "Rowlet",
+ "fantasy": "A little owl: tackles and leafage.",
+ "attacks": [
+  {
+   "name": "Tackle",
+   "shape": {
+    "kind": "melee",
+    "range": 62,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Leafage",
+   "shape": {
+    "kind": "projectile",
+    "speed": 13,
+    "radius": 11,
+    "range": 580,
+    "path": "weave",
+    "amp": 18,
+    "period": 12
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

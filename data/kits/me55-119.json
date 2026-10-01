@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "card": "me55-119",
+ "character": "snorlax",
+ "name": "Snorlax",
+ "fantasy": "A mountain that sleeps: collapses and snores around itself, knocking everything away.",
+ "attacks": [
+  {
+   "name": "Collapse",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 84,
+    "radius": 85,
+    "delay": 8
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "status",
+     "status": "asleep",
+     "target": "self"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

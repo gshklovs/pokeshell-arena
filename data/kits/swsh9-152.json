@@ -1,0 +1,46 @@
+{
+ "version": 1,
+ "card": "swsh9-152",
+ "character": "shaymin-sky",
+ "name": "Shaymin V",
+ "fantasy": "A hedgehog in a gale: flaps and a revenge blast.",
+ "attacks": [
+  {
+   "name": "Flap",
+   "shape": {
+    "kind": "cone",
+    "range": 190,
+    "arc": 48
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "knockback",
+     "px": 60
+    }
+   ]
+  },
+  {
+   "name": "Revenge Blast",
+   "shape": {
+    "kind": "beam",
+    "length": 660,
+    "width": 30
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foePrizes",
+     "amount": 40
+    },
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-96",
+ "character": "zacian-crowned",
+ "name": "Zacian VSTAR",
+ "fantasy": "Break Edge cuts through everything; Sword Star is a flying sword that hurts it too.",
+ "attacks": [
+  {
+   "name": "Break Edge",
+   "shape": {
+    "kind": "melee",
+    "range": 92,
+    "arc": 110,
+    "lunge": 70
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200,
+     "wr": false,
+     "pierce": true
+    }
+   ]
+  },
+  {
+   "name": "Sword Star",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 360,
+    "radius": 141,
+    "delay": 20
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 310
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ]
+}

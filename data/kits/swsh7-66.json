@@ -1,0 +1,50 @@
+{
+ "version": 1,
+ "card": "swsh7-66",
+ "character": "wobbuffet",
+ "name": "Wobbuffet",
+ "fantasy": "Mirror pain turns the damage on it back on the foe.",
+ "attacks": [
+  {
+   "name": "Mirror Pain",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 110,
+    "range": 460
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 0,
+     "wr": false,
+     "pierce": true
+    }
+   ]
+  },
+  {
+   "name": "Headbutt Bounce",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 80,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70
+    },
+    {
+     "op": "knockback",
+     "px": 60
+    }
+   ]
+  }
+ ]
+}

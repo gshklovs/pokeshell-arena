@@ -1,0 +1,63 @@
+{
+ "version": 1,
+ "card": "sma-SV71",
+ "character": "guzzlord",
+ "name": "Guzzlord-GX",
+ "fantasy": "A black hole that eats: a tyrannical hole around it, Glutton takes extra prizes.",
+ "attacks": [
+  {
+   "name": "Eat Sloppily",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Tyrannical Hole",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "range": 300,
+    "radius": 92,
+    "ticks": 100,
+    "every": 45
+   },
+   "windup": 24,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  },
+  {
+   "name": "Glutton-GX",
+   "shape": {
+    "kind": "melee",
+    "range": 100,
+    "arc": 120,
+    "lunge": 60
+   },
+   "windup": 18,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "bounty",
+     "prizes": 2
+    }
+   ]
+  }
+ ]
+}

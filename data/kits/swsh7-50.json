@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "card": "swsh7-50",
+ "character": "raichu",
+ "name": "Raichu",
+ "fantasy": "A heavier Pikachu: agility, sparks over the back line, thunder from above, a big bolt.",
+ "attacks": [
+  {
+   "name": "Big Sparking",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 160
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    },
+    {
+     "op": "benchDamage",
+     "amount": 50
+    }
+   ]
+  },
+  {
+   "name": "Thunderbolt",
+   "shape": {
+    "kind": "beam",
+    "length": 740,
+    "width": 40
+   },
+   "windup": 16,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    }
+   ]
+  }
+ ]
+}

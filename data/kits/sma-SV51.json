@@ -1,0 +1,78 @@
+{
+ "version": 1,
+ "card": "sma-SV51",
+ "character": "reshiram",
+ "name": "Reshiram-GX",
+ "fantasy": "Columns of blue-white fire on the aim point; Vermilion is a beam that fuels its next move.",
+ "attacks": [
+  {
+   "name": "Flame Charge",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "name": "Scorching Column",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 90,
+    "range": 460
+   },
+   "windup": 14,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 110
+    },
+    {
+     "op": "status",
+     "status": "burned"
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 60,
+     "ticks": 150
+    }
+   ]
+  },
+  {
+   "name": "Vermilion-GX",
+   "shape": {
+    "kind": "beam",
+    "length": 760,
+    "width": 44
+   },
+   "windup": 20,
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 3
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 70,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

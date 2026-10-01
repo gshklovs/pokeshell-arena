@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "card": "swsh12pt5gg-GG52",
+ "character": "samurott-hisui",
+ "name": "Hisuian Samurott VSTAR",
+ "fantasy": "Merciless Blade cuts deeper into the wounded.",
+ "attacks": [
+  {
+   "name": "Merciless Blade",
+   "shape": {
+    "kind": "melee",
+    "range": 90,
+    "arc": 120,
+    "lunge": 80
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeDamaged",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 110
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 110
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

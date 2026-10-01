@@ -1,0 +1,55 @@
+{
+ "version": 1,
+ "card": "swsh11-146",
+ "character": "zoroark-hisui",
+ "name": "Hisuian Zoroark V",
+ "fantasy": "A void return, a shadow cyclone.",
+ "attacks": [
+  {
+   "name": "Void Return",
+   "shape": {
+    "kind": "melee",
+    "range": 72,
+    "arc": 96,
+    "lunge": 50
+   },
+   "onCast": [
+    {
+     "op": "retreat"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Shadow Cyclone",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 110,
+    "range": 300,
+    "ticks": 150,
+    "every": 40,
+    "path": "drift",
+    "drift": 2
+   },
+   "windup": 12,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "version": 1,
+ "card": "sma-SV11",
+ "character": "froakie",
+ "name": "Froakie",
+ "fantasy": "A frog that flops into you.",
+ "attacks": [
+  {
+   "name": "Flop",
+   "shape": {
+    "kind": "melee",
+    "range": 66,
+    "arc": 80
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  }
+ ]
+}

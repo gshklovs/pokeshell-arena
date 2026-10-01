@@ -1,0 +1,62 @@
+{
+ "version": 1,
+ "card": "swsh11tg-TG14",
+ "character": "centiskorch",
+ "name": "Centiskorch V",
+ "fantasy": "A burning train of a centipede: radiant heat up close, then it rolls right through you.",
+ "attacks": [
+  {
+   "name": "Radiating Heat",
+   "shape": {
+    "kind": "cone",
+    "range": 170,
+    "arc": 64
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    },
+    {
+     "op": "discardEnergy",
+     "count": 1,
+     "target": "target"
+    }
+   ]
+  },
+  {
+   "name": "Burning Train",
+   "shape": {
+    "kind": "dash",
+    "distance": 320,
+    "speed": 18,
+    "radius": 34
+   },
+   "windup": 18,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 180
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "fire",
+     "radius": 60,
+     "ticks": 150
+    }
+   ]
+  }
+ ]
+}

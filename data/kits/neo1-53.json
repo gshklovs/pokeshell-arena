@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "card": "neo1-53",
+ "character": "chikorita",
+ "name": "Chikorita",
+ "fantasy": "A leaf-headed defender: growls foes weaker, throws razor leaves.",
+ "attacks": [
+  {
+   "name": "Tackle",
+   "shape": {
+    "kind": "melee",
+    "range": 62,
+    "arc": 72
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  },
+  {
+   "name": "Deflector",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 40,
+     "ticks": 90
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "version": 1,
+ "card": "swsh9-79",
+ "character": "lucario",
+ "name": "Lucario",
+ "fantasy": "An aura master: Aura Sphere flies true and splashes the back line; Missile Jab closes the gap instantly.",
+ "attacks": [
+  {
+   "name": "Aura Sphere Volley",
+   "shape": {
+    "kind": "projectile",
+    "speed": 15,
+    "radius": 14,
+    "range": 660,
+    "blast": 56
+   },
+   "onCast": [
+    {
+     "op": "spendEnergy",
+     "max": 3,
+     "amount": 60,
+     "paid": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

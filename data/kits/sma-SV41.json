@@ -1,0 +1,26 @@
+{
+ "version": 1,
+ "card": "sma-SV41",
+ "character": "eevee",
+ "name": "Eevee",
+ "fantasy": "A curious all-rounder: tackles, quick attacks, and searches for its evolutions.",
+ "attacks": [
+  {
+   "name": "Quick Draw",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "gainEnergy",
+       "count": 1
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

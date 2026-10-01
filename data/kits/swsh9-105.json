@@ -1,0 +1,36 @@
+{
+ "version": 1,
+ "card": "swsh9-105",
+ "character": "zamazenta-crowned",
+ "name": "Zamazenta V",
+ "fantasy": "A shield rush that grows with its fallen friends.",
+ "attacks": [
+  {
+   "name": "Revenge Blast",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 15,
+    "range": 600,
+    "grow": 2,
+    "growMax": 10,
+    "blast": 76
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foePrizes",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

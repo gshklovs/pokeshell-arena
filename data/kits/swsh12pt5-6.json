@@ -1,0 +1,29 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-6",
+ "character": "scyther",
+ "name": "Scyther",
+ "fantasy": "A blur of blades: slashes, sharp scythes, agility.",
+ "attacks": [
+  {
+   "name": "Mach Cut",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 110,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    },
+    {
+     "op": "discardEnergy",
+     "count": 1,
+     "target": "target"
+    }
+   ]
+  }
+ ]
+}

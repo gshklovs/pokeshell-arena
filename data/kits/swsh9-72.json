@@ -1,0 +1,47 @@
+{
+ "version": 1,
+ "card": "swsh9-72",
+ "character": "hitmontop",
+ "name": "Hitmontop",
+ "fantasy": "A spinning top: spinning draws and cyclone kicks all around.",
+ "attacks": [
+  {
+   "name": "Spinning Draw",
+   "shape": {
+    "kind": "melee",
+    "range": 70,
+    "arc": 160
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Cyclone Kick",
+   "shape": {
+    "kind": "melee",
+    "range": 89,
+    "arc": 255
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

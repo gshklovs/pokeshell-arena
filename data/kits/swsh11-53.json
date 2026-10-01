@@ -1,0 +1,63 @@
+{
+ "version": 1,
+ "card": "swsh11-53",
+ "character": "raichu",
+ "name": "Raichu",
+ "fantasy": "A heavier Pikachu: agility, sparks over the back line, thunder from above, a big bolt.",
+ "attacks": [
+  {
+   "name": "Thunder Shock",
+   "shape": {
+    "kind": "projectile",
+    "speed": 16,
+    "radius": 10,
+    "range": 620,
+    "path": "zigzag",
+    "amp": 8,
+    "period": 4
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    },
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "status",
+       "status": "paralyzed"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ace Spark",
+   "shape": {
+    "kind": "dash",
+    "distance": 210,
+    "speed": 15,
+    "radius": 32,
+    "invulnerable": 0
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "usedVstar",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 120
+      }
+     ]
+    },
+    {
+     "op": "damage",
+     "amount": 100
+    }
+   ]
+  }
+ ]
+}

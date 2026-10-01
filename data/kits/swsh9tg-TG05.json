@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "card": "swsh9tg-TG05",
+ "character": "zekrom",
+ "name": "Zekrom",
+ "fantasy": "The black lightning: slashes, a nitro thunder beam, a wild shock that hurts it too.",
+ "attacks": [
+  {
+   "name": "Slash",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 100,
+    "lunge": 50
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Wild Shock",
+   "shape": {
+    "kind": "dash",
+    "distance": 300,
+    "speed": 20,
+    "radius": 32
+   },
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 60
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    },
+    {
+     "op": "status",
+     "status": "paralyzed"
+    },
+    {
+     "op": "knockback",
+     "px": 100
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "card": "me55-148",
+ "character": "greninja",
+ "name": "Greninja ex",
+ "fantasy": "Stealthy Slash cuts deeper into the wounded; Aqua Edge is a thin, fast blade of water.",
+ "attacks": [
+  {
+   "name": "Stealthy Slash",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 100,
+    "lunge": 60
+   },
+   "pin": "a slash from the shadows (the name reads as a vanish-and-strike: as that blink dash Greninja ex fell from 50-89% to 10%)",
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "foeDamage",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "name": "Aqua Edge",
+   "shape": {
+    "kind": "melee",
+    "range": 96,
+    "arc": 80,
+    "lunge": 110
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 60
+    }
+   ]
+  }
+ ],
+ "notes": "Stealthy Slash: a slash from the shadows (the name reads as a vanish-and-strike: as that blink dash Greninja ex fell from 50-89% to 10%)"
+}

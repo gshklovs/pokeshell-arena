@@ -1,0 +1,28 @@
+{
+ "version": 1,
+ "card": "me55-43",
+ "character": "pikachu",
+ "name": "Pikachu",
+ "fantasy": "Quick and electric: jolts and sparks from range, darting tackles, a bolt from the sky.",
+ "attacks": [
+  {
+   "name": "Tropical Vibes",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 150
+   },
+   "onCast": [
+    {
+     "op": "status",
+     "status": "asleep",
+     "target": "self"
+    },
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  }
+ ]
+}

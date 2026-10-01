@@ -1,0 +1,75 @@
+{
+ "version": 1,
+ "card": "sma-SV91",
+ "character": "tapu-bulu",
+ "name": "Tapu Bulu-GX",
+ "fantasy": "A guardian bull: horns, a charging judgment, and a wilderness that heals.",
+ "attacks": [
+  {
+   "name": "Horn Attack",
+   "shape": {
+    "kind": "projectile",
+    "speed": 19,
+    "radius": 9,
+    "range": 650,
+    "pierce": 2
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 30
+    }
+   ]
+  },
+  {
+   "name": "Nature's Judgment",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 90,
+    "range": 510,
+    "delay": 24
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 15
+    }
+   ],
+   "onHit": [
+    {
+     "op": "bonus",
+     "amount": 60
+    },
+    {
+     "op": "damage",
+     "amount": 120
+    },
+    {
+     "op": "knockback",
+     "px": 110
+    }
+   ]
+  },
+  {
+   "name": "Tapu Wilderness-GX",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 180
+   },
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 1000
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 150
+    }
+   ]
+  }
+ ]
+}

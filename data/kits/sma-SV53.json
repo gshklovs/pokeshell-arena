@@ -1,0 +1,74 @@
+{
+ "version": 1,
+ "card": "sma-SV53",
+ "character": "ninetales-alola",
+ "name": "Alolan Ninetales-GX",
+ "fantasy": "An ice-blade sniper and a blizzard edge.",
+ "attacks": [
+  {
+   "name": "Ice Blade",
+   "shape": {
+    "kind": "melee",
+    "range": 96,
+    "arc": 80,
+    "lunge": 80
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  },
+  {
+   "name": "Blizzard Edge",
+   "shape": {
+    "kind": "cone",
+    "range": 250,
+    "arc": 64
+   },
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 160
+    },
+    {
+     "op": "slow",
+     "permille": 400,
+     "ticks": 90
+    }
+   ]
+  },
+  {
+   "name": "Ice Path-GX",
+   "shape": {
+    "kind": "beam",
+    "length": 660,
+    "width": 30
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": 10
+    },
+    {
+     "op": "damage",
+     "amount": 0,
+     "wr": false,
+     "pierce": true
+    },
+    {
+     "op": "heal",
+     "amount": 1000
+    }
+   ]
+  }
+ ]
+}

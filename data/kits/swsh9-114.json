@@ -1,0 +1,71 @@
+{
+ "version": 1,
+ "card": "swsh9-114",
+ "character": "dracovish",
+ "name": "Dracovish V",
+ "fantasy": "Jaws on a fish: slosh and crash, a dragon strike.",
+ "attacks": [
+  {
+   "name": "Slosh 'n' Crash",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 96,
+    "lunge": 60
+   },
+   "onHit": [
+    {
+     "op": "when",
+     "cond": "foeBuffed",
+     "then": [
+      {
+       "op": "bonus",
+       "amount": 120
+      }
+     ]
+    },
+    {
+     "op": "dispel"
+    },
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 60
+    }
+   ]
+  },
+  {
+   "name": "Dragon Strike",
+   "shape": {
+    "kind": "melee",
+    "range": 92,
+    "arc": 110,
+    "lunge": 80
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "exhaust",
+     "ticks": 90,
+     "which": "this"
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 210
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

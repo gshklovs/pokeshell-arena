@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "card": "me55-115",
+ "character": "ditto",
+ "name": "Ditto",
+ "fantasy": "Transforms: it hits with the foe's own strongest attack.",
+ "attacks": [
+  {
+   "name": "Surprisingly Transform",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 40,
+    "radius": 28,
+    "path": "leap",
+    "blast": 64
+   },
+   "onHit": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "mimic"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

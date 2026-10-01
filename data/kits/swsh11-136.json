@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "card": "swsh11-136",
+ "character": "goodra-hisui",
+ "name": "Hisuian Goodra VSTAR",
+ "fantasy": "Rolling Iron: a heavy roll that hardens it.",
+ "attacks": [
+  {
+   "name": "Rolling Iron",
+   "shape": {
+    "kind": "dash",
+    "distance": 320,
+    "speed": 16,
+    "radius": 42
+   },
+   "windup": 14,
+   "onCast": [
+    {
+     "op": "buff",
+     "stat": "defense",
+     "amount": 80,
+     "ticks": 90
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200
+    },
+    {
+     "op": "knockback",
+     "px": 130
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "version": 1,
+ "card": "swsh7-190",
+ "character": "garbodor",
+ "name": "Garbodor V",
+ "fantasy": "A trash stench that poisons and pins; a sludge bomb.",
+ "attacks": [
+  {
+   "name": "Trash Stench",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 100,
+    "ticks": 120,
+    "every": 60
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 40
+    },
+    {
+     "op": "status",
+     "status": "poisoned"
+    },
+    {
+     "op": "retreatLock",
+     "ticks": 90
+    }
+   ]
+  },
+  {
+   "name": "Sludge Bomb",
+   "shape": {
+    "kind": "projectile",
+    "speed": 11,
+    "radius": 20,
+    "range": 620,
+    "path": "lob",
+    "blast": 82
+   },
+   "windup": 12,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 130
+    }
+   ]
+  }
+ ]
+}

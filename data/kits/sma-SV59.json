@@ -1,0 +1,69 @@
+{
+ "version": 1,
+ "card": "sma-SV59",
+ "character": "mewtwo",
+ "name": "Mewtwo-GX",
+ "fantasy": "Psy bolts, a draining absorption, and Psystrike: a beam that ignores every shield.",
+ "attacks": [
+  {
+   "name": "Full Burst",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 160
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myAttached",
+     "amount": 30
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "name": "Super Absorption",
+   "shape": {
+    "kind": "beam",
+    "length": 640,
+    "width": 28
+   },
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ]
+  },
+  {
+   "name": "Psystrike-GX",
+   "shape": {
+    "kind": "beam",
+    "length": 780,
+    "width": 46,
+    "ticks": 12
+   },
+   "windup": 20,
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 200,
+     "pierce": true
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

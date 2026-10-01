@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-64",
+ "character": "tapu-lele",
+ "name": "Tapu Lele",
+ "fantasy": "An energy burst that grows with both sides' energy, a draining spiral.",
+ "attacks": [
+  {
+   "name": "Energy Burst",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 160
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "bothEnergy",
+     "amount": 20
+    },
+    {
+     "op": "damage",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "name": "Spiral Drain",
+   "shape": {
+    "kind": "beam",
+    "length": 660,
+    "width": 30
+   },
+   "onCast": [
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 100
+    }
+   ]
+  }
+ ]
+}

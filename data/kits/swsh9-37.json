@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "card": "swsh9-37",
+ "character": "empoleon",
+ "name": "Empoleon",
+ "fantasy": "A water sniper: Water Arrow flies fast and far.",
+ "attacks": [
+  {
+   "name": "Water Arrow",
+   "shape": {
+    "kind": "projectile",
+    "speed": 18,
+    "radius": 10,
+    "range": 760
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    }
+   ],
+   "onImpact": [
+    {
+     "op": "paint",
+     "terrain": "water",
+     "radius": 50
+    }
+   ]
+  }
+ ]
+}

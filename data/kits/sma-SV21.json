@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "card": "sma-SV21",
+ "character": "riolu",
+ "name": "Riolu",
+ "fantasy": "An aura pup: detects attacks, jabs, low kicks.",
+ "attacks": [
+  {
+   "name": "Detect",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "coin",
+     "heads": [
+      {
+       "op": "invulnerable",
+       "ticks": 90
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Jab",
+   "shape": {
+    "kind": "melee",
+    "range": 64,
+    "arc": 72,
+    "lunge": 20
+   },
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}

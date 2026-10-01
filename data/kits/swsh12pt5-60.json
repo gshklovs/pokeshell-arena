@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "card": "swsh12pt5-60",
+ "character": "mew",
+ "name": "Mew V",
+ "fantasy": "Mixes energy in, then a psychic leap that returns it to the bench.",
+ "attacks": [
+  {
+   "name": "Energy Mix",
+   "shape": {
+    "kind": "self"
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "Psychic Leap",
+   "shape": {
+    "kind": "dash",
+    "distance": 280,
+    "speed": 21,
+    "radius": 26,
+    "path": "leap",
+    "blast": 62
+   },
+   "onCast": [
+    {
+     "op": "retreat",
+     "px": 220
+    },
+    {
+     "op": "heal",
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 70
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "card": "base1-34",
+ "character": "machoke",
+ "name": "Machoke",
+ "fantasy": "Karate chops that weaken as it is hurt, submission holds that hurt it too.",
+ "attacks": [
+  {
+   "name": "Karate Chop",
+   "shape": {
+    "kind": "melee",
+    "range": 74,
+    "arc": 84,
+    "lunge": 40
+   },
+   "onHit": [
+    {
+     "op": "bonusPer",
+     "per": "myDamage",
+     "amount": -10
+    },
+    {
+     "op": "damage",
+     "amount": 50
+    }
+   ]
+  },
+  {
+   "name": "Submission",
+   "shape": {
+    "kind": "melee",
+    "range": 80,
+    "arc": 90,
+    "lunge": 50
+   },
+   "onCast": [
+    {
+     "op": "selfDamage",
+     "amount": 20
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    },
+    {
+     "op": "knockback",
+     "px": 90
+    }
+   ]
+  }
+ ]
+}

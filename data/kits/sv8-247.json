@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "card": "sv8-247",
+ "character": "pikachu",
+ "name": "Pikachu ex",
+ "fantasy": "A Tera Pikachu: parades its friends in, then thunder, bolts, and the Topaz Bolt.",
+ "attacks": [
+  {
+   "name": "Topaz Bolt",
+   "shape": {
+    "kind": "beam",
+    "length": 780,
+    "width": 46,
+    "ticks": 12
+   },
+   "windup": 22,
+   "onCast": [
+    {
+     "op": "discardEnergy",
+     "count": 3
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 300
+    },
+    {
+     "op": "knockback",
+     "px": 120
+    }
+   ]
+  }
+ ]
+}

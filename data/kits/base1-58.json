@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "card": "base1-58",
+  "character": "pikachu",
+  "name": "Pikachu",
+  "stats": {
+    "hp": 40, "types": ["Lightning"], "subtypes": ["Basic"],
+    "weaknesses": [{ "type": "Fighting", "value": "×2" }], "resistances": [], "retreat": 1
+  },
+  "attacks": [
+    {
+      "name": "Gnaw", "cost": ["Colorless"], "damage": "10",
+      "shape": { "kind": "melee", "range": 60, "arc": 64, "lunge": 16 },
+      "windup": 4, "recovery": 6, "cooldown": 18,
+      "onHit": [{ "op": "damage", "amount": 10 }]
+    },
+    {
+      "name": "Thunder Jolt", "cost": ["Lightning", "Colorless"], "damage": "30",
+      "shape": { "kind": "projectile", "speed": 15, "radius": 10, "range": 640 },
+      "windup": 10, "recovery": 10, "cooldown": 36,
+      "onCast": [{ "op": "coin", "tails": [{ "op": "selfDamage", "amount": 10 }] }],
+      "onHit": [{ "op": "damage", "amount": 30 }]
+    }
+  ],
+  "passive": null,
+  "notes": "Thunder Jolt's coin is flipped on release; tails: 10 to itself. A Lightning shot landing in water electrifies it (built-in reaction)."
+}

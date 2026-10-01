@@ -1,0 +1,58 @@
+{
+ "version": 1,
+ "card": "swsh11-124",
+ "character": "steelix",
+ "name": "Radiant Steelix",
+ "fantasy": "An iron snake: an energy stream, then a crushing destructive finish.",
+ "attacks": [
+  {
+   "name": "Energy Stream",
+   "shape": {
+    "kind": "beam",
+    "length": 540,
+    "width": 27,
+    "ticks": 10
+   },
+   "onCast": [
+    {
+     "op": "gainEnergy",
+     "count": 2
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 20
+    }
+   ]
+  },
+  {
+   "name": "Destructive Finish",
+   "shape": {
+    "kind": "area",
+    "at": "self",
+    "radius": 180
+   },
+   "pin": "a ring (the lexicon reads it as an explosion) but 180 px, not 230: Radiant Steelix won 93% of rule-box fights",
+   "windup": 20,
+   "onCast": [
+    {
+     "op": "spendEnergy",
+     "max": 3,
+     "amount": 30
+    }
+   ],
+   "onHit": [
+    {
+     "op": "damage",
+     "amount": 60
+    },
+    {
+     "op": "knockback",
+     "px": 140
+    }
+   ]
+  }
+ ],
+ "notes": "Destructive Finish: a ring (the lexicon reads it as an explosion) but 180 px, not 230: Radiant Steelix won 93% of rule-box fights"
+}

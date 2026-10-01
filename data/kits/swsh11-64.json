@@ -1,0 +1,24 @@
+{
+ "version": 1,
+ "card": "swsh11-64",
+ "character": "gastly",
+ "name": "Gastly",
+ "fantasy": "A gas cloud: puts foes to sleep and curses whoever knocks it out. It does almost no damage of its own.",
+ "attacks": [
+  {
+   "name": "Furtive Drop",
+   "shape": {
+    "kind": "area",
+    "at": "aim",
+    "radius": 90,
+    "range": 460
+   },
+   "onHit": [
+    {
+     "op": "counters",
+     "amount": 10
+    }
+   ]
+  }
+ ]
+}
