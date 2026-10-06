@@ -1,10 +1,10 @@
 # what `vercel` (the CLI) never uploads: build output, and the gitignored art (the web build includes the art only
 # when ARENA_WEB_ART=1 fetches it: tools/web/art.mjs, docs/WEB.md)
 node_modules
-dist
-release
+/dist
+/release
 host/target
-shots
+/shots
 test-results
 .cache
 public/sprites
