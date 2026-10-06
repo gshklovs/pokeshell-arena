@@ -20,3 +20,5 @@ test-results/
 .cache/
 # standalone release build output (tools/release, docs/RELEASE.md)
 /release/
+# the web build's card faces (tools/web/art.mjs, opt-in: the same art release as above)
+public/pokeshell/

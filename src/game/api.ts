@@ -17,13 +17,31 @@ export interface Health {
   mode?: 'pokeshell' | 'standalone'
   /** the downloadable build (the game data is embedded in the host) */
   bundled?: boolean
+  /** the web build: no host, the arena runs in this browser and keeps its state there (src/web/) */
+  web?: boolean
   starter?: Starter
   pokeshell: { found: boolean; script?: string; home?: string; version?: string }
 }
 
 export interface ApiError { status: number; error: string; message: string; need?: string }
 
+/** the web build (`npm run build:web`, the Vercel site): no host; src/web/ answers the same routes in the browser */
+export const WEB = import.meta.env.VITE_ARENA_BACKEND === 'browser'
+
+async function webCall<T>(method: string, path: string, body?: unknown): Promise<T> {
+  const { webBackend } = await import('../web/backend')
+  // a copy each way, as over HTTP: neither side keeps the other's objects
+  const r = await webBackend(import.meta.env.VITE_ARENA_FACES === '1').handle(method, path, body === undefined ? undefined : JSON.parse(JSON.stringify(body)))
+  const j = JSON.parse(JSON.stringify(r.body ?? null)) as unknown
+  if (r.status >= 400) {
+    const e = (j ?? {}) as Partial<ApiError>
+    throw { status: r.status, error: e.error ?? 'error', message: e.message ?? '', need: e.need } as ApiError
+  }
+  return j as T
+}
+
 async function call<T>(method: string, path: string, body?: unknown): Promise<T> {
+  if (WEB) return webCall<T>(method, path, body)
   const r = await fetch(path, {
     method,
     headers: body === undefined ? {} : { 'Content-Type': 'application/json' },
@@ -85,6 +103,7 @@ export async function probeHost(): Promise<Health | null> {
 /** keep the host alive while a page is open (it exits a while after the last heartbeat); `onLost` once it stops
  * answering (it exited: relaunching the arena starts it again) */
 export function startHeartbeat(onLost?: () => void): void {
+  if (WEB) return // nothing to keep alive
   let lost = false
   const beat = () => {
     api.heartbeat().then(() => { lost = false }).catch((e: Partial<ApiError>) => {

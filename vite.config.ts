@@ -1,5 +1,6 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
+import type { ProxyOptions } from 'vite'
 import { defineConfig } from 'vitest/config'
 
 // `npm run dev` proxies /api and /pokeshell to a running arena-host: POKEARENA_HOST, else the port in the arena
@@ -16,18 +17,25 @@ function hostUrl(): string {
 
 const host = hostUrl()
 
-export default defineConfig({
-  base: './',
-  server: {
-    // the host checks Host/Origin, so the proxy rewrites them to the host's own origin
-    proxy: {
-      '/api': { target: host, changeOrigin: true, headers: { origin: host } },
-      '/pokeshell': { target: host, changeOrigin: true },
+// `vite build --mode web` (npm run build:web, the Vercel site): no host, the arena runs in the browser (src/web/,
+// VITE_ARENA_BACKEND from .env.web). Card faces only when the art is in public/pokeshell/img (tools/web/art.mjs, opt-in).
+const faces = existsSync(join(import.meta.dirname, 'public', 'pokeshell', 'img', 'pokemon'))
+
+export default defineConfig(({ mode }) => {
+  // the host checks Host/Origin, so the proxy rewrites them to the host's own origin; the web build has no host
+  const proxy: Record<string, ProxyOptions> = mode === 'web' ? {} : {
+    '/api': { target: host, changeOrigin: true, headers: { origin: host } },
+    '/pokeshell': { target: host, changeOrigin: true },
+  }
+  return {
+    base: './',
+    define: { 'import.meta.env.VITE_ARENA_FACES': JSON.stringify(faces ? '1' : '0') },
+    server: { proxy },
+    preview: { proxy },
+    build: { outDir: 'dist', assetsInlineLimit: 0, chunkSizeWarningLimit: 800 },
+    test: {
+      include: ['src/**/*.test.ts'],
+      environment: 'node',
     },
-  },
-  build: { outDir: 'dist', assetsInlineLimit: 0, chunkSizeWarningLimit: 800 },
-  test: {
-    include: ['src/**/*.test.ts'],
-    environment: 'node',
-  },
+  }
 })

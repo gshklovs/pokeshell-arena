@@ -98,6 +98,7 @@ function standalone(): boolean {
 
 function statusLine(): string {
   if (!host) return 'no arena-host: run <b>pokearena</b>'
+  if (host.web) return 'pokeshell arena <b>web</b> · your cards and packs are saved in this browser'
   if (standalone()) return `pokeshell arena <b>${esc(host.version)}</b> · your own collection`
   const ps = host.pokeshell
   return `host <b>${esc(host.version)}</b> · pokeshell ${ps.found ? `<b>found</b>${ps.version ? ' ' + esc(ps.version) : ''}` : '<b>not found</b>'}`
@@ -130,7 +131,7 @@ function welcomeBlock(): NonNullable<typeof blocked> {
   return {
     title: 'Welcome to the arena!', packs: true,
     body: `<p>You battle with the cards you own. To start your collection you get <b>${starter} free booster packs</b>: open them to pull real cards (a random set each, rolled by its pack's price), then pick your team and fight the bots.</p>
-      <p class="note">You have ${n} pack${n === 1 ? '' : 's'} to open. After that, wins earn tokens toward more: 1 for a 1v1, 2 for a team battle, +1 on hard and +2 on expert, and every 10 tokens make a pack.</p>`,
+      <p class="note">You have ${n} pack${n === 1 ? '' : 's'} to open. After that, wins earn tokens toward more: 1 for a 1v1, 2 for a team battle, +1 on hard and +2 on expert, and every 10 tokens make a pack.</p>${host?.web ? '<p class="note">Everything is saved in this browser: no account, no install.</p>' : ''}`,
   }
 }
 
