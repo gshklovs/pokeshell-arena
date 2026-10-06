@@ -6,6 +6,12 @@ Real-time top-down Pokémon battles with the cards you pulled in [pokeshell](htt
 A separate, optional install: pokeshell itself never depends on it. Or play it on its own: download it, open your
 free starter packs, battle.
 
+## Play in the browser
+
+The web build runs the whole arena in the browser: no download, no pokeshell. A new visitor gets 3 free starter packs,
+and the collection is saved in that browser. `npm run build:web` builds it (a static site; `vercel.json` deploys it on
+Vercel). How it works, the art (opt-in) and the deploy steps: [docs/WEB.md](docs/WEB.md).
+
 ## Download & play (no terminal)
 
 1. Download the zip for your computer from the latest release (Releases, on the right of this page):
@@ -89,6 +95,7 @@ npm run shots        # Playwright screenshots + a fight video into shots\: a tem
 cargo test --release --manifest-path host\Cargo.toml   # incl. the standalone wallet, starter packs, tokens, pack-odds parity
 powershell -NoProfile -ExecutionPolicy Bypass -File tests\test-host.ps1   # the host end to end, temp dirs only
 npm run release:win  # the downloadable Windows build in release\ (docs/RELEASE.md); npm run test:standalone tests it
+npm run build:web    # the web arena in dist\ (docs/WEB.md); node tests/web-smoke.mjs plays it as a new visitor
 ```
 
 - **Kit checks against real card data**: `$env:POKEARENA_CARDS = '..\pokeshell\packs\pokemon\carddata.json'`, then
@@ -105,6 +112,7 @@ npm run release:win  # the downloadable Windows build in release\ (docs/RELEASE.
 | `src/game/` | loadout (your cards, saved teams), the two bot-match modes, Random decks and You choose (rolled from `data/bots/roster.json`), the reveal, match loop, result, the way to the pack scene |
 | `src/render/`, `src/audio/` | the renderer (game feel is render-only: the sim never sees it), HUD, synthesised sfx |
 | `src/packs/` | the pack opening scene |
+| `src/web/` | the web build's host in the browser: localStorage state, the booster port, the /api routes (docs/WEB.md) |
 | `src/input/` | keyboard, mouse (clicks on the team bar swap), gamepad → InputFrame |
 | `data/kits/<card id>.json` | per-card kits: shapes and effects over the card's own numbers |
 | `public/arenas/<id>/` | the ten arenas (`arena.json`, `props.json`; art is gitignored) |

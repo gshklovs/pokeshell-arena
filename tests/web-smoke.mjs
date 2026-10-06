@@ -80,9 +80,8 @@ try {
   check(stored && stored.balance === 2 && Object.keys(stored.cards).length > 0, `localStorage holds the collection (${stored && Object.keys(stored.cards).length} cards, ${stored?.balance} packs)`)
   await shot('04-loadout')
 
-  // a 1v1 from the loadout: the Battle button, then knock the bot out (the sim's state, as the screenshot tools do)
-  await page.click('.lo-modes [data-mode="1v1"], [data-mode="1v1"]').catch(() => {})
-  await sleep(300)
+  // a battle from the loadout (its default: a team of 3 rolled from your cards): the Battle button, the reveal, then
+  // knock the bot out (the sim's state, as the screenshot tools do)
   await page.click('#go')
   for (let i = 0; i < 60; i++) {
     const phase = await page.evaluate(() => window.__arena?.state?.()?.phase ?? null)
